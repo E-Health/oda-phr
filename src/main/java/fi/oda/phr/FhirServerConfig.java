@@ -30,7 +30,7 @@ public class FhirServerConfig extends BaseJavaConfigDstu2 {
   @Bean
   public EmbeddedServletContainerFactory servletContainerFactory() {
     return new TomcatEmbeddedServletContainerFactory() {
-  
+
       @Override
       protected TomcatEmbeddedServletContainer getTomcatEmbeddedServletContainer(
           Tomcat tomcat) {
@@ -47,9 +47,11 @@ public class FhirServerConfig extends BaseJavaConfigDstu2 {
         }
         return super.getTomcatEmbeddedServletContainer(tomcat);
       }
-  
+
     };
-  }*/
+  }
+
+  */
 
   /**
    * Configure FHIR properties around the the JPA server via this bean
