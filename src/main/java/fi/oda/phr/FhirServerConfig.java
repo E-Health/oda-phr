@@ -1,25 +1,22 @@
 package fi.oda.phr;
 
-import java.util.Properties;
-
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-
-import org.apache.commons.lang3.time.DateUtils;
-import org.hibernate.jpa.HibernatePersistenceProvider;
-import org.springframework.beans.factory.annotation.Autowire;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu2;
 import ca.uhn.fhir.jpa.dao.DaoConfig;
 import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu2;
 import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
+import org.apache.commons.lang3.time.DateUtils;
+import org.hibernate.jpa.HibernatePersistenceProvider;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement()
@@ -107,22 +104,19 @@ public class FhirServerConfig extends BaseJavaConfigDstu2 {
     return retVal;
   }
 
-  /**
-   * This interceptor adds some pretty syntax highlighting in responses when a browser is detected
-   */
-  @Bean(autowire = Autowire.BY_TYPE)
+  @Bean
   public IServerInterceptor responseHighlighterInterceptor() {
     final ResponseHighlighterInterceptor retVal = new ResponseHighlighterInterceptor();
     return retVal;
   }
 
-  @Bean(autowire = Autowire.BY_TYPE)
+  @Bean
   public IServerInterceptor subscriptionSecurityInterceptor() {
     final SubscriptionsRequireManualActivationInterceptorDstu2 retVal = new SubscriptionsRequireManualActivationInterceptorDstu2();
     return retVal;
   }
 
-  @Bean()
+  @Bean
   public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
     final JpaTransactionManager retVal = new JpaTransactionManager();
     retVal.setEntityManagerFactory(entityManagerFactory);
