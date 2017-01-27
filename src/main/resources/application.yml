@@ -1,0 +1,24 @@
+server:
+    port: 6083
+    tomcat:
+        remote_ip_header: x-forwarded-for
+        protocol_header: x-forwarded-proto
+    session:
+        cookie:
+            http-only: true
+    contextPath: /phr
+
+
+spring:
+    datasource:
+        url: jdbc:derby:directory:build/jpaserver_derby_files;create=true
+        username:
+        password:
+        driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+
+
+logging:
+    level:
+#    ROOT: DEBUG
+#    ca.uhn.fhir.rest.server: DEBUG
+
