@@ -1,11 +1,21 @@
 package fi.oda.phr;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
+import javax.servlet.ServletException;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+import org.springframework.web.cors.CorsConfiguration;
+
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.context.FhirVersionEnum;
 import ca.uhn.fhir.jpa.dao.DaoConfig;
 import ca.uhn.fhir.jpa.dao.IFhirSystemDao;
+import ca.uhn.fhir.jpa.provider.BaseJpaSystemProvider;
 import ca.uhn.fhir.jpa.provider.JpaConformanceProviderDstu2;
-import ca.uhn.fhir.jpa.provider.JpaSystemProviderDstu2;
 import ca.uhn.fhir.jpa.search.DatabaseBackedPagingProvider;
 import ca.uhn.fhir.model.dstu2.composite.MetaDt;
 import ca.uhn.fhir.model.dstu2.resource.Bundle;
@@ -16,13 +26,6 @@ import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
 import ca.uhn.fhir.rest.server.interceptor.CorsInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
-import org.springframework.stereotype.Component;
-import org.springframework.web.cors.CorsConfiguration;
-
-import javax.servlet.ServletException;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 
 @Component
 public class JpaServer extends RestfulServer {
@@ -30,11 +33,17 @@ public class JpaServer extends RestfulServer {
   private static final long serialVersionUID = 1L;
 
   public JpaServer(List<IResourceProvider> resourceProviders,
-      JpaSystemProviderDstu2 systemProvider,
+      BaseJpaSystemProvider<?, ?> systemProvider,
       IFhirSystemDao<Bundle, MetaDt> dao,
       DaoConfig daoConfig,
       DatabaseBackedPagingProvider dbBackedPagingProvider,
-      Collection<IServerInterceptor> interceptorBeans) {
+      Collection<IServerInterceptor> interceptorBeans,
+      @Value("${app.fhirVersion}") String fhirVersion) {
+
+    final FhirContext context = new FhirContext(FhirVersionEnum.valueOf(fhirVersion));
+
+    setFhirContext(context);
+
     setResourceProviders(resourceProviders);
     setPlainProviders(systemProvider);
     final JpaConformanceProviderDstu2 confProvider = new JpaConformanceProviderDstu2(this, dao, daoConfig);
@@ -58,10 +67,6 @@ public class JpaServer extends RestfulServer {
      * If you want to use DSTU1 instead, change the following line, and
      * change the 2 occurrences of dstu2 in web.xml to dstu1
      */
-    final FhirVersionEnum fhirVersion = FhirVersionEnum.DSTU2;
-    final FhirContext context = new FhirContext(fhirVersion);
-
-    setFhirContext(context);
 
     /*
      * Enable ETag Support (this is already the default)

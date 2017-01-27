@@ -8,7 +8,6 @@ server:
             http-only: true
     contextPath: /phr
 
-
 spring:
     datasource:
         url: jdbc:derby:directory:build/jpaserver_derby_files;create=true
@@ -22,3 +21,6 @@ logging:
 #    ROOT: DEBUG
 #    ca.uhn.fhir.rest.server: DEBUG
 
+
+app:
+    fhirVersion: DSTU2
