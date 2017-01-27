@@ -46,7 +46,7 @@ dependencies {
 	compile('ca.uhn.hapi.fhir:hapi-fhir-jpaserver-base:2.2')
 	//compile('ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:2.2')
     compile group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-testpage-overlay', version:'2.2', classifier:'classes'
-    compile group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-testpage-overlay', version:'2.2'
+    compile('ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:2.2@war')
     compile group: 'org.apache.commons', name: 'commons-dbcp2', version:'2.1.1'
     compile group: 'org.apache.derby', name: 'derby', version:'10.13.1.1'
     compile group: 'org.apache.derby', name: 'derbynet', version:'10.13.1.1'
