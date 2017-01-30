@@ -31,7 +31,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile group: 'org.thymeleaf', name: 'thymeleaf', version:'3.0.1.RELEASE'
+    compile('org.thymeleaf:thymeleaf:3.0.1.RELEASE')
     compile('org.thymeleaf:thymeleaf-spring4:3.0.1.RELEASE')
     	    
     compile('org.apache.httpcomponents:httpclient:4.5.2')
