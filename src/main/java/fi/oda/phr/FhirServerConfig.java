@@ -1,11 +1,10 @@
 package fi.oda.phr;
 
-import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu2;
-import ca.uhn.fhir.jpa.dao.DaoConfig;
-import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu2;
-import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
-import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
-import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
+import java.util.Properties;
+
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+
 import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.context.annotation.Bean;
@@ -14,41 +13,17 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-import java.util.Properties;
+import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu2;
+import ca.uhn.fhir.jpa.dao.DaoConfig;
+import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu2;
+import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
+import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
+import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
 
 @Configuration
 @EnableTransactionManagement()
 //@Import(WebsocketDstu2Config.class)
 public class FhirServerConfig extends BaseJavaConfigDstu2 {
-
-  /*
-  @Bean
-  public EmbeddedServletContainerFactory servletContainerFactory() {
-    return new TomcatEmbeddedServletContainerFactory() {
-
-      @Override
-      protected TomcatEmbeddedServletContainer getTomcatEmbeddedServletContainer(
-          Tomcat tomcat) {
-        try {
-          tomcat.getHost().getAppBaseFile().mkdir();
-          final Context context =
-              tomcat.addWebapp("/", "foo.war");
-          final WebappLoader loader =
-              new WebappLoader(Thread.currentThread().getContextClassLoader());
-          context.setLoader(loader);
-        }
-        catch (final ServletException ex) {
-          throw new IllegalStateException("Failed to add webapp", ex);
-        }
-        return super.getTomcatEmbeddedServletContainer(tomcat);
-      }
-
-    };
-  }
-
-  */
 
   /**
    * Configure FHIR properties around the the JPA server via this bean
