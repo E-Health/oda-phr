@@ -31,7 +31,6 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-//	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
     compile group: 'org.thymeleaf', name: 'thymeleaf', version:'3.0.1.RELEASE'
     compile('org.thymeleaf:thymeleaf-spring4:3.0.1.RELEASE')
     	    
@@ -44,13 +43,12 @@ dependencies {
     compile('ca.uhn.hapi.fhir:hapi-fhir-structures-dstu2:2.2')
 	
 	compile('ca.uhn.hapi.fhir:hapi-fhir-jpaserver-base:2.2')
-	//compile('ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:2.2')
-    compile group: 'ca.uhn.hapi.fhir', name: 'hapi-fhir-testpage-overlay', version:'2.2', classifier:'classes'
+    compile('ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:2.2:classes')
     compile('ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:2.2@war')
-    compile group: 'org.apache.commons', name: 'commons-dbcp2', version:'2.1.1'
-    compile group: 'org.apache.derby', name: 'derby', version:'10.13.1.1'
-    compile group: 'org.apache.derby', name: 'derbynet', version:'10.13.1.1'
-    compile group: 'org.apache.derby', name: 'derbyclient', version:'10.13.1.1'
+    compile('org.apache.commons:commons-dbcp2:2.1.1')  
+    compile('org.apache.derby:derby:10.13.1.1')
+    compile('org.apache.derby:derbynet:10.13.1.1')
+    compile('org.apache.derby:derbyclient:10.13.1.1')
     
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
