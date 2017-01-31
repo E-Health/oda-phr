@@ -1,8 +1,6 @@
 server:
     port: 6083
-    tomcat:
-        remote_ip_header: x-forwarded-for
-        protocol_header: x-forwarded-proto
+    use-forward-headers: true
     session:
         cookie:
             http-only: true
