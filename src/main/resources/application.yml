@@ -19,6 +19,3 @@ logging:
 #    ROOT: DEBUG
 #    ca.uhn.fhir.rest.server: DEBUG
 
-
-app:
-    fhirVersion: DSTU2
