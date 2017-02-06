@@ -5,7 +5,6 @@ import java.util.Properties;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowire;
@@ -49,27 +48,11 @@ public class FhirServerConfigDstu3 extends BaseJavaConfigDstu3 {
         return retVal;
     }
 
-    /**
-     * The following bean configures the database connection. The 'url' property value of "jdbc:derby:directory:jpaserver_derby_files;create=true" indicates that the server should save resources in a
-     * directory called "jpaserver_derby_files".
-     *
-     * A URL to a remote database could also be placed here, along with login credentials and other properties supported by BasicDataSource.
-     */
-    @Bean(destroyMethod = "close")
-    public DataSource dataSource() {
-        final BasicDataSource retVal = new BasicDataSource();
-        retVal.setDriver(new org.apache.derby.jdbc.EmbeddedDriver());
-        retVal.setUrl("jdbc:derby:directory:target/jpaserver_derby_files;create=true");
-        retVal.setUsername("");
-        retVal.setPassword("");
-        return retVal;
-    }
-
     @Bean()
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         final LocalContainerEntityManagerFactoryBean retVal = new LocalContainerEntityManagerFactoryBean();
         retVal.setPersistenceUnitName("HAPI_PU");
-        retVal.setDataSource(dataSource());
+        retVal.setDataSource(dataSource);
         retVal.setPackagesToScan("ca.uhn.fhir.jpa.entity");
         retVal.setPersistenceProvider(new HibernatePersistenceProvider());
         retVal.setJpaProperties(jpaProperties());
