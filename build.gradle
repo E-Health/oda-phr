@@ -33,7 +33,11 @@ repositories {
     }
 }
 
+
+
 dependencies {
+    def hapiVersion = '2.3-SNAPSHOT'
+
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -44,15 +48,15 @@ dependencies {
     compile('org.apache.commons:commons-lang3:3.4')
     compile('com.jayway.jsonpath:json-path')
 
-    compile('ca.uhn.hapi.fhir:hapi-fhir-base:2.3-SNAPSHOT')
-    compile('ca.uhn.hapi.fhir:hapi-fhir-jpaserver-base:2.3-SNAPSHOT')
+    compile("ca.uhn.hapi.fhir:hapi-fhir-base:${hapiVersion}")
+    compile("ca.uhn.hapi.fhir:hapi-fhir-jpaserver-base:${hapiVersion}")
     
     
-    compile('ca.uhn.hapi.fhir:hapi-fhir-structures-dstu2:2.3-SNAPSHOT') 
-    compile('ca.uhn.hapi.fhir:hapi-fhir-structures-dstu3:2.3-SNAPSHOT')	
+    compile("ca.uhn.hapi.fhir:hapi-fhir-structures-dstu2:${hapiVersion}")
+    compile("ca.uhn.hapi.fhir:hapi-fhir-structures-dstu3:${hapiVersion}")
 	
-    compile('ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:2.3-SNAPSHOT:classes')
-    compile('ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:2.3-SNAPSHOT@war')
+    compile("ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:${hapiVersion}:classes")
+    compile("ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:${hapiVersion}@war")
     compile('org.apache.commons:commons-dbcp2:2.1.1')  
     compile('org.apache.derby:derby:10.13.1.1')
     compile('org.apache.derby:derbynet:10.13.1.1')
