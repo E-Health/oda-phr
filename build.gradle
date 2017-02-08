@@ -19,6 +19,12 @@ jar {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+
+// Override Spring Boot default versions of libraries
+ext['thymeleaf.version'] = '3.0.2.RELEASE'
+ext['thymeleaf-layout-dialect.version'] = '2.1.1'
+ext['hibernate.version'] = '5.2.7.Final'
+
 repositories {	
     mavenCentral()
     jcenter()
@@ -31,11 +37,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    
-    compile('org.hibernate:hibernate-core:5.2.7.Final')
-    compile('org.thymeleaf:thymeleaf:3.0.1.RELEASE')
-    compile('org.thymeleaf:thymeleaf-spring4:3.0.1.RELEASE')
-    	    
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
     compile('org.apache.httpcomponents:httpclient:4.5.2')
     compile('commons-io:commons-io:2.5')
     compile('org.apache.commons:commons-lang3:3.4')
