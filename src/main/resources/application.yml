@@ -12,8 +12,11 @@ spring:
         username:
         password:
         driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+    thymeleaf:
+            prefix: classpath:/WEB-INF/templates/
     profiles:
-      active: dstu2
+        active: dstu2
+
 logging:
     level:
 #    ROOT: DEBUG

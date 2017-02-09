@@ -21,6 +21,10 @@ public class FhirTesterMvcConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/css/**").addResourceLocations("classpath:/css/");
+        registry.addResourceHandler("/fa/**").addResourceLocations("classpath:/fa/");
+        registry.addResourceHandler("/fonts/**").addResourceLocations("classpath:/fonts/");
+        registry.addResourceHandler("/img/**").addResourceLocations("classpath:/img/");
+        registry.addResourceHandler("/js/**").addResourceLocations("classpath:/js/");
     }
 }
