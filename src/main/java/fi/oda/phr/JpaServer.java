@@ -1,16 +1,5 @@
 package fi.oda.phr;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
-import javax.servlet.ServletException;
-
-import org.hl7.fhir.dstu3.model.Bundle;
-import org.hl7.fhir.dstu3.model.Meta;
-import org.springframework.stereotype.Component;
-import org.springframework.web.cors.CorsConfiguration;
-
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.context.FhirVersionEnum;
 import ca.uhn.fhir.jpa.dao.DaoConfig;
@@ -27,6 +16,16 @@ import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
 import ca.uhn.fhir.rest.server.interceptor.CorsInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
+import fi.oda.phr.config.FhirConfig;
+import org.hl7.fhir.dstu3.model.Bundle;
+import org.hl7.fhir.dstu3.model.Meta;
+import org.springframework.stereotype.Component;
+import org.springframework.web.cors.CorsConfiguration;
+
+import javax.servlet.ServletException;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 @Component
 public class JpaServer extends RestfulServer {
@@ -40,8 +39,8 @@ public class JpaServer extends RestfulServer {
             DaoConfig daoConfig,
             DatabaseBackedPagingProvider dbBackedPagingProvider,
             Collection<IServerInterceptor> interceptorBeans,
-            FhirVersionEnum version) {
-        final FhirContext context = new FhirContext(version);
+            FhirConfig fhirConfig) {
+        final FhirContext context = new FhirContext(fhirConfig.versionEnum);
         setFhirContext(context);
         setResourceProviders(resourceProviders);
         setPlainProviders(systemProvider);

@@ -38,5 +38,4 @@ public class FhirTesterConfig {
 				.withName("Public HAPI Test Server");
 		return retVal;
 	}
-
 }

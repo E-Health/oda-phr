@@ -1,10 +1,9 @@
 package fi.oda.phr.config;
 
-import java.util.Properties;
-
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-
+import ca.uhn.fhir.jpa.dao.DaoConfig;
+import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
+import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
+import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
 import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowire;
@@ -12,28 +11,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import ca.uhn.fhir.context.FhirVersionEnum;
-import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu2;
-import ca.uhn.fhir.jpa.dao.DaoConfig;
-import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu2;
-import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
-import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
-import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
-import fi.oda.phr.profiles.Dstu2Profile;
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+import java.util.Properties;
 
-@Dstu2Profile
 @Configuration
-@EnableTransactionManagement()
-//@Import(WebsocketDstu2Config.class)
-
-public class FhirServerConfigDstu2 extends BaseJavaConfigDstu2 {
+public class FhirDatabaseConfig {
 
     /**
      * Configure FHIR properties around the the JPA server via this bean
      */
-    @Bean()
+    @Bean
     public DaoConfig daoConfig() {
         final DaoConfig retVal = new DaoConfig();
         retVal.setSubscriptionEnabled(true);
@@ -43,7 +32,7 @@ public class FhirServerConfigDstu2 extends BaseJavaConfigDstu2 {
         return retVal;
     }
 
-    @Bean()
+    @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         final LocalContainerEntityManagerFactoryBean retVal = new LocalContainerEntityManagerFactoryBean();
         retVal.setPersistenceUnitName("HAPI_PU");
@@ -68,6 +57,7 @@ public class FhirServerConfigDstu2 extends BaseJavaConfigDstu2 {
         extraProperties.put("hibernate.search.default.directory_provider", "filesystem");
         extraProperties.put("hibernate.search.default.indexBase", "build/lucenefiles");
         extraProperties.put("hibernate.search.lucene_version", "LUCENE_CURRENT");
+        //      extraProperties.put("hibernate.search.default.worker.execution", "async");
         return extraProperties;
     }
 
@@ -93,21 +83,10 @@ public class FhirServerConfigDstu2 extends BaseJavaConfigDstu2 {
         return retVal;
     }
 
-    @Bean(autowire = Autowire.BY_TYPE)
-    public IServerInterceptor subscriptionSecurityInterceptor() {
-        final SubscriptionsRequireManualActivationInterceptorDstu2 retVal = new SubscriptionsRequireManualActivationInterceptorDstu2();
-        return retVal;
-    }
-
-    @Bean()
+    @Bean
     public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
         final JpaTransactionManager retVal = new JpaTransactionManager();
         retVal.setEntityManagerFactory(entityManagerFactory);
         return retVal;
-    }
-
-    @Bean()
-    public FhirVersionEnum version() {
-        return FhirVersionEnum.DSTU2;
     }
 }
