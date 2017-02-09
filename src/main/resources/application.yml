@@ -13,7 +13,7 @@ spring:
         password:
         driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
     thymeleaf:
-            prefix: classpath:/WEB-INF/templates/
+        prefix: classpath:/WEB-INF/templates/
     profiles:
         active: dstu2
 
