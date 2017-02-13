@@ -15,7 +15,7 @@ spring:
     thymeleaf:
         prefix: classpath:/WEB-INF/templates/
     profiles:
-        active: dstu2
+        active: dstu3
 
 logging:
     level:
