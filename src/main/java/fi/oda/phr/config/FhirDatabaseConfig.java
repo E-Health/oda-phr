@@ -8,8 +8,6 @@ import javax.sql.DataSource;
 import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowire;
-import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;
-import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -21,7 +19,7 @@ import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
 
 @Configuration
-public class FhirDatabaseConfig implements ApplicationListener<ApplicationEnvironmentPreparedEvent> {
+public class FhirDatabaseConfig {
 
     /**
      * Configure FHIR properties around the the JPA server via this bean
@@ -97,15 +95,4 @@ public class FhirDatabaseConfig implements ApplicationListener<ApplicationEnviro
         return retVal;
     }
 
-    @Override
-    public void onApplicationEvent(ApplicationEnvironmentPreparedEvent event) {
-        /*   try {
-            FileUtils.deleteDirectory(new File("C:/work/oda/oda-phr/build/libs/build/jpaserver_derby_files"));
-        }
-        catch (final IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        */
-    }
 }
