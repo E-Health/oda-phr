@@ -51,9 +51,7 @@ public class FhirDatabaseConfig {
         extraProperties.put("hibernate.dialect", org.hibernate.dialect.DerbyTenSevenDialect.class.getName());
         extraProperties.put("hibernate.format_sql", "true");
         extraProperties.put("hibernate.show_sql", "false");
-        extraProperties.put("hibernate.default_schema", "SA");
-        extraProperties.put("hibernate.hbm2ddl.auto", "update");//cx"create-drop");//"update");
-        //extraProperties.put("spring.jpa.hibernate.ddl-auto", "create-drop");//"update");
+        extraProperties.put("hibernate.hbm2ddl.auto", "update");
         extraProperties.put("hibernate.jdbc.batch_size", "20");
         extraProperties.put("hibernate.cache.use_query_cache", "false");
         extraProperties.put("hibernate.cache.use_second_level_cache", "false");
