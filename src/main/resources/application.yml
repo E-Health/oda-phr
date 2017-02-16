@@ -8,7 +8,7 @@ server:
 
 spring:
     datasource:
-        url: jdbc:derby:directory:build/jpaserver_derby_files;create=true
+        url:  jdbc:derby:memory:odaDB;create=true
         username:
         password:
         driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
@@ -16,7 +16,7 @@ spring:
         prefix: classpath:/WEB-INF/templates/
     profiles:
         active: dstu3
-
+    
 logging:
     level:
 #    ROOT: DEBUG

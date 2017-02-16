@@ -1,23 +1,27 @@
 package fi.oda.phr.config;
 
-import ca.uhn.fhir.jpa.dao.DaoConfig;
-import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
-import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
-import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
+import java.util.Properties;
+
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+
 import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowire;
+import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-import java.util.Properties;
+import ca.uhn.fhir.jpa.dao.DaoConfig;
+import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
+import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
+import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
 
 @Configuration
-public class FhirDatabaseConfig {
+public class FhirDatabaseConfig implements ApplicationListener<ApplicationEnvironmentPreparedEvent> {
 
     /**
      * Configure FHIR properties around the the JPA server via this bean
@@ -40,6 +44,7 @@ public class FhirDatabaseConfig {
         retVal.setPackagesToScan("ca.uhn.fhir.jpa.entity");
         retVal.setPersistenceProvider(new HibernatePersistenceProvider());
         retVal.setJpaProperties(jpaProperties());
+
         return retVal;
     }
 
@@ -48,7 +53,9 @@ public class FhirDatabaseConfig {
         extraProperties.put("hibernate.dialect", org.hibernate.dialect.DerbyTenSevenDialect.class.getName());
         extraProperties.put("hibernate.format_sql", "true");
         extraProperties.put("hibernate.show_sql", "false");
-        extraProperties.put("hibernate.hbm2ddl.auto", "update");
+        extraProperties.put("hibernate.default_schema", "SA");
+        extraProperties.put("hibernate.hbm2ddl.auto", "update");//cx"create-drop");//"update");
+        //extraProperties.put("spring.jpa.hibernate.ddl-auto", "create-drop");//"update");
         extraProperties.put("hibernate.jdbc.batch_size", "20");
         extraProperties.put("hibernate.cache.use_query_cache", "false");
         extraProperties.put("hibernate.cache.use_second_level_cache", "false");
@@ -57,7 +64,7 @@ public class FhirDatabaseConfig {
         extraProperties.put("hibernate.search.default.directory_provider", "filesystem");
         extraProperties.put("hibernate.search.default.indexBase", "build/lucenefiles");
         extraProperties.put("hibernate.search.lucene_version", "LUCENE_CURRENT");
-        //      extraProperties.put("hibernate.search.default.worker.execution", "async");
+        //extraProperties.put("hibernate.search.default.worker.execution", "sync");
         return extraProperties;
     }
 
@@ -88,5 +95,17 @@ public class FhirDatabaseConfig {
         final JpaTransactionManager retVal = new JpaTransactionManager();
         retVal.setEntityManagerFactory(entityManagerFactory);
         return retVal;
+    }
+
+    @Override
+    public void onApplicationEvent(ApplicationEnvironmentPreparedEvent event) {
+        /*   try {
+            FileUtils.deleteDirectory(new File("C:/work/oda/oda-phr/build/libs/build/jpaserver_derby_files"));
+        }
+        catch (final IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        */
     }
 }
