@@ -1,6 +1,6 @@
 package fi.oda.phr.config;
 
-import java.util.SortedMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -22,10 +22,10 @@ public class DatasetConfig implements ApplicationListener<ApplicationReadyEvent>
 
     private final String serverAddress;
 
-    private final SortedMap<Integer, DataInjector> datasets;
+    private final List<DataInjector> datasets;
 
     public DatasetConfig(JpaServer server, FhirConfig config, @Value("${server.port}") String port,
-            @Value("${server.contextPath}") String contextPath, SortedMap<Integer, DataInjector> datasets) {
+            @Value("${server.contextPath}") String contextPath, List<DataInjector> datasets) {
         this.serverAddress = "http://localhost:" + port + "/" + contextPath + "/" + config.path;
         this.server = server;
         this.datasets = datasets;
@@ -39,7 +39,7 @@ public class DatasetConfig implements ApplicationListener<ApplicationReadyEvent>
         final IGenericClient client =
                 server.getFhirContext().newRestfulGenericClient(serverAddress);
 
-        datasets.forEach((k, v) -> {
+        datasets.forEach((v) -> {
             v.inject(client);
         });
 

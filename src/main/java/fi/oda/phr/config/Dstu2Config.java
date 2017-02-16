@@ -1,7 +1,7 @@
 package fi.oda.phr.config;
 
 import java.util.Collections;
-import java.util.SortedMap;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
@@ -31,8 +31,8 @@ public class Dstu2Config {
     }
 
     @Bean
-    public SortedMap<Integer, DataInjector> datasets() {
+    public List<DataInjector> datasets() {
         //TODO: Add DSTU2 datasets if needed
-        return Collections.emptySortedMap();
+        return Collections.emptyList();
     }
 }

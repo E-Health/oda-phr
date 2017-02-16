@@ -1,7 +1,7 @@
 package fi.oda.phr.config;
 
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
@@ -32,14 +32,13 @@ public class Dstu3Config {
     }
 
     @Bean
-    public SortedMap<Integer, DataInjector> datasets() {
+    public List<DataInjector> datasets() {
         //TODO: Make data sets configurable in the yaml file?
-        final SortedMap<Integer, DataInjector> result = new TreeMap<Integer, DataInjector>();
+        final List<DataInjector> result = new ArrayList<DataInjector>();
 
-        result.put(0, new BundleInjector("oda-patients.json",
+        result.add(new BundleInjector("oda-patients.json",
                 "responses/oda-patients-response.json"));
-        //TODO insert additional data sets here. Use the precedence value (map key) to control order of data insertion.
-        //Smaller number means that the data set is injected sooner in the chain.
+        //TODO add additional data sets here. Items will be inserted in the order they are put in the list.
         return result;
     }
 
