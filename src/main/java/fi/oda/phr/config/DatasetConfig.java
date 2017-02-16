@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import ca.uhn.fhir.rest.client.IGenericClient;
 import fi.oda.phr.JpaServer;
@@ -15,7 +15,7 @@ import fi.oda.phr.dataset.DataInjector;
  * Configuration for injecting test data sets to the server
  *
  */
-@Configuration
+@Component
 public class DatasetConfig implements ApplicationListener<ApplicationReadyEvent> {
 
     private final JpaServer server;

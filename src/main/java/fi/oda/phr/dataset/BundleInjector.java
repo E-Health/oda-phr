@@ -47,8 +47,7 @@ public class BundleInjector implements DataInjector {
             bundle = parser.parseResource(Bundle.class, reader);
         }
         catch (final IOException e) {
-            log.error("Unable to read data file", e);
-            return;
+            throw new RuntimeException(e);
         }
         final Bundle result = client.transaction().withBundle(bundle).execute();
         try {
@@ -58,7 +57,7 @@ public class BundleInjector implements DataInjector {
             }
         }
         catch (final IOException e) {
-            log.warn("Unable to write response to " + responseFile, e);
+            throw new RuntimeException(e);
         }
     }
 

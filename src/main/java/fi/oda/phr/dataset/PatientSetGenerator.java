@@ -3,7 +3,6 @@ package fi.oda.phr.dataset;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 
 import org.hl7.fhir.dstu3.model.Bundle;
 import org.hl7.fhir.dstu3.model.Bundle.BundleEntryComponent;
@@ -38,8 +37,7 @@ public class PatientSetGenerator {
         final Bundle bundle = parser.parseResource(Bundle.class,
                 new String(Files.readAllBytes(Paths.get(PatientSetGenerator.DATA_PATH, PatientSetGenerator.SOURCE_FILE))));
         bundle.setType(BundleType.TRANSACTION);
-        final List<BundleEntryComponent> entries = bundle.getEntry();
-        for (final BundleEntryComponent b : entries) {
+        for (final BundleEntryComponent b : bundle.getEntry()) {
             final Resource resource = b.getResource();
             if (resource instanceof Patient) {
                 final Patient p = (Patient) resource;
