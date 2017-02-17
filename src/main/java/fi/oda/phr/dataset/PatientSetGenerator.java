@@ -1,6 +1,9 @@
 package fi.oda.phr.dataset;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -33,9 +36,11 @@ public class PatientSetGenerator {
         final FhirContext ctx = FhirContext.forDstu3();
         final IParser parser = ctx.newJsonParser();
         parser.setPrettyPrint(true);
-
-        final Bundle bundle = parser.parseResource(Bundle.class,
-                new String(Files.readAllBytes(Paths.get(PatientSetGenerator.DATA_PATH, PatientSetGenerator.SOURCE_FILE))));
+        Bundle bundle;
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(PatientSetGenerator.DATA_PATH,
+                PatientSetGenerator.SOURCE_FILE), Charset.forName("UTF-8"))) {
+            bundle = parser.parseResource(Bundle.class, reader);
+        }
         bundle.setType(BundleType.TRANSACTION);
         for (final BundleEntryComponent b : bundle.getEntry()) {
             final Resource resource = b.getResource();
@@ -50,8 +55,10 @@ public class PatientSetGenerator {
                 b.setRequest(request);
             }
         }
-        Files.write(Paths.get(PatientSetGenerator.DATA_PATH, PatientSetGenerator.PATIENTS_FILE),
-                parser.encodeResourceToString(bundle).getBytes());
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(PatientSetGenerator.DATA_PATH,
+                PatientSetGenerator.SOURCE_FILE), Charset.forName("UTF-8"))) {
+            writer.write(parser.encodeResourceToString(bundle));
+        }
     }
 
 }
