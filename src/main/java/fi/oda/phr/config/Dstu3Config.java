@@ -14,6 +14,7 @@ import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu3
 import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
 import fi.oda.phr.dataset.BundleInjector;
 import fi.oda.phr.dataset.DataInjector;
+import fi.oda.phr.dataset.ResourceInjector;
 import fi.oda.phr.profiles.Dstu3Profile;
 
 @Dstu3Profile
@@ -38,6 +39,8 @@ public class Dstu3Config {
 
         result.add(new BundleInjector("oda-patients.json",
                 "responses/oda-patients-response.json"));
+        result.add(new ResourceInjector("testi-anna.json",
+                "responses/testi-anna-response.json"));
         //TODO add additional data sets here. Items will be inserted in the order they are put in the list.
         return result;
     }
