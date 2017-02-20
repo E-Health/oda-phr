@@ -9680,34 +9680,6 @@
         "method": "POST",
         "url": "Patient"
       }
-    },
-    {
-      "resource": {
-        "resourceType": "Patient",
-        "name": [
-          {
-            "text": "Anna Testi",
-            "family": "Testi",
-            "given": [
-              "Anna"
-            ]
-          }
-        ],
-        "address": [
-          {
-            "line": [
-              "Osuuspankkitie 2"
-            ],
-            "city": "Helsinki",
-            "postalCode": "00120",
-            "country": "Suomi"
-          }
-        ]
-      },
-      "request": {
-        "method": "POST",
-        "url": "Patient"
-      }
     }
   ]
 }
