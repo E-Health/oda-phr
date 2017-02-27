@@ -30,7 +30,7 @@ The constructors of BundleInjector and ResourceInjector take a response file as 
 
 | Data set | Description | Source |
 | ---- | ------- | ------- |
-| [oda-patients.json](src/main/resources/oda-patients.json) | A bundle 225 patients with name and birthdate | [HL7 test data](https://www.hl7.org/FHIR/2017Jan/downloads.html) |
+| [oda-patients.json](src/main/resources/oda-patients.json) | A bundle of 225 patients with names and birthdates | [HL7 test data](https://www.hl7.org/FHIR/2017Jan/downloads.html) |
 | [testi-anna.json](src/main/resources/testi-anna.json) | A resource for a single patient, Testi Anna | [Osuuspankki test user](https://support.signicat.com/display/S2/Finnish+Tupas+test+info)|
 
 Injectors could also be used for storing profiles to the server.
