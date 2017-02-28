@@ -40,7 +40,11 @@ public class Dstu3Config {
         result.add(new BundleInjector("oda-patients.json",
                 "responses/oda-patients-response.json"));
         result.add(new ResourceInjector("testi-anna.json",
-                "responses/testi-anna-response.json"));
+                "responses/testi-anna-response.json", false));
+        result.add(new ResourceInjector("demo-anna.json",
+                "responses/demo-anna-response.json", true)); //Use UPDATE (PUT) to be able to define FHIR resource id
+        result.add(new ResourceInjector("demo-anna-careplan.json",
+                "responses/demo-anna-response.json", false));
         //TODO add additional data sets here. Items will be inserted in the order they are put in the list.
         return result;
     }

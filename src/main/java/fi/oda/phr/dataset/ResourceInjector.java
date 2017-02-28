@@ -31,14 +31,19 @@ public class ResourceInjector implements DataInjector {
     //Response is written to this file
     private final String responseFile;
 
-    public ResourceInjector(String sourceFile, String responseFile) {
+    private final boolean useUpdate;
 
+    public ResourceInjector(String sourceFile, String responseFile, boolean useUpdate) {
+        this.useUpdate = useUpdate;
         this.sourceFile = sourceFile;
         this.responseFile = responseFile;
     }
 
     @Override
     public void inject(IGenericClient client) {
+        if (log.isDebugEnabled()) {
+
+        }
         final FhirContext ctx = FhirContext.forDstu3();
         final IParser parser = ctx.newJsonParser();
         parser.setPrettyPrint(true);
@@ -50,7 +55,16 @@ public class ResourceInjector implements DataInjector {
         catch (final IOException e) {
             throw new RuntimeException(e);
         }
-        final MethodOutcome result = client.create().resource(resource).prettyPrint().encodedJson().execute();
+        final MethodOutcome result;
+        if (useUpdate) {
+            result = client.update().resource(resource).execute();
+        }
+        else {
+            result = client.create().resource(resource).prettyPrint().encodedJson().execute();
+        }
+        if (log.isDebugEnabled()) {
+
+        }
         try {
 
             Files.createDirectories(Paths.get(responseFile).getParent());
@@ -60,6 +74,9 @@ public class ResourceInjector implements DataInjector {
         }
         catch (final IOException e) {
             throw new RuntimeException(e);
+        }
+        if (log.isDebugEnabled()) {
+
         }
     }
 

@@ -1,0 +1,41 @@
+{
+  "resourceType": "Patient",
+  "id": "Patient/P1001",
+  "name": [
+      {
+        "text": "Anna Demo",
+        "family": "Demo",
+        "given": [
+          "Anna"
+        ]
+      }
+  ],
+  "address": [
+      {
+        "line": [
+          "S-Pankki Ålandsbanken 2"
+        ],
+        "city": "Helsinki",
+        "postalCode": "00120",
+        "country": "Suomi"
+      }
+  ],
+  "request": {
+    "method": "POST",
+    "url": "Patient"
+  },  
+  "active": true,
+  "telecom": [
+    {
+      "use": "home"
+    },
+    {
+      "system": "phone",
+      "value": "(044) 2233567",
+      "use": "work"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1970-01-01",
+  "deceasedBoolean": false
+}
