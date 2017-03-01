@@ -24,7 +24,7 @@ public class Dstu3Config {
 
     @Bean
     public FhirConfig fhirConfig() {
-        return new FhirConfig(FhirVersionEnum.DSTU3, "baseDstu3");
+        return new FhirConfig(FhirVersionEnum.DSTU3, "baseDstu3", 60000);
     }
 
     @Bean(autowire = Autowire.BY_TYPE)

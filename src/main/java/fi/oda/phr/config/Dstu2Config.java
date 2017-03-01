@@ -22,7 +22,7 @@ public class Dstu2Config {
 
     @Bean
     public FhirConfig fhirConfig() {
-        return new FhirConfig(FhirVersionEnum.DSTU2, "baseDstu2");
+        return new FhirConfig(FhirVersionEnum.DSTU2, "baseDstu2", 60000);
     }
 
     @Bean(autowire = Autowire.BY_TYPE)
