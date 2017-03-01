@@ -22,9 +22,11 @@ The bean should return a list of objects that implement the DataInjector interfa
 - BundleInjector
 - ResourceInjector
 
-BundleInjector is used for persisting a bundle of FHIR resources as a transaction. ResourceInjector is used for storing a single FHIR resource. After the server has started, it creates a client for itself and calls all injectors with the client. Injectors are called in the order they are provided in the "datasets" bean list. The order of the execution can be important when one resource contains references to another one.
+BundleInjector is used for persisting a bundle of FHIR resources as a transaction. ResourceInjector is used for storing a single FHIR resource. After the server has started, it creates a client for itself and calls all configured injectors with the client. Injectors are called in the order they are provided in the "datasets" bean list. The order of the execution can be important when one resource contains references to another one. 
 
-The constructors of BundleInjector and ResourceInjector take a response file as the second argument. This file is used for storing the response from the server. The response contain identifiers that the server generated for the resources. If the database is configured to be stored on the disk, the returned identifiers can used for constructing test environments. For example, a test script might loop through a list of identifiers and query the server for the data.
+When storing data to the server, the server returns a response message with generated resource ids. The response is stored in a file and the location of the file is configured with injector constructor arguments. The ids in the response can used for building test environments. For example, a test script might loop through a list of ids and query the server for the data. The constructor of ResourceInjector also allows to choose between update and create operations. When using a create operation, the server assigns an id for the stored resource. When using an update operation, it is possible to define an id in the FHIR resource. This user-specified id has to have at least one non-numeric character. Custom ids are necessary when FHIR resources contain references to other FHIR resources. 
+
+
 
 ## Available data sets
 
