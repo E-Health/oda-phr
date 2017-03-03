@@ -43,6 +43,20 @@ public class Dstu3Config {
                 "responses/testi-anna-response.json", false));
         result.add(new ResourceInjector("demo-anna.json",
                 "responses/demo-anna-response.json", true)); //Use UPDATE (PUT) to be able to define FHIR resource id
+        result.add(new ResourceInjector("ODA-finnishpatient-patient.example.json",
+                            "responses/oda-finnishpatient-patient.example-response.json", false));
+        result.add(new ResourceInjector("ODA-person.example.json",
+                "responses/oda-person.example-response.json", false));
+
+        result.add(new ResourceInjector("demoFHIRquestionnaire_validated.json",
+                "responses/demoFHIRquestionnaire_validated-response.json", false));
+
+
+        result.add(new ResourceInjector("ODA-temperature-observation.example.json",
+                "responses/ODA-temperature-observation.example.-response.json", false));
+
+
+
         result.add(new ResourceInjector("demo-anna-careplan.json",
                 "responses/demo-anna-response.json", false));
         //TODO add additional data sets here. Items will be inserted in the order they are put in the list.

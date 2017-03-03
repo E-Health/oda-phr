@@ -1,0 +1,39 @@
+{
+  "resourceType": "Patient",
+  "id": "example",
+  "text": {
+    "status": "generated"
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.36.146.595.217.0.1",
+      "value": "12345"
+    }
+  ],
+   "communication": [
+    {
+      "language": {
+        "coding": [
+          {
+            "system": "urn:ietf:bcp:47",
+            "code": "fi-FI",
+            "display": "Finnish"
+          }
+        ]
+      },
+      "preferred": true
+    },
+    {
+      "language": {
+        "coding": [
+          {
+            "system": "urn:ietf:bcp:47",
+            "code": "en-US",
+            "display": "English"
+          }
+        ]
+      },
+      "preferred": false
+    }     
+  ]  
+}

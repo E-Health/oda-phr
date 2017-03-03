@@ -32,11 +32,20 @@ public class ResourceInjector implements DataInjector {
     private final String responseFile;
 
     private final boolean useUpdate;
+    private final boolean useJson;
 
     public ResourceInjector(String sourceFile, String responseFile, boolean useUpdate) {
         this.useUpdate = useUpdate;
         this.sourceFile = sourceFile;
         this.responseFile = responseFile;
+        this.useJson = true;
+    }
+
+    public ResourceInjector(String sourceFile, String responseFile, boolean useUpdate, boolean useJson) {
+        this.useUpdate = useUpdate;
+        this.sourceFile = sourceFile;
+        this.responseFile = responseFile;
+        this.useJson = useJson;
     }
 
     @Override
@@ -45,7 +54,15 @@ public class ResourceInjector implements DataInjector {
 
         }
         final FhirContext ctx = FhirContext.forDstu3();
-        final IParser parser = ctx.newJsonParser();
+        final IParser parser; // = ctx.newJsonParser();
+
+
+        if(useJson){
+                parser = ctx.newJsonParser();
+        }else{
+            parser = ctx.newXmlParser();
+        }
+
         parser.setPrettyPrint(true);
         IBaseResource resource;
         try (BufferedReader reader = new BufferedReader(
