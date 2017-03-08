@@ -1,9 +1,15 @@
 {
-	"resourceType" : "Person",
-	"id" : "21",
-	"text": {
-		"status" : "generated"
-	},
+  "resourceType" : "Person",
+  "id" : "PERSON1",
+  "text": {
+    	"status" : "generated"
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.246.21",
+      "value": "081181-9984"
+    }
+  ],	
   "name": [
       {
         "text": "Anna Testi",
@@ -23,10 +29,6 @@
         "country": "Suomi"
       }
   ],
-  "request": {
-    "method": "POST",
-    "url": "Patient"
-  },  
   "active": true,
   "telecom": [
     {
@@ -40,5 +42,13 @@
   ],
   "gender": "female",
   "birthDate": "1981-11-08",
-  "deceasedBoolean": false
+  "link":[
+    {   
+        "target":{
+            "reference": "Patient/PATIENT1",
+            "display" : "Anna Testi"            
+        }         
+    }
+  ]
+  
 }

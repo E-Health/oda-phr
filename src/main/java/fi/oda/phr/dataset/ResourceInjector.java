@@ -32,6 +32,7 @@ public class ResourceInjector implements DataInjector {
     private final String responseFile;
 
     private final boolean useUpdate;
+
     private final boolean useJson;
 
     public ResourceInjector(String sourceFile, String responseFile, boolean useUpdate) {
@@ -51,15 +52,15 @@ public class ResourceInjector implements DataInjector {
     @Override
     public void inject(IGenericClient client) {
         if (log.isDebugEnabled()) {
-
+            log.debug("About to inject: " + sourceFile);
         }
         final FhirContext ctx = FhirContext.forDstu3();
         final IParser parser; // = ctx.newJsonParser();
 
-
-        if(useJson){
-                parser = ctx.newJsonParser();
-        }else{
+        if (useJson) {
+            parser = ctx.newJsonParser();
+        }
+        else {
             parser = ctx.newXmlParser();
         }
 
@@ -93,7 +94,7 @@ public class ResourceInjector implements DataInjector {
             throw new RuntimeException(e);
         }
         if (log.isDebugEnabled()) {
-
+            log.debug("Finished injecting: " + sourceFile);
         }
     }
 
