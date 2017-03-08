@@ -12,6 +12,7 @@ import ca.uhn.fhir.context.FhirVersionEnum;
 import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu3;
 import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu3;
 import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
+import fi.oda.phr.dataset.BundleInjector;
 import fi.oda.phr.dataset.DataInjector;
 import fi.oda.phr.dataset.ResourceInjector;
 import fi.oda.phr.profiles.Dstu3Profile;
@@ -33,28 +34,21 @@ public class Dstu3Config {
 
     @Bean
     public List<DataInjector> datasets() {
-        //TODO: Make data sets configurable in the yaml file?
         final List<DataInjector> result = new ArrayList<DataInjector>();
+        //Bundle of patients
+        result.add(new BundleInjector("datasets/patient-bundle.json",
+                "responses/patient-bundle-response.json"));
 
+        //Testi Anna with temperature observations
         result.add(new ResourceInjector("datasets/PATIENT1/patient.json",
                 "responses/patient1-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT1/person.json",
                 "responses/person1-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT1/observation1.json",
-                "responses/observation1-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT1/observation2.json",
-                "responses/observation2-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT1/observation3.json",
-                "responses/observation3-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT1/observation4.json",
-                "responses/observation4-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT1/observation5.json",
-                "responses/observation5-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT1/observation6.json",
-                "responses/observation6-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT1/observation7.json",
-                "responses/observation7-response.json", true));
-
+        int i;
+        for (i = 1; i <= 7; i++) {
+            result.add(new ResourceInjector("datasets/PATIENT1/observation" + i + ".json",
+                    "responses/patient1-observation" + i + "-response.json", true));
+        }
         //TODO add additional data sets here. Items will be inserted in the order they are put in the list.
         return result;
     }

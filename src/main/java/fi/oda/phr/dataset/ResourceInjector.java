@@ -51,9 +51,7 @@ public class ResourceInjector implements DataInjector {
 
     @Override
     public void inject(IGenericClient client) {
-        if (log.isDebugEnabled()) {
-            log.debug("About to inject: " + sourceFile);
-        }
+        log.info("About to inject: " + sourceFile);
         final FhirContext ctx = FhirContext.forDstu3();
         final IParser parser; // = ctx.newJsonParser();
 
@@ -93,9 +91,7 @@ public class ResourceInjector implements DataInjector {
         catch (final IOException e) {
             throw new RuntimeException(e);
         }
-        if (log.isDebugEnabled()) {
-            log.debug("Finished injecting: " + sourceFile);
-        }
+        log.info("Finished injecting: " + sourceFile);
     }
 
 }
