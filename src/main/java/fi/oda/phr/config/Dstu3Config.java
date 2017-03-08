@@ -54,6 +54,13 @@ public class Dstu3Config {
             result.add(new ResourceInjector("datasets/PATIENT1/observation" + i + ".json",
                     "responses/patient1-observation" + i + "-response.json", true));
         }
+        //Demo Anna with careplan, careteam, communication, questionnaireresponse and temperature observation
+        result.add(new ResourceInjector("datasets/PATIENT2/patient.json",
+                "responses/patient2-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT2/person.json",
+                "responses/person2-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT2/careteam.json",
+                "responses/patient2-careteam-response.json", true));
         //TODO add additional data sets here. Items will be inserted in the order they are put in the list.
         return result;
     }
