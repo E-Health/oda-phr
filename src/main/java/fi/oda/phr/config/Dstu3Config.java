@@ -67,6 +67,8 @@ public class Dstu3Config {
                 "responses/patient2-questionnaireresponse-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT2/careteam.json",
                 "responses/patient2-careteam-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT2/communication.json",
+                "responses/patient2-communication-response.json", true));
         //TODO add additional data sets here. Items will be inserted in the order they are put in the list.
         return result;
     }
