@@ -38,6 +38,9 @@ public class Dstu3Config {
         //Bundle of patients
         result.add(new BundleInjector("datasets/patient-bundle.json",
                 "responses/patient-bundle-response.json"));
+        //Practitioner
+        result.add(new ResourceInjector("datasets/practitioner1.json",
+                "responses/practitioner1-response.json", true));
 
         //Testi Anna with temperature observations
         result.add(new ResourceInjector("datasets/PATIENT1/patient.json",
