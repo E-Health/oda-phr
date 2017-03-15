@@ -8,15 +8,15 @@
   "period": {
     "end": "2017-05-01"
   },
-  "name": "Intensive care team",
+  "name": "Hoitotiimi",
   "participant": [
     {
       "role": {
-        "text": "Chief quack"
+        "text": "Hoitava lääkäri"
       },
       "member": {
         "reference": "Practitioner/PRACTITIONER1",
-        "display": "Pekka Puoskari"
+        "display": "Pekka Pakarinen"
       }
     }
   ]
