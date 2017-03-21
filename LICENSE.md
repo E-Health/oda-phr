@@ -1,6 +1,4 @@
-All rights reserved, Copyright (c) 2017 City of Espoo 
 
-Kaikki oikeudet pidätetään. Copyright (c) 2017 Espoon kaupunki
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
