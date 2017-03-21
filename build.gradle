@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '1.5.1.RELEASE'
     id 'java'
     id "org.standardout.versioneye" version "1.4.0"
+    id "com.github.jk1.dependency-license-report" version "0.3.9"
 }
 
 apply plugin: 'java'
@@ -25,7 +26,7 @@ ext['thymeleaf.version'] = '3.0.2.RELEASE'
 ext['thymeleaf-layout-dialect.version'] = '2.1.1'
 ext['hibernate.version'] = '5.2.7.Final'
 
-repositories {	
+repositories {
     mavenCentral()
     jcenter()
     maven{
@@ -40,7 +41,7 @@ dependencies {
 
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-aop')
-	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 
     compile('org.apache.httpcomponents:httpclient:4.5.2')
@@ -50,25 +51,29 @@ dependencies {
 
     compile("ca.uhn.hapi.fhir:hapi-fhir-base:${hapiVersion}")
     compile("ca.uhn.hapi.fhir:hapi-fhir-jpaserver-base:${hapiVersion}")
-    
-    
+
+
     compile("ca.uhn.hapi.fhir:hapi-fhir-structures-dstu2:${hapiVersion}")
     compile("ca.uhn.hapi.fhir:hapi-fhir-structures-dstu3:${hapiVersion}")
-	
+
     compile("ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:${hapiVersion}:classes")
     compile("ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:${hapiVersion}@war")
-    compile('org.apache.commons:commons-dbcp2:2.1.1')  
+    compile('org.apache.commons:commons-dbcp2:2.1.1')
     compile('org.apache.derby:derby:10.13.1.1')
     compile('org.apache.derby:derbynet:10.13.1.1')
     compile('org.apache.derby:derbyclient:10.13.1.1')
-    
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
-    
+
 test {
     systemProperties = System.getProperties()
 }
 
 jacoco {
     toolVersion = "0.7.7.201606060606"
+}
+
+licenseReport {
+    renderer = new com.github.jk1.license.render.CsvReportRenderer()
 }
