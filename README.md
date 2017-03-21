@@ -1,22 +1,34 @@
 # ODA PHR
 
-## Description
 This project contains a server for persisting and manipulating FHIR resources. 
 The server provides CRUD operations with REST interfaces according to the FHIR 
-specification. Data is stored in a Derby database.
+specification. In development mode data is stored in a Derby database.
+
+## Building
+
+    ./gradlew clean build
+    
+This creates oda-phr.jar under build/libs.
+
+## Running
 
 Starting in dstu3 mode:
-java -jar oda-phr.jar -Dspring.profiles.active=dstu3
 
-Starting in dstu2 mode:
-java -jar oda-phr.jar -Dspring.profiles.active=dstu2
+    java -jar oda-phr.jar -Dspring.profiles.active=dstu3
+
+Starting in dstu2 mode (deprecated):
+
+    java -jar oda-phr.jar -Dspring.profiles.active=dstu2
 
 ## Database
 ODA PHR uses an in-memory database, which is cleared every time the server is 
 rebooted. A disk-based database can be used by changing the configuration:
+
+```yml
 spring:
     datasource:
         url: jdbc:derby:directory:build/jpaserver_derby_files;create=true   
+```
 
 ## Data sets        
 Data can be injected in to the database when the server is started. This 
