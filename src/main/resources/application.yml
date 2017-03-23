@@ -1,3 +1,8 @@
+#logging:
+#    level:
+  #    ROOT: DEBUG
+#    ca.uhn.fhir.rest.server: DEBUG
+
 server:
     port: 6083
     use-forward-headers: true
@@ -6,19 +11,54 @@ server:
             http-only: true
     contextPath: /phr
 
+    
 spring:
+    thymeleaf:
+        prefix: classpath:/WEB-INF/templates/
+    profiles:
+        active: dstu3, dev
+    jpa:
+       properties:
+              format_sql: true
+              show-sql: true
+              jdbc:
+                  batch_size: 20
+              cache:
+                  use_query_cache: false
+                  use_second_level_cache: false
+                  use_structured_entries: false
+                  use_minimal_puts: false
+              search:
+                  default:
+                      directory_provider: filesystem
+                      indexBase: build/lucenefiles
+                      worker:
+                          execution: sync
+                  lucene_version: LUCENE_CURRENT
+---
+spring:
+    profiles: dev
+    jpa:
+       properties:
+           hibernate:
+              dialect: org.hibernate.dialect.DerbyTenSevenDialect
+
     datasource:
         url:  jdbc:derby:memory:odaDB;create=true
         username:
         password:
         driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
-    thymeleaf:
-        prefix: classpath:/WEB-INF/templates/
-    profiles:
-        active: dstu3
-    
-logging:
-    level:
-#    ROOT: DEBUG
-#    ca.uhn.fhir.rest.server: DEBUG
+---
+spring:
+    profiles: test
+    jpa:
+       properties:
+           hibernate:
+              dialect: org.hibernate.dialect.PostgreSQL9Dialect
+
+    datasource:
+        url:  jdbc:postgresql://localhost:5432/oda-test
+        username: postgres
+        password: changeit
+        driver-class-name: org.postgresql.Driver
 

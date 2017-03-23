@@ -41,27 +41,10 @@ public class FhirDatabaseConfig {
         retVal.setDataSource(dataSource);
         retVal.setPackagesToScan("ca.uhn.fhir.jpa.entity");
         retVal.setPersistenceProvider(new HibernatePersistenceProvider());
-        retVal.setJpaProperties(jpaProperties());
-
-        return retVal;
-    }
-
-    private Properties jpaProperties() {
         final Properties extraProperties = new Properties();
-        extraProperties.put("hibernate.dialect", org.hibernate.dialect.DerbyTenSevenDialect.class.getName());
-        extraProperties.put("hibernate.format_sql", "true");
-        extraProperties.put("hibernate.show_sql", "false");
         extraProperties.put("hibernate.hbm2ddl.auto", "update");
-        extraProperties.put("hibernate.jdbc.batch_size", "20");
-        extraProperties.put("hibernate.cache.use_query_cache", "false");
-        extraProperties.put("hibernate.cache.use_second_level_cache", "false");
-        extraProperties.put("hibernate.cache.use_structured_entries", "false");
-        extraProperties.put("hibernate.cache.use_minimal_puts", "false");
-        extraProperties.put("hibernate.search.default.directory_provider", "filesystem");
-        extraProperties.put("hibernate.search.default.indexBase", "build/lucenefiles");
-        extraProperties.put("hibernate.search.lucene_version", "LUCENE_CURRENT");
-        //extraProperties.put("hibernate.search.default.worker.execution", "sync");
-        return extraProperties;
+        retVal.setJpaProperties(extraProperties);
+        return retVal;
     }
 
     /**

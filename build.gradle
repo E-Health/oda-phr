@@ -34,8 +34,6 @@ repositories {
     }
 }
 
-
-
 dependencies {
     def hapiVersion = '2.3-SNAPSHOT'
 
@@ -52,17 +50,17 @@ dependencies {
     compile("ca.uhn.hapi.fhir:hapi-fhir-base:${hapiVersion}")
     compile("ca.uhn.hapi.fhir:hapi-fhir-jpaserver-base:${hapiVersion}")
 
-
     compile("ca.uhn.hapi.fhir:hapi-fhir-structures-dstu2:${hapiVersion}")
     compile("ca.uhn.hapi.fhir:hapi-fhir-structures-dstu3:${hapiVersion}")
 
     compile("ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:${hapiVersion}:classes")
     compile("ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:${hapiVersion}@war")
     compile('org.apache.commons:commons-dbcp2:2.1.1')
+    compile('org.postgresql:postgresql:42.0.0')
     compile('org.apache.derby:derby:10.13.1.1')
     compile('org.apache.derby:derbynet:10.13.1.1')
     compile('org.apache.derby:derbyclient:10.13.1.1')
-
+   
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
