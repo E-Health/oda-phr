@@ -7,6 +7,8 @@ server:
     contextPath: /phr
 
 spring:
+    application:
+        name: phr
     datasource:
         url:  jdbc:derby:memory:odaDB;create=true
         username:
