@@ -1,13 +1,12 @@
 package fi.oda.phr.config;
 
-import java.util.Properties;
-
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowire;
+import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -35,15 +34,13 @@ public class FhirDatabaseConfig {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, JpaProperties properties) {
         final LocalContainerEntityManagerFactoryBean retVal = new LocalContainerEntityManagerFactoryBean();
         retVal.setPersistenceUnitName("HAPI_PU");
         retVal.setDataSource(dataSource);
         retVal.setPackagesToScan("ca.uhn.fhir.jpa.entity");
         retVal.setPersistenceProvider(new HibernatePersistenceProvider());
-        final Properties extraProperties = new Properties();
-        extraProperties.put("hibernate.hbm2ddl.auto", "update");
-        retVal.setJpaProperties(extraProperties);
+        retVal.setJpaPropertyMap(properties.getHibernateProperties(dataSource));
         return retVal;
     }
 
