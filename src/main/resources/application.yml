@@ -10,7 +10,9 @@ server:
         cookie:
             http-only: true
     contextPath: /phr
-
+    tomcat:
+      max-threads: 600
+      
     
 spring:
     application:
