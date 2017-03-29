@@ -73,3 +73,9 @@ spring:
         password: changeit
         driver-class-name: org.postgresql.Driver
 
+---
+spring:
+    profiles: test
+
+logging:
+    config: logback.xml
