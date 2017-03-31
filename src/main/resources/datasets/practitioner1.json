@@ -10,34 +10,5 @@
       ]
     }
   ],
-  "telecom": [
-    {
-      "system": "phone",
-      "value": "020556936",
-      "use": "work"
-    },
-    {
-      "system": "email",
-      "value": "S.M.Heps@bmc.fi",
-      "use": "work"
-    },
-    {
-      "system": "fax",
-      "value": "0205669283",
-      "use": "work"
-    }
-  ],
-  "address": [
-    {
-      "use": "work",
-      "line": [
-        "Talvelantie 4"
-      ],
-      "city": "Helsinki",
-      "postalCode": "00700",
-      "country": "FI"
-    }
-  ],
-  "gender": "male",
-  "birthDate": "1971-11-07"
+  "gender": "male"
 }

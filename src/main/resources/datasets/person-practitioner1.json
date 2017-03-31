@@ -1,0 +1,54 @@
+{
+    "resourceType" : "Person",
+    "id" : "PERSON1-PRACTITIONER1",
+    "text": {
+        "status" : "generated"
+    },
+    "identifier": [
+        {
+          "system": "urn:oid:1.2.246.21",
+          "value": "010160-123F"
+        }
+    ],
+    "name": [
+      {
+        "text": "Pekka Pakarinen",
+        "family": "Pakarinen",
+        "given": [
+          "Pekka"
+        ]
+      }
+    ],
+    "address": [
+      {
+        "line": [
+          "Talvelantie 4"
+        ],
+        "city": "Helsinki",
+        "postalCode": "00700",
+        "country": "FI"
+      }
+    ],
+    "active": true,
+    "telecom": [
+        {
+            "use": "home"
+        },
+        {
+            "system": "phone",
+            "value": "(044) 22335s67",
+            "use": "work"
+        }
+    ],
+    "gender": "female",
+    "birthDate": "1970-01-01",
+    "link":[
+        {   
+            "target":{
+                "reference": "Practitioner/PRACTITIONER1",
+                "display" : "Pekka Pakarinen"            
+            }         
+        }
+    ]
+      
+}

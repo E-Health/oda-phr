@@ -41,6 +41,8 @@ public class Dstu3Config {
         //Practitioner
         result.add(new ResourceInjector("datasets/practitioner1.json",
                 "responses/practitioner1-response.json", true));
+        result.add(new ResourceInjector("datasets/person-practitioner1.json",
+                "responses/person-practitioner1-response.json", true));
         //Questionnaire
         result.add(new ResourceInjector("datasets/questionnaire1.json",
                 "responses/questionnaire1-response.json", true));
@@ -69,6 +71,7 @@ public class Dstu3Config {
                 "responses/patient2-careteam-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT2/communication.json",
                 "responses/patient2-communication-response.json", true));
+
         //TODO add additional data sets here. Items will be inserted in the order they are put in the list.
         return result;
     }
