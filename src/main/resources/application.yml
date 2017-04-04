@@ -70,7 +70,6 @@ spring:
     datasource:
         url:  jdbc:postgresql://localhost:5432/oda-test
         username: postgres
-        password: changeit
         driver-class-name: org.postgresql.Driver
 
 ---
