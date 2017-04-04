@@ -46,6 +46,8 @@ public class Dstu3Config {
         //Questionnaire
         result.add(new ResourceInjector("datasets/questionnaire1.json",
                 "responses/questionnaire1-response.json", true));
+        result.add(new ResourceInjector("datasets/questionnaire-107-fixed.json",
+                "responses/questionnaire-107-fixed-response.json", true));
         //Testi Anna with temperature observations
         result.add(new ResourceInjector("datasets/PATIENT1/patient.json",
                 "responses/patient1-response.json", true));
