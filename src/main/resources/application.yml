@@ -50,7 +50,7 @@ spring:
            hibernate:
               dialect: org.hibernate.dialect.DerbyTenSevenDialect
     datasource:
-        url:  jdbc:derby:memory:odaDB;create=true
+        url:  jdbc:derby:memory:odaDB;create=true;territory=FI_fi;collation=TERRITORY_BASED
         username:
         password:
         driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
@@ -69,7 +69,7 @@ spring:
 
     datasource:
         url:  jdbc:postgresql://localhost:5432/oda-test
-        username: postgres
+        username: phr
         driver-class-name: org.postgresql.Driver
 
 ---
