@@ -73,3 +73,59 @@ references to other FHIR resources.
 Injectors could also be used for storing profiles to the server.
 
 
+## Validating FHIR resources against the server
+
+ODA PHR can test whether a given FHIR resource would be a valid input for the server. Validation is performed by sending an HTTP POST to the server. The path of the request should point to the extended operation $validate under the resource type. For example:     
+https://oda.medidemo.fi/phr/baseDstu3/Patient/$validate
+
+When basic general validation is sufficient (e.g. validate that the resource conforms to the specification), the request body is the FHIR resource that needs to be validated. However, it should be noted that a FHIR resource might be a valid candidate for one operation, but an invalid one for another one. For example, the resource might conform to the specification, but would not be a valid input for a create operation due to uniqueness constraints. If more strict validation is needed, the request body should be a Parameters resource. In this case, it is possible to supply a profile and a validation mode in addition to the actual FHIR resource.
+
+| Parameter name | Parameter type | Description | Mandatory |
+| ---- | ------- | ------- | ------- |
+| resource | FHIR resource | The resource that should be validated | * |
+| mode | valueCode | Type of operation to validate (create, update or delete) |  | 
+| profile | valueUri | Profile to validate against |  |
+
+Example request body: 
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "resource",
+      "resource": {
+          "resourceType": "Patient",
+          "id" : "PATIENT1",
+          "communication": [
+            {
+              "language": {
+                 "coding": [
+                   {
+                     "system": "urn:ietf:bcp:47",
+                     "code": "fi-FI",
+                     "display": "Finnish"
+                   }
+                 ]
+              },
+              "preferred": true
+            }
+          ]
+      }  
+    },
+    {
+      "name": "mode",
+      "valueCode" : "create"
+    },
+    {
+      "name" : "profile",
+      "valueUri" : "http://someprofile"
+    }
+
+  ]
+} 
+```
+
+Example curl command for validating a FHIR resource: 
+curl -X POST https://oda.medidemo.fi/phr/baseDstu3/Patient/\$validate --data @patient.json --header "Content-Type: application/fhir+json"
+
+If the validation succeeds, the server will return 200 OK. A failed validation will result in 400 Bad Request. 
