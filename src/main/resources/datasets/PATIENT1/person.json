@@ -1,9 +1,6 @@
 {
   "resourceType" : "Person",
   "id" : "PERSON1",
-  "text": {
-    	"status" : "generated"
-  },
   "identifier": [
     {
       "value": "081181-9984"
