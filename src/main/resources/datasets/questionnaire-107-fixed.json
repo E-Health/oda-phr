@@ -549,21 +549,6 @@
               "question": "3"
             }
           ],
-          "linkId": "591",
-          "text": null,
-          "type": ""
-        },
-        {
-          "enableWhen": [
-            {
-              "answerQuantity": {
-                  "comparator": ">",
-                  "value": "14"
-              },
-              "answerString": "14",
-              "question": "3"
-            }
-          ],
           "linkId": "53",
           "text": "Onko sinulla kurkkukipua?<br>",
           "type": "boolean"
