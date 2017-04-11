@@ -511,11 +511,13 @@
           "type": "boolean"
         },
         {
-          "concept": {
+          "concept": [
+            {
               "code": "8310-5",
               "display": "finLOINC",
               "system": "urn:1.2.246.537.6.96"
-          },
+            }
+          ],
           "enableWhen": [
             {
               "answerString": "yes",
@@ -1061,7 +1063,7 @@
               "valueCoding": {
                 "code": "4",
                 "display": "Korvakivun kanssa samanaikaisesti leukanivelen seudun kipua",
-                "id": 169
+                "id": "169"
               }
             },
             {
