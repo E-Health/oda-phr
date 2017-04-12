@@ -14,6 +14,7 @@ import org.springframework.core.io.ClassPathResource;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
+import ca.uhn.fhir.parser.StrictErrorHandler;
 import ca.uhn.fhir.rest.client.IGenericClient;
 
 /**
@@ -39,7 +40,8 @@ public class BundleInjector implements DataInjector {
     @Override
     public void inject(IGenericClient client) {
         final FhirContext ctx = FhirContext.forDstu3();
-        final IParser parser = ctx.newJsonParser();
+        ctx.setParserErrorHandler(new StrictErrorHandler());
+        final IParser parser = ctx.newJsonParser();        
         parser.setPrettyPrint(true);
         Bundle bundle;
         try (BufferedReader reader = new BufferedReader(

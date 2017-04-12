@@ -2,6 +2,7 @@ package fi.oda.phr;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.context.FhirVersionEnum;
+import ca.uhn.fhir.context.ParserOptions;
 import ca.uhn.fhir.jpa.dao.DaoConfig;
 import ca.uhn.fhir.jpa.dao.IFhirSystemDao;
 import ca.uhn.fhir.jpa.provider.BaseJpaSystemProvider;
@@ -10,12 +11,14 @@ import ca.uhn.fhir.jpa.provider.dstu3.JpaConformanceProviderDstu3;
 import ca.uhn.fhir.jpa.search.DatabaseBackedPagingProvider;
 import ca.uhn.fhir.model.dstu2.composite.MetaDt;
 import ca.uhn.fhir.narrative.DefaultThymeleafNarrativeGenerator;
+import ca.uhn.fhir.parser.StrictErrorHandler;
 import ca.uhn.fhir.rest.server.ETagSupportEnum;
 import ca.uhn.fhir.rest.server.EncodingEnum;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
 import ca.uhn.fhir.rest.server.interceptor.CorsInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
+import ca.uhn.fhir.rest.server.interceptor.RequestValidatingInterceptor;
 import fi.oda.phr.config.FhirConfig;
 import org.hl7.fhir.dstu3.model.Bundle;
 import org.hl7.fhir.dstu3.model.Meta;
@@ -26,12 +29,14 @@ import javax.servlet.ServletException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class JpaServer extends RestfulServer {
 
     private static final long serialVersionUID = 1L;
-
+    private Optional<RequestValidatingInterceptor> validationInterceptor;
+    
     @SuppressWarnings("unchecked")
     public JpaServer(List<IResourceProvider> resourceProviders,
             BaseJpaSystemProvider<?, ?> systemProvider,
@@ -39,9 +44,12 @@ public class JpaServer extends RestfulServer {
             DaoConfig daoConfig,
             DatabaseBackedPagingProvider dbBackedPagingProvider,
             Collection<IServerInterceptor> interceptorBeans,
-            FhirConfig fhirConfig) {
+            FhirConfig fhirConfig,
+            Optional<RequestValidatingInterceptor> validationInterceptor) {
+        this.validationInterceptor = validationInterceptor;
         final FhirContext context = new FhirContext(fhirConfig.versionEnum);
-        setFhirContext(context);
+        context.setParserErrorHandler(new StrictErrorHandler());
+        setFhirContext(context);        
         setResourceProviders(resourceProviders);
         setPlainProviders(systemProvider);
 
@@ -95,6 +103,10 @@ public class JpaServer extends RestfulServer {
         config.addExposedHeader("Content-Location");
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         registerInterceptor(corsInterceptor);
+        
+        if (validationInterceptor.isPresent()){
+            registerInterceptor(validationInterceptor.get());
+        }
     }
 
 }
