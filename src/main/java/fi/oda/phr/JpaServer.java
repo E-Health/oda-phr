@@ -2,7 +2,6 @@ package fi.oda.phr;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.context.FhirVersionEnum;
-import ca.uhn.fhir.context.ParserOptions;
 import ca.uhn.fhir.jpa.dao.DaoConfig;
 import ca.uhn.fhir.jpa.dao.IFhirSystemDao;
 import ca.uhn.fhir.jpa.provider.BaseJpaSystemProvider;

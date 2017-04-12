@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.hl7.fhir.dstu3.hapi.validation.IValidationSupport;
 import org.hl7.fhir.dstu3.hapi.validation.PrePopulatedValidationSupport;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
@@ -20,7 +19,7 @@ import fi.oda.phr.dataset.BundleInjector;
 import fi.oda.phr.dataset.DataInjector;
 import fi.oda.phr.dataset.ResourceInjector;
 import fi.oda.phr.profiles.Dstu3Profile;
-import fi.oda.phr.OdaValidatingInterceptor;
+import fi.oda.phr.validation.OdaValidatingInterceptor;
 @Dstu3Profile
 @Configuration
 @Import(BaseJavaConfigDstu3.class)

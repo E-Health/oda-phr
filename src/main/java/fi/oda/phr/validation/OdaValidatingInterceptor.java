@@ -1,4 +1,4 @@
-package fi.oda.phr;
+package fi.oda.phr.validation;
 
 import java.util.Optional;
 
