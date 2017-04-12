@@ -13,7 +13,7 @@
         "coding": [
           {
             "system": "urn:ietf:bcp:47",
-            "code": "fi-FI",
+            "code": "fi",
             "display": "Finnish"
           }
         ]
@@ -31,6 +31,6 @@
         ]
       },
       "preferred": false
-    }	
+    }
   ]
 }
