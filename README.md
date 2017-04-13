@@ -4,6 +4,8 @@ This project contains a server for persisting and manipulating FHIR resources.
 The server provides CRUD operations with REST interfaces according to the FHIR 
 specification. In development mode data is stored in a Derby database.
 
+[![Dependency Status](https://www.versioneye.com/user/projects/58ef3c3673eac40052fd19ad/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58ef3c3673eac40052fd19ad)
+
 ## Building
 
     ./gradlew clean build
@@ -19,6 +21,9 @@ Starting in dstu3 mode:
 Starting in dstu2 mode (deprecated):
 
     java -jar oda-phr.jar -Dspring.profiles.active=dstu2
+
+
+Hapi server web interface: http://localhost:6083/phr/
 
 ## Database
 ODA PHR uses an in-memory database, which is cleared every time the server is 
