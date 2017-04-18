@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.hl7.fhir.dstu3.hapi.validation.PrePopulatedValidationSupport;
+import org.hl7.fhir.dstu3.model.CarePlan;
+import org.hl7.fhir.dstu3.model.Person;
+import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,8 +31,10 @@ public class Dstu3Config {
     @Bean
     public RequestValidatingInterceptor validationInterceptor(){
         PrePopulatedValidationSupport validationSupport = new PrePopulatedValidationSupport();
-        //TODO: Populate validationSupport with ODA profiles (addCodeSystem, addStructureDefinition, addValueSet)       
-        return new OdaValidatingInterceptor(Optional.of(validationSupport));
+        //TODO: Populate validationSupport with ODA profiles (addCodeSystem, addStructureDefinition, addValueSet)
+        List<Class<? extends IBaseResource>> ignoreList = new ArrayList<Class<? extends IBaseResource>>();
+        ignoreList.add(CarePlan.class);
+        return new OdaValidatingInterceptor(Optional.of(validationSupport), ignoreList);
     }
     
     @Bean
