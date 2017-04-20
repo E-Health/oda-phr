@@ -14,6 +14,7 @@ import org.springframework.core.io.ClassPathResource;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
+import ca.uhn.fhir.parser.StrictErrorHandler;
 import ca.uhn.fhir.rest.api.MethodOutcome;
 import ca.uhn.fhir.rest.client.IGenericClient;
 
@@ -53,7 +54,8 @@ public class ResourceInjector implements DataInjector {
     public void inject(IGenericClient client) {
         log.info("About to inject: " + sourceFile);
         final FhirContext ctx = FhirContext.forDstu3();
-        final IParser parser; // = ctx.newJsonParser();
+        ctx.setParserErrorHandler(new StrictErrorHandler());
+        final IParser parser;
 
         if (useJson) {
             parser = ctx.newJsonParser();

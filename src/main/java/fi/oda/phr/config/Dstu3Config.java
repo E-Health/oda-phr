@@ -2,7 +2,9 @@ package fi.oda.phr.config;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
+import org.hl7.fhir.dstu3.hapi.validation.PrePopulatedValidationSupport;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,16 +14,24 @@ import ca.uhn.fhir.context.FhirVersionEnum;
 import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu3;
 import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu3;
 import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
+import ca.uhn.fhir.rest.server.interceptor.RequestValidatingInterceptor;
 import fi.oda.phr.dataset.BundleInjector;
 import fi.oda.phr.dataset.DataInjector;
 import fi.oda.phr.dataset.ResourceInjector;
 import fi.oda.phr.profiles.Dstu3Profile;
-
+import fi.oda.phr.validation.OdaValidatingInterceptor;
 @Dstu3Profile
 @Configuration
 @Import(BaseJavaConfigDstu3.class)
 public class Dstu3Config {
 
+    @Bean
+    public RequestValidatingInterceptor validationInterceptor(){
+        PrePopulatedValidationSupport validationSupport = new PrePopulatedValidationSupport();
+        //TODO: Populate validationSupport with ODA profiles (addCodeSystem, addStructureDefinition, addValueSet)       
+        return new OdaValidatingInterceptor(Optional.of(validationSupport));
+    }
+    
     @Bean
     public FhirConfig fhirConfig() {
         return new FhirConfig(FhirVersionEnum.DSTU3, "baseDstu3", 60000);
