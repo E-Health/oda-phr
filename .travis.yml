@@ -4,11 +4,10 @@ jdk:
 
 script:
   - chmod +x ./gradlew
+  - gradlew assemble
+  - gradlew clean build
 
 sudo: false
-
-install:
-  - gradlew assemble
 
 notifications:
   email: false
