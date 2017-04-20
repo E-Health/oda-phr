@@ -6,8 +6,10 @@ script:
   - chmod +x ./gradlew
 
 install:
-  - gradlew assemble
-  - gradlew clean build
+  - ./gradlew assemble
+
+build:
+  - ./gradlew check
 
 sudo: false
 
