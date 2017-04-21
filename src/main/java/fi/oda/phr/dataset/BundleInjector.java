@@ -4,10 +4,14 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.io.Writer;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import org.hl7.fhir.dstu3.model.Bundle;
+import org.hl7.fhir.dstu3.model.Patient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -45,7 +49,7 @@ public class BundleInjector implements DataInjector {
         parser.setPrettyPrint(true);
         Bundle bundle;
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new ClassPathResource(Paths.get(sourceFile).toString()).getInputStream()))) {
+                new InputStreamReader(new ClassPathResource(Paths.get(sourceFile).toString()).getInputStream(), Charset.forName("UTF-8")))) {
             bundle = parser.parseResource(Bundle.class, reader);
         }
         catch (final IOException e) {
@@ -56,6 +60,7 @@ public class BundleInjector implements DataInjector {
             Files.createDirectories(Paths.get(responseFile).getParent());
             try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(responseFile))) {
                 parser.encodeResourceToWriter(result, writer);
+                parser.encodeResourceToWriter(result, new PrintWriter(System.out));
             }
         }
         catch (final IOException e) {
