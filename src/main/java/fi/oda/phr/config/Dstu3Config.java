@@ -5,8 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.hl7.fhir.dstu3.hapi.validation.PrePopulatedValidationSupport;
-import org.hl7.fhir.dstu3.model.CarePlan;
-import org.hl7.fhir.dstu3.model.Person;
+import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
@@ -34,9 +33,10 @@ public class Dstu3Config {
         //TODO: Populate validationSupport with ODA profiles (addCodeSystem, addStructureDefinition, addValueSet)
         List<Class<? extends IBaseResource>> ignoreList = new ArrayList<Class<? extends IBaseResource>>();
         ignoreList.add(CarePlan.class);
+        ignoreList.add(Bundle.class);
         return new OdaValidatingInterceptor(Optional.of(validationSupport), ignoreList);
     }
-    
+
     @Bean
     public FhirConfig fhirConfig() {
         return new FhirConfig(FhirVersionEnum.DSTU3, "baseDstu3", 60000);
