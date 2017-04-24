@@ -1,25 +1,19 @@
 package fi.oda.phr.config;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import org.hl7.fhir.dstu3.hapi.validation.PrePopulatedValidationSupport;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.springframework.beans.factory.annotation.Autowire;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 
 import ca.uhn.fhir.context.FhirVersionEnum;
 import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu3;
 import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu3;
-import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
-import ca.uhn.fhir.rest.server.interceptor.RequestValidatingInterceptor;
-import fi.oda.phr.dataset.BundleInjector;
-import fi.oda.phr.dataset.DataInjector;
-import fi.oda.phr.dataset.ResourceInjector;
+import ca.uhn.fhir.rest.server.interceptor.*;
+import fi.oda.phr.dataset.*;
 import fi.oda.phr.profiles.Dstu3Profile;
 import fi.oda.phr.validation.OdaValidatingInterceptor;
 @Dstu3Profile
@@ -29,9 +23,9 @@ public class Dstu3Config {
 
     @Bean
     public RequestValidatingInterceptor validationInterceptor(){
-        PrePopulatedValidationSupport validationSupport = new PrePopulatedValidationSupport();
+        final PrePopulatedValidationSupport validationSupport = new PrePopulatedValidationSupport();
         //TODO: Populate validationSupport with ODA profiles (addCodeSystem, addStructureDefinition, addValueSet)
-        List<Class<? extends IBaseResource>> ignoreList = new ArrayList<Class<? extends IBaseResource>>();
+        final List<Class<? extends IBaseResource>> ignoreList = new ArrayList<>();
         ignoreList.add(CarePlan.class);
         ignoreList.add(Bundle.class);
         return new OdaValidatingInterceptor(Optional.of(validationSupport), ignoreList);
@@ -49,7 +43,7 @@ public class Dstu3Config {
 
     @Bean
     public List<DataInjector> datasets() {
-        final List<DataInjector> result = new ArrayList<DataInjector>();
+        final List<DataInjector> result = new ArrayList<>();
         //Bundle of patients
         result.add(new BundleInjector("datasets/patient-bundle.json",
                 "responses/patient-bundle-response.json"));
@@ -63,6 +57,8 @@ public class Dstu3Config {
                 "responses/questionnaire1-response.json", true));
         result.add(new ResourceInjector("datasets/questionnaire-107-fixed.json",
                 "responses/questionnaire-107-fixed-response.json", true));
+        result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed.json",
+                "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response.json", true));
         //Testi Anna with temperature observations
         result.add(new ResourceInjector("datasets/PATIENT1/patient.json",
                 "responses/patient1-response.json", true));
