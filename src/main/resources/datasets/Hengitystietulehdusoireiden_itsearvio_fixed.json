@@ -1,0 +1,967 @@
+{
+    "resourceType": "Questionnaire",
+    "id": "QUESTIONNAIRE-107-FIXED-V2",
+    "language": "fi",
+    "url": "https://www.ebmeds.org/form/api/FHIR/forms/export/107",
+    "status": "published",
+    "date": "2017-04-20T18:37:36.587Z",
+    "publisher": "© Kustannus Oy Duodecim, 2017",
+    "identifier": [{
+            "system": "https://www.ebmeds.org/form/api/FHIR/forms/export/107",
+            "value": "107"
+        }
+    ],
+    "useContext": [{
+            "text": "selfcare"
+        }
+    ],
+    "title": "Hengitystietulehdusoireiden itsearvio",
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Hengitystietulehdusoireiden itsearvion kuvausteksti.</div>"
+    },
+    "extension": [{
+            "url": "https://www.ebmeds.org/form#selfCareInstructions",
+            "extension": [{
+                    "url": "instruction_text",
+                    "valueString": "[Itsehoito-ohje](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01167)"
+                }, {
+                    "url": "instruction_url",
+                    "valueString": "some url"
+                }
+            ]
+        }
+    ],
+    "item": [{
+            "linkId": "introduction",
+            "text": "Tämän oirearvion tarkoituksena on auttaa sinua arvioimaan, voitko hoitaa hengitystietulehdusongelmasi itse, vai tarvitsetko ammattilaisen apua. Hengitystietulehduksella tarkoitetaan tulehdusta nenässä, nielussa, kurkunpäässä, poskionteloissa, henkitorvessa tai keuhkoissa. Hengitystietulehdus on yleensä viruksen aiheuttama (Terveyskirjaston artikkeli [Nuhakuume, flunssa](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00590)). Vastauksia usein kysyttyihin kysymyksiin löytyy [täältä](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01192).",
+            "type": "group",
+            "item": [{
+                    "linkId": "3",
+
+                    "text": "Ikä (vuosia)",
+                    "type": "decimal"
+                }, {
+                    "linkId": "14",
+                    "extension": [{
+                            "url": "answer_type",
+                            "valueString": "subtitle"
+                        }
+                    ],
+                    "text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+                    "type": "display",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 15,
+                                "comparator": "<"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "586",
+                    "extension": [{
+                            "url": "answer_type",
+                            "valueString": "subtitle"
+                        }
+                    ],
+                    "text": "# Väliotsikko: hengitystietulehdus, päivystyshoidon tarve\n\nSeuraavien kysymysten avulla arvioidaan, onko sinun syytä ottaa heti yhteyttä päivystykseen",
+                    "type": "display",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "584",
+
+                    "text": "Onko sinulla ollut kuumetta yli 38 astetta kolmen päivän ajan tai kauemmin?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "35",
+
+                    "text": "Onko yleistilasi huonontunut? Yleistilan huononeminen tarkoittaa tässä sitä, että vointisi on heikompi kuin tavallisesti flunssan aikana tai muuten sairastaessa.",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "143",
+
+                    "text": "Onko sinulla vaikeutta avata suutasi (ns. leukalukko)?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "142",
+
+                    "text": "Onko puheesi tavallisesta poiketen \"puuromaista\"",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "141",
+
+                    "text": "Onko sinulla vaikeuksia niellessä (muuta kuin pelkkä kipu)  tai hengittäessä?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "37",
+
+                    "text": "Onko hengityksesi tihentynyt (yli 20 kertaa minuutissa) tai hengästytkö levossa tai pienessä rasituksessa?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "290",
+
+                    "text": "Onko niskan kipua ja jäykkyyttä (leukaa ei saa painetuksi rintaan, ks. [Aivokalvontulehdus](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00558))",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "585",
+
+                    "text": "Onko sinulla yskä-, nuha-, kurkkukipu-, poski- tai otsasärkyoireita, jotka ovat kestäneet yli 10 vuorokautta?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "663",
+                    "extension": [{
+                            "url": "answer_type",
+                            "valueString": "feedback"
+                        }
+                    ],
+                    "text": "Oireidesi perusteella sinun on aiheellista ottaa välittömästi yhteys ensihoitoon - soita 112. Jos vointisi sallii, voit antaa esitietoja tällä lomakkeella vastaamalla alla oleviin kysymyksiin ennen tai jälkeen soiton.",
+                    "type": "display",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }, {
+                            "question": "143",
+                            "answerBoolean": true
+                        }, {
+                            "question": "142",
+                            "answerBoolean": true
+                        }, {
+                            "question": "141",
+                            "answerBoolean": true
+                        }, {
+                            "question": "37",
+                            "answerBoolean": true
+                        }, {
+                            "question": "290",
+                            "answerBoolean": true
+                        }
+                    ]
+                }, {
+                    "linkId": "587",
+                    "extension": [{
+                            "url": "answer_type",
+                            "valueString": "feedback"
+                        }
+                    ],
+                    "text": " Antamiesi vastausten perusteella sinulla ei ole hälyttäviä oireita. Oireitasi voidaan hoitaa kotona. Voit tutustua itsehoito-ohjeisiin heti tai jatkaa kyselyyn vastaamista saadaksesi tarkemman arvion. Jos lisäkysymyksiin vastattuasi arvelet tarvitsevasi ammattilaisen apua, voit lähettää vastauksesi ammattilaiselle.",
+                    "type": "display",
+                    "enableWhen": [{
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }, {
+                            "question": "584",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "35",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "143",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "142",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "141",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "37",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "290",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "585",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }
+                    ]
+                }, {
+                    "linkId": "588",
+
+                    "text": "Haluatko katsoa itsehoito-ohjeen nyt vai haluatko vastata lisäkysymyksiin?",
+                    "type": "choice",
+                    "repeats": false,
+                    "option": [{
+                            "valueCoding": {
+                                "id": "919",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "unknown",
+                                "display": "Haluan itsehoito-ohjeen"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "920",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "unknown",
+                                "display": "Haluan jatkaa oireeni arviointia ja vastata lisäkysymyksiin"
+                            }
+                        }
+                    ],
+                    "enableWhen": [{
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }, {
+                            "question": "584",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "35",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "143",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "142",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "141",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "37",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "290",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "585",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }
+                    ]
+                }, {
+                    "linkId": "10",
+                    "extension": [{
+                            "url": "answer_type",
+                            "valueString": "subtitle"
+                        }
+                    ],
+                    "text": "# Oireeni sopivat itsehoitoon ja haluan vain itsehoito-ohjeen\n\n**Tulosta [itsehoito-ohje](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01167)**.",
+                    "type": "display",
+                    "enableWhen": [{
+                            "question": "588",
+                            "answerString": "Haluan itsehoito-ohjeen"
+                        }
+                    ]
+                }, {
+                    "linkId": "654",
+                    "extension": [{
+                            "url": "answer_type",
+                            "valueString": "subtitle"
+                        }
+                    ],
+                    "text": "# Hengitystietulehdus, tarkentavat kysymykset\n\nVastaamalla seuraaviin kysymyksiin saat tarkemman arvion oireesi hoidon tarpeesta",
+                    "type": "display",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "590",
+
+                    "text": "Kuinka monta vuorokautta nykyiset oireesi ovat kestäneet",
+                    "type": "decimal",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "38",
+
+                    "text": "Onko sinulla kuumetta?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "584",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": false
+                        }, {
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "7",
+                    "concept": [{
+                            "system": "urn:1.2.246.537.6.96",
+                            "display": "finLOINC",
+                            "code": "8310-5"
+                        }
+                    ],
+                    "text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8)",
+                    "type": "decimal",
+                    "enableWhen": [{
+                            "question": "584",
+                            "answerBoolean": true
+                        }, {
+                            "question": "38",
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                },  {
+                    "linkId": "53",
+
+                    "text": "Onko sinulla kurkkukipua?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "144",
+
+                    "text": "Paheneeko kurkkukipu tai vaikeutuuko hengittäminen maatessasi selälläsi?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "53",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "145",
+
+                    "text": "Onko mahdollista, että nieluusi on juuttunut vierasesine (kalanruoto, ruokapala tms.)?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "53",
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "146",
+
+                    "text": "Onko kaulallasi tai kasvoissasi ulospäin näkyvää turvotusta?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "53",
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "147",
+
+                    "text": "Oletko niellyt ärsyttävää tai syövyttävää ainetta?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "53",
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "18",
+
+                    "text": "Onko sinulla seuraavia nielun oireita? Katso kuvat 1 ja 2  \n![](http://www.terveyskirjasto.fi/xmedia/ldk/ldk00245.jpg)     ![](http://www.terveyskirjasto.fi/xmedia/ldk/ldk00483.png)",
+                    "type": "choice",
+                    "repeats": true,
+                    "option": [{
+                            "valueCoding": {
+                                "id": "35",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "1",
+                                "display": "Nielurisoissa havaittavissa selviä peitteitä tai pilkkuja (kuva 1)"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "36",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "2",
+                                "display": "Jompikumpi nielun seinämistä on turvonnut toista enemmän (kuva 2)"
+                            }
+                        }
+                    ],
+                    "enableWhen": [{
+                            "question": "53",
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "658",
+
+                    "text": "Onko sinulla leuanalustassa turvotusta tai tunnettavissa olevia patteja (imusolmukkeita)?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }, {
+                            "question": "53",
+                            "answerBoolean": true
+                        }
+                    ]
+                }, {
+                    "linkId": "54",
+
+                    "text": "Onko sinulla nuha? Oireena on nenän tukkoisuus ja vuotaminen.",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "136",
+
+                    "text": "Onko sinulla yskää?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "593",
+
+                    "text": "Hakkaavaa yskää öisin",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "136",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "52",
+
+                    "text": "Onko sinulla lääkärin diagnosoima keuhkoahtaumatauti? Tietoa keuhkoahtaumataudista [Terveyskirjastossa](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00029)",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "136",
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "45",
+
+                    "text": "Onko sinulla lääkärin diagnosoima astma? Tietoa astmasta [Terveyskirjastossa](www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00009)",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "136",
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "594",
+
+                    "text": "Särkyä kasvojen etuosassa",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "55",
+
+                    "text": "Onko äänesi käheä?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "595",
+
+                    "text": "Onko äänesi kokonaan poissa (puhe vain kuiskailua)",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "596",
+
+                    "text": "Kipua keskellä rintaa henkitorven seudussa hengittäessä",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "597",
+
+                    "text": "Pistosta muualla rinnassa kuin henkitorven seudussa",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "592",
+
+                    "text": "Onko sinulla korvakipua?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "83",
+
+                    "text": "Millaista korvakipu on luonteeltaan eniten?",
+                    "type": "choice",
+                    "repeats": false,
+                    "option": [{
+                            "valueCoding": {
+                                "id": "160",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "unknown",
+                                "display": "paineentunne tai täyteläisyyden tunne"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "161",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "unknown",
+                                "display": "korva on lukossa"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "163",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "unknown",
+                                "display": "sähköiskumainen kipu"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "162",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "unknown",
+                                "display": "viiltävä, terävä kipu"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "164",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "unknown",
+                                "display": "jomottava kipu"
+                            }
+                        }
+                    ],
+                    "enableWhen": [{
+                            "question": "592",
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "89",
+
+                    "text": "Muut oireet samanaikaisesti korvakivun kanssa",
+                    "type": "choice",
+                    "repeats": true,
+                    "option": [{
+                            "valueCoding": {
+                                "id": "166",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "1",
+                                "display": "Korvalehti tai korvan seutu on painellen arka"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "167",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "2",
+                                "display": "Korvalehti tai korvan ympärys punoittaa"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "168",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "3",
+                                "display": "Korvakivun kanssa samanaikaisesti kurkun tai nielun kipua"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "169",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "4",
+                                "display": "Korvakivun kanssa samanaikaisesti leukanivelen seudun kipua"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "170",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "5",
+                                "display": "Korvakivun kanssa samanaikaisesti niskan seudun kipua"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "171",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "6",
+                                "display": "Korvasta tulee märkäistä vuotoa"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "172",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "7",
+                                "display": "Korvasta tulee verta"
+                            }
+                        }, {
+                            "valueCoding": {
+                                "id": "668",
+                                "system": "https://www.ebmeds.org/form",
+                                "code": "unknown",
+                                "display": "Kuulo on äkillisesti alentunut toisesta korvasta"
+                            }
+                        }
+                    ],
+                    "enableWhen": [{
+                            "question": "592",
+                            "answerBoolean": true
+                        }, {
+                            "question": "3",
+                            "extension": [{
+                                    "url": "https://www.ebmeds.org/form#enableWhenOperator",
+                                    "valueString": "AND"
+                                }
+                            ],
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "linkId": "599",
+
+                    "text": "Oireet lisääntyivät uudelleen sen jälkeen kun ne olivat jo lievittymässä",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

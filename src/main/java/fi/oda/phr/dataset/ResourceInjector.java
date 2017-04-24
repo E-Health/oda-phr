@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -67,7 +68,7 @@ public class ResourceInjector implements DataInjector {
         parser.setPrettyPrint(true);
         IBaseResource resource;
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new ClassPathResource(Paths.get(sourceFile).toString()).getInputStream()))) {
+                new InputStreamReader(new ClassPathResource(Paths.get(sourceFile).toString()).getInputStream(), Charset.forName("UTF-8")))) {
             resource = parser.parseResource(reader);
         }
         catch (final IOException e) {

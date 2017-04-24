@@ -133,7 +133,11 @@ Example request body:
 }
 ```
 
-Example curl command for validating a FHIR resource:
-    curl -X POST https://oda.medidemo.fi/phr/baseDstu3/Patient/\$validate --data @patient.json --header "Content-Type: application/fhir+json"
+Example curl command for validating a FHIR resource: 
+```
+curl -X POST https://oda.medidemo.fi/phr/baseDstu3/Patient/\$validate \
+     --data @patient.json \
+     --header "Content-Type: application/fhir+json"
+```
 
 If the validation succeeds, the server will return 200 OK. A failed validation will result in 400 Bad Request.
