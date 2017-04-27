@@ -23,12 +23,12 @@ public class Dstu3Config {
 
     @Bean
     public RequestValidatingInterceptor validationInterceptor(){
-        final PrePopulatedValidationSupport validationSupport = new PrePopulatedValidationSupport();
+        //PrePopulatedValidationSupport validationSupport = new PrePopulatedValidationSupport();
         //TODO: Populate validationSupport with ODA profiles (addCodeSystem, addStructureDefinition, addValueSet)
         final List<Class<? extends IBaseResource>> ignoreList = new ArrayList<>();
         ignoreList.add(CarePlan.class);
         ignoreList.add(Bundle.class);
-        return new OdaValidatingInterceptor(Optional.of(validationSupport), ignoreList);
+        return new OdaValidatingInterceptor(Optional.empty(), ignoreList);
     }
 
     @Bean
@@ -47,14 +47,12 @@ public class Dstu3Config {
         //Bundle of patients
         result.add(new BundleInjector("datasets/patient-bundle.json",
                 "responses/patient-bundle-response.json"));
-        //Practitioner
+        result.add(new ResourceInjector("datasets/organization1.json",
+                "responses/organization1-response.json", true));
         result.add(new ResourceInjector("datasets/practitioner1.json",
                 "responses/practitioner1-response.json", true));
         result.add(new ResourceInjector("datasets/person-practitioner1.json",
                 "responses/person-practitioner1-response.json", true));
-        //Questionnaire
-        result.add(new ResourceInjector("datasets/questionnaire1.json",
-                "responses/questionnaire1-response.json", true));
         result.add(new ResourceInjector("datasets/questionnaire-107-fixed.json",
                 "responses/questionnaire-107-fixed-response.json", true));
         result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed.json",
@@ -76,14 +74,18 @@ public class Dstu3Config {
                 "responses/person2-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT2/observation.json",
                 "responses/patient2-observation-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT2/episodeofcare.json",
+                "responses/patient2-episodeofcare-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT2/careteam-authorization.json",
+                "responses/patient2-careteam-authorization-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT2/careplan.json",
                 "responses/patient2-careplan-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT2/questionnaireresponse.json",
-                "responses/patient2-questionnaireresponse-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT2/careteam.json",
-                "responses/patient2-careteam-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT2/communication.json",
                 "responses/patient2-communication-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT2/careteam-care.json",
+               "responses/patient2-careteam-care-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT2/episodeofcare.json",
+                "responses/patient2-episodeofcare-response.json", true));
 
         //TODO add additional data sets here. Items will be inserted in the order they are put in the list.
         return result;

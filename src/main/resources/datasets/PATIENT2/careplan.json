@@ -10,7 +10,11 @@
     "subject":{
               "reference":"Patient/PATIENT2"
     },
-    "status":"proposed",
+    "context":{
+              "reference":"EpisodeOfCare/EPISODEOFCARE1-PATIENT2"
+    },
+    
+    "status":"active",
     "period":{
               "start":"2017-03-01T00:00:00.000Z",
               "end":"2017-04-02T23:59:59.999Z"
@@ -20,7 +24,11 @@
               "reference":"Patient/PATIENT2"
         }
     ],
-    "modified":"2017-03-09T10:00:00.000Z",
+    "careTeam":[
+        {
+         "reference" : "CareTeam/CARETEAM1-AUTHORIZATION"
+        }
+    ],
     "category":[
         {
             "text":"self care"

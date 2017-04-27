@@ -1,0 +1,39 @@
+{
+  "resourceType": "Organization",
+  "id": "ORGANIZATION1",
+  "active": true,
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "405608006",
+          "display": "Academic Medical Center"
+        },
+        {
+          "system": "http://hl7.org/fhir/organization-type",
+          "code": "prov"
+        }
+      ]
+    }
+  ],
+  "name": "Meilahti Tower Hospital",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+3581234567",
+      "use": "work"
+    }
+  ],
+  "address": [
+    {
+      "use": "work",
+      "line": [
+        "Haartmaninkatu 4"
+      ],
+      "city": "Helsinki",
+      "postalCode": "00290",
+      "country": "FI"
+    }
+  ]
+}

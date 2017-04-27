@@ -1,13 +1,16 @@
 {
   "resourceType": "CareTeam",
-  "id" : "CARETEAM1-PATIENT2",
-  "subject": {
-    "reference": "Patient/PATIENT2",
-    "display": "Anna Demo"
-  },
+  "id" : "CARETEAM2-CARE",
+  "category" : [{
+    "coding" : [{
+        "system" : "http://oda",
+        "code": "Care"
+    }],
+    "text" : "Care"
+  }],
   "period": {
     "end": "2017-05-01"
-  },
+  },  
   "name": "Hoitotiimi",
   "participant": [
     {
@@ -19,5 +22,9 @@
         "display": "Pekka Pakarinen"
       }
     }
-  ]
+  ],
+  "managingOrganization" : [{
+    "reference": "Organization/ORGANIZATION1",
+    "display" : "Meilahti Tower Hospital"
+  }]
 }
