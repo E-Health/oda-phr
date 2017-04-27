@@ -3,7 +3,9 @@
 Modules listed below are not included in this repository, Gradle will download
 them when the software is packaged.
 
-How to genarate the listing:
+For an up-to-date listing see [VersionEye](https://www.versioneye.com/user/projects/58ef3c3673eac40052fd19ad).
+
+The followin listing is generated semi-automaticly:
 1. Run `./gradlew generateLicenseReport`
 2. Upload build/reports/dependency-license/licenses.csv to http://www.tablesgenerator.com/markdown_tables
 3. Copy-paste the generated markdown table below
