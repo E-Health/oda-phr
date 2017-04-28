@@ -57,8 +57,10 @@ public class Dstu3Config {
                 "responses/questionnaire-107-fixed-response.json", true));
         result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed.json",
                 "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response.json", true));
-        result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed_248.json",
-                "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response_248.json", true));
+        // result.add(new
+        // ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed_248.json",
+        // "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response_248.json",
+        // true));
         //Testi Anna with temperature observations
         result.add(new ResourceInjector("datasets/PATIENT1/patient.json",
                 "responses/patient1-response.json", true));
