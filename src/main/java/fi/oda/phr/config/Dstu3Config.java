@@ -2,7 +2,6 @@ package fi.oda.phr.config;
 
 import java.util.*;
 
-import org.hl7.fhir.dstu3.hapi.validation.PrePopulatedValidationSupport;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.springframework.beans.factory.annotation.Autowire;
@@ -53,10 +52,13 @@ public class Dstu3Config {
                 "responses/practitioner1-response.json", true));
         result.add(new ResourceInjector("datasets/person-practitioner1.json",
                 "responses/person-practitioner1-response.json", true));
+        // Questionnaires
         result.add(new ResourceInjector("datasets/questionnaire-107-fixed.json",
                 "responses/questionnaire-107-fixed-response.json", true));
         result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed.json",
                 "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response.json", true));
+        result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed_248.json",
+                "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response_248.json", true));
         //Testi Anna with temperature observations
         result.add(new ResourceInjector("datasets/PATIENT1/patient.json",
                 "responses/patient1-response.json", true));
