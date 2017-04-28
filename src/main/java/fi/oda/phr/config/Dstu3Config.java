@@ -43,6 +43,11 @@ public class Dstu3Config {
     @Bean
     public List<DataInjector> datasets() {
         final List<DataInjector> result = new ArrayList<>();
+
+        // THIS HAS TO BE FIRST !! ID MUST BE 1
+        result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json",
+                "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response_id1.json", false));
+
         //Bundle of patients
         result.add(new BundleInjector("datasets/patient-bundle.json",
                 "responses/patient-bundle-response.json"));
@@ -57,15 +62,13 @@ public class Dstu3Config {
                 "responses/questionnaire-107-fixed-response.json", true));
         result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed.json",
                 "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response.json", true));
-        // result.add(new
-        // ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed_248.json",
-        // "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response_248.json",
-        // true));
+
         //Testi Anna with temperature observations
         result.add(new ResourceInjector("datasets/PATIENT1/patient.json",
                 "responses/patient1-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT1/person.json",
                 "responses/person1-response.json", true));
+
         int i;
         for (i = 1; i <= 7; i++) {
             result.add(new ResourceInjector("datasets/PATIENT1/observation" + i + ".json",

@@ -1,6 +1,5 @@
 {
     "resourceType": "Questionnaire",
-    "id": "248",
     "language": "fi",
     "url": "https://www.ebmeds.org/form/api/FHIR/forms/export/107",
     "status": "published",
