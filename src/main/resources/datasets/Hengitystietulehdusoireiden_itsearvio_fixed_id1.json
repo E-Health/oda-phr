@@ -2,7 +2,7 @@
     "resourceType": "Questionnaire",
     "language": "fi",
     "url": "https://www.ebmeds.org/form/api/FHIR/forms/export/107",
-    "status": "published",
+    "status": "active",
     "date": "2017-04-20T18:37:36.587Z",
     "publisher": "© Kustannus Oy Duodecim, 2017",
     "identifier": [{
@@ -11,7 +11,12 @@
         }
     ],
     "useContext": [{
-            "text": "selfcare"
+            "code" : [{
+                "display" : "selfCare"
+            }],
+            "valueCodeableConcept": {
+                "text": "selfCare"
+            }
         }
     ],
     "title": "Hengitystietulehdusoireiden itsearvio",
@@ -19,17 +24,6 @@
         "status": "generated",
         "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Hengitystietulehdusoireiden itsearvion kuvausteksti.</div>"
     },
-    "extension": [{
-            "url": "https://www.ebmeds.org/form#selfCareInstructions",
-            "extension": [{
-                    "url": "instruction_text",
-                    "valueString": "[Itsehoito-ohje](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01167)"
-                }, {
-                    "url": "instruction_url"
-                }
-            ]
-        }
-    ],
     "item": [{
             "linkId": "introduction",
             "text": "Tämän oirearvion tarkoituksena on auttaa sinua arvioimaan, voitko hoitaa hengitystietulehdusongelmasi itse, vai tarvitsetko ammattilaisen apua. Hengitystietulehduksella tarkoitetaan tulehdusta nenässä, nielussa, kurkunpäässä, poskionteloissa, henkitorvessa tai keuhkoissa. Hengitystietulehdus on yleensä viruksen aiheuttama (Terveyskirjaston artikkeli [Nuhakuume, flunssa](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00590)). Vastauksia usein kysyttyihin kysymyksiin löytyy [täältä](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01192).",
@@ -445,7 +439,7 @@
                     ]
                 }, {
                     "linkId": "7",
-                    "concept": [{
+                    "code": [{
                             "system": "urn:1.2.246.537.6.96",
                             "display": "finLOINC",
                             "code": "8310-5"
