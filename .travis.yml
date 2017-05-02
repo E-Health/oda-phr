@@ -4,8 +4,6 @@ jdk:
 
 script:
   - chmod +x ./gradlew
-
-build:
   - ./gradlew clean build
 
 sudo: false
