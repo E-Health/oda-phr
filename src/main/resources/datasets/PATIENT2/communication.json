@@ -6,13 +6,13 @@
         "div": "<div>You are progressing well! Good work!</div>"
     },        
     "status": "completed",
-    "category": {        
+    "category": [{        
         "text": "oda-careplan-comment"
-    },    
+    }],    
     "subject": {
         "reference": "Patient/PATIENT2"
     },
-	"topic": [{
+    "topic": [{
         "reference": "CarePlan/CAREPLAN1-PATIENT2"
     }],
     "sent": "2016-12-12T18:01:10-08:00",
