@@ -1,21 +1,6 @@
 {
   "date": "2017-03-27T14:18:21.564Z",
   "id": "QUESTIONNAIRE-107-FIXED",
-  "extension": [
-    {
-      "extension": [
-        {
-          "url": "instruction_text",
-          "valueString": "<a href=\"http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01167\">Itsehoito-ohje</a>."
-        },
-        {
-          "url": "instruction_url",
-          "valueString": "null"
-        }
-      ],
-      "url": "https://www.ebmeds.org/form#selfCareInstructions"
-    }
-  ],
   "identifier": [
     {
       "system": "https://www.ebmeds.org/form/api/FHIR/forms/export/107",
@@ -511,7 +496,7 @@
           "type": "boolean"
         },
         {
-          "concept": [
+          "code": [
             {
               "code": "8310-5",
               "display": "finLOINC",
@@ -1146,16 +1131,20 @@
 "language": "fi",
 "publisher": "Ilkka Kunnamo",
 "resourceType": "Questionnaire",
-"status": "published",
+"status": "active",
 "text": {
   "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">null</div>",
   "status": "generated"
 },
 "title": "Hengitystietulehdusoireiden itsearvio",
 "url": "https://www.ebmeds.org/form/api/FHIR/forms/export/107",
-"useContext": [
-  {
-    "text": "selfcare"
-  }
-]
+    "useContext": [{
+            "code" : [{
+                "display" : "selfCare"
+            }],
+            "valueCodeableConcept": {
+                "text": "selfCare"
+            }
+        }
+    ]
 }
