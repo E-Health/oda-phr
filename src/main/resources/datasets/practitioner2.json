@@ -1,0 +1,14 @@
+{
+  "resourceType": "Practitioner",
+  "id": "PRACTITIONER2",
+  "name": [
+    {
+      "use": "official",
+      "family": "Lääkäri",
+      "given": [
+        "Lasse"
+      ]
+    }
+  ],
+  "gender": "male"
+}

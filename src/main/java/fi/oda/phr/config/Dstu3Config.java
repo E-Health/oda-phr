@@ -48,7 +48,6 @@ public class Dstu3Config {
         result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json",
                 "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response_id1.json", false));
 
-        //Bundle of patients
         result.add(new BundleInjector("datasets/patient-bundle.json",
                 "responses/patient-bundle-response.json"));
         result.add(new ResourceInjector("datasets/organization1.json",
@@ -57,24 +56,37 @@ public class Dstu3Config {
                 "responses/practitioner1-response.json", true));
         result.add(new ResourceInjector("datasets/person-practitioner1.json",
                 "responses/person-practitioner1-response.json", true));
-        // Questionnaires
+        result.add(new ResourceInjector("datasets/practitioner2.json",
+                "responses/practitioner2-response.json", true));
+        result.add(new ResourceInjector("datasets/person-practitioner2.json",
+                "responses/person-practitioner2-response.json", true));
+
+        
         result.add(new ResourceInjector("datasets/questionnaire-107-fixed.json",
                 "responses/questionnaire-107-fixed-response.json", true));
         result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed.json",
                 "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response.json", true));
 
-        //Testi Anna with temperature observations
         result.add(new ResourceInjector("datasets/PATIENT1/patient.json",
                 "responses/patient1-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT1/person.json",
                 "responses/person1-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT1/careteam-authorization.json",
+                "responses/patient1-careteam-authorization-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT1/careteam-care.json",
+                "responses/patient1-careteam-care-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT1/episodeofcare.json",
+                "responses/patient1-episodeofcare-response.json", true));
 
+        result.add(new ResourceInjector("datasets/PATIENT1/careplan.json",
+                "responses/patient1-careplan-response.json", true));
+        
         int i;
         for (i = 1; i <= 7; i++) {
             result.add(new ResourceInjector("datasets/PATIENT1/observation" + i + ".json",
                     "responses/patient1-observation" + i + "-response.json", true));
         }
-        //Demo Anna with careplan, careteam, communication, questionnaireresponse and temperature observation
+
         result.add(new ResourceInjector("datasets/PATIENT2/patient.json",
                 "responses/patient2-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT2/person.json",

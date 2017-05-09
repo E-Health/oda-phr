@@ -1,12 +1,12 @@
 {
   "resourceType": "CareTeam",
-  "id" : "CARETEAM1-CARE",
+  "id" : "CARETEAM2-AUTHORIZATION",
   "category" : [{
     "coding" : [{
         "system" : "http://oda",
-        "code": "Care"
+        "code": "Authorization"
     }],
-    "text" : "Care"
+    "text" : "Authorization"
   }],
   "period": {
     "end": "2017-05-01"
@@ -18,8 +18,8 @@
         "text": "Hoitava lääkäri"
       },
       "member": {
-        "reference": "Practitioner/PRACTITIONER1",
-        "display": "Pekka Pakarinen"
+        "reference": "Practitioner/PRACTITIONER2",
+        "display": "Lasse Lääkäri"
       }
     }
   ],

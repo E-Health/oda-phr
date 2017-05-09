@@ -1,6 +1,6 @@
 {
   "resourceType": "CareTeam",
-  "id" : "CARETEAM1-CARE",
+  "id" : "CARETEAM2-CARE",
   "category" : [{
     "coding" : [{
         "system" : "http://oda",
@@ -18,8 +18,8 @@
         "text": "Hoitava lääkäri"
       },
       "member": {
-        "reference": "Practitioner/PRACTITIONER1",
-        "display": "Pekka Pakarinen"
+        "reference": "Practitioner/PRACTITIONER2",
+        "display": "Lasse Lääkäri"
       }
     }
   ],
