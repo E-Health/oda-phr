@@ -11,10 +11,7 @@ import ca.uhn.fhir.jpa.search.DatabaseBackedPagingProvider;
 import ca.uhn.fhir.model.dstu2.composite.MetaDt;
 import ca.uhn.fhir.narrative.DefaultThymeleafNarrativeGenerator;
 import ca.uhn.fhir.parser.StrictErrorHandler;
-import ca.uhn.fhir.rest.server.ETagSupportEnum;
-import ca.uhn.fhir.rest.server.EncodingEnum;
-import ca.uhn.fhir.rest.server.IResourceProvider;
-import ca.uhn.fhir.rest.server.RestfulServer;
+import ca.uhn.fhir.rest.server.*;
 import ca.uhn.fhir.rest.server.interceptor.CorsInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
 import ca.uhn.fhir.rest.server.interceptor.RequestValidatingInterceptor;
@@ -44,13 +41,15 @@ public class JpaServer extends RestfulServer {
             DatabaseBackedPagingProvider dbBackedPagingProvider,
             Collection<IServerInterceptor> interceptorBeans,
             FhirConfig fhirConfig,
-            Optional<RequestValidatingInterceptor> validationInterceptor) {
+            Optional<RequestValidatingInterceptor> validationInterceptor,
+            IServerAddressStrategy addressStrategy) {
         this.validationInterceptor = validationInterceptor;
         final FhirContext context = new FhirContext(fhirConfig.versionEnum);
         context.setParserErrorHandler(new StrictErrorHandler());
         setFhirContext(context);        
         setResourceProviders(resourceProviders);
         setPlainProviders(systemProvider);
+        setServerAddressStrategy(addressStrategy);
 
         if (context.getVersion().getVersion() == FhirVersionEnum.DSTU3) {
             final JpaConformanceProviderDstu3 confProvider =

@@ -72,9 +72,8 @@ spring:
         username: phr
         driver-class-name: org.postgresql.Driver
 
----
-spring:
-    profiles: test
-
 logging:
     config: logback.xml
+
+app:
+    fhir-server.url: https://oda.medidemo.fi/api/fhir/fhir/
