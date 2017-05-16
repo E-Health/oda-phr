@@ -3,20 +3,11 @@
     "language": "fi",
     "url": "https://www.ebmeds.org/form/api/FHIR/forms/export/107",
     "status": "active",
-    "date": "2017-04-20T18:37:36.587Z",
+    "date": "2017-05-06T10:40:18.401Z",
     "publisher": "© Kustannus Oy Duodecim, 2017",
     "identifier": [{
             "system": "https://www.ebmeds.org/form/api/FHIR/forms/export/107",
             "value": "107"
-        }
-    ],
-    "useContext": [{
-            "code" : [{
-                "display" : "selfCare"
-            }],
-            "valueCodeableConcept": {
-                "text": "selfCare"
-            }
         }
     ],
     "title": "Hengitystietulehdusoireiden itsearvio",
@@ -24,15 +15,28 @@
         "status": "generated",
         "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Hengitystietulehdusoireiden itsearvion kuvausteksti.</div>"
     },
+    "extension": [{
+            "url": "https://www.ebmeds.org/form#selfCareInstructions",
+            "extension": [{
+                    "url": "instruction_text",
+                    "valueString": "[Itsehoito-ohje](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01167)"
+                }, {
+                    "url": "instruction_url"
+                }
+            ]
+        }
+    ],
     "item": [{
             "linkId": "introduction",
             "text": "Tämän oirearvion tarkoituksena on auttaa sinua arvioimaan, voitko hoitaa hengitystietulehdusongelmasi itse, vai tarvitsetko ammattilaisen apua. Hengitystietulehduksella tarkoitetaan tulehdusta nenässä, nielussa, kurkunpäässä, poskionteloissa, henkitorvessa tai keuhkoissa. Hengitystietulehdus on yleensä viruksen aiheuttama (Terveyskirjaston artikkeli [Nuhakuume, flunssa](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00590)). Vastauksia usein kysyttyihin kysymyksiin löytyy [täältä](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01192).",
             "type": "group",
             "item": [{
+                    "required": true,
                     "linkId": "3",
                     "text": "Ikä (vuosia)",
                     "type": "decimal"
                 }, {
+                    "required": true,
                     "linkId": "14",
                     "extension": [{
                             "url": "answer_type",
@@ -50,6 +54,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "586",
                     "extension": [{
                             "url": "answer_type",
@@ -67,6 +72,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "584",
                     "text": "Onko sinulla ollut kuumetta yli 38 astetta kolmen päivän ajan tai kauemmin?",
                     "type": "boolean",
@@ -79,6 +85,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "35",
                     "text": "Onko yleistilasi huonontunut? Yleistilan huononeminen tarkoittaa tässä sitä, että vointisi on heikompi kuin tavallisesti flunssan aikana tai muuten sairastaessa.",
                     "type": "boolean",
@@ -91,6 +98,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "143",
                     "text": "Onko sinulla vaikeutta avata suutasi (ns. leukalukko)?",
                     "type": "boolean",
@@ -103,6 +111,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "142",
                     "text": "Onko puheesi tavallisesta poiketen \"puuromaista\"",
                     "type": "boolean",
@@ -115,6 +124,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "141",
                     "text": "Onko sinulla vaikeuksia niellessä (muuta kuin pelkkä kipu)  tai hengittäessä?",
                     "type": "boolean",
@@ -127,6 +137,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "37",
                     "text": "Onko hengityksesi tihentynyt (yli 20 kertaa minuutissa) tai hengästytkö levossa tai pienessä rasituksessa?",
                     "type": "boolean",
@@ -139,6 +150,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "290",
                     "text": "Onko niskan kipua ja jäykkyyttä (leukaa ei saa painetuksi rintaan, ks. [Aivokalvontulehdus](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00558))",
                     "type": "boolean",
@@ -151,6 +163,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "585",
                     "text": "Onko sinulla yskä-, nuha-, kurkkukipu-, poski- tai otsasärkyoireita, jotka ovat kestäneet yli 10 vuorokautta?",
                     "type": "boolean",
@@ -163,6 +176,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "663",
                     "extension": [{
                             "url": "answer_type",
@@ -172,12 +186,6 @@
                     "text": "Oireidesi perusteella sinun on aiheellista ottaa välittömästi yhteys ensihoitoon - soita 112. Jos vointisi sallii, voit antaa esitietoja tällä lomakkeella vastaamalla alla oleviin kysymyksiin ennen tai jälkeen soiton.",
                     "type": "display",
                     "enableWhen": [{
-                            "question": "3",
-                            "answerQuantity": {
-                                "value": 14,
-                                "comparator": ">"
-                            }
-                        }, {
                             "question": "143",
                             "answerBoolean": true
                         }, {
@@ -195,6 +203,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "587",
                     "extension": [{
                             "url": "answer_type",
@@ -281,6 +290,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "588",
                     "text": "Haluatko katsoa itsehoito-ohjeen nyt vai haluatko vastata lisäkysymyksiin?",
                     "type": "choice",
@@ -375,6 +385,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "10",
                     "extension": [{
                             "url": "answer_type",
@@ -389,6 +400,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "654",
                     "extension": [{
                             "url": "answer_type",
@@ -406,6 +418,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "590",
                     "text": "Kuinka monta vuorokautta nykyiset oireesi ovat kestäneet",
                     "type": "decimal",
@@ -418,6 +431,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "38",
                     "text": "Onko sinulla kuumetta?",
                     "type": "boolean",
@@ -438,6 +452,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "7",
                     "code": [{
                             "system": "urn:1.2.246.537.6.96",
@@ -467,7 +482,29 @@
                         }
                     ]
                 }, {
+                    "required": true,
+                    "linkId": "591",
+                    "text": "Onko sinulla seuraavia oireita?",
+                    "type": "choice",
+                    "repeats": true,
+                    "option": [],
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerQuantity": {
+                                "value": 14,
+                                "comparator": ">"
+                            }
+                        }
+                    ]
+                }, {
+                    "required": true,
                     "linkId": "53",
+                    "code": [{
+                            "system": "urn:1.2.246.537.6.1",
+                            "display": "ICD-10",
+                            "code": "R07.0"
+                        }
+                    ],
                     "text": "Onko sinulla kurkkukipua?",
                     "type": "boolean",
                     "enableWhen": [{
@@ -479,6 +516,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "144",
                     "text": "Paheneeko kurkkukipu tai vaikeutuuko hengittäminen maatessasi selälläsi?",
                     "type": "boolean",
@@ -499,6 +537,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "145",
                     "text": "Onko mahdollista, että nieluusi on juuttunut vierasesine (kalanruoto, ruokapala tms.)?",
                     "type": "boolean",
@@ -519,6 +558,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "146",
                     "text": "Onko kaulallasi tai kasvoissasi ulospäin näkyvää turvotusta?",
                     "type": "boolean",
@@ -539,6 +579,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "147",
                     "text": "Oletko niellyt ärsyttävää tai syövyttävää ainetta?",
                     "type": "boolean",
@@ -559,8 +600,9 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "18",
-                    "text": "Onko sinulla seuraavia nielun oireita? Katso kuvat 1 ja 2  \n![](http://www.terveyskirjasto.fi/xmedia/ldk/ldk00245.jpg)     ![](http://www.terveyskirjasto.fi/xmedia/ldk/ldk00483.png)",
+                    "text": "Onko sinulla seuraavia nielun oireita? Katso kuvat 1 ja 2  \n![](https://www.terveysportti.fi/xmedia/ldk/ldk00245.jpg)     ![](https://www.terveysportti.fi/xmedia/ldk/ldk00483.png)",
                     "type": "choice",
                     "repeats": true,
                     "option": [{
@@ -594,6 +636,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "658",
                     "text": "Onko sinulla leuanalustassa turvotusta tai tunnettavissa olevia patteja (imusolmukkeita)?",
                     "type": "boolean",
@@ -609,6 +652,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "54",
                     "text": "Onko sinulla nuha? Oireena on nenän tukkoisuus ja vuotaminen.",
                     "type": "boolean",
@@ -621,7 +665,14 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "136",
+                    "code": [{
+                            "system": "urn:1.2.246.537.6.1",
+                            "display": "ICD-10",
+                            "code": "R05"
+                        }
+                    ],
                     "text": "Onko sinulla yskää?",
                     "type": "boolean",
                     "enableWhen": [{
@@ -633,6 +684,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "593",
                     "text": "Hakkaavaa yskää öisin",
                     "type": "boolean",
@@ -653,7 +705,14 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "52",
+                    "code": [{
+                            "system": "urn:1.2.246.537.6.1",
+                            "display": "ICD-10",
+                            "code": "J44"
+                        }
+                    ],
                     "text": "Onko sinulla lääkärin diagnosoima keuhkoahtaumatauti? Tietoa keuhkoahtaumataudista [Terveyskirjastossa](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00029)",
                     "type": "boolean",
                     "enableWhen": [{
@@ -673,7 +732,14 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "45",
+                    "code": [{
+                            "system": "urn:1.2.246.537.6.1",
+                            "display": "ICD-10",
+                            "code": "J45"
+                        }
+                    ],
                     "text": "Onko sinulla lääkärin diagnosoima astma? Tietoa astmasta [Terveyskirjastossa](www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00009)",
                     "type": "boolean",
                     "enableWhen": [{
@@ -693,6 +759,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "594",
                     "text": "Särkyä kasvojen etuosassa",
                     "type": "boolean",
@@ -705,7 +772,14 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "55",
+                    "code": [{
+                            "system": "urn:1.2.246.537.6.1",
+                            "display": "ICD-10",
+                            "code": "R49.0"
+                        }
+                    ],
                     "text": "Onko äänesi käheä?",
                     "type": "boolean",
                     "enableWhen": [{
@@ -717,6 +791,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "595",
                     "text": "Onko äänesi kokonaan poissa (puhe vain kuiskailua)",
                     "type": "boolean",
@@ -729,6 +804,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "596",
                     "text": "Kipua keskellä rintaa henkitorven seudussa hengittäessä",
                     "type": "boolean",
@@ -741,6 +817,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "597",
                     "text": "Pistosta muualla rinnassa kuin henkitorven seudussa",
                     "type": "boolean",
@@ -753,7 +830,14 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "592",
+                    "code": [{
+                            "system": "urn:1.2.246.537.6.1",
+                            "display": "ICD-10",
+                            "code": "H92.0"
+                        }
+                    ],
                     "text": "Onko sinulla korvakipua?",
                     "type": "boolean",
                     "enableWhen": [{
@@ -765,6 +849,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "83",
                     "text": "Millaista korvakipu on luonteeltaan eniten?",
                     "type": "choice",
@@ -813,6 +898,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "89",
                     "text": "Muut oireet samanaikaisesti korvakivun kanssa",
                     "type": "choice",
@@ -883,6 +969,7 @@
                         }
                     ]
                 }, {
+                    "required": true,
                     "linkId": "599",
                     "text": "Oireet lisääntyivät uudelleen sen jälkeen kun ne olivat jo lievittymässä",
                     "type": "boolean",
