@@ -45,15 +45,7 @@ spring:
     jpa:
        generate-ddl: true
        hibernate:
-              ddl-auto: update        
-       properties:
-           hibernate:
-              dialect: org.hibernate.dialect.DerbyTenSevenDialect
-    datasource:
-        url:  jdbc:derby:memory:odaDB;create=true;territory=FI_fi;collation=TERRITORY_BASED
-        username:
-        password:
-        driver-class-name: org.apache.derby.jdbc.EmbeddedDriver
+              ddl-auto: update
 ---
 spring:
     profiles: test

@@ -56,10 +56,9 @@ dependencies {
     compile("ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:${hapiVersion}:classes")
     compile("ca.uhn.hapi.fhir:hapi-fhir-testpage-overlay:${hapiVersion}@war")
     compile('org.apache.commons:commons-dbcp2:2.1.1')
-    compile('org.postgresql:postgresql:42.0.0')
-    compile('org.apache.derby:derby:10.13.1.1')
-    compile('org.apache.derby:derbynet:10.13.1.1')
-    compile('org.apache.derby:derbyclient:10.13.1.1')
+    runtime('org.postgresql:postgresql:42.0.0')
+    runtime('org.hsqldb:hsqldb')
+
    
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
