@@ -1,60 +1,56 @@
 {
-  "resourceType": "Questionnaire",
-  "language": "fi",
-  "version": "0.1",
-  "name": "henkiloKohtainenApu",
-  "title": "Oikeus henkilökohtaiseen apuun",
-  "status": "draft",
-  "date": "2017-06-08T00:00:00+03:00",
-  "description": "Arviointilomakeella arvoidaan asiakkaan mahdollisuutta saada henkilökohtaista apua.",
-  "item": [
-    {
-      "linkId": "1",
-      "text": "Tarvitsetko välttämättä toisen ihmisen apua kotona tapahtuvissa päivittäisissä toiminnoissa?",
-      "type": "boolean"
-    },
-    {
-      "linkId": "2",
-      "text": "Tarvitsetko välttämättä toisen ihmisen apua kodin ulkopuolella?",
-      "type": "boolean"
-    },
-    {
-      "linkId": "3",
-      "text": "Johtuuko avun tarpeesi pitkäaikaisesta tai etenevästä sairaudesta tai vammasta?",
-      "type": "boolean",
-      "enableWhen": [
-        {
-          "question": "1",
-          "answerBoolean": true
-        },
-        {
-          "question": "2",
-          "answerBoolean": true
+    "resourceType": "Questionnaire",
+    "language": "fi",
+    "version": "0.1",
+    "name": "henkiloKohtainenApu",
+    "title": "Oikeus henkilökohtaiseen apuun",
+    "status": "draft",
+    "date": "2017-06-08T00:00:00+03:00",
+    "description": "Arviointilomakeella arvoidaan asiakkaan mahdollisuutta saada henkilökohtaista apua.",
+    "item": [{
+            "linkId": "0",
+            "text": "Lomakeella arvoidaan mahdollisuutta saada henkilökohtaista apua.",
+            "type": "group",
+            "item": [{
+                    "linkId": "1",
+                    "text": "Tarvitsetko välttämättä toisen ihmisen apua kotona tapahtuvissa päivittäisissä toiminnoissa?",
+                    "type": "boolean"
+                }, {
+                    "linkId": "2",
+                    "text": "Tarvitsetko välttämättä toisen ihmisen apua kodin ulkopuolella?",
+                    "type": "boolean"
+                }, {
+                    "linkId": "3",
+                    "text": "Johtuuko avun tarpeesi pitkäaikaisesta tai etenevästä sairaudesta tai vammasta?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "1",
+                            "answerBoolean": true
+                        }, {
+                            "question": "2",
+                            "answerBoolean": true
+                        }
+                    ]
+                }, {
+                    "linkId": "4",
+                    "text": "Johtuuko avun tarpeesi ikääntymiseen liittyvistä sairauksista tai toimintarajoitteista?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "3",
+                            "answerBoolean": false
+                        }
+                    ]
+                }, {
+                    "linkId": "5",
+                    "text": "Osaatko ja pystytkö itse määrittelemään tarvitsemasi avun sisällön ja toteuttamistavan?",
+                    "type": "boolean",
+                    "enableWhen": [{
+                            "question": "4",
+                            "answerBoolean": true
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    },
-    {
-      "linkId": "4",
-      "text": "Johtuuko avun tarpeesi ikääntymiseen liittyvistä sairauksista tai toimintarajoitteista?",
-      "type": "boolean",
-      "enableWhen": [
-        {
-          "question": "3",
-          "answerBoolean": false
-        }
-      ]
-    },
-    {
-      "linkId": "5",
-      "text": "Osaatko ja pystytkö itse määrittelemään tarvitsemasi avun sisällön ja toteuttamistavan?",
-      "type": "boolean",
-      "enableWhen": [
-        {
-          "question": "4",
-          "answerBoolean": true
-        }
-      ]
-    }
-  ]
+    ]
 }
-
