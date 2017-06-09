@@ -14,7 +14,7 @@
     "title": "Hengitystietulehdusoireiden itsearvio",
     "text": {
         "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Hengitystietulehdusoireiden itsearvion kuvausteksti.</div>"
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Oirearvio auttaa sinua arvioimaan, voitko hoitaa hengitystietulehdusongelmasi itse</div>"
     },
     "extension": [{
             "url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
