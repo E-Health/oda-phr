@@ -61,12 +61,6 @@ public class Dstu3Config {
         result.add(new ResourceInjector("datasets/person-practitioner2.json",
                 "responses/person-practitioner2-response.json", true));
 
-        
-        result.add(new ResourceInjector("datasets/questionnaire-107-fixed.json",
-                "responses/questionnaire-107-fixed-response.json", true));
-        result.add(new ResourceInjector("datasets/Hengitystietulehdusoireiden_itsearvio_fixed.json",
-                "responses/Hengitystietulehdusoireiden_itsearvio_fixed-response.json", true));
-
         result.add(new ResourceInjector("datasets/PATIENT1/patient.json",
                 "responses/patient1-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT1/person.json",
@@ -80,7 +74,7 @@ public class Dstu3Config {
 
         result.add(new ResourceInjector("datasets/PATIENT1/careplan.json",
                 "responses/patient1-careplan-response.json", true));
-        
+
         int i;
         for (i = 1; i <= 7; i++) {
             result.add(new ResourceInjector("datasets/PATIENT1/observation" + i + ".json",
