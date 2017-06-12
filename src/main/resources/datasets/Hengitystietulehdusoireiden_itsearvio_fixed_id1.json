@@ -32,6 +32,11 @@
             "item": [{
                     "required": true,
                     "linkId": "3",
+                    "code": [{
+                            "system": "http://loinc.org",
+                            "code": "21612-7"
+                        }
+                    ],
                     "text": "Ikä (vuosia)",
                     "type": "decimal"
                 }, {
