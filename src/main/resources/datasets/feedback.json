@@ -1,0 +1,33 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "FEEDBACK1",
+  "meta": {
+    "profile": [
+      "http://oda.fi/StructureDefinition/Questionnaire/Feedback"
+    ]
+  },
+  "language": "fi",
+  "version": "0.0.1",
+  "title": "Palautelomake",
+  "status": "active",
+  "item": [
+    {
+      "linkId": "description",
+      "text": "Kuvaus",
+      "type": "text",
+      "required": true
+    },
+    {
+      "linkId": "name",
+      "text": "Ilmoittajan nimi",
+      "type": "string",
+      "required": false
+    },
+    {
+      "linkId": "email",
+      "text": "Sähköpostiosoite",
+      "type": "string",
+      "required": false
+    }
+  ]
+}
