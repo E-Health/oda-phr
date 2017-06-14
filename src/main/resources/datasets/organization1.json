@@ -1,6 +1,14 @@
 {
   "resourceType": "Organization",
   "id": "ORGANIZATION1",
+  "identifier": [
+    {
+      "use": "temp",
+      "system": "http://system.oda.fi/cname",
+      "value": "localhost"
+    }
+  ],
+
   "active": true,
   "type": [
     {
