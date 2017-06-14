@@ -12,8 +12,8 @@ server:
     contextPath: /phr
     tomcat:
       max-threads: 600
-      
-    
+
+
 spring:
     application:
         name: phr
@@ -46,26 +46,3 @@ spring:
        generate-ddl: true
        hibernate:
               ddl-auto: update
----
-spring:
-    profiles: test
-    jpa:
-       generate-ddl: true
-       hibernate:
-              #ddl-auto != update => Exceptions in start log when tables do not exist. Seems to work normally.
-              #Possible Hibernate bug 
-              ddl-auto: create-drop        
-       properties:
-           hibernate:
-              dialect: org.hibernate.dialect.PostgreSQL9Dialect
-
-    datasource:
-        url:  jdbc:postgresql://localhost:5432/oda-test
-        username: phr
-        driver-class-name: org.postgresql.Driver
-
-logging:
-    config: logback.xml
-
-app:
-    fhir-server.url: https://oda.medidemo.fi/api/fhir/fhir/
