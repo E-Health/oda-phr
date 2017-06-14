@@ -20,7 +20,7 @@ spring:
     thymeleaf:
         prefix: classpath:/WEB-INF/templates/
     profiles:
-        active: dstu3, dev
+        active: dev
     jpa:
        properties:
               format_sql: true

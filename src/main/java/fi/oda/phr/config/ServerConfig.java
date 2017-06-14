@@ -13,12 +13,10 @@ import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu3;
 import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu3;
 import ca.uhn.fhir.rest.server.interceptor.*;
 import fi.oda.phr.dataset.*;
-import fi.oda.phr.profiles.Dstu3Profile;
 import fi.oda.phr.validation.OdaValidatingInterceptor;
-@Dstu3Profile
 @Configuration
 @Import(BaseJavaConfigDstu3.class)
-public class Dstu3Config {
+public class ServerConfig {
 
     @Bean
     public RequestValidatingInterceptor validationInterceptor(){
