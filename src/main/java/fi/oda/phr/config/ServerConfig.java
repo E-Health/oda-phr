@@ -101,9 +101,8 @@ public class ServerConfig {
         result.add(new ResourceInjector("datasets/PATIENT2/episodeofcare.json",
                 "responses/patient2-episodeofcare-response.json", true));
 
-        result.add(new ResourceInjector("datasets/feedback.json",
-                "responses/feedback-response.json", true));
-        
+        result.add(new ResourceInjector("datasets/feedback-issue.json",
+                "responses/feedback-issue-response.json", true));
         
         //TODO add additional data sets here. Items will be inserted in the order they are put in the list.
         return result;

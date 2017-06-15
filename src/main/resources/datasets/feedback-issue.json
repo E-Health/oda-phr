@@ -1,12 +1,18 @@
 {
   "resourceType": "Questionnaire",
-  "id": "FEEDBACK1",
+  "id": "FEEDBACK-ISSUE-FI",
   "meta": {
     "profile": [
       "http://oda.fi/StructureDefinition/Questionnaire/Feedback"
     ]
   },
   "language": "fi",
+  "identifier": [
+    {
+      "system": "http://oda.fi/Questionnaire/Feedback/Type",
+      "value": "Issue"
+    }
+  ],
   "version": "0.0.1",
   "title": "Palautelomake",
   "status": "active",
@@ -19,12 +25,24 @@
     },
     {
       "linkId": "name",
+      "code": [
+        {
+          "system": "http://oda.fi/Questionnaire/ItemType",
+          "code": "Name"
+        }
+      ],
       "text": "Ilmoittajan nimi",
       "type": "string",
       "required": false
     },
     {
       "linkId": "email",
+      "code": [
+        {
+          "system": "http://oda.fi/Questionnaire/ItemType",
+          "code": "Email"
+        }
+      ],
       "text": "Sähköpostiosoite",
       "type": "string",
       "required": false
