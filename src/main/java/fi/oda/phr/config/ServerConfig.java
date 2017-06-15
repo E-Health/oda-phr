@@ -103,7 +103,8 @@ public class ServerConfig {
 
         result.add(new ResourceInjector("datasets/feedback-issue.json",
                 "responses/feedback-issue-response.json", true));
-        
+        result.add(new ResourceInjector("datasets/feedback-satisfaction.json",
+                "responses/feedback-satisfaction-response.json", true));
         //TODO add additional data sets here. Items will be inserted in the order they are put in the list.
         return result;
     }

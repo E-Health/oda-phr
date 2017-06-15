@@ -1,0 +1,61 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "FEEDBACK-SATISFACTION-FI",
+  "meta": {
+    "profile": [
+      "http://oda.fi/StructureDefinition/Questionnaire/Feedback"
+    ]
+  },
+  "language": "fi",
+  "identifier": [
+    {
+      "system": "http://oda.fi/Questionnaire/Feedback/Type",
+      "value": "Satisfaction"
+    }
+  ],
+  "version": "0.0.1",
+  "title": "Palautelomake",
+  "status": "active",
+  "item": [
+    {
+      "linkId": "email",
+      "type": "choice",
+      "required": true,
+      "option": [
+        {
+          "valueInteger": 10
+        },
+        {
+          "valueInteger": 9
+        },
+        {
+          "valueInteger": 8
+        },
+        {
+          "valueInteger": 7
+        },
+        {
+          "valueInteger": 6
+        },
+        {
+          "valueInteger": 5
+        },
+        {
+          "valueInteger": 4
+        },
+        {
+          "valueInteger": 3
+        },
+        {
+          "valueInteger": 2
+        },
+        {
+          "valueInteger": 1
+        },
+        {
+          "valueInteger": 0
+        }
+      ]
+    }
+  ]
+}
