@@ -4,7 +4,7 @@
   "identifier": [
     {
       "use": "temp",
-      "system": "http://system.oda.fi/cname",
+      "system": "http://oda.fi/Organization/CNAME",
       "value": "localhost"
     }
   ],
