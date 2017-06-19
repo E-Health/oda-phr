@@ -4,11 +4,10 @@
   "identifier": [
     {
       "use": "temp",
-      "system": "http://oda.fi/Organization/CNAME",
-      "value": "localhost"
+      "system": "https://oda.fi/Organization/CNAME",
+      "value": "oda.medidemo.fi"
     }
   ],
-
   "active": true,
   "type": [
     {
