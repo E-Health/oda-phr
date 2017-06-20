@@ -11,6 +11,11 @@
             "value": "107"
         }
     ],
+    "meta": {
+        "profile": [
+          "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+        ]
+    },
     "title": "Hengitystietulehdusoireiden itsearvio",
     "text": {
         "status": "generated",
