@@ -12,7 +12,7 @@
     "subject": {
         "reference": "Patient/PATIENT2"
     },
-    "topic": [{
+    "basedOn": [{
         "reference": "CarePlan/CAREPLAN1-PATIENT2"
     }],
     "sent": "2016-12-12T18:01:10-08:00",
