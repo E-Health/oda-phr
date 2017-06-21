@@ -16,7 +16,7 @@
   "version": "0.0.1",
   "title": "Palautelomake",
   "status": "active",
-  "item": [
+  "item": [  
     {
       "linkId": "satisfaction",
       "type": "choice",
@@ -56,6 +56,12 @@
           "valueInteger": 0
         }
       ]
+    },
+    {
+      "linkId": "comment",
+      "text": "Kommentti",
+      "type": "text",
+      "required": false
     }
   ]
 }
