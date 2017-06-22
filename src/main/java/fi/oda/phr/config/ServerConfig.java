@@ -75,6 +75,8 @@ public class ServerConfig {
 
         result.add(new ResourceInjector("datasets/PATIENT1/careplan.json",
                 "responses/patient1-careplan-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT1/communication.json",
+                "responses/patient1-communication-response.json", true));
 
         int i;
         for (i = 1; i <= 7; i++) {
