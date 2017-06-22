@@ -16,7 +16,18 @@
   "version": "0.0.1",
   "title": "Palautelomake",
   "status": "active",
-  "item": [  
+  "item": [
+    {
+      "linkId": "comment",
+      "text": "Kommentti",
+      "type": "display",
+      "_type": {
+        "extension": [{
+          "url": "https://duodecim.fi/fhir/extensions/item-type",
+          "valueString": "subtitle"
+        }]
+      }
+    },
     {
       "linkId": "satisfaction",
       "type": "choice",
@@ -56,12 +67,6 @@
           "valueInteger": 0
         }
       ]
-    },
-    {
-      "linkId": "comment",
-      "text": "Kommentti",
-      "type": "text",
-      "required": false
     }
   ]
 }
