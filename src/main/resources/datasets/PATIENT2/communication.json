@@ -5,12 +5,13 @@
         "status": "generated",
         "div": "<div>You are progressing well! Good work!</div>"
     },        
-    "status": "completed",
+    "status": "in-progress",
     "category": [{        
         "text": "oda-careplan-comment"
     }],    
     "subject": {
-        "reference": "Patient/PATIENT2"
+        "reference": "Patient/PATIENT2",
+        "display" : "adf"
     },
     "basedOn": [{
         "reference": "CarePlan/CAREPLAN1-PATIENT2"
@@ -24,7 +25,7 @@
         "reference": "Patient/PATIENT2"
     }],   
     "payload": [{
-        "contentString": "You are progressing well! Good work!"
+        "contentString": "You are well!"
     }]
 
 }

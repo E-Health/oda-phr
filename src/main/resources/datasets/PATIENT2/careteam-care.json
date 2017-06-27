@@ -21,10 +21,15 @@
         "reference": "Practitioner/PRACTITIONER1",
         "display": "Pekka Pakarinen"
       }
+    },
+    {
+      "role": {
+        "text": "Hoitava terveysasema"
+      },
+      "member": {
+        "reference": "Organization/ORGANIZATION1",
+        "display": "Meilahti Tower Hospital"
+      }
     }
-  ],
-  "managingOrganization" : [{
-    "reference": "Organization/ORGANIZATION1",
-    "display" : "Meilahti Tower Hospital"
-  }]
+  ]
 }
