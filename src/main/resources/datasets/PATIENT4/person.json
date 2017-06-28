@@ -1,0 +1,51 @@
+{
+	"resourceType" : "Person",
+	"id" : "PERSON4",
+	"identifier": [
+        {
+          "system": "urn:oid:1.2.246.21",
+          "value": "110291-120F"
+        }
+    ],
+    "name": [
+      {
+        "text": "Paavo Potilas",
+        "family": "Potilas",
+        "given": [
+          "Paavo"
+        ]
+      }
+    ],
+    "address": [
+      {
+        "line": [
+          "Torikatu 2"
+        ],
+        "city": "Helsinki",
+        "postalCode": "00120",
+        "country": "Suomi"
+      }
+    ],
+    "active": true,
+    "telecom": [
+        {
+            "use": "home"
+        },
+        {
+            "system": "phone",
+            "value": "(044) 1029345",
+            "use": "work"
+        }
+    ],
+    "gender": "male",
+    "birthDate": "1991-02-11",
+    "link":[
+        {   
+            "target":{
+                "reference": "Patient/PATIENT4",
+                "display" : "Paavo Potilas"
+            }         
+        }
+    ]
+      
+}

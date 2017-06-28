@@ -103,18 +103,30 @@ public class ServerConfig {
         result.add(new ResourceInjector("datasets/PATIENT2/careteam-care.json",
                "responses/patient2-careteam-care-response.json", true));
 
+        result.add(new ResourceInjector("datasets/careteam3-authorization.json",
+                "responses/careteam3-authorization-response.json", true));
+
         result.add(new ResourceInjector("datasets/PATIENT3/patient.json",
                 "responses/patient3-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT3/person.json",
                 "responses/person3-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT3/episodeofcare.json",
                 "responses/patient3-episodeofcare-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT3/careteam-authorization.json",
-                "responses/patient3-careteam-authorization-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT3/careplan.json",
                 "responses/patient3-careplan-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT3/careteam-care.json",
                 "responses/patient3-careteam-care-response.json", true));
+
+        result.add(new ResourceInjector("datasets/PATIENT4/patient.json",
+                "responses/patient4-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT4/person.json",
+                "responses/person3-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT4/episodeofcare.json",
+                "responses/patient4-episodeofcare-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT4/careplan.json",
+                "responses/patient4-careplan-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT4/careteam-care.json",
+                "responses/patient4-careteam-care-response.json", true));
 
         result.add(new ResourceInjector("datasets/feedback-issue.json",
                 "responses/feedback-issue-response.json", true));

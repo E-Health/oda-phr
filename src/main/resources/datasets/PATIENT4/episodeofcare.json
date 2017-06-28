@@ -1,0 +1,16 @@
+{
+  "resourceType": "EpisodeOfCare",
+  "id": "EPISODEOFCARE1-PATIENT4",
+  "status": "active",
+  "patient": {
+    "reference": "Patient/PATIENT4"
+  },
+  "careManager": {
+    "reference": "Practitioner/PRACTITIONER1"
+  },
+  "team": [
+    {
+      "reference": "CareTeam/CARETEAM4-CARE"
+    }
+  ]
+}
