@@ -1,0 +1,50 @@
+{
+    "resourceType" : "Person",
+    "id" : "PERSON-PRACTITIONER3",
+    "identifier": [
+        {
+          "value": "010170-960F"
+        }
+    ],
+    "name": [
+      {
+        "text": "Maija Meikäläinen",
+        "family": "Meikäläinen",
+        "given": [
+          "Maijai"
+        ]
+      }
+    ],
+    "address": [
+      {
+        "line": [
+          "Talvelantie 4"
+        ],
+        "city": "Helsinki",
+        "postalCode": "00700",
+        "country": "FI"
+      }
+    ],
+    "active": true,
+    "telecom": [
+        {
+            "use": "home"
+        },
+        {
+            "system": "phone",
+            "value": "(050) 1234567",
+            "use": "work"
+        }
+    ],
+    "gender": "female",
+    "birthDate": "1970-01-01",
+    "link":[
+        {   
+            "target":{
+                "reference": "Practitioner/PRACTITIONER3",
+                "display" : "Maija Meikäläinen"
+            }         
+        }
+    ]
+      
+}

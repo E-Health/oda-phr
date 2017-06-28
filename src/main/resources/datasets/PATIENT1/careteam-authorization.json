@@ -15,13 +15,22 @@
   "participant": [
     {
       "role": {
-        "text": "Hoitava lääkäri"
+        "text": "Hoitava ortopedi"
       },
       "member": {
         "reference": "Practitioner/PRACTITIONER2",
         "display": "Lasse Lääkäri"
       }
     },
+    {
+      "role": {
+        "text": "Hoitava endokrinologi"
+      },
+      "member": {
+        "reference": "Practitioner/PRACTITIONER3",
+        "display": "Maija Meikäläinen"
+      }
+    },    
     {
       "role": {
         "text": "Hoitava terveysasema"

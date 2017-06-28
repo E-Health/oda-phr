@@ -61,6 +61,10 @@ public class ServerConfig {
                 "responses/practitioner2-response.json", true));
         result.add(new ResourceInjector("datasets/person-practitioner2.json",
                 "responses/person-practitioner2-response.json", true));
+        result.add(new ResourceInjector("datasets/practitioner3.json",
+                "responses/practitioner3-response.json", true));
+        result.add(new ResourceInjector("datasets/person-practitioner3.json",
+                "responses/person-practitioner3-response.json", true));
 
         result.add(new ResourceInjector("datasets/PATIENT1/patient.json",
                 "responses/patient1-response.json", true));
