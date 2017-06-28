@@ -49,8 +49,6 @@ public class ServerConfig {
         result.add(new ResourceInjector("datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json",
                 "responses/Oikeus_henkilokohtaiseen_apuun-response.json", false));
 
-        result.add(new BundleInjector("datasets/patient-bundle.json",
-                "responses/patient-bundle-response.json"));
         result.add(new ResourceInjector("datasets/organization1.json",
                 "responses/organization1-response.json", true));
         result.add(new ResourceInjector("datasets/practitioner1.json",
@@ -104,8 +102,19 @@ public class ServerConfig {
                 "responses/patient2-communication-response.json", true));
         result.add(new ResourceInjector("datasets/PATIENT2/careteam-care.json",
                "responses/patient2-careteam-care-response.json", true));
-        result.add(new ResourceInjector("datasets/PATIENT2/episodeofcare.json",
-                "responses/patient2-episodeofcare-response.json", true));
+
+        result.add(new ResourceInjector("datasets/PATIENT3/patient.json",
+                "responses/patient3-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT3/person.json",
+                "responses/person3-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT3/episodeofcare.json",
+                "responses/patient3-episodeofcare-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT3/careteam-authorization.json",
+                "responses/patient3-careteam-authorization-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT3/careplan.json",
+                "responses/patient3-careplan-response.json", true));
+        result.add(new ResourceInjector("datasets/PATIENT3/careteam-care.json",
+                "responses/patient3-careteam-care-response.json", true));
 
         result.add(new ResourceInjector("datasets/feedback-issue.json",
                 "responses/feedback-issue-response.json", true));

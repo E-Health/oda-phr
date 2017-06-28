@@ -1,0 +1,26 @@
+{
+  "resourceType": "CareTeam",
+  "id" : "CARETEAM3-AUTHORIZATION",
+  "category" : [{
+    "coding" : [{
+        "system" : "http://oda",
+        "code": "Authorization"
+    }],
+    "text" : "Authorization"
+  }],
+  "period": {
+    "end": "2017-05-01"
+  },  
+  "name": "Hoitotiimi",
+  "participant": [
+    {
+      "role": {
+        "text": "Hoitava lääkäri"
+      },
+      "member": {
+        "reference": "Practitioner/PRACTITIONER1",
+        "display": "Pekka Pakarinen"
+      }
+    }
+  ]
+}

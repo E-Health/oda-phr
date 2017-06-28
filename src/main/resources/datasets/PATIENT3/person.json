@@ -1,0 +1,51 @@
+{
+	"resourceType" : "Person",
+	"id" : "PERSON3",
+	"identifier": [
+        {
+          "system": "urn:oid:1.2.246.21",
+          "value": "010170-960F"
+        }
+    ],
+    "name": [
+      {
+        "text": "Seppo Sairanen",
+        "family": "Sairanen",
+        "given": [
+          "Seppo"
+        ]
+      }
+    ],
+    "address": [
+      {
+        "line": [
+          "Nuhakatu 2"
+        ],
+        "city": "Helsinki",
+        "postalCode": "00120",
+        "country": "Suomi"
+      }
+    ],
+    "active": true,
+    "telecom": [
+        {
+            "use": "home"
+        },
+        {
+            "system": "phone",
+            "value": "(044) 22335s67",
+            "use": "work"
+        }
+    ],
+    "gender": "male",
+    "birthDate": "1964-01-01",
+    "link":[
+        {   
+            "target":{
+                "reference": "Patient/PATIENT3",
+                "display" : "Seppo Sairanen"
+            }         
+        }
+    ]
+      
+}
