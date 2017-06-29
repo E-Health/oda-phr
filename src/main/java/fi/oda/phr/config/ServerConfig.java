@@ -49,6 +49,8 @@ public class ServerConfig {
         result.add(new ResourceInjector("datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json",
                 "responses/Oikeus_henkilokohtaiseen_apuun-response.json", false));
 
+        result.add(new ResourceInjector("datasets/location1.json",
+                "responses/location1-response.json", true));
         result.add(new ResourceInjector("datasets/organization1.json",
                 "responses/organization1-response.json", true));
         result.add(new ResourceInjector("datasets/practitioner1.json",
