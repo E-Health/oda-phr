@@ -53,6 +53,9 @@ public class ServerConfig {
                 "responses/location1-response.json", true));
         result.add(new ResourceInjector("datasets/organization1.json",
                 "responses/organization1-response.json", true));
+        result.add(new ResourceInjector("datasets/healthcareservice1.json",
+                "responses/healthcareservice1-response.json", true));
+
         result.add(new ResourceInjector("datasets/practitioner1.json",
                 "responses/practitioner1-response.json", true));
         result.add(new ResourceInjector("datasets/person-practitioner1.json",

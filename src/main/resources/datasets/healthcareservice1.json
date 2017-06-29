@@ -1,0 +1,25 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "HEALTHCARESERVICE1",
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "urn:oid:1.2.246.537.6.49",
+          "code": "ADA001"
+        }
+      ]
+    }
+  ],
+  "name": "Yleislääkärin päivystyksen palvelut",
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/ORGANIZATION1"
+  },
+  "location": [
+    {
+      "reference": "Location/LOCATION1"
+    }
+  ],
+  "appointmentRequired": true
+}
