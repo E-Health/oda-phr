@@ -15,14 +15,19 @@ server:
 app:
     data:
         feed_on_start: true
-        resources: 
+        resources:               
             hengitystieoirearvio:
                file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
                use_update: false
                #Note: use_update defaults to true if not defined
-               #      injector defaults to fi.oda.phr.dataset.ResourceInjector if not defined
+               injector: fi.oda.phr.dataset.ResourceInjector
                #      priority and file must be defined. They have no default values.
                priority: 0 
+
+           # communication_profile:
+           #    file: profiles/ODA-Communication.structuredefinition.xml
+           #    use_update: false
+           #    priority: 1
                
             oikeus_apuun:
                file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json

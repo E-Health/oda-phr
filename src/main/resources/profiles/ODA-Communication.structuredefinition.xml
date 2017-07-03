@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <meta>
+    <lastUpdated value="2017-05-18T10:22:04.516+03:00" />
+  </meta>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="pc" />
+  </extension>
+  <url value="StructureDefinition/MyCommunication" />
+  <name value="ODA-Communication" />
+  <status value="draft" />
+  <date value="2017-05-18T10:15:57.8267927+03:00" />
+  <fhirVersion value="3.0.0" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Communication" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Communication" />
+  <derivation value="constraint" />
+  <differential>
+    <element>
+      <path value="Communication.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.definition" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.basedOn" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.partOf" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.notDone" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.notDoneReason" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.category" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element>
+      <path value="Communication.category.coding.system" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.category.coding.code" />
+      <min value="1" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Communication.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Communication.category.text" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.medium" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.subject" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Communication.subject.display" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.recipient" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.topic" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.topic.reference" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.topic.identifier" />
+      <max value="0" />
+    </element>
+    <element>
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Communication.topic.display" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.context" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.sent" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.received" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.sender" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.reasonCode" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.reasonReference" />
+      <max value="0" />
+    </element>
+    <element>
+      <path value="Communication.payload" />
+      <min value="1" />
+    </element>
+    <element>
+      <path value="Communication.payload.contentString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element>
+      <path value="Communication.note" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -40,7 +40,14 @@ public class ResourceInjector implements DataInjector {
         log.info("About to inject: " + sourceFile + " for item " + setName);
         final FhirContext ctx = FhirContext.forDstu3();
         ctx.setParserErrorHandler(new StrictErrorHandler());
-        final IParser parser = ctx.newJsonParser();
+        final IParser parser;
+        String[] splitFileName = sourceFile.split("\\.");
+        if (splitFileName.length > 1 && splitFileName[splitFileName.length - 1].equalsIgnoreCase("xml")) {
+            parser = ctx.newXmlParser();
+        }
+        else {
+            parser = ctx.newJsonParser();
+        }
         parser.setPrettyPrint(true);
 
         IBaseResource resource;
