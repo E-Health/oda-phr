@@ -115,14 +115,6 @@ app:
            file: datasets/PATIENT1/observation7.json
            priority: 22
 
-        patient1-communication-notification1:
-           file: datasets/PATIENT1/communication-notification1.json
-           priority: 23
-           
-        patient1-communication-notification2:
-           file: datasets/PATIENT1/communication-notification2.json
-           priority: 24      
-
         patient2:
            file: datasets/PATIENT2/patient.json
            priority: 25
