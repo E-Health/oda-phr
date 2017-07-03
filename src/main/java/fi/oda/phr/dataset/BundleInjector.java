@@ -1,25 +1,18 @@
 package fi.oda.phr.dataset;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.io.Writer;
+import java.io.*;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Map;
 
 import org.hl7.fhir.dstu3.model.Bundle;
-import org.hl7.fhir.dstu3.model.Patient;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 import org.springframework.core.io.ClassPathResource;
 
 import ca.uhn.fhir.context.FhirContext;
-import ca.uhn.fhir.parser.IParser;
-import ca.uhn.fhir.parser.StrictErrorHandler;
+import ca.uhn.fhir.parser.*;
 import ca.uhn.fhir.rest.client.IGenericClient;
+import fi.oda.phr.config.DataConfig;
 
 /**
  * Reads a FHIR resource bundle (transaction) from the classpath and sends it to the server
@@ -32,17 +25,16 @@ public class BundleInjector implements DataInjector {
     //Bundle is read from this file (Must be available in the classpath)
     public final String sourceFile;
 
-    //Response is written to this file
-    private final String responseFile;
+    private final String setName;
 
-    public BundleInjector(String sourceFile, String responseFile) {
-
-        this.sourceFile = sourceFile;
-        this.responseFile = responseFile;
+    public BundleInjector(String setName, Map<String, String> parameters) {
+        this.sourceFile = parameters.get(DataConfig.SET_FILE);
+        this.setName = setName;
     }
 
     @Override
     public void inject(IGenericClient client) {
+        log.info("About to inject: " + sourceFile + " for item " + setName);
         final FhirContext ctx = FhirContext.forDstu3();
         ctx.setParserErrorHandler(new StrictErrorHandler());
         final IParser parser = ctx.newJsonParser();        
@@ -53,19 +45,10 @@ public class BundleInjector implements DataInjector {
             bundle = parser.parseResource(Bundle.class, reader);
         }
         catch (final IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Unable to read file", e);
         }
-        final Bundle result = client.transaction().withBundle(bundle).execute();
-        try {
-            Files.createDirectories(Paths.get(responseFile).getParent());
-            try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(responseFile))) {
-                parser.encodeResourceToWriter(result, writer);
-                parser.encodeResourceToWriter(result, new PrintWriter(System.out));
-            }
-        }
-        catch (final IOException e) {
-            throw new RuntimeException(e);
-        }
+        client.transaction().withBundle(bundle).execute();
+        log.info("Finished injecting: " + sourceFile);
     }
 
 }

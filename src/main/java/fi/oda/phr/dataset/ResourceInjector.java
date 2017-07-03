@@ -1,98 +1,61 @@
 package fi.oda.phr.dataset;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Map;
 
 import org.hl7.fhir.instance.model.api.IBaseResource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 import org.springframework.core.io.ClassPathResource;
 
 import ca.uhn.fhir.context.FhirContext;
-import ca.uhn.fhir.parser.IParser;
-import ca.uhn.fhir.parser.StrictErrorHandler;
-import ca.uhn.fhir.rest.api.MethodOutcome;
+import ca.uhn.fhir.parser.*;
 import ca.uhn.fhir.rest.client.IGenericClient;
+import fi.oda.phr.config.DataConfig;
 
 /**
- * Reads a FHIR resource bundle (transaction) from the classpath and sends it to the server
+ * Reads a FHIR resource bundle from the classpath and sends it to the server
  *
  */
 public class ResourceInjector implements DataInjector {
 
     private final Logger log = LoggerFactory.getLogger(ResourceInjector.class);
 
-    //Bundle is read from this file (Must be available in the classpath)
+    //Resource is read from this file (Must be available in the classpath)
     public final String sourceFile;
-
-    //Response is written to this file
-    private final String responseFile;
 
     private final boolean useUpdate;
 
-    private final boolean useJson;
-
-    public ResourceInjector(String sourceFile, String responseFile, boolean useUpdate) {
-        this.useUpdate = useUpdate;
-        this.sourceFile = sourceFile;
-        this.responseFile = responseFile;
-        this.useJson = true;
+    private final String setName;
+    public ResourceInjector(String setName, Map<String, String> parameters) {
+        this.setName = setName;
+        this.sourceFile = parameters.get(DataConfig.SET_FILE);
+        useUpdate = Boolean.parseBoolean(parameters.get(DataConfig.INJECTOR_PROP_USE_UPDATE));
     }
 
-    public ResourceInjector(String sourceFile, String responseFile, boolean useUpdate, boolean useJson) {
-        this.useUpdate = useUpdate;
-        this.sourceFile = sourceFile;
-        this.responseFile = responseFile;
-        this.useJson = useJson;
-    }
 
     @Override
     public void inject(IGenericClient client) {
-        log.info("About to inject: " + sourceFile);
+        log.info("About to inject: " + sourceFile + " for item " + setName);
         final FhirContext ctx = FhirContext.forDstu3();
         ctx.setParserErrorHandler(new StrictErrorHandler());
-        final IParser parser;
-
-        if (useJson) {
-            parser = ctx.newJsonParser();
-        }
-        else {
-            parser = ctx.newXmlParser();
-        }
-
+        final IParser parser = ctx.newJsonParser();
         parser.setPrettyPrint(true);
+
         IBaseResource resource;
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new ClassPathResource(Paths.get(sourceFile).toString()).getInputStream(), Charset.forName("UTF-8")))) {
             resource = parser.parseResource(reader);
         }
         catch (final IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Unable to read data file", e);
         }
-        final MethodOutcome result;
         if (useUpdate) {
-            result = client.update().resource(resource).execute();
+            client.update().resource(resource).execute();
         }
         else {
-            result = client.create().resource(resource).prettyPrint().encodedJson().execute();
-        }
-        if (log.isDebugEnabled()) {
-
-        }
-        try {
-
-            Files.createDirectories(Paths.get(responseFile).getParent());
-            try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(responseFile))) {
-                parser.encodeResourceToWriter(result.getOperationOutcome(), writer);
-            }
-        }
-        catch (final IOException e) {
-            throw new RuntimeException(e);
+            client.create().resource(resource).prettyPrint().encodedJson().execute();
         }
         log.info("Finished injecting: " + sourceFile);
     }
