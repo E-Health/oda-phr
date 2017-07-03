@@ -36,10 +36,13 @@ public class DatasetInitializer implements ApplicationListener<ApplicationReadyE
 
     private final String useUpdateDefault = "true";
 
+    private boolean runDataOnStart = false;
     public DatasetInitializer(JpaServer server, FhirConfig config, @Value("${server.port}") String port,
-            @Value("${server.contextPath}") String contextPath, DataConfig dataConfig)
+            @Value("${server.contextPath}") String contextPath, DataConfig dataConfig,
+            @Value("${app.data.feed_on_start}") String runDataOnStart)
             throws ClassNotFoundException, NoSuchMethodException, SecurityException,
             InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        this.runDataOnStart = Boolean.valueOf(runDataOnStart);
         this.config = config;
         this.serverAddress = "http://localhost:" + port + "/" + contextPath + "/" + config.path;
         this.server = server;
@@ -71,6 +74,13 @@ public class DatasetInitializer implements ApplicationListener<ApplicationReadyE
      */
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
+        if (!runDataOnStart) {
+            return;
+        }
+        feedData();
+    }
+
+    public void feedData() {
         final IRestfulClientFactory factory = server.getFhirContext().getRestfulClientFactory();
         factory.setConnectTimeout(config.timeout);
         factory.setConnectionRequestTimeout(config.timeout);

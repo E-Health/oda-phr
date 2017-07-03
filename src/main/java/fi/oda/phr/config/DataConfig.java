@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "app")
+@ConfigurationProperties(prefix = "app.data")
 public class DataConfig {
     public static final String SET_DESCRIPTION = "description";
 
@@ -22,18 +22,18 @@ public class DataConfig {
 
     public static final String INJECTOR_PROP_USE_UPDATE = "use_update";
 
-    private Map<String, Map<String, String>> data;
+    private Map<String, Map<String, String>> resources;
 
-    public Map<String, Map<String, String>> getData() {
-        return data;
+    public Map<String, Map<String, String>> getResources() {
+        return resources;
     }
     
-    public void setData(Map<String, Map<String, String>> data) {
-        this.data = data;
+    public void setResources(Map<String, Map<String, String>> resources) {
+        this.resources = resources;
     }
 
     public List<String> getDatasetKeysByPriority() {
-        return data.entrySet()
+        return resources.entrySet()
                 .stream()
                 .sorted(
                         new Comparator<Map.Entry<String, Map<String, String>>>() {
@@ -56,19 +56,19 @@ public class DataConfig {
     }
 
     public Map<String, String> getDatasetProperties(String setKey) {
-        return data.get(setKey);
+        return resources.get(setKey);
     }
 
     public String getDatasetFile(String setKey) {
-        return data.get(setKey).get(DataConfig.SET_FILE);
+        return resources.get(setKey).get(DataConfig.SET_FILE);
     }
 
     public String getInjectorClass(String setKey) {
-        return data.get(setKey).get(DataConfig.SET_INJECTOR_CLASS);
+        return resources.get(setKey).get(DataConfig.SET_INJECTOR_CLASS);
     }
 
     public Integer getPriority(String setKey) {
-        return Integer.valueOf(data.get(setKey).get(DataConfig.SET_PRIORITY));
+        return Integer.valueOf(resources.get(setKey).get(DataConfig.SET_PRIORITY));
     }
 
 }
