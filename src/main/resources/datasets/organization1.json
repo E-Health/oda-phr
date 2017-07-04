@@ -4,11 +4,6 @@
   "identifier": [
     {
       "use": "temp",
-      "system": "https://oda.fi/Organization/CNAME",
-      "value": "oda.medidemo.fi"
-    },
-    {
-      "use": "temp",
       "system": "urn:oid:1.2.246.537.6.202.2008",
       "value": "1.2.246.10.0.10.0"
     }
