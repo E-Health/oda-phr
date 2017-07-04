@@ -14,247 +14,241 @@ server:
       max-threads: 600
 app:
     data:
-        feed_on_start: true
+        feed_on_start: false
         resources:               
             hengitystieoirearvio:
                file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
                use_update: false
                #Note: use_update defaults to true if not defined
                injector: fi.oda.phr.dataset.ResourceInjector
-               #      priority and file must be defined. They have no default values.
-               priority: -1
-
-           # communication_profile:
-           #    file: profiles/ODA-Communication.structuredefinition.xml
-           #    use_update: false
-           #    priority: 1
-               
+               #      order and file must be defined. They have no default values.
+               order: -1
 
             activitydefinition-rfc:
                file: profiles/ODA-ActivityDefinition.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             careplan-rfc:
                file: profiles/ODA-CarePlan.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             careteam-rfc:
                file: profiles/ODA-CareTeam.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             communication-rfc:
                file: profiles/ODA-Communication.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             episodeofcare-rfc:
                file: profiles/ODA-EpisodeOfCare.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             goal-rfc:
                file: profiles/ODA-Goal.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             medicationstatement-rfc:
                file: profiles/ODA-MedicationStatement.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             observation-rfc:
                file: profiles/ODA-Observation.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             organization-rfc:
                file: profiles/ODA-Organization.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             person-rfc:
                file: profiles/ODA-Person.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             practitioner-rfc:
                file: profiles/ODA-Practitioner.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             questionnaire-rfc:
                file: profiles/ODA-Questionnaire.profile.xml
                use_update: false
-               priority: 1
+               order: 0
             questionnaireresponse-rfc:
                file: profiles/ODA-QuestionnaireResponse.profile.xml
                use_update: false
-               priority: 1
+               order: 0
 
             oikeus_apuun:
                file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
                use_update: false           
-               priority: 1
+               order: 1
                
             location1:
                file: datasets/location1.json
-               priority: 2
+               order: 2
     
             organization1:
                file: datasets/organization1.json
-               priority: 3
+               order: 3
                
             healthcareservice1:
                file: datasets/healthcareservice1.json
-               priority: 4
+               order: 4
                
             practitioner1:
                file: datasets/practitioner1.json
-               priority: 5
+               order: 5
                
             practitioner2:
                file: datasets/practitioner2.json
-               priority: 6
+               order: 6
     
             practitioner3:
                file: datasets/practitioner3.json
-               priority: 7
+               order: 7
                           
             person-practitioner2:
                file: datasets/person-practitioner2.json
-               priority: 8
+               order: 8
     
             person-practitioner3:
                file: datasets/person-practitioner3.json
-               priority: 9
+               order: 9
     
             patient1:
                file: datasets/PATIENT1/patient.json
-               priority: 10
+               order: 10
     
             patient1-person:
                file: datasets/PATIENT1/person.json
-               priority: 11
+               order: 11
     
             patient1-careteam-authorization:
                file: datasets/PATIENT1/careteam-authorization.json
-               priority: 12
+               order: 12
     
             patient1-careteam-care:
                file: datasets/PATIENT1/careteam-care.json
-               priority: 13
+               order: 13
     
             patient1-episodeofcare:
                file: datasets/PATIENT1/episodeofcare.json
-               priority: 14
+               order: 14
     
             patient1-careplan:
                file: datasets/PATIENT1/careplan.json
-               priority: 15
+               order: 15
     
             patient1-communication:
                file: datasets/PATIENT1/communication.json
-               priority: 16
+               order: 16
             
             patient1-observation1:
                file: datasets/PATIENT1/observation1.json
-               priority: 16
+               order: 16
     
             patient1-observation2:
                file: datasets/PATIENT1/observation2.json
-               priority: 17
+               order: 17
                
             patient1-observation3:
                file: datasets/PATIENT1/observation3.json
-               priority: 18
+               order: 18
                
             patient1-observation4:
                file: datasets/PATIENT1/observation4.json
-               priority: 19
+               order: 19
                
             patient1-observation5:
                file: datasets/PATIENT1/observation5.json
-               priority: 20
+               order: 20
                
             patient1-observation6:
                file: datasets/PATIENT1/observation6.json
-               priority: 21                    
+               order: 21                    
     
             patient1-observation7:
                file: datasets/PATIENT1/observation7.json
-               priority: 22
+               order: 22
     
             patient2:
                file: datasets/PATIENT2/patient.json
-               priority: 25
+               order: 25
     
             patient2-person:
                file: datasets/PATIENT2/person.json
-               priority: 26
+               order: 26
     
             patient2-observation:
                file: datasets/PATIENT2/observation.json
-               priority: 27
+               order: 27
     
             patient2-episodeofcare:
                file: datasets/PATIENT2/episodeofcare.json
-               priority: 28
+               order: 28
     
             patient2-careteam-authorization:
                file: datasets/PATIENT2/careteam-authorization.json
-               priority: 29
+               order: 29
     
             patient2-careplan:
                file: datasets/PATIENT2/careplan.json
-               priority: 30
+               order: 30
                
             patient2-communication:
                file: datasets/PATIENT2/communication.json
-               priority: 31
+               order: 31
                
             patient2-careteam-care:
                file: datasets/PATIENT2/careteam-care.json
-               priority: 32
+               order: 32
                                      
             careteam3-authorization:
                file: datasets/careteam3-authorization.json
-               priority: 33
+               order: 33
     
             patient3:
                file: datasets/PATIENT3/patient.json
-               priority: 34
+               order: 34
                
             patient3-person:
                file: datasets/PATIENT3/person.json
-               priority: 35
+               order: 35
                
             patient3-episodeofcare:
                file: datasets/PATIENT3/episodeofcare.json
-               priority: 36
+               order: 36
     
             patient3-careplan:
                file: datasets/PATIENT3/careplan.json
-               priority: 37
+               order: 37
     
             patient3-careteam-care:
                file: datasets/PATIENT3/careteam-care.json
-               priority: 38
+               order: 38
     
             patient4:
                file: datasets/PATIENT4/patient.json
-               priority: 39
+               order: 39
     
             patient4-episodeofcare:
                file: datasets/PATIENT4/episodeofcare.json
-               priority: 40
+               order: 40
     
             patient4-careplan:
                file: datasets/PATIENT4/careplan.json
-               priority: 41
+               order: 41
     
             patient4-careteam-care:
                file: datasets/PATIENT4/careteam-care.json
-               priority: 42
+               order: 42
     
             patient4-feedback-issue:
                file: datasets/feedback-issue.json
-               priority: 43
+               order: 43
             
             patient4-feedback-satisfaction:
                file: datasets/feedback-satisfaction.json
-               priority: 44
+               order: 44
 
 
 spring:

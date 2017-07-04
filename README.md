@@ -1,8 +1,6 @@
 # ODA PHR
 
-This project contains a server for persisting and manipulating FHIR resources.
-The server provides CRUD operations with REST interfaces according to the FHIR
-specification. In development mode data is stored in a Derby database.
+This project contains a server for persisting and manipulating FHIR resources. The server provides CRUD operations with REST interfaces according to the FHIR  specification.
 
 [![Dependency Status](https://www.versioneye.com/user/projects/58ef3c3673eac40052fd19ad/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/58ef3c3673eac40052fd19ad)
 
@@ -17,68 +15,41 @@ This creates oda-phr.jar under build/libs.
 
 ## Running
 
-Starting in dstu3 mode:
+The server can be started with the following command:
 
-    java -jar oda-phr.jar -Dspring.profiles.active=dstu3
-
-Starting in dstu2 mode (deprecated):
-
-    java -jar oda-phr.jar -Dspring.profiles.active=dstu2
-
-
+    java -jar oda-phr.jar
+    
 Hapi server web interface: http://localhost:6083/phr/
 
-## Database
-ODA PHR uses an in-memory database, which is cleared every time the server is
-rebooted. A disk-based database can be used by changing the configuration:
+
+## Initial data        
+The database of the server can be initialized with data when the server starts. Alternatively, data initialization can be triggered manually with a REST interface. This is configured in the program settings in application.yml.
 
 ```yml
-spring:
-    datasource:
-        url: jdbc:derby:directory:build/jpaserver_derby_files;create=true   
+app:
+    data:
+        feed_on_start: true
+        resources:
+             practitioner1:
+                 file: datasets/practitioner1.json
+                 injector: fi.oda.phr.dataset.ResourceInjector
+                 use_update: true
+                 order: 5
+                       
 ```
 
-## Data sets        
-Data can be injected in to the database when the server is started. This
-behavior is configured with the "datasets" bean in Dstu2Config and Dstu3Config.
+If feed_on_start is set to true, data will be inserted when the server is started. Data insertion can also be performed by sending an HTTP POST with an empty body to the following url:
+[oda-phr-base]/data/init
 
-The bean should return a list of objects that implement the DataInjector
-interface. If no data needs to be injected, the bean should return an empty
-list. DataInjector has a single inject-method, which takes a FHIR client as an
-argument. Classes that implement DataInjector use the provided FHIR client for
-sending data to the server. ODA PHR provides two injectors:
+Inserted data is configured under app.data.resources. Each data item has a unique key (e.g. app.data.resources.practitioner1) and properties under the key. Only two parameters are mandatory: file and order. The data file has to be available on the classpath and it can be in json or xml format. The order property is an integer that defines the order for data insertion. Data items are sorted so that the one with the lowest order gets inserted first and the one with the highest order gets inserted last. Two optional parameters are also supported: use_update and injector. The injector parameter defines the class of the data injector. The class has to implement the DataInjector interface. If no value is specified for injector, a default of fi.oda.phr.dataset.ResourceInjector is used. If use_update is set to false, the data resource is inserted with a FHIR create operation. Otherwise an update operation is used. If no value is specified for use_update, a default of true is used. When using an update operation, an id has to be defined in the FHIR resource. This user-specified id has to have at least one non-numeric character. Custom ids are necessary when FHIR resources contain references to other FHIR resources. 
+
+ODA PHR provides two injector classes:
 - BundleInjector
 - ResourceInjector
 
-BundleInjector is used for persisting a bundle of FHIR resources as a
-transaction. ResourceInjector is used for storing a single FHIR resource. After
-the server has started, it creates a client for itself and calls all configured
-injectors with the client. Injectors are called in the order they are provided
-in the "datasets" bean list. The order of the execution can be important when
-one resource contains references to another one.
-
-When storing data to the server, the server returns a response message with
-generated resource ids. The response is stored in a file and the location of
-the file is configured with injector constructor arguments. The ids in the
-response can used for building test environments. For example, a test script
-might loop through a list of ids and query the server for the data. The
-constructor of ResourceInjector also allows to choose between update and create
-operations. When using a create operation, the server assigns an id for the
-stored resource. When using an update operation, it is possible to define an id
-in the FHIR resource. This user-specified id has to have at least one
-non-numeric character. Custom ids are necessary when FHIR resources contain
-references to other FHIR resources.
+BundleInjector is used for persisting a bundle of FHIR resources as a transaction. ResourceInjector is used for storing a single FHIR resource. 
 
 
-
-## Available data sets
-
-| Data set | Description | Source |
-| ---- | ------- | ------- |
-| [oda-patients.json](src/main/resources/oda-patients.json) | A bundle of 225 patients with names and birthdates | [HL7 test data](https://www.hl7.org/FHIR/2017Jan/downloads.html) |
-| [testi-anna.json](src/main/resources/testi-anna.json) | A resource for a single patient, Testi Anna | [Osuuspankki test user](https://support.signicat.com/display/S2/Finnish+Tupas+test+info)|
-
-Injectors could also be used for storing profiles to the server.
 
 
 ## Validating FHIR resources against the server

@@ -14,7 +14,7 @@ public class DataConfig {
 
     public static final String SET_FILE = "file";
 
-    public static final String SET_PRIORITY = "priority";
+    public static final String SET_ORDER = "order";
 
     public static final String SET_INJECTOR_PROPS = "injector_properties";
 
@@ -40,8 +40,8 @@ public class DataConfig {
 
                             @Override
                             public int compare(Entry<String, Map<String, String>> obj1, Entry<String, Map<String, String>> obj2) {
-                                int priority1 = Integer.valueOf(obj1.getValue().get(DataConfig.SET_PRIORITY));
-                                int priority2 = Integer.valueOf(obj2.getValue().get(DataConfig.SET_PRIORITY));
+                                int priority1 = Integer.valueOf(obj1.getValue().get(DataConfig.SET_ORDER));
+                                int priority2 = Integer.valueOf(obj2.getValue().get(DataConfig.SET_ORDER));
                                 if (priority1 == priority2) {
                                     return 0;
                                 }
@@ -67,8 +67,8 @@ public class DataConfig {
         return resources.get(setKey).get(DataConfig.SET_INJECTOR_CLASS);
     }
 
-    public Integer getPriority(String setKey) {
-        return Integer.valueOf(resources.get(setKey).get(DataConfig.SET_PRIORITY));
+    public Integer getOrder(String setKey) {
+        return Integer.valueOf(resources.get(setKey).get(DataConfig.SET_ORDER));
     }
 
 }

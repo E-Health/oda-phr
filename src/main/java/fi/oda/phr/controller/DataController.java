@@ -17,7 +17,8 @@ public class DataController {
     public DataController(DatasetInitializer dataInitializer) {
         this.dataInitializer = dataInitializer;
     }
-    @RequestMapping("/data/init")
+
+    @RequestMapping(value = "/data/init", method = RequestMethod.POST)
     public void initData(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws IOException {
         log.debug("Feeding data...");
         dataInitializer.feedData();
