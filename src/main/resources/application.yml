@@ -22,13 +22,67 @@ app:
                #Note: use_update defaults to true if not defined
                injector: fi.oda.phr.dataset.ResourceInjector
                #      priority and file must be defined. They have no default values.
-               priority: 0 
+               priority: -1
 
            # communication_profile:
            #    file: profiles/ODA-Communication.structuredefinition.xml
            #    use_update: false
            #    priority: 1
                
+
+            activitydefinition-rfc:
+               file: profiles/ODA-ActivityDefinition.profile.xml
+               use_update: false
+               priority: 1
+            careplan-rfc:
+               file: profiles/ODA-CarePlan.profile.xml
+               use_update: false
+               priority: 1
+            careteam-rfc:
+               file: profiles/ODA-CareTeam.profile.xml
+               use_update: false
+               priority: 1
+            communication-rfc:
+               file: profiles/ODA-Communication.profile.xml
+               use_update: false
+               priority: 1
+            episodeofcare-rfc:
+               file: profiles/ODA-EpisodeOfCare.profile.xml
+               use_update: false
+               priority: 1
+            goal-rfc:
+               file: profiles/ODA-Goal.profile.xml
+               use_update: false
+               priority: 1
+            medicationstatement-rfc:
+               file: profiles/ODA-MedicationStatement.profile.xml
+               use_update: false
+               priority: 1
+            observation-rfc:
+               file: profiles/ODA-Observation.profile.xml
+               use_update: false
+               priority: 1
+            organization-rfc:
+               file: profiles/ODA-Organization.profile.xml
+               use_update: false
+               priority: 1
+            person-rfc:
+               file: profiles/ODA-Person.profile.xml
+               use_update: false
+               priority: 1
+            practitioner-rfc:
+               file: profiles/ODA-Practitioner.profile.xml
+               use_update: false
+               priority: 1
+            questionnaire-rfc:
+               file: profiles/ODA-Questionnaire.profile.xml
+               use_update: false
+               priority: 1
+            questionnaireresponse-rfc:
+               file: profiles/ODA-QuestionnaireResponse.profile.xml
+               use_update: false
+               priority: 1
+
             oikeus_apuun:
                file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
                use_update: false           
@@ -201,6 +255,7 @@ app:
             patient4-feedback-satisfaction:
                file: datasets/feedback-satisfaction.json
                priority: 44
+
 
 spring:
     application:
