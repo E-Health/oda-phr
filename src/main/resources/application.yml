@@ -14,7 +14,7 @@ server:
       max-threads: 600
 app:
     data:
-        feed_on_start: false
+        feed_on_start: true
         resources:               
             hengitystieoirearvio:
                file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
