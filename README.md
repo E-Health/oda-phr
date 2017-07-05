@@ -30,26 +30,24 @@ app:
     data:
         feed_on_start: true
         resources:
-             practitioner1:
-                 file: datasets/practitioner1.json
-                 injector: fi.oda.phr.dataset.ResourceInjector
-                 use_update: true
-                 order: 5
+                - file: datasets/practitioner1.json
+                  injector: fi.oda.phr.dataset.ResourceInjector
+                  use_update: true
+                - file: datasets/practitioner2.json
+                - file: datasets/practitioner3.json
                        
 ```
 
 If feed_on_start is set to true, data will be inserted when the server is started. Data insertion can also be performed by sending an HTTP POST with an empty body to the following url:
 [oda-phr-base]/data/init
 
-Inserted data is configured under app.data.resources. Each data item has a unique key (e.g. app.data.resources.practitioner1) and properties under the key. Only two parameters are mandatory: file and order. The data file has to be available on the classpath and it can be in json or xml format. The order property is an integer that defines the order for data insertion. Data items are sorted so that the one with the lowest order gets inserted first and the one with the highest order gets inserted last. Two optional parameters are also supported: use_update and injector. The injector parameter defines the class of the data injector. The class has to implement the DataInjector interface. If no value is specified for injector, a default of fi.oda.phr.dataset.ResourceInjector is used. If use_update is set to false, the data resource is inserted with a FHIR create operation. Otherwise an update operation is used. If no value is specified for use_update, a default of true is used. When using an update operation, an id has to be defined in the FHIR resource. This user-specified id has to have at least one non-numeric character. Custom ids are necessary when FHIR resources contain references to other FHIR resources. 
+Inserted data is configured under app.data.resources. Data resources are given as a list of maps. A mandatory file parameter has to be specified, which determines the location of the data file. The file has be available on the classpath and it can be in json or xml format. Data resources are inserted in the order they are given in the list. Two optional parameters are also supported: use_update and injector. The injector parameter defines the class of the data injector. The class has to implement the DataInjector interface. If no value is specified for injector, a default of fi.oda.phr.dataset.ResourceInjector is used. If use_update is set to false, the data resource is inserted with a FHIR create operation. Otherwise an update operation is used. If no value is specified for use_update, a default of true is used. When using an update operation, an id has to be defined in the FHIR resource. This user-specified id has to have at least one non-numeric character. Custom ids are necessary when FHIR resources contain references to other FHIR resources. 
 
 ODA PHR provides two injector classes:
 - BundleInjector
 - ResourceInjector
 
 BundleInjector is used for persisting a bundle of FHIR resources as a transaction. ResourceInjector is used for storing a single FHIR resource. 
-
-
 
 
 ## Validating FHIR resources against the server
