@@ -31,22 +31,4 @@ public class DataConfig {
         this.resources = resources;
     }
     
-    /*    public void setResources(List<Map<String, String>> resources) {
-        this.resources = resources;
-    }
-    public Map<String, String> getDatasetProperties(String setKey) {
-        return resources.get(setKey);
-    }
-    
-    public String getDatasetFile(String setKey) {
-        return resources.get(setKey).get(DataConfig.SET_FILE);
-    }
-    
-    public String getInjectorClass(String setKey) {
-        return resources.get(setKey).get(DataConfig.SET_INJECTOR_CLASS);
-    }
-    
-    public Integer getOrder(String setKey) {
-        return Integer.valueOf(resources.get(setKey).get(DataConfig.SET_ORDER));
-    }*/
 }
