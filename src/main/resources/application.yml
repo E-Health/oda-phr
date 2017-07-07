@@ -68,6 +68,8 @@ app:
             - file: datasets/PATIENT1/observation5.json
             - file: datasets/PATIENT1/observation6.json
             - file: datasets/PATIENT1/observation7.json
+            - file: datasets/PATIENT1/communication-notification1.json
+            - file: datasets/PATIENT1/communication-notification2.json            
             - file: datasets/PATIENT2/patient.json
             - file: datasets/PATIENT2/person.json
             - file: datasets/PATIENT2/observation.json

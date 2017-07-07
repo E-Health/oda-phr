@@ -1,0 +1,34 @@
+{
+    "resourceType": "Communication",
+    "id" : "COMMUNICATION1-NOTIFICATION1-PATIENT1",
+    "text": {
+        "status": "generated",
+        "div": "<div>Hello!</div>"
+    },        
+    "status": "completed",
+    "category": [{        
+    "coding": [{
+            "system": "http://hl7.org/fhir/communication-category",
+            "code": "notification",
+            "display": "notification"
+        }]
+    }],    
+    "subject": {
+        "reference": "Patient/PATIENT1"
+    },
+    "basedOn": [{
+        "reference": "CarePlan/CAREPLAN1-PATIENT1"
+    }],
+    "sent": "2017-06-20T18:01:10-08:00",
+    "received": "2017-06-22T18:01:10-08:00",
+    "sender": {
+        "reference": "Practitioner/PRACTITIONER1"
+    },
+    "recipient": [{
+        "reference": "Patient/PATIENT1"
+    }],   
+    "payload": [{
+        "contentString": "Hello!"
+    }]
+
+}
