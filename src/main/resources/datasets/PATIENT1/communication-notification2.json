@@ -1,6 +1,6 @@
 {
     "resourceType": "Communication",
-    "id" : "COMMUNICATION1-NOTIFICATION1-PATIENT1",
+    "id" : "COMMUNICATION-NOTIFICATION2-PATIENT1",
     "text": {
         "status": "generated",
         "div": "<div>Hello!</div>"
