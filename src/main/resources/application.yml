@@ -82,6 +82,10 @@ app:
                file: profiles/ODA-QuestionnaireResponse.profile.xml
                use_update: false
                priority: 1
+            yesdontknow-test:
+               file: valueSets/yesdontknow.json
+               use_update: false
+               priority: 1
 
             oikeus_apuun:
                file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
