@@ -27,9 +27,7 @@ public class ResourceInjector implements DataInjector {
 
     private final boolean useUpdate;
 
-    private final String setName;
-    public ResourceInjector(String setName, Map<String, String> parameters) {
-        this.setName = setName;
+    public ResourceInjector(Map<String, String> parameters) {
         this.sourceFile = parameters.get(DataConfig.SET_FILE);
         useUpdate = Boolean.parseBoolean(parameters.get(DataConfig.INJECTOR_PROP_USE_UPDATE));
     }
@@ -37,7 +35,7 @@ public class ResourceInjector implements DataInjector {
 
     @Override
     public void inject(IGenericClient client) {
-        log.info("About to inject: " + sourceFile + " for item " + setName);
+        log.info("About to inject: " + sourceFile);
         final FhirContext ctx = FhirContext.forDstu3();
         ctx.setParserErrorHandler(new StrictErrorHandler());
         final IParser parser;

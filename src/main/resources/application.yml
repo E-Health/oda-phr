@@ -267,7 +267,7 @@ spring:
     thymeleaf:
         prefix: classpath:/WEB-INF/templates/
     profiles:
-        active: dev
+        active: dev            
     jpa:
        properties:
               format_sql: true

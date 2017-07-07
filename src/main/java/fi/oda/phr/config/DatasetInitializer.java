@@ -52,20 +52,17 @@ public class DatasetInitializer implements ApplicationListener<ApplicationReadyE
 
     private void parseDatasets(DataConfig data) throws ClassNotFoundException, NoSuchMethodException, SecurityException,
             InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        for (String key : data.getDatasetKeysByPriority()) {
-            log.info("Creating dataset injector for " + key);
-            String injectorName = data.getInjectorClass(key);
-            Map<String, String> properties = data.getDatasetProperties(key);
-            
+        for (Map<String, String> dataset : data.getResources()) {
+            String injectorName = dataset.get(DataConfig.SET_INJECTOR_CLASS);
             if (injectorName == null) {
                 injectorName = defaultInjectorClass;
             }
-            if (!properties.containsKey(useUpdateKey)) {
-                properties.put(useUpdateKey, useUpdateDefault);
+            if (!dataset.containsKey(useUpdateKey)) {
+                dataset.put(useUpdateKey, useUpdateDefault);
             }
             Class<?> injectorClass = Class.forName(injectorName, true, DataInjector.class.getClassLoader());
-            Constructor<?> injectorConstructor = injectorClass.getConstructor(String.class, Map.class);
-            datasets.add((DataInjector) injectorConstructor.newInstance(key, properties));
+            Constructor<?> injectorConstructor = injectorClass.getConstructor(Map.class);
+            datasets.add((DataInjector) injectorConstructor.newInstance(dataset));
         }
         log.info("Done loading datasets");
     }

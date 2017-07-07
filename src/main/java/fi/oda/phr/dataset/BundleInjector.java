@@ -25,16 +25,13 @@ public class BundleInjector implements DataInjector {
     //Bundle is read from this file (Must be available in the classpath)
     public final String sourceFile;
 
-    private final String setName;
-
-    public BundleInjector(String setName, Map<String, String> parameters) {
+    public BundleInjector(Map<String, String> parameters) {
         this.sourceFile = parameters.get(DataConfig.SET_FILE);
-        this.setName = setName;
     }
 
     @Override
     public void inject(IGenericClient client) {
-        log.info("About to inject: " + sourceFile + " for item " + setName);
+        log.info("About to inject: " + sourceFile);
         final FhirContext ctx = FhirContext.forDstu3();
         ctx.setParserErrorHandler(new StrictErrorHandler());
         final IParser parser = ctx.newJsonParser();        
