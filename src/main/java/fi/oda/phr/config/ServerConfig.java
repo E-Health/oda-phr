@@ -33,7 +33,7 @@ public class ServerConfig {
 
         //TODO: Populate validationSupport with ODA profiles (addCodeSystem, addStructureDefinition, addValueSet)
         validationSupport.addValueSet(loadValueSet("valueSets/yesdontknow.xml", parser));
-//        validationSupport.addCodeSystem(loadCodeSystem("codeSystems/simple-example.xml", parser));
+        validationSupport.addCodeSystem(loadCodeSystem("codeSystems/simple-example.xml", parser));
 
         final List<Class<? extends IBaseResource>> ignoreList = new ArrayList<>();
         ignoreList.add(CarePlan.class);
@@ -80,7 +80,5 @@ public class ServerConfig {
             throw new RuntimeException("Unable to read profile file", e);
         }
     }
-
-
 
 }
