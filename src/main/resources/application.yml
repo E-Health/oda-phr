@@ -57,6 +57,12 @@ app:
             - file: datasets/practitioner1.json
             - file: datasets/practitioner2.json
             - file: datasets/practitioner3.json
+            - file: datasets/practitioner1-role1.json
+            - file: datasets/practitioner2-role1.json
+            - file: datasets/practitioner3-role1.json
+            - file: datasets/practitioner1-role1-valueset.json
+            - file: datasets/practitioner2-role1-valueset.json
+            - file: datasets/practitioner3-role1-valueset.json
             - file: datasets/person-practitioner2.json
             - file: datasets/person-practitioner3.json
             - file: datasets/PATIENT1/patient.json

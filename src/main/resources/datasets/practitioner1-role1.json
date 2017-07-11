@@ -1,0 +1,30 @@
+{
+	"resourceType": "PractitionerRole",
+	"id": "PRACTITIONER1-ROLE1",
+	"active": "true",
+	"practitioner": {
+		"reference": "Practitioner/PRACTITIONER1",
+		"display": "Pekka Pakarinen"
+	},
+	"organization": {
+		"reference": "Organization/ORGANIZATION1",
+		"display": "Meilahti Tower Hospital"
+	},
+	"code": [{
+		"coding": [{
+			"system": "http://oda.fi/CodeSystem/practitionerroles",
+			"code": "PR"
+		}]
+	}],
+	"specialty": [{
+		"coding": [{
+			"system": "http://snomed.info/sct",
+			"code": "408443003",
+			"display": "General medical practice"
+		}]
+	}],
+	"location": [{
+		"reference": "Location/LOCATION1",
+		"display": "Meilahti Tower Hospital, South Wing, second floor"
+	}]
+}
