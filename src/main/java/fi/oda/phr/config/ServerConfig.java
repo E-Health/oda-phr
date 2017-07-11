@@ -30,10 +30,7 @@ public class ServerConfig {
         FhirContext ctx = FhirContext.forDstu3();
         IParser parser = ctx.newXmlParser();
         validationSupport.addStructureDefinition(loadStructureDefinition("profiles/ODA-Communication.structuredefinition.xml", parser));
-
-        //TODO: Populate validationSupport with ODA profiles (addCodeSystem, addStructureDefinition, addValueSet)
-        validationSupport.addValueSet(loadValueSet("valueSets/yesdontknow.xml", parser));
-        validationSupport.addCodeSystem(loadCodeSystem("codeSystems/simple-example.xml", parser));
+        validationSupport.addCodeSystem(loadResource("codeSystems/simple-example.xml", parser));
 
         final List<Class<? extends IBaseResource>> ignoreList = new ArrayList<>();
         ignoreList.add(CarePlan.class);
@@ -51,30 +48,20 @@ public class ServerConfig {
         return new SubscriptionsRequireManualActivationInterceptorDstu3();
     }
 
+    private <E extends MetadataResource> E loadResource(String file, IParser parser){
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new ClassPathResource(Paths.get(file).toString()).getInputStream(), Charset.forName("UTF-8")))) {
+            return (E) parser.parseResource(reader);
+        }
+        catch (final IOException e) {
+            throw new RuntimeException("Unable to read profile file", e);
+        }
+    }
+
     private StructureDefinition loadStructureDefinition(String file, IParser parser) {
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(new ClassPathResource(Paths.get(file).toString()).getInputStream(), Charset.forName("UTF-8")))) {
             return (StructureDefinition) parser.parseResource(reader);
-        }
-        catch (final IOException e) {
-            throw new RuntimeException("Unable to read profile file", e);
-        }
-    }
-
-    private ValueSet loadValueSet(String file, IParser parser) {
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new ClassPathResource(Paths.get(file).toString()).getInputStream(), Charset.forName("UTF-8")))) {
-            return (ValueSet) parser.parseResource(reader);
-        }
-        catch (final IOException e) {
-            throw new RuntimeException("Unable to read profile file", e);
-        }
-    }
-
-    private CodeSystem loadCodeSystem(String file, IParser parser) {
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new ClassPathResource(Paths.get(file).toString()).getInputStream(), Charset.forName("UTF-8")))) {
-            return (CodeSystem) parser.parseResource(reader);
         }
         catch (final IOException e) {
             throw new RuntimeException("Unable to read profile file", e);

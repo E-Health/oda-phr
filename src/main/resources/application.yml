@@ -15,259 +15,93 @@ server:
 app:
     data:
         feed_on_start: true
-        resources:               
-            hengitystieoirearvio:
-               file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
-               use_update: false
-               #Note: use_update defaults to true if not defined
-               injector: fi.oda.phr.dataset.ResourceInjector
-               #      priority and file must be defined. They have no default values.
-               priority: -1
+        resources:
+            - file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
+              use_update: false
+            - file: profiles/ODA-ActivityDefinition.profile.xml
+              use_update: false
+            - file: profiles/ODA-CarePlan.profile.xml
+              use_update: false
+            - file: profiles/ODA-CareTeam.profile.xml
+              use_update: false
+            - file: profiles/ODA-Communication.profile.xml
+              use_update: false
+            - file: profiles/ODA-EpisodeOfCare.profile.xml
+              use_update: false
+            - file: profiles/ODA-Goal.profile.xml
+              use_update: false
+            - file: profiles/ODA-MedicationStatement.profile.xml
+              use_update: false
+            - file: profiles/ODA-Observation.profile.xml
+              use_update: false
+            - file: profiles/ODA-Organization.profile.xml
+              use_update: false
+            - file: profiles/ODA-Person.profile.xml
+              use_update: false
+            - file: profiles/ODA-Practitioner.profile.xml
+              use_update: false
+            - file: profiles/ODA-Questionnaire.profile.xml
+              use_update: false
+            - file: profiles/ODA-QuestionnaireResponse.profile.xml
+              use_update: false
+            - file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
+              use_update: false
+            - file: valueSets/ODA-practitionerroles-valueset.xml
+              use_update: false
+            - file: codeSystems/simple-example.xml
+              use_update: false
 
-           # communication_profile:
-           #    file: profiles/ODA-Communication.structuredefinition.xml
-           #    use_update: false
-           #    priority: 1
-               
-
-            activitydefinition-rfc:
-               file: profiles/ODA-ActivityDefinition.profile.xml
-               use_update: false
-               priority: 1
-            careplan-rfc:
-               file: profiles/ODA-CarePlan.profile.xml
-               use_update: false
-               priority: 1
-            careteam-rfc:
-               file: profiles/ODA-CareTeam.profile.xml
-               use_update: false
-               priority: 1
-            communication-rfc:
-               file: profiles/ODA-Communication.profile.xml
-               use_update: false
-               priority: 1
-            episodeofcare-rfc:
-               file: profiles/ODA-EpisodeOfCare.profile.xml
-               use_update: false
-               priority: 1
-            goal-rfc:
-               file: profiles/ODA-Goal.profile.xml
-               use_update: false
-               priority: 1
-            medicationstatement-rfc:
-               file: profiles/ODA-MedicationStatement.profile.xml
-               use_update: false
-               priority: 1
-            observation-rfc:
-               file: profiles/ODA-Observation.profile.xml
-               use_update: false
-               priority: 1
-            organization-rfc:
-               file: profiles/ODA-Organization.profile.xml
-               use_update: false
-               priority: 1
-            person-rfc:
-               file: profiles/ODA-Person.profile.xml
-               use_update: false
-               priority: 1
-            practitioner-rfc:
-               file: profiles/ODA-Practitioner.profile.xml
-               use_update: false
-               priority: 1
-            questionnaire-rfc:
-               file: profiles/ODA-Questionnaire.profile.xml
-               use_update: false
-               priority: 1
-            questionnaireresponse-rfc:
-               file: profiles/ODA-QuestionnaireResponse.profile.xml
-               use_update: false
-               priority: 1
-            yesdontknow-test:
-               file: valueSets/yesdontknow.json
-               use_update: false
-               priority: 1
-
-            oikeus_apuun:
-               file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
-               use_update: false           
-               priority: 1
-               
-            location1:
-               file: datasets/location1.json
-               priority: 2
-    
-            organization1:
-               file: datasets/organization1.json
-               priority: 3
-               
-            healthcareservice1:
-               file: datasets/healthcareservice1.json
-               priority: 4
-               
-            practitioner1:
-               file: datasets/practitioner1.json
-               priority: 5
-               
-            practitioner2:
-               file: datasets/practitioner2.json
-               priority: 6
-    
-            practitioner3:
-               file: datasets/practitioner3.json
-               priority: 7
-                          
-            person-practitioner2:
-               file: datasets/person-practitioner2.json
-               priority: 8
-    
-            person-practitioner3:
-               file: datasets/person-practitioner3.json
-               priority: 9
-    
-            patient1:
-               file: datasets/PATIENT1/patient.json
-               priority: 10
-    
-            patient1-person:
-               file: datasets/PATIENT1/person.json
-               priority: 11
-    
-            patient1-careteam-authorization:
-               file: datasets/PATIENT1/careteam-authorization.json
-               priority: 12
-    
-            patient1-careteam-care:
-               file: datasets/PATIENT1/careteam-care.json
-               priority: 13
-    
-            patient1-episodeofcare:
-               file: datasets/PATIENT1/episodeofcare.json
-               priority: 14
-    
-            patient1-careplan:
-               file: datasets/PATIENT1/careplan.json
-               priority: 15
-    
-            patient1-communication:
-               file: datasets/PATIENT1/communication.json
-               priority: 16
-            
-            patient1-observation1:
-               file: datasets/PATIENT1/observation1.json
-               priority: 16
-    
-            patient1-observation2:
-               file: datasets/PATIENT1/observation2.json
-               priority: 17
-               
-            patient1-observation3:
-               file: datasets/PATIENT1/observation3.json
-               priority: 18
-               
-            patient1-observation4:
-               file: datasets/PATIENT1/observation4.json
-               priority: 19
-               
-            patient1-observation5:
-               file: datasets/PATIENT1/observation5.json
-               priority: 20
-               
-            patient1-observation6:
-               file: datasets/PATIENT1/observation6.json
-               priority: 21                    
-    
-            patient1-observation7:
-               file: datasets/PATIENT1/observation7.json
-               priority: 22
-    
-            patient2:
-               file: datasets/PATIENT2/patient.json
-               priority: 25
-    
-            patient2-person:
-               file: datasets/PATIENT2/person.json
-               priority: 26
-    
-            patient2-observation:
-               file: datasets/PATIENT2/observation.json
-               priority: 27
-    
-            patient2-episodeofcare:
-               file: datasets/PATIENT2/episodeofcare.json
-               priority: 28
-    
-            patient2-careteam-authorization:
-               file: datasets/PATIENT2/careteam-authorization.json
-               priority: 29
-    
-            patient2-careplan:
-               file: datasets/PATIENT2/careplan.json
-               priority: 30
-               
-            patient2-communication:
-               file: datasets/PATIENT2/communication.json
-               priority: 31
-               
-            patient2-careteam-care:
-               file: datasets/PATIENT2/careteam-care.json
-               priority: 32
-                                     
-            careteam3-authorization:
-               file: datasets/careteam3-authorization.json
-               priority: 33
-    
-            patient3:
-               file: datasets/PATIENT3/patient.json
-               priority: 34
-               
-            patient3-person:
-               file: datasets/PATIENT3/person.json
-               priority: 35
-               
-            patient3-episodeofcare:
-               file: datasets/PATIENT3/episodeofcare.json
-               priority: 36
-    
-            patient3-careplan:
-               file: datasets/PATIENT3/careplan.json
-               priority: 37
-    
-            patient3-careteam-care:
-               file: datasets/PATIENT3/careteam-care.json
-               priority: 38
-    
-            patient4:
-               file: datasets/PATIENT4/patient.json
-               priority: 39
-    
-            patient4-episodeofcare:
-               file: datasets/PATIENT4/episodeofcare.json
-               priority: 40
-    
-            patient4-careplan:
-               file: datasets/PATIENT4/careplan.json
-               priority: 41
-    
-            patient4-careteam-care:
-               file: datasets/PATIENT4/careteam-care.json
-               priority: 42
-    
-            patient4-feedback-issue:
-               file: datasets/feedback-issue.json
-               priority: 43
-            
-            patient4-feedback-satisfaction:
-               file: datasets/feedback-satisfaction.json
-               priority: 44
-
-
+            - file: datasets/location1.json
+            - file: datasets/organization1.json
+            - file: datasets/healthcareservice1.json
+            - file: datasets/practitioner1.json
+            - file: datasets/practitioner2.json
+            - file: datasets/practitioner3.json
+            - file: datasets/person-practitioner2.json
+            - file: datasets/person-practitioner3.json
+            - file: datasets/PATIENT1/patient.json
+            - file: datasets/PATIENT1/person.json
+            - file: datasets/PATIENT1/careteam-authorization.json
+            - file: datasets/PATIENT1/careteam-care.json
+            - file: datasets/PATIENT1/episodeofcare.json
+            - file: datasets/PATIENT1/careplan.json
+            - file: datasets/PATIENT1/communication.json
+            - file: datasets/PATIENT1/observation1.json
+            - file: datasets/PATIENT1/observation2.json
+            - file: datasets/PATIENT1/observation3.json
+            - file: datasets/PATIENT1/observation4.json
+            - file: datasets/PATIENT1/observation5.json
+            - file: datasets/PATIENT1/observation6.json
+            - file: datasets/PATIENT1/observation7.json
+            - file: datasets/PATIENT1/communication-notification1.json
+            - file: datasets/PATIENT1/communication-notification2.json
+            - file: datasets/PATIENT2/patient.json
+            - file: datasets/PATIENT2/person.json
+            - file: datasets/PATIENT2/observation.json
+            - file: datasets/PATIENT2/episodeofcare.json
+            - file: datasets/PATIENT2/careteam-authorization.json
+            - file: datasets/PATIENT2/careplan.json
+            - file: datasets/PATIENT2/communication.json
+            - file: datasets/PATIENT2/careteam-care.json
+            - file: datasets/careteam3-authorization.json
+            - file: datasets/PATIENT3/patient.json
+            - file: datasets/PATIENT3/person.json
+            - file: datasets/PATIENT3/episodeofcare.json
+            - file: datasets/PATIENT3/careplan.json
+            - file: datasets/PATIENT3/careteam-care.json
+            - file: datasets/PATIENT4/patient.json
+            - file: datasets/PATIENT4/episodeofcare.json
+            - file: datasets/PATIENT4/careplan.json
+            - file: datasets/PATIENT4/careteam-care.json
+            - file: datasets/feedback-issue.json
+            - file: datasets/feedback-satisfaction.json
 spring:
     application:
         name: phr
     thymeleaf:
         prefix: classpath:/WEB-INF/templates/
     profiles:
-        active: dev            
+        active: dev
     jpa:
        properties:
               format_sql: true
@@ -293,3 +127,307 @@ spring:
        generate-ddl: true
        hibernate:
               ddl-auto: update
+
+##logging:
+##    level:
+#  #    ROOT: DEBUG
+##    ca.uhn.fhir.rest.server: DEBUG
+#
+#server:
+#    port: 6083
+#    use-forward-headers: true
+#    session:
+#        cookie:
+#            http-only: true
+#    contextPath: /phr
+#    tomcat:
+#      max-threads: 600
+#app:
+#    data:
+#        feed_on_start: true
+#        resources:
+#
+##            hengitystieoirearvio:
+##               file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
+##               use_update: false
+##               #Note: use_update defaults to true if not defined
+##               injector: fi.oda.phr.dataset.ResourceInjector
+##               #      priority and file must be defined. They have no default values.
+##               priority: -1
+#
+#           # communication_profile:
+#           #    file: profiles/ODA-Communication.structuredefinition.xml
+#           #    use_update: false
+#           #    priority: 1
+#
+#
+##            activitydefinition-rfc:
+##               file: profiles/ODA-ActivityDefinition.profile.xml
+##               injector: fi.oda.phr.dataset.ResourceInjector
+##               use_update: false
+##               priority: 1
+##            careplan-rfc:
+##               file: profiles/ODA-CarePlan.profile.xml
+##               use_update: false
+##               priority: 1
+##            careteam-rfc:
+##               file: profiles/ODA-CareTeam.profile.xml
+##               use_update: false
+##               priority: 1
+##            communication-rfc:
+##               file: profiles/ODA-Communication.profile.xml
+##               use_update: false
+##               priority: 1
+##            episodeofcare-rfc:
+##               file: profiles/ODA-EpisodeOfCare.profile.xml
+##               use_update: false
+##               priority: 1
+##            goal-rfc:
+##               file: profiles/ODA-Goal.profile.xml
+##               use_update: false
+##               priority: 1
+##            medicationstatement-rfc:
+##               file: profiles/ODA-MedicationStatement.profile.xml
+##               use_update: false
+##               priority: 1
+##            observation-rfc:
+##               file: profiles/ODA-Observation.profile.xml
+##               use_update: false
+##               priority: 1
+##            organization-rfc:
+##               file: profiles/ODA-Organization.profile.xml
+##               use_update: false
+##               priority: 1
+##            person-rfc:
+##               file: profiles/ODA-Person.profile.xml
+##               use_update: false
+##               priority: 1
+##            practitioner-rfc:
+##               file: profiles/ODA-Practitioner.profile.xml
+##               use_update: false
+##               priority: 1
+##            questionnaire-rfc:
+##               file: profiles/ODA-Questionnaire.profile.xml
+##               use_update: false
+##               priority: 1
+##            questionnaireresponse-rfc:
+##               file: profiles/ODA-QuestionnaireResponse.profile.xml
+##               use_update: false
+##               priority: 1
+##
+##            practitionerroles-rfc:
+##               file: valueSets/ODA-practitionerroles-valueset.xml
+##               use_update: false
+##               priority: 1
+##
+##            yesdontknow-test:
+##               file: valueSets/yesdontknow.json
+##               use_update: false
+##               priority: 1
+#
+#            oikeus_apuun:
+#               file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
+#               use_update: false
+#               priority: 1
+#
+#            location1:
+#               file: datasets/location1.json
+#               priority: 2
+#
+#            organization1:
+#               file: datasets/organization1.json
+#               priority: 3
+#
+#            healthcareservice1:
+#               file: datasets/healthcareservice1.json
+#               priority: 4
+#
+#            practitioner1:
+#               file: datasets/practitioner1.json
+#               priority: 5
+#
+#            practitioner2:
+#               file: datasets/practitioner2.json
+#               priority: 6
+#
+#            practitioner3:
+#               file: datasets/practitioner3.json
+#               priority: 7
+#
+#            person-practitioner2:
+#               file: datasets/person-practitioner2.json
+#               priority: 8
+#
+#            person-practitioner3:
+#               file: datasets/person-practitioner3.json
+#               priority: 9
+#
+#            patient1:
+#               file: datasets/PATIENT1/patient.json
+#               priority: 10
+#
+#            patient1-person:
+#               file: datasets/PATIENT1/person.json
+#               priority: 11
+#
+#            patient1-careteam-authorization:
+#               file: datasets/PATIENT1/careteam-authorization.json
+#               priority: 12
+#
+#            patient1-careteam-care:
+#               file: datasets/PATIENT1/careteam-care.json
+#               priority: 13
+#
+#            patient1-episodeofcare:
+#               file: datasets/PATIENT1/episodeofcare.json
+#               priority: 14
+#
+#            patient1-careplan:
+#               file: datasets/PATIENT1/careplan.json
+#               priority: 15
+#
+#            patient1-communication:
+#               file: datasets/PATIENT1/communication.json
+#               priority: 16
+#
+#            patient1-observation1:
+#               file: datasets/PATIENT1/observation1.json
+#               priority: 16
+#
+#            patient1-observation2:
+#               file: datasets/PATIENT1/observation2.json
+#               priority: 17
+#
+#            patient1-observation3:
+#               file: datasets/PATIENT1/observation3.json
+#               priority: 18
+#
+#            patient1-observation4:
+#               file: datasets/PATIENT1/observation4.json
+#               priority: 19
+#
+#            patient1-observation5:
+#               file: datasets/PATIENT1/observation5.json
+#               priority: 20
+#
+#            patient1-observation6:
+#               file: datasets/PATIENT1/observation6.json
+#               priority: 21
+#
+#            patient1-observation7:
+#               file: datasets/PATIENT1/observation7.json
+#               priority: 22
+#
+#            patient2:
+#               file: datasets/PATIENT2/patient.json
+#               priority: 25
+#
+#            patient2-person:
+#               file: datasets/PATIENT2/person.json
+#               priority: 26
+#
+#            patient2-observation:
+#               file: datasets/PATIENT2/observation.json
+#               priority: 27
+#
+#            patient2-episodeofcare:
+#               file: datasets/PATIENT2/episodeofcare.json
+#               priority: 28
+#
+#            patient2-careteam-authorization:
+#               file: datasets/PATIENT2/careteam-authorization.json
+#               priority: 29
+#
+#            patient2-careplan:
+#               file: datasets/PATIENT2/careplan.json
+#               priority: 30
+#
+#            patient2-communication:
+#               file: datasets/PATIENT2/communication.json
+#               priority: 31
+#
+#            patient2-careteam-care:
+#               file: datasets/PATIENT2/careteam-care.json
+#               priority: 32
+#
+#            careteam3-authorization:
+#               file: datasets/careteam3-authorization.json
+#               priority: 33
+#
+#            patient3:
+#               file: datasets/PATIENT3/patient.json
+#               priority: 34
+#
+#            patient3-person:
+#               file: datasets/PATIENT3/person.json
+#               priority: 35
+#
+#            patient3-episodeofcare:
+#               file: datasets/PATIENT3/episodeofcare.json
+#               priority: 36
+#
+#            patient3-careplan:
+#               file: datasets/PATIENT3/careplan.json
+#               priority: 37
+#
+#            patient3-careteam-care:
+#               file: datasets/PATIENT3/careteam-care.json
+#               priority: 38
+#
+#            patient4:
+#               file: datasets/PATIENT4/patient.json
+#               priority: 39
+#
+#            patient4-episodeofcare:
+#               file: datasets/PATIENT4/episodeofcare.json
+#               priority: 40
+#
+#            patient4-careplan:
+#               file: datasets/PATIENT4/careplan.json
+#               priority: 41
+#
+#            patient4-careteam-care:
+#               file: datasets/PATIENT4/careteam-care.json
+#               priority: 42
+#
+#            patient4-feedback-issue:
+#               file: datasets/feedback-issue.json
+#               priority: 43
+#
+#            patient4-feedback-satisfaction:
+#               file: datasets/feedback-satisfaction.json
+#               priority: 44
+#
+#
+#spring:
+#    application:
+#        name: phr
+#    thymeleaf:
+#        prefix: classpath:/WEB-INF/templates/
+#    profiles:
+#        active: dev
+#    jpa:
+#       properties:
+#              format_sql: true
+#              show-sql: true
+#              jdbc:
+#                  batch_size: 20
+#              cache:
+#                  use_query_cache: false
+#                  use_second_level_cache: false
+#                  use_structured_entries: false
+#                  use_minimal_puts: false
+#              search:
+#                  default:
+#                      directory_provider: filesystem
+#                      indexBase: build/lucenefiles
+#                      worker:
+#                          execution: sync
+#                  lucene_version: LUCENE_CURRENT
+#---
+#spring:
+#    profiles: dev
+#    jpa:
+#       generate-ddl: true
+#       hibernate:
+#              ddl-auto: update
