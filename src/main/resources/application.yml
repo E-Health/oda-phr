@@ -15,6 +15,11 @@ server:
 app:
     data:
         feed_on_start: true
+
+        # NOTE: keep the resources in order!
+        # The resources have references to one another.
+        # Add new resources to the end of the list.
+
         resources:
             - file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
               use_update: false
