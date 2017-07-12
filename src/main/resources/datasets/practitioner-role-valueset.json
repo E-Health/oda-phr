@@ -1,11 +1,25 @@
 {
 	"resourceType": "ValueSet",
-	"id": "PRACTITIONER3-ROLE1-VALUESET",
+	"id": "PRACTITIONER-ROLE-VALUESET",
+	"url": "http://oda.fi/ValueSet/oda-vs-practitionerroles",
 	"status": "draft",
 	"compose": [{
 		"include": [{
 			"system": "http://oda.fi/CodeSystem/practitionerroles",
 			"concept": [{
+					"code": "admin",
+					"display": "Administrator",
+					"designation": [{
+							"language": "fi-FI",
+							"value": "Järjestelmän ylläpitäjä"
+						},
+						{
+							"language": "en-EN",
+							"value": "Administrator"
+						}
+					]
+				},
+				{
 					"code": "siteresp",
 					"display": "Site Responsible",
 					"designation": [{
@@ -34,4 +48,5 @@
 			]
 		}]
 	}]
+
 }

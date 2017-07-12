@@ -1,20 +1,26 @@
 {
 	"resourceType": "PractitionerRole",
-	"id": "PRACTITIONER2-ROLE1",
+	"id": "PRACTITIONER3-ROLE",
 	"active": "true",
 	"practitioner": {
-		"reference": "Practitioner/PRACTITIONER2",
-		"display": "Lasse Lääkäri"
+		"reference": "Practitioner/PRACTITIONER3",
+		"display": "Maija Meikäläinen"
 	},
 	"organization": {
 		"reference": "Organization/ORGANIZATION1",
 		"display": "Meilahti Tower Hospital"
 	},
 	"code": [{
-		"coding": [{
+		"coding": [
+			{
 			"system": "http://oda.fi/CodeSystem/practitionerroles",
-			"code": "PR"
-		}]
+			"code": "prof"
+		},
+			{
+				"system": "http://oda.fi/CodeSystem/practitionerroles",
+				"code": "siteresp"
+			}
+		]
 	}],
 	"specialty": [{
 		"coding": [{
@@ -22,9 +28,5 @@
 			"code": "408443003",
 			"display": "General medical practice"
 		}]
-	}],
-	"location": [{
-		"reference": "Location/LOCATION1",
-		"display": "Meilahti Tower Hospital, South Wing, second floor"
 	}]
 }
