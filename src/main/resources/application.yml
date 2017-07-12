@@ -16,8 +16,8 @@ app:
     data:
         feed_on_start: true
         resources:
-#            - file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
-#              use_update: false
+            - file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
+              use_update: false
 #            - file: profiles/ODA-ActivityDefinition.profile.xml
 #              use_update: false
 #            - file: profiles/ODA-CarePlan.profile.xml
@@ -44,8 +44,8 @@ app:
 #              use_update: false
 #            - file: profiles/ODA-QuestionnaireResponse.profile.xml
 #              use_update: false
-#            - file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
-#              use_update: false
+            - file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
+              use_update: false
 #            - file: valueSets/ODA-practitionerroles-valueset.xml
 #              use_update: false
 
