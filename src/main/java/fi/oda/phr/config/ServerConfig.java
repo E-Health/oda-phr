@@ -26,10 +26,12 @@ public class ServerConfig {
     @Bean
     public RequestValidatingInterceptor validationInterceptor(){
         PrePopulatedValidationSupport validationSupport = new PrePopulatedValidationSupport();
+
         FhirContext ctx = FhirContext.forDstu3();
         IParser parser = ctx.newXmlParser();
         validationSupport.addStructureDefinition(loadStructureDefinition("profiles/ODA-Communication.structuredefinition.xml", parser));
-        //TODO: Populate validationSupport with ODA profiles (addCodeSystem, addStructureDefinition, addValueSet)
+        validationSupport.addCodeSystem(loadResource("codeSystems/simple-example.xml", parser));
+
         final List<Class<? extends IBaseResource>> ignoreList = new ArrayList<>();
         ignoreList.add(CarePlan.class);
         ignoreList.add(Bundle.class);
@@ -44,6 +46,16 @@ public class ServerConfig {
     @Bean(autowire = Autowire.BY_TYPE)
     public IServerInterceptor subscriptionSecurityInterceptor() {
         return new SubscriptionsRequireManualActivationInterceptorDstu3();
+    }
+
+    private <E extends MetadataResource> E loadResource(String file, IParser parser){
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(new ClassPathResource(Paths.get(file).toString()).getInputStream(), Charset.forName("UTF-8")))) {
+            return (E) parser.parseResource(reader);
+        }
+        catch (final IOException e) {
+            throw new RuntimeException("Unable to read profile file", e);
+        }
     }
 
     private StructureDefinition loadStructureDefinition(String file, IParser parser) {
