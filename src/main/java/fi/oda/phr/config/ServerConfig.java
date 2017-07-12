@@ -30,7 +30,6 @@ public class ServerConfig {
         FhirContext ctx = FhirContext.forDstu3();
         IParser parser = ctx.newXmlParser();
         validationSupport.addStructureDefinition(loadStructureDefinition("profiles/ODA-Communication.structuredefinition.xml", parser));
-        validationSupport.addCodeSystem(loadResource("codeSystems/simple-example.xml", parser));
 
         final List<Class<? extends IBaseResource>> ignoreList = new ArrayList<>();
         ignoreList.add(CarePlan.class);

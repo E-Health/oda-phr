@@ -1,0 +1,38 @@
+{
+	"resourceType": "PractitionerRole",
+	"id": "PRACTITIONER2-ROLE",
+	"active": "true",
+	"practitioner": {
+		"reference": "Practitioner/PRACTITIONER2",
+		"display": "Lasse Lääkäri"
+	},
+	"organization": {
+		"reference": "Organization/ORGANIZATION1",
+		"display": "Meilahti Tower Hospital"
+	},
+	"code": [
+		{
+			"coding": [
+				{
+					"system": "http://oda.fi/CodeSystem/practitionerroles",
+					"code": "prof"
+				},
+				{
+					"system": "http://oda.fi/CodeSystem/practitionerroles",
+					"code": "admin"
+				}
+			]
+		}
+	],
+	"specialty": [
+		{
+			"coding": [
+				{
+					"system": "http://snomed.info/sct",
+					"code": "408443003",
+					"display": "General medical practice"
+				}
+			]
+		}
+	]
+}
