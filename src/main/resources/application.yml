@@ -23,32 +23,32 @@ app:
         resources:
             - file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
               use_update: false
-#            - file: profiles/ODA-ActivityDefinition.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-CarePlan.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-CareTeam.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-Communication.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-EpisodeOfCare.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-Goal.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-MedicationStatement.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-Observation.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-Organization.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-Person.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-Practitioner.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-Questionnaire.profile.xml
-#              use_update: false
-#            - file: profiles/ODA-QuestionnaireResponse.profile.xml
-#              use_update: false
+            - file: profiles/ODA-ActivityDefinition.profile.xml
+              use_update: false
+            - file: profiles/ODA-CarePlan.profile.xml
+              use_update: false
+            - file: profiles/ODA-CareTeam.profile.xml
+              use_update: false
+            - file: profiles/ODA-Communication.profile.xml
+              use_update: false
+            - file: profiles/ODA-EpisodeOfCare.profile.xml
+              use_update: false
+            - file: profiles/ODA-Goal.profile.xml
+              use_update: false
+            - file: profiles/ODA-MedicationStatement.profile.xml
+              use_update: false
+            - file: profiles/ODA-Observation.profile.xml
+              use_update: false
+            - file: profiles/ODA-Organization.profile.xml
+              use_update: false
+            - file: profiles/ODA-Person.profile.xml
+              use_update: false
+            - file: profiles/ODA-Practitioner.profile.xml
+              use_update: false
+            - file: profiles/ODA-Questionnaire.profile.xml
+              use_update: false
+            - file: profiles/ODA-QuestionnaireResponse.profile.xml
+              use_update: false
             - file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
               use_update: false
 #            - file: valueSets/ODA-practitionerroles-valueset.xml
@@ -60,13 +60,13 @@ app:
             - file: datasets/practitioner1.json
             - file: datasets/practitioner2.json
             - file: datasets/practitioner3.json
+            - file: datasets/person-practitioner1.json
+            - file: datasets/person-practitioner2.json
+            - file: datasets/person-practitioner3.json
             - file: datasets/practitioner1-role.json
             - file: datasets/practitioner2-role.json
             - file: datasets/practitioner3-role.json
             - file: datasets/practitioner-role-valueset.json
-            - file: datasets/person-practitioner1.json
-            - file: datasets/person-practitioner2.json
-            - file: datasets/person-practitioner3.json
             - file: datasets/PATIENT1/patient.json
             - file: datasets/PATIENT1/person.json
             - file: datasets/PATIENT1/careteam-authorization.json
