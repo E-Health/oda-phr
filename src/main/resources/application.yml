@@ -98,6 +98,7 @@ app:
             - file: datasets/PATIENT3/careplan.json
             - file: datasets/PATIENT3/careteam-care.json
             - file: datasets/PATIENT4/patient.json
+            - file: datasets/PATIENT4/person.json
             - file: datasets/PATIENT4/episodeofcare.json
             - file: datasets/PATIENT4/careplan.json
             - file: datasets/PATIENT4/careteam-care.json
