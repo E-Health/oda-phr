@@ -23,7 +23,7 @@ app:
         resources:
             - file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
               use_update: false
-
+              
             - file: datasets/location1.json
             - file: datasets/organization1.json
             - file: datasets/healthcareservice1.json
@@ -103,8 +103,16 @@ app:
               use_update: false
             - file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
               use_update: false
-#            - file: valueSets/ODA-practitionerroles-valueset.xml
-#              use_update: false
+
+            - file: datasets/APPOINTMENT/ODALocation-example.json
+            - file: datasets/APPOINTMENT/ODAOrganization-example.json
+            - file: datasets/APPOINTMENT/ODAPatient-example.json
+            - file: datasets/APPOINTMENT/ODAPractitioner-example.json
+            - file: datasets/APPOINTMENT/ODASchedule-example.json
+            - file: datasets/APPOINTMENT/ODASlot-example.json
+            - file: datasets/APPOINTMENT/ODAHealthcareService-example.json
+            - file: datasets/APPOINTMENT/ODACareTeam-example.json
+            - file: datasets/APPOINTMENT/ODAAppointment-example.json
 
 spring:
     application:

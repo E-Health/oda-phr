@@ -1,0 +1,36 @@
+{
+  "resourceType": "Patient",
+  "id": "PATIENT2-APPOINTMENT",
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.36.146.595.217.0.1",
+      "value": "10001"
+    }
+  ],
+   "communication": [
+    {
+      "language": {
+        "coding": [
+          {
+            "system": "urn:ietf:bcp:47",
+            "code": "fi",
+            "display": "Finnish"
+          }
+        ]
+      },
+      "preferred": true
+    },
+    {
+      "language": {
+        "coding": [
+          {
+            "system": "urn:ietf:bcp:47",
+            "code": "en-US",
+            "display": "English"
+          }
+        ]
+      },
+      "preferred": false
+    }
+  ]
+}
