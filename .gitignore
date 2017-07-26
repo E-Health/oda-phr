@@ -1,4 +1,4 @@
-/target
+*.md.html
 /jpaserver_derby_files
 *.log
 ca.uhn.fhir.jpa.entity.ResourceTable/
