@@ -104,7 +104,7 @@ app:
             - file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
               use_update: false
 
-            - file: datasets/APPOINTMENT/ODALocation-example.json
+              - file: datasets/APPOINTMENT/ODALocation-example.json
             - file: datasets/APPOINTMENT/ODAOrganization-example.json
             - file: datasets/APPOINTMENT/ODAPatient-example.json
             - file: datasets/APPOINTMENT/ODAPractitioner-example.json
@@ -113,6 +113,7 @@ app:
             - file: datasets/APPOINTMENT/ODAHealthcareService-example.json
             - file: datasets/APPOINTMENT/ODACareTeam-example.json
             - file: datasets/APPOINTMENT/ODAAppointment-example.json
+
 
 spring:
     application:
