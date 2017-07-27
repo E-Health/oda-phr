@@ -1,7 +1,7 @@
 *.md.html
 /jpaserver_derby_files
 *.log
-ca.uhn.fhir.jpa.entity.ResourceTable/
+ca.uhn.fhir.jpa.entity.*/
 
 # Created by https://www.gitignore.io
 
