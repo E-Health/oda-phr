@@ -3,7 +3,7 @@
 	"id": "PRACTITIONER1-APPOINTMENT",
 	"identifier": [{
 		"use": "official",
-		"system": "urn:oid:2.16.528.1.1007.3.1",
+		"system": "urn:oid:2.16.52example.com",
 		"value": "874635264"
 	}],
 	"name": [{
