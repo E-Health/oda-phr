@@ -31,7 +31,7 @@ public class BundleInjector implements DataInjector {
 
     @Override
     public void inject(IGenericClient client) {
-        log.info("About to inject: " + sourceFile);
+        log.info("About to inject: {} ", sourceFile);
         final FhirContext ctx = FhirContext.forDstu3();
         ctx.setParserErrorHandler(new StrictErrorHandler());
         final IParser parser = ctx.newJsonParser();        
@@ -45,7 +45,7 @@ public class BundleInjector implements DataInjector {
             throw new RuntimeException("Unable to read file", e);
         }
         client.transaction().withBundle(bundle).execute();
-        log.info("Finished injecting: " + sourceFile);
+        log.info("Finished injecting: {}", sourceFile);
     }
 
 }

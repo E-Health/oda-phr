@@ -35,7 +35,7 @@ public class ResourceInjector implements DataInjector {
 
     @Override
     public void inject(IGenericClient client) {
-        log.info("About to inject: " + sourceFile);
+        log.info("About to inject: {}", sourceFile);
         final FhirContext ctx = FhirContext.forDstu3();
         ctx.setParserErrorHandler(new StrictErrorHandler());
         final IParser parser;
@@ -62,7 +62,7 @@ public class ResourceInjector implements DataInjector {
         else {
             client.create().resource(resource).prettyPrint().encodedJson().execute();
         }
-        log.info("Finished injecting: " + sourceFile);
+        log.info("Finished injecting: {}", sourceFile);
     }
 
 }
