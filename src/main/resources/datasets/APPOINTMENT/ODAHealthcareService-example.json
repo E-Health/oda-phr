@@ -1,0 +1,34 @@
+{
+	"resourceType": "HealthcareService",
+	"id" : "HEALTHCARESERVICE1-APPOINTMENT",
+	"identifier": [{
+		"system": "http://oda.fi/healthcarereferences",
+		"value": "HC-600"
+	}],
+	"type": [
+	    {
+	      "coding": [
+	        {
+	          "system": "http://oda.fi/palvelutyypit",
+	          "code": "123",
+	          "display": "Terveystarkastus"
+	        }
+	      ]
+	    }
+		],
+	"providedBy": {
+	  "reference": "Organization/ORGANIZATION1-APPOINTMENT"
+	},
+	"location": [
+	    {
+	      "reference": "Location/LOCATION1-APPOINTMENT"
+	    }
+	  ],
+	"name": "Malminkartanon terveysasema",
+	"telecom": [{
+		"system": "phone",
+		"value": "0555",
+		"use": "home"
+	}],
+	"appointmentRequired": true
+}

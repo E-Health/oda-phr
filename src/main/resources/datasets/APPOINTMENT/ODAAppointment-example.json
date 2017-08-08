@@ -1,0 +1,78 @@
+{
+  "resourceType": "Appointment",
+  "id" : "APPOINTMENT1-APPOINTMENT",
+  "identifier": [
+    {
+      "system": "urn:oid:2.16.840.1.113883.3.19.2.3",
+      "value": "1234"
+    }
+  ],
+  "status": "booked",
+  "appointmentType" : {
+    "coding" : [
+      {
+        "code" : "WALKIN",
+        "display" : "suoraan vastaanotolle"
+      }
+    ]
+  },
+  "reason": [
+    {
+      "coding":[
+        {
+          "system": "http://snomed.info/sct",
+          "code": "413095006"
+        }
+      ]
+    }
+  ],
+  "description": "Tarkistetaan potilaan tila.",
+  "start": "2013-12-10T09:00:00Z",
+  "end": "2013-12-10T09:15:00Z",
+  "minutesDuration": 15,
+  "slot": [
+    {
+      "identifier": {
+        "system": "http://oda.fi/patientsystem",
+        "value": "1100"
+      }
+    }
+  ],
+  "comment": "Potilaan tarkistus.",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/PATIENT2-APPOINTMENT",
+        "display": "Anna Demo"
+      },
+      "required": "required",
+      "status": "accepted"
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/ParticipationType",
+              "code": "ATND"
+            }
+          ]
+        }
+      ],
+      "actor": {
+        "reference": "Practitioner/PRACTITIONER1-APPOINTMENT",
+        "display": "Tri Pekka Pakarinen"
+      },
+      "required": "required",
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "HealthcareService/HEALTHCARESERVICE1-APPOINTMENT",
+        "display": "Malminkartano"
+      },
+      "required": "required",
+      "status": "accepted"
+    }
+  ]
+}
