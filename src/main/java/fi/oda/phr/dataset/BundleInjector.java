@@ -1,7 +1,6 @@
 package fi.oda.phr.dataset;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.nio.file.Paths;
 import java.util.Map;
 
@@ -38,7 +37,8 @@ public class BundleInjector implements DataInjector {
         parser.setPrettyPrint(true);
         Bundle bundle;
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new ClassPathResource(Paths.get(sourceFile).toString()).getInputStream(), Charset.forName("UTF-8")))) {
+                new InputStreamReader(new ClassPathResource(Paths.get(sourceFile).toString()).getInputStream(),
+                        java.nio.charset.StandardCharsets.UTF_8))) {
             bundle = parser.parseResource(Bundle.class, reader);
         }
         catch (final IOException e) {

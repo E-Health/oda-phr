@@ -1,30 +1,25 @@
 package fi.oda.phr.config;
 
-import ca.uhn.fhir.context.FhirContext;
-import ca.uhn.fhir.context.FhirVersionEnum;
-import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu3;
-import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu3;
-import ca.uhn.fhir.parser.IParser;
-import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
-import ca.uhn.fhir.rest.server.interceptor.RequestValidatingInterceptor;
-import fi.oda.phr.validation.OdaValidatingInterceptor;
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Paths;
+import java.util.*;
+
 import org.hl7.fhir.dstu3.hapi.validation.PrePopulatedValidationSupport;
 import org.hl7.fhir.dstu3.model.*;
 import org.hl7.fhir.instance.model.api.IBaseResource;
-import org.springframework.beans.factory.annotation.Autowire;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.core.io.ClassPathResource;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import ca.uhn.fhir.context.*;
+import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu3;
+import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu3;
+import ca.uhn.fhir.parser.IParser;
+import ca.uhn.fhir.rest.client.*;
+import ca.uhn.fhir.rest.server.interceptor.*;
+import fi.oda.phr.validation.OdaValidatingInterceptor;
 @Configuration
 @Import(BaseJavaConfigDstu3.class)
 public class ServerConfig {
@@ -42,6 +37,17 @@ public class ServerConfig {
         ignoreList.add(Bundle.class);
         ignoreList.add(Appointment.class);
         return new OdaValidatingInterceptor(Optional.of(validationSupport), ignoreList);
+    }
+
+    @Bean
+    public IGenericClient fhirClient(FhirConfig config, @Value("${server.port}") String port,
+            @Value("${server.contextPath}") String contextPath) {
+        final IRestfulClientFactory factory = FhirContext.forDstu3().getRestfulClientFactory();
+        factory.setConnectTimeout(config.timeout);
+        factory.setConnectionRequestTimeout(config.timeout);
+        factory.setSocketTimeout(config.timeout);
+        return factory.newGenericClient("http://localhost:" + port + "/" + contextPath + "/" + config.path);
+
     }
 
     @Bean
