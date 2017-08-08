@@ -7,15 +7,11 @@ import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.context.annotation.*;
+import org.springframework.orm.jpa.*;
 
 import ca.uhn.fhir.jpa.dao.DaoConfig;
-import ca.uhn.fhir.rest.server.interceptor.IServerInterceptor;
-import ca.uhn.fhir.rest.server.interceptor.LoggingInterceptor;
-import ca.uhn.fhir.rest.server.interceptor.ResponseHighlighterInterceptor;
+import ca.uhn.fhir.rest.server.interceptor.*;
 
 @Configuration
 public class FhirDatabaseConfig {
@@ -30,6 +26,7 @@ public class FhirDatabaseConfig {
         retVal.setSubscriptionPollDelay(5000);
         retVal.setSubscriptionPurgeInactiveAfterMillis(DateUtils.MILLIS_PER_HOUR);
         retVal.setAllowMultipleDelete(true);
+        retVal.setReuseCachedSearchResultsForMillis(null);
         return retVal;
     }
 
