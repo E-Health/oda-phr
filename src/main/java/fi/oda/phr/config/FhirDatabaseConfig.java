@@ -26,7 +26,7 @@ public class FhirDatabaseConfig {
         retVal.setSubscriptionPollDelay(5000);
         retVal.setSubscriptionPurgeInactiveAfterMillis(DateUtils.MILLIS_PER_HOUR);
         retVal.setAllowMultipleDelete(true);
-        retVal.setReuseCachedSearchResultsForMillis(null);
+        retVal.setReuseCachedSearchResultsForMillis(null); //search cache disabled intentionally to prevent showing old data
         return retVal;
     }
 
