@@ -40,16 +40,23 @@ public class DatasetInitializer implements ApplicationListener<ApplicationReadyE
         this.fhirClient = fhirClient;
         this.dataConfig = dataConfig;
     }
-    public List<DataInjector> parseDatasets(DataConfig dataConfig) throws ClassNotFoundException, NoSuchMethodException, SecurityException,
-            InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+
+    public List<DataInjector> parseDatasets(
+            DataConfig dataConfig) {
         List<DataInjector> datasets = new ArrayList<DataInjector>();
         for (Map<String, String> dataset : dataConfig.getResources()) {
             String injectorName = dataset.get(DataConfig.SET_INJECTOR_CLASS);
             injectorName = ObjectUtils.defaultIfNull(dataset.get(DataConfig.SET_INJECTOR_CLASS), defaultInjectorClass);
             dataset.putIfAbsent(useUpdateKey, useUpdateDefault);
-            Class<?> injectorClass = Class.forName(injectorName, true, DataInjector.class.getClassLoader());
-            Constructor<?> injectorConstructor = injectorClass.getConstructor(Map.class);
-            datasets.add((DataInjector) injectorConstructor.newInstance(dataset));
+            try {
+                Class<?> injectorClass = Class.forName(injectorName, true, DataInjector.class.getClassLoader());
+                Constructor<?> injectorConstructor = injectorClass.getConstructor(Map.class);
+                datasets.add((DataInjector) injectorConstructor.newInstance(dataset));
+            }
+            catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException
+                    | IllegalArgumentException | InvocationTargetException e) {
+                throw new RuntimeException(e);
+            }
         }
         log.info("Done loading datasets");
         return datasets;
@@ -58,13 +65,7 @@ public class DatasetInitializer implements ApplicationListener<ApplicationReadyE
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
         if (runDataOnStart) {
-            try {
                 feedData(parseDatasets(dataConfig), fhirClient);
-            }
-            catch (ClassNotFoundException | NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException
-                    | IllegalArgumentException | InvocationTargetException e) {
-                log.error("Failed to load data", e);
-            }
         }
     }
 

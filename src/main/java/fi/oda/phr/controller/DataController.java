@@ -1,8 +1,5 @@
 package fi.oda.phr.controller;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-
 import javax.servlet.http.*;
 
 import org.slf4j.*;
@@ -28,8 +25,7 @@ public class DataController {
 
     @RequestMapping(value = "/data/init", method = RequestMethod.POST)
     public void initData(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
-            throws IOException, ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException,
-            IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+            throws Exception {
         log.debug("Feeding data...");
         dataInitializer.feedData(dataInitializer.parseDatasets(dataConfig), fhirClient);
         httpServletResponse.setStatus(HttpServletResponse.SC_OK);

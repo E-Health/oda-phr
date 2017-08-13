@@ -1,18 +1,22 @@
 package fi.oda.phr.config;
 
+import static java.util.Arrays.asList;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 import org.junit.*;
+import org.junit.rules.ExpectedException;
 
 import ca.uhn.fhir.rest.client.*;
 import fi.oda.phr.dataset.*;
 public class DatasetInitializerTest {
     private IGenericClient fhirClient;
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     private DatasetInitializer datasetInitializer;
 
@@ -26,24 +30,33 @@ public class DatasetInitializerTest {
 
     private final String foobarInjector = "fi.oda.phr.dataset.Foobar";
 
+    private Map<String, String> bundleInjectorConfig;
+
+    private Map<String, String> resourceInjectorConfig;
+
+    private Map<String, String> foobarInjectorConfig;
+
     @Before
     public void setUp() {
         fhirClient = mock(GenericClient.class);
-        injectors = new ArrayList<Map<String, String>>();
+        resourceInjectorConfig = new HashMap<String, String>();
+        bundleInjectorConfig = new HashMap<String, String>();
+        foobarInjectorConfig = new HashMap<String, String>();
+
+        resourceInjectorConfig.put("file", "datafile.json");
+        resourceInjectorConfig.put("injector", resourceInjector);
+
+        bundleInjectorConfig.put("file", "datafile2.json");
+        bundleInjectorConfig.put("injector", bundleInjector);
+
+        foobarInjectorConfig.put("file", "datafile.json");
+        foobarInjectorConfig.put("injector", foobarInjector);
 
     }
     @Test
-    public void parseValidInjectors() throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException,
-            IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public void parseValidInjectors() {
         dataConfig = new DataConfig();
-        Map<String, String> validInjectors = new HashMap<String, String>();
-        validInjectors.put("file", "datafile.json");
-        validInjectors.put("injector", resourceInjector);
-        injectors.add(validInjectors);
-        validInjectors = new HashMap<String, String>();
-        validInjectors.put("file", "datafile2.json");
-        validInjectors.put("injector", bundleInjector);
-        injectors.add(validInjectors);
+        injectors = asList(bundleInjectorConfig, resourceInjectorConfig);
         dataConfig.setResources(injectors);
         datasetInitializer = new DatasetInitializer(fhirClient, dataConfig, "true");
         List<DataInjector> sets = datasetInitializer.parseDatasets(dataConfig);
@@ -52,21 +65,17 @@ public class DatasetInitializerTest {
         assertThat(sets, hasItem(isA(BundleInjector.class)));
     }
 
-    @Test(expected = ClassNotFoundException.class)
-    public void parseInvalidInjector() throws ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException,
-            IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    @Test
+    public void parseInvalidInjector() {        
         dataConfig = new DataConfig();
-        Map<String, String> validInjectors = new HashMap<String, String>();
-        validInjectors.put("file", "datafile.json");
-        validInjectors.put("injector", foobarInjector);
-        injectors.add(validInjectors);
-        validInjectors = new HashMap<String, String>();
-        validInjectors.put("file", "datafile2.json");
-        validInjectors.put("injector", bundleInjector);
-        injectors.add(validInjectors);
+        injectors = asList(foobarInjectorConfig);
         dataConfig.setResources(injectors);
+        thrown.expect(RuntimeException.class);
+        thrown.expectCause(isA(ClassNotFoundException.class));
+        thrown.expectMessage("java.lang.ClassNotFoundException: fi.oda.phr.dataset.Foobar");
         datasetInitializer = new DatasetInitializer(fhirClient, dataConfig, "true");
         datasetInitializer.parseDatasets(dataConfig);
+        
     }
 
 }
