@@ -114,6 +114,9 @@ app:
             - file: datasets/APPOINTMENT/ODACareTeam-example.json
             - file: datasets/APPOINTMENT/ODAAppointment-example.json
 
+            - file: datasets/symptom_checks/Virtsatietulehdus.json
+              use_update: false
+
 
 spring:
     application:
