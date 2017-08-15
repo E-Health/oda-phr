@@ -184,6 +184,11 @@
 					},
 					"enableWhen": [{
 							"question": "305",
+							"extension": [{
+                                    "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+                                    "valueString": "AND"
+                                }
+                            ],
 							"answerCoding": {
 								"id": "461"
 							}

@@ -114,9 +114,30 @@ app:
             - file: datasets/APPOINTMENT/ODACareTeam-example.json
             - file: datasets/APPOINTMENT/ODAAppointment-example.json
 
+            - file: datasets/symptom_checks/Yska.json
+              use_update: false
             - file: datasets/symptom_checks/Virtsatietulehdus.json
               use_update: false
-
+            - file: datasets/symptom_checks/Korvakipu.json
+              use_update: false
+            - file: datasets/symptom_checks/Kurkkukipu.json
+              use_update: false
+            - file: datasets/symptom_checks/Ripuli.json
+              use_update: false
+            - file: datasets/symptom_checks/Alaselka.json
+              use_update: false
+            - file: datasets/symptom_checks/Narastys.json
+              use_update: false
+            - file: datasets/symptom_checks/Olkapaa.json
+              use_update: false
+            - file: datasets/symptom_checks/Paansarky.json
+              use_update: false
+            - file: datasets/symptom_checks/Peraaukko.json
+              use_update: false
+            - file: datasets/symptom_checks/Polvi.json
+              use_update: false
+            - file: datasets/symptom_checks/Silma.json
+              use_update: false
 
 spring:
     application:

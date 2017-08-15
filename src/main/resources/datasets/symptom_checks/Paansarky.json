@@ -1,0 +1,616 @@
+{
+	"resourceType": "Questionnaire",
+	"language": "fi",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/101",
+	"status": "active",
+	"date": "2017-07-05T09:16:02.178Z",
+	"publisher": "© Kustannus Oy Duodecim, 2017",
+	"copyright": "© Kustannus Oy Duodecim, 2017",
+	"identifier": [{
+			"system": "http://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"value": "101"
+		}
+	],
+	"meta": {
+		"profile": [
+			"http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+		]
+	},
+	"title": "Päänsäryn itsearvio - päivitetty",
+	"text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia päänsärkyoireen yhteydessä.</div>"
+	},
+	"extension": [{
+			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
+			"extension": [{
+					"url": "instruction-text",
+					"valueString": "## Itsehoito-ohje\n\n  \n\nSilloin tällöin esiintyvää lievää päänsärkyä, johon ei liity muita oireita, on turvallista seurata ja tarvittaessa hoitaa tulehduskipulääkkeillä (ks. [Kipulääkkeet - turvallinen käyttö](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00649)). Sama pätee särkyyn, jolle on selvä mutta itsestään paraneva syy, esimerkiksi alkoholin käytön tai lievä päähän kohdistuneen iskun aiheuttama särky.\n\nJännityspäänsäryn (ks. [Jännityspäänsärky](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00024)) hoidossa ovat tärkeitä potilaan omat toimet: rentouttava voimistelu ja liikunta (esimerkiksi sauvakävely), työasentojen muuttaminen, unirytmin korjaaminen, kipualueen hieronta ja lämmitys. Tarvittaessa myös tulehduskipulääkkeiden lyhytaikainen käyttö voi olla avuksi.\n\nMigreenipotilas voi sen jälkeen, kun migreenidiagnoosi on asetettu, yleensä hoitaa kohtaukset omatoimisesti lääkärin kanssa sopivaksi katsotulla lääkehoidolla.\n\nPäänsäryn itsehoitoon sopivasta lääkityksestä saat tietoa [Itselääkitys](http://www.kaypahoito.fi/web/kh/suositukset/suositus?id=hoi50106#s6_2)-hoitosuosituksesta."
+				}
+			]
+		}
+	],
+	"item": [{
+			"linkId": "introduction",
+			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Anna oireisen henkilön taustatiedot ja vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Päänsäryn arviointi\n\nPäänsärkyyn on lukuisia syitä, viattomista särkylääkkeillä hoidettavista ohimenevistä kivuista vakaviin ja välitöntä hoitoa vaativiin sairauksiin.  \n\nTämän ohjeen tarkoituksena on ensi sijassa erottaa kiireellistä hoitoa vaativat tilanteet muista. Lieviä oireita, jotka eivät edellytä kiireellistä käyntiä vastaanotolla, on seurattava, ja oireiden mahdollisesti lisääntyessä tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan. \n\n  \nLue ensin artikkeli tästä linkistä [Päänsärky](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00322) ja tarvittaessa siihen linkitettyjä muita artikkeleita sekä päänsäryn itsehoito-ohje. Mikäli ongelmasi ei tunnu soveltuvan itsehoitoon vastaa oirekyselyyn.  \n\n\n\n**Jos päänsärkyä valittanut henkilö on tajuton eikä reagoi kevyeen ravisteluun, soita välittömästi numeroon 112.**  \n",
+			"type": "group",
+			"item": [{
+					"required": true,
+					"linkId": "20",
+					"text": "### Oma arvioni",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "46",
+								"display": "Oireeni sopivat itse hoidettaviksi ja haluan vain itsehoito-ohjeen"
+							}
+						}, {
+							"valueCoding": {
+								"id": "47",
+								"display": "Arvelen tarvitsevani muuta hoitoa ja haluan täyttää oirekyselyn"
+							}
+						}
+					]
+				}, {
+					"linkId": "161",
+					"text": "# Päänsärkyartikkelin tulostus\n\n\n\nTulosta Lääkärikirja Duodecimin artikkeli [Päänsärky](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00322) artikkelin lopussa olevasta tulostuslinkistä.\n\n",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "46"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "3",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "21612-7"
+						}
+					],
+					"text": "Ikä (vuosia)",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"linkId": "14",
+					"text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 15,
+								"comparator": "<"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "436",
+					"text": "Miten päänsärky on alkanut?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "678",
+								"display": "Särky on kehittynyt vähitellen."
+							}
+						}, {
+							"valueCoding": {
+								"id": "679",
+								"display": "Alkoi voimakkaana ja äkillisesti itsestään tai ponnistamisen yhteydessä ja kehittyi nykyiselleen muutaman minuutin kuluessa."
+							}
+						}, {
+							"valueCoding": {
+								"id": "680",
+								"display": "Alkoi äkillisesti päähän osuneen kovan iskun jälkeen."
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "100",
+					"text": "Kauanko päänsärky on kestänyt?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "227",
+								"display": "Alle vuorokauden."
+							}
+						}, {
+							"valueCoding": {
+								"id": "228",
+								"display": "1-3 vuorokautta."
+							}
+						}, {
+							"valueCoding": {
+								"id": "229",
+								"display": "Yli 3 vuorokautta."
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "101",
+					"text": "Päänsäryn voimakkuus (0 = ei särkyä, 10 = pahin mahdollinen särky)",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "931",
+								"display": "0 ei särkyä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "230",
+								"display": "1"
+							}
+						}, {
+							"valueCoding": {
+								"id": "231",
+								"display": "2 lievä särky, ei haittaa arkisia toimia"
+							}
+						}, {
+							"valueCoding": {
+								"id": "232",
+								"display": "3"
+							}
+						}, {
+							"valueCoding": {
+								"id": "233",
+								"display": "4 kiusallinen, häiritsevä särky"
+							}
+						}, {
+							"valueCoding": {
+								"id": "234",
+								"display": "5"
+							}
+						}, {
+							"valueCoding": {
+								"id": "235",
+								"display": "6 viheliäinen, hankala särky"
+							}
+						}, {
+							"valueCoding": {
+								"id": "236",
+								"display": "7"
+							}
+						}, {
+							"valueCoding": {
+								"id": "237",
+								"display": "8 vaikea, voimakkaasti haittaava särky"
+							}
+						}, {
+							"valueCoding": {
+								"id": "238",
+								"display": "9"
+							}
+						}, {
+							"valueCoding": {
+								"id": "239",
+								"display": "10 pahin mahdollinen särky"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "103",
+					"text": "Päänsäryn lisäoireet (Miksi näitä kysytään? Ks. [Aivokalvontulehdus](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00558), [Aivohalvaus](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00001), [Ohimovaltimon tulehdus](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00932)), onko jotakin seuraavista:",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "246",
+								"display": "yleistilan huononeminen (esimerkiksi selviytyminen tavallisista päivittäisistä askareista selvästi heikentynyt),"
+							}
+						}, {
+							"valueCoding": {
+								"id": "247",
+								"display": "tajunnanhäiriöitä,"
+							}
+						}, {
+							"valueCoding": {
+								"id": "248",
+								"display": "niskan kipu ja jäykkyys (leukaa ei saa painetuksi rintaan),"
+							}
+						}, {
+							"valueCoding": {
+								"id": "249",
+								"display": "oksentelua,"
+							}
+						}, {
+							"valueCoding": {
+								"id": "250",
+								"display": "kouristuksia, puhehäiriöitä, raajan tai kasvojen alueen puutumista, voimattomuutta tai toimintahäiriö,"
+							}
+						}, {
+							"valueCoding": {
+								"id": "930",
+								"display": "voimakas ohimon alueen kipu ja näön häiriöitä."
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään yllä olevista"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "38",
+					"text": "Onko sinulla kuumetta?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "7",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "8310-5"
+						}
+					],
+					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8)",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "38",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "293",
+					"text": "Onko sinulla hengitystietulehduksen oireita (nuha, yskä, kurkkukipu)?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "287",
+					"text": "Onko sinulla aiemmin on todettu migreeni (ks. [Migreeni](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00047))?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "936",
+								"display": "On todettu, mutta särky on nyt toisenlaista."
+							}
+						}, {
+							"valueCoding": {
+								"id": "937",
+								"display": "On todettu, mutta migreenilääkitys ei auta."
+							}
+						}, {
+							"valueCoding": {
+								"id": "938",
+								"display": "Ei ole todettu."
+							}
+						}, {
+							"valueCoding": {
+								"id": "939",
+								"display": "En tiedä."
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "606",
+					"text": "Kuvaile omin sanoin, millä tavoin särkyoire on muuttunut:",
+					"type": "text",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "287",
+							"answerCoding": {
+								"id": "936"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "441",
+					"text": "Onko sinulla aikaisemmin ollut samanlaista päänsärkyä?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "932",
+								"display": "Kyllä, ja oireet ovat viime kuukausina olleet samanlaiset, välillä on ollut oireettomia aikoja."
+							}
+						}, {
+							"valueCoding": {
+								"id": "933",
+								"display": "Kyllä, mutta oireet ovat viime kuukausina tai viikkoina lisääntyneet."
+							}
+						}, {
+							"valueCoding": {
+								"id": "935",
+								"display": "Ei ole ollut."
+							}
+						}, {
+							"valueCoding": {
+								"id": "934",
+								"display": "En osaa sanoa."
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "439",
+					"text": "Päänsärkykohtaus on jo mennyt ohi",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "341",
+					"text": "# Muut oireeseen liittyvät asiat\n\nMikäli sinulla on oireita, joita kyselyssä ei ole käsitelty tai muita sairauksia tai lääkityksiä, joiden arvelet vaikuttavan hoidon tarpeeseesi, ota yhteys sinua hoitavaan terveydenhuollon yksikköön tai kiireellisessä tapauksessa lähimpään päivystävään toimipisteeseen.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
