@@ -110,6 +110,7 @@ app:
             - file: datasets/APPOINTMENT/ODAPractitioner-example.json
             - file: datasets/APPOINTMENT/ODASchedule-example.json
             - file: datasets/APPOINTMENT/ODASlot-example.json
+            - file: datasets/APPOINTMENT/ODAEndpoint-example.json
             - file: datasets/APPOINTMENT/ODAHealthcareService-example.json
             - file: datasets/APPOINTMENT/ODACareTeam-example.json
             - file: datasets/APPOINTMENT/ODAAppointment-example.json

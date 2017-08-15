@@ -3,8 +3,9 @@
   "id": "LOCATION1-APPOINTMENT",
   "identifier": [
     {
-      "system": "http://oda.fi/identifiers/slots",
-      "value": "123132"
+      "use": "temp",
+      "system": "https://oda.fi/identifiers/locations",
+      "value": "LOC1"
     }
   ],
   "status": "active",

@@ -30,5 +30,10 @@
 		"value": "0555",
 		"use": "home"
 	}],
-	"appointmentRequired": true
+	"appointmentRequired": true,
+	"endpoint": [
+		{
+			"reference": "Endpoint/ENDPOINT1-APPOINTMENT"
+		}
+	]
 }
