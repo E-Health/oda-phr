@@ -1,0 +1,60 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "ENCOUNTER-REASON-CODESYSTEM",
+  "url": "http://oda.fi/CodeSystem/encounterreason",
+  "status": "draft",
+  "valueSet": "http://example.com/fhir/encounter-reason-type",
+  "content": "example",
+  "concept": [
+    {
+      "code": "A77",
+      "display": "Muu virustauti NUD",
+      "definition": "Muu virustauti NUD"
+    },
+    {
+      "code": "R05",
+      "display": "Yskä",
+      "definition": "Yskä"
+    },
+    {
+      "code": "R71",
+      "display": "Hinkuyskä",
+      "definition": "Hinkuyskä"
+    },
+    {
+      "code": "R74",
+      "display": "Akuutti ylähengitystieinfektio",
+      "definition": "Akuutti ylähengitystieinfektio"
+    },
+    {
+      "code": "R75",
+      "display": "Poskiontelotulehdus, akuutti/krooninen",
+      "definition": "Poskiontelotulehdus, akuutti/krooninen"
+    },
+    {
+      "code": "R77",
+      "display": "Akuutti kurkunpääntulehdus / henkitorven tulehdus",
+      "definition": "Akuutti kurkunpääntulehdus / henkitorven tulehdus"
+    },
+    {
+      "code": "R78",
+      "display": "Äkillinen keuhkoputkentulehdus",
+      "definition": "Äkillinen keuhkoputkentulehdus/bronkioliitti"
+    },
+    {
+      "code": "R80",
+      "display": "Influenssa keuhkokuumeen kanssa",
+      "definition": "Influenssa keuhkokuumeen kanssa"
+    },
+    {
+      "code": "R81",
+      "display": "Keuhkokuume",
+      "definition": "Keuhkokuume"
+    },
+    {
+      "code": "R96",
+      "display": "Astma",
+      "definition": "Astma"
+    }
+  ]
+}

@@ -23,11 +23,10 @@ app:
         resources:
             - file: datasets/symptom_checks/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
               use_update: false
-              
+
             - file: datasets/misc/location1.json
             - file: datasets/misc/organization1.json
             - file: datasets/misc/healthcareservice1.json
-            - file: datasets/misc/practitioner-role-valueset.json
             - file: datasets/misc/practitioner4.json
             - file: datasets/misc/person-practitioner4.json
             - file: datasets/misc/careteam3-authorization.json
@@ -128,9 +127,16 @@ app:
             - file: datasets/APPOINTMENT/ODAPractitioner-example.json
             - file: datasets/APPOINTMENT/ODASchedule-example.json
             - file: datasets/APPOINTMENT/ODASlot-example.json
+            - file: datasets/APPOINTMENT/ODAEndpoint-example.json
             - file: datasets/APPOINTMENT/ODAHealthcareService-example.json
             - file: datasets/APPOINTMENT/ODACareTeam-example.json
             - file: datasets/APPOINTMENT/ODAAppointment-example.json
+
+            - file: valueSets/practitioner-role-valueset.json
+            - file: valueSets/location-valueset.json
+            - file: codeSystems/action-type-codesystem.json
+            - file: codeSystems/encounter-reason-codesystem.json
+            - file: codeSystems/endpoint-connection-type-codesystem.json
 
             - file: datasets/symptom_checks/Yska.json
               use_update: false

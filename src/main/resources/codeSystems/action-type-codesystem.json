@@ -1,0 +1,55 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "ACTION-TYPE-CODESYSTEM",
+  "url": "http://oda.fi/CodeSystem/action-type",
+  "status": "draft",
+  "valueSet": "http://example.com/fhir/action-type",
+  "content": "example",
+  "concept": [
+    {
+      "code": "AAAA",
+      "display": "Virhekirjaukset",
+      "definition": "Virhekirjaukset"
+    },
+    {
+      "code": "AAPUV",
+      "display": "Apuvälinepalvelut",
+      "definition": "Apuvälinepalvelut"
+    },
+    {
+      "code": "AFYS",
+      "display": "Fysioterapia",
+      "definition": "Fysioterapia"
+    },
+    {
+      "code": "AHANK",
+      "display": "HUS AVK Hankinnat",
+      "definition": "HUS AVK Hankinnat"
+    },
+    {
+      "code": "AJAKEL",
+      "display": "Hoitotarvikejakelu",
+      "definition": "Hoitotarvikejakelu"
+    },
+    {
+      "code": "AKEHPA",
+      "display": "Kehva kuntoutus",
+      "definition": "Kehva kuntoutus"
+    },
+    {
+      "code": "AKORVA",
+      "display": "Korvayksikkö",
+      "definition": "Korvayksikkö"
+    },
+    {
+      "code": "AKUNTO",
+      "display": "Kuntoutuksen ostopalvelut",
+      "definition": "Kuntoutuksen ostopalvelut"
+    },
+    {
+      "code": "AMTER",
+      "display": "Muut terapiat",
+      "definition": "Muut terapiat"
+    }
+  ]
+}
