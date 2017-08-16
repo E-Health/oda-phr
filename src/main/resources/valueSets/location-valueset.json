@@ -1,0 +1,101 @@
+{
+  "resourceType": "ValueSet",
+  "id": "LOCATION-VALUESET",
+  "url": "http://oda.fi/ValueSet/locations",
+  "status": "draft",
+  "compose": [{
+    "include": [{
+      "system": "http://oda.fi/CodeSystem/Locations",
+      "concept": [
+        {
+        "code": "31AUN",
+        "display": "Auroran neuvola",
+        "designation": [{
+          "language": "fi-FI",
+          "value": "Auroran neuvola"
+        },
+          {
+            "language": "se-FI",
+            "value": "Aurora rådgivning"
+          }
+        ]
+      },
+        {
+          "code": "31BOK",
+          "display": "Boställsskolan",
+          "designation": [{
+            "language": "fi-FI",
+            "value": "Boställsskolan"
+          },
+            {
+              "language": "se-FI",
+              "value": "Boställsskolan"
+            }
+          ]
+        },
+        {
+          "code": "31ELO",
+          "display": "Elit Espoon liiketalousinstitu",
+          "designation": [
+            {
+            "language": "fi-FI",
+            "value": "Elit Espoon liiketalousinstitu"
+            }
+          ]
+        },
+        {
+          "code": "31ETO",
+          "display": "Omnia Leppävaara  Upseerinkatu",
+          "designation": [
+            {
+            "language": "fi-FI",
+            "value": "Omnia Leppävaara  Upseerinkatu"
+            }
+          ]
+        },
+        {
+          "code": "31EVO",
+          "display": "Metropolia Leppävaara",
+          "designation": [
+            {
+              "language": "fi-FI",
+              "value": "Metropolia Leppävaara"
+            }
+          ]
+        },
+        {
+          "code": "31JUK",
+          "display": "Jupperin koulu",
+          "designation": [
+            {
+              "language": "fi-FI",
+              "value": "Jupperin koulu"
+            }
+          ]
+        },
+        {
+          "code": "31JUN",
+          "display": "PASSJupperin neuvola",
+          "designation": [
+            {
+              "language": "fi-FI",
+              "value": "PASSJupperin neuvola"
+            }
+          ]
+        },
+        {
+          "code": "31JUN",
+          "display": "PASSKarakallion neuvola",
+          "designation": [
+            {
+              "language": "fi-FI",
+              "value": "PASSKarakallion neuvola"
+            }
+          ]
+        }
+
+      ]
+    }]
+  }]
+
+}

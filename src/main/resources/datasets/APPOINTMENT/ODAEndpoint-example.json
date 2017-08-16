@@ -8,6 +8,19 @@
     }
   ],
   "status": "active",
-  "name": "Ulkopuolisten palvelujen haku",
-  "address": "http://example.com/open/CarePlan"
+  "connectionType": {
+    "system": "http://hl7.org/fhir/endpoint-connection-type",
+    "code": "hl7-fhir-rest"
+  },
+  "name": "Ulkopuolisten hoitosuunnitelmien haku",
+  "payloadType": [
+    {
+      "coding": [
+        {
+          "system": "http://hl7.org/fhir/resource-types",
+          "code": "CarePlan"
+        }
+      ]
+    }
+  ],  "address": "http://example.com/open/CarePlan"
 }

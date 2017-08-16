@@ -23,7 +23,7 @@ app:
         resources:
             - file: datasets/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
               use_update: false
-              
+
             - file: datasets/location1.json
             - file: datasets/organization1.json
             - file: datasets/healthcareservice1.json
@@ -36,7 +36,6 @@ app:
             - file: datasets/practitioner1-role.json
             - file: datasets/practitioner2-role.json
             - file: datasets/practitioner3-role.json
-            - file: datasets/practitioner-role-valueset.json
             - file: datasets/PATIENT1/patient.json
             - file: datasets/PATIENT1/person.json
             - file: datasets/PATIENT1/careteam-authorization.json
@@ -114,6 +113,12 @@ app:
             - file: datasets/APPOINTMENT/ODAHealthcareService-example.json
             - file: datasets/APPOINTMENT/ODACareTeam-example.json
             - file: datasets/APPOINTMENT/ODAAppointment-example.json
+
+            - file: valueSets/practitioner-role-valueset.json
+            - file: valueSets/location-valueset.json
+            - file: codeSystems/action-type-codesystem.json
+            - file: codeSystems/encounter-reason-codesystem.json
+            - file: codeSystems/endpoint-connection-type-codesystem.json
 
 
 spring:

@@ -4,6 +4,7 @@
   "url": "http://oda.fi/ValueSet/endpointconnectiontype",
   "status": "draft",
   "valueSet": "http://hl7.org/fhir/endpoint-connection-type",
+  "content": "example",
   "concept": [
         {
           "code": "ihe-xcpd",
