@@ -1,0 +1,51 @@
+{
+	"resourceType" : "Person",
+	"id" : "PERSON6",
+	"identifier": [
+        {
+          "system": "urn:oid:1.2.246.21",
+          "value": "030303-0303"
+        }
+    ],
+    "name": [
+      {
+        "text": "Tarja Testipotilas",
+        "family": "Testipotilas",
+        "given": [
+          "Tarja"
+        ]
+      }
+    ],
+    "address": [
+      {
+        "line": [
+          "Katu 1"
+        ],
+        "city": "Turku",
+        "postalCode": "02120",
+        "country": "Suomi"
+      }
+    ],
+    "active": true,
+    "telecom": [
+        {
+            "use": "home"
+        },
+        {
+            "system": "phone",
+            "value": "(044) 1029345",
+            "use": "work"
+        }
+    ],
+    "gender": "female",
+    "birthDate": "2003-03-03",
+    "link":[
+        {   
+            "target":{
+                "reference": "Patient/PATIENT6",
+                "display" : "Tarja Testipotilas"
+            }         
+        }
+    ]
+      
+}

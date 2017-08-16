@@ -1,0 +1,51 @@
+{
+	"resourceType" : "Person",
+	"id" : "PERSON8",
+	"identifier": [
+        {
+          "system": "urn:oid:1.2.246.21",
+          "value": "040404-0404"
+        }
+    ],
+    "name": [
+      {
+        "text": "Kalle Kipeä",
+        "family": "Kipeä",
+        "given": [
+          "Kalle"
+        ]
+      }
+    ],
+    "address": [
+      {
+        "line": [
+          "Peltokatu 1"
+        ],
+        "city": "Iisalmi",
+        "postalCode": "02120",
+        "country": "Suomi"
+      }
+    ],
+    "active": true,
+    "telecom": [
+        {
+            "use": "home"
+        },
+        {
+            "system": "phone",
+            "value": "(044) 1029345",
+            "use": "work"
+        }
+    ],
+    "gender": "male",
+    "birthDate": "2004-04-04",
+    "link":[
+        {   
+            "target":{
+                "reference": "Patient/PATIENT8",
+                "display" : "Kalle Kipeä"
+            }         
+        }
+    ]
+      
+}

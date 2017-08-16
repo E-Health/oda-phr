@@ -1,6 +1,6 @@
 {
     "resourceType": "CarePlan",
-    "id" : "CAREPLAN1-PATIENT1",
+    "id" : "CAREPLAN1-PATIENT8",
     "identifier":[
         {
             "use":"temp",
@@ -8,12 +8,8 @@
         }
     ],
     "subject":{
-              "reference":"Patient/PATIENT1"
+              "reference":"Patient/PATIENT8"
     },
-    "context":{
-              "reference":"EpisodeOfCare/EPISODEOFCARE1-PATIENT1"
-    },
-    
     "status":"active",
     "period":{
               "start":"2017-03-01T00:00:00.000Z",
@@ -21,12 +17,12 @@
     },
     "author":[
         {
-              "reference":"Patient/PATIENT1"
+              "reference":"Patient/PATIENT8"
         }
     ],
     "careTeam":[
         {
-         "reference" : "CareTeam/CARETEAM2-AUTHORIZATION"
+         "reference" : "CareTeam/CARETEAM1-AUTHORIZATION"
         }
     ],
     "category":[

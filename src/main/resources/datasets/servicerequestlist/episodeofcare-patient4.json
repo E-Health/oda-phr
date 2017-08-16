@@ -6,7 +6,7 @@
     "reference": "Patient/PATIENT4"
   },
   "careManager": {
-    "reference": "Practitioner/PRACTITIONER1"
+    "reference": "Practitioner/PRACTITIONER3"
   },
   "team": [
     {

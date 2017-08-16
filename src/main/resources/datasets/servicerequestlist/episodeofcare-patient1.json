@@ -6,11 +6,11 @@
     "reference": "Patient/PATIENT1"
   },
   "careManager": {
-    "reference": "Practitioner/PRACTITIONER2"
+    "reference": "Practitioner/PRACTITIONER1"
   },
   "team": [
     {
-      "reference": "CareTeam/CARETEAM2-CARE"
+      "reference": "CareTeam/CARETEAM1-CARE"
     }
   ]
 }

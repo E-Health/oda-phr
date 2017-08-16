@@ -1,12 +1,12 @@
 {
   "resourceType": "CareTeam",
-  "id" : "CARETEAM2-AUTHORIZATION",
+  "id" : "CARETEAM1-CARE",
   "category" : [{
     "coding" : [{
         "system" : "http://oda",
-        "code": "Authorization"
+        "code": "Care"
     }],
-    "text" : "Authorization"
+    "text" : "Care"
   }],
   "period": {
     "end": "2017-05-01"
@@ -15,22 +15,13 @@
   "participant": [
     {
       "role": {
-        "text": "Hoitava ortopedi"
+        "text": "Hoitava lääkäri"
       },
       "member": {
         "reference": "Practitioner/PRACTITIONER2",
         "display": "Lasse Lääkäri"
       }
     },
-    {
-      "role": {
-        "text": "Hoitava endokrinologi"
-      },
-      "member": {
-        "reference": "Practitioner/PRACTITIONER3",
-        "display": "Maija Meikäläinen"
-      }
-    },    
     {
       "role": {
         "text": "Hoitava terveysasema"
