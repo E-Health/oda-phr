@@ -11,15 +11,15 @@
   "period": {
     "end": "2017-05-01"
   },  
-  "name": "Hoitotiimi",
+  "name": "Työjono 123",
   "participant": [
     {
       "role": {
         "text": "Hoitava lääkäri"
       },
       "member": {
-        "reference": "Practitioner/PRACTITIONER1",
-        "display": "Pekka Pakarinen"
+        "reference": "Practitioner/PRACTITIONER4",
+        "display": "Kimmo Kirurgi"
       }
     }
   ]

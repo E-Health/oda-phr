@@ -1,6 +1,6 @@
 {
     "resourceType": "CarePlan",
-    "id" : "CAREPLAN1-PATIENT2",
+    "id" : "CAREPLAN1-PATIENT1",
     "identifier":[
         {
             "use":"temp",
@@ -8,10 +8,10 @@
         }
     ],
     "subject":{
-              "reference":"Patient/PATIENT2"
+              "reference":"Patient/PATIENT1"
     },
     "context":{
-              "reference":"EpisodeOfCare/EPISODEOFCARE1-PATIENT2"
+              "reference":"EpisodeOfCare/EPISODEOFCARE1-PATIENT1"
     },
     
     "status":"active",
@@ -21,17 +21,22 @@
     },
     "author":[
         {
-              "reference":"Patient/PATIENT2"
+              "reference":"Patient/PATIENT1"
         }
     ],
     "careTeam":[
         {
-         "reference" : "CareTeam/CARETEAM1-AUTHORIZATION"
+               "reference" : "CareTeam/CARETEAM1-AUTHORIZATION"
         }
-    ],
+    ],  
     "category":[
         {
-            "text":"self care"
+               "coding":[
+                   {
+                       "system": "http://phr.kanta.fi/ValueSet/fiphr-vs-careplan-category",
+                       "code" :"HOHS"
+                   }
+               ]
         }
     ],
     "description":"Nieluvaivasi on todennäköisesti lievä virustauti, jonka yhteydessä oloa voi helpottaa levolla ja tulehduskipulääkkeillä (ks. Nuhakuume),         eikä tarvita lääkärin tai hoitajan antamaa hoitoa. Töistä poissaolon tarve riippuu voinnista ja työn vaatimuksista. Tarpeellisen poissaolon järjestämiseksi menettele työnantajasi antamien ohjeiden mukaan.\n",

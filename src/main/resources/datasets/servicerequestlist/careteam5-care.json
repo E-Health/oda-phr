@@ -1,12 +1,12 @@
 {
   "resourceType": "CareTeam",
-  "id" : "CARETEAM1-AUTHORIZATION",
+  "id" : "CARETEAM5-CARE",
   "category" : [{
     "coding" : [{
         "system" : "http://oda",
-        "code": "Authorization"
+        "code": "Care"
     }],
-    "text" : "Authorization"
+    "text" : "Care"
   }],
   "period": {
     "end": "2017-05-01"
@@ -20,15 +20,6 @@
       "member": {
         "reference": "Practitioner/PRACTITIONER1",
         "display": "Pekka Pakarinen"
-      }
-    },
-    {
-      "role": {
-        "text": "Hoitava terveysasema"
-      },
-      "member": {
-        "reference": "Organization/ORGANIZATION1",
-        "display": "Meilahti Tower Hospital"
       }
     }
   ]

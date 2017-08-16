@@ -1,0 +1,14 @@
+{
+  "resourceType": "Practitioner",
+  "id": "PRACTITIONER5",
+  "name": [
+    {
+      "use": "official",
+      "family": "Psykiatri",
+      "given": [
+        "Pekka"
+      ]
+    }
+  ],
+  "gender": "male"
+}

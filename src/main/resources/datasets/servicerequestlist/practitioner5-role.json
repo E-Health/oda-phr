@@ -1,0 +1,32 @@
+{
+	"resourceType": "PractitionerRole",
+	"id": "PRACTITIONER5-ROLE",
+	"active": "true",
+	"practitioner": {
+		"reference": "Practitioner/PRACTITIONER5",
+		"display": "Kimmo Kirurgi"
+	},
+	"organization": {
+		"reference": "Organization/ORGANIZATION1",
+		"display": "Meilahti Tower Hospital"
+	},
+	"code": [{
+		"coding": [
+			{
+			"system": "http://oda.fi/CodeSystem/practitionerroles",
+			"code": "prof"
+		},
+			{
+				"system": "http://oda.fi/CodeSystem/practitionerroles",
+				"code": "siteresp"
+			}
+		]
+	}],
+	"specialty": [{
+		"coding": [{
+			"system": "http://snomed.info/sct",
+			"code": "408443003",
+			"display": "Psychiatrist"
+		}]
+	}]
+}

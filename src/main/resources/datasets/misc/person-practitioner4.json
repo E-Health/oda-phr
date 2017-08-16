@@ -1,0 +1,50 @@
+{
+    "resourceType" : "Person",
+    "id" : "PERSON-PRACTITIONER4",
+    "identifier": [
+        {
+          "value": "010154-120L"
+        }
+    ],
+    "name": [
+      {
+        "text": "Kimmo Kirurgi",
+        "family": "Kirurgi",
+        "given": [
+          "Kimmo"
+        ]
+      }
+    ],
+    "address": [
+      {
+        "line": [
+          "Talvelantie 4"
+        ],
+        "city": "Helsinki",
+        "postalCode": "00700",
+        "country": "FI"
+      }
+    ],
+    "active": true,
+    "telecom": [
+        {
+            "use": "home"
+        },
+        {
+            "system": "phone",
+            "value": "(050) 1234567",
+            "use": "work"
+        }
+    ],
+    "gender": "male",
+    "birthDate": "1954-01-01",
+    "link":[
+        {   
+            "target":{
+                "reference": "Practitioner/PRACTITIONER4",
+                "display" : "Kimmo Kirurgi"
+            }         
+        }
+    ]
+      
+}

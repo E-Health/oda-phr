@@ -1,0 +1,62 @@
+{
+  "resourceType": "CareTeam",
+  "id" : "CARETEAM1-AUTHORIZATION",
+  "category" : [{
+    "coding" : [{
+        "system" : "http://oda",
+        "code": "Authorization"
+    }],
+    "text" : "Authorization"
+  }],
+  "period": {
+    "end": "2017-05-01"
+  },  
+  "name": "Meilahden päivystyksen tyäjono",
+  "participant": [
+    {
+      "role": {
+        "text": "Hoitava psykiatri"
+      },
+      "member": {
+        "reference": "Practitioner/PRACTITIONER5",
+        "display": "Pekka Psykiatri"
+      }
+    },
+    {
+      "role": {
+        "text": "Hoitava kirurgi"
+      },
+      "member": {
+        "reference": "Practitioner/PRACTITIONER1",
+        "display": "Kimmo Kirurgi"
+      }
+    },
+    {
+      "role": {
+        "text": "Hoitava ortopedi"
+      },
+      "member": {
+        "reference": "Practitioner/PRACTITIONER2",
+        "display": "Lasse Lääkäri"
+      }
+    },
+    {
+      "role": {
+        "text": "Hoitava endokrinologi"
+      },
+      "member": {
+        "reference": "Practitioner/PRACTITIONER3",
+        "display": "Maija Meikäläinen"
+      }
+    },    
+    {
+      "role": {
+        "text": "Hoitava terveysasema"
+      },
+      "member": {
+        "reference": "Organization/ORGANIZATION1",
+        "display": "Meilahti Tower Hospital"
+      }
+    }
+  ]
+}
