@@ -1,0 +1,838 @@
+{
+	"resourceType": "Questionnaire",
+	"language": "fi",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/41",
+	"status": "active",
+	"date": "2017-07-05T17:13:34.909Z",
+	"publisher": "© Kustannus Oy Duodecim, 2017",
+	"copyright": "© Kustannus Oy Duodecim, 2017",
+	"identifier": [{
+			"system": "http://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"value": "41"
+		}
+	],
+	"meta": {
+        "profile": [
+          "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+        ]
+    },
+	"title": "Ripulin (alle kuukauden kestänyt) itsearvio",
+	"text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia.</div>"
+	},
+	"extension": [{
+			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
+			"extension": [{
+					"url": "instruction-text",
+					"valueString": "Ohjeet"
+				}, {
+					"url": "instruction-url",
+					"valueString": "www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00059"
+				}
+			]
+		}
+	],
+	"item": [{
+			"linkId": "introduction",
+			"text": "### Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta alle kuukauden kestäneessä ripulioireessa. Lomake ei sovellu pitkittyneen ripulin selvittelyyn.  \n\nKatso ensin [Terveyskirjaston artikkelit ripulista](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_hakusana=ripuli) selvittääksesi ongelman luonnetta. Jos luettuasi artikkeleita arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.",
+			"type": "group",
+			"item": [{
+					"required": true,
+					"linkId": "20",
+					"text": "### Oma arvioni",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "46",
+								"display": "Oireeni sopivat itse hoidettaviksi ja haluan vain itsehoito-ohjeen"
+							}
+						}, {
+							"valueCoding": {
+								"id": "47",
+								"display": "Arvelen tarvitsevani muuta hoitoa ja haluan täyttää oirekyselyn"
+							}
+						}
+					]
+				}, {
+					"linkId": "257",
+					"text": "# Ripuli ja/tai oksentelu -artikkelin tulostuslinkki\n\nTulosta Lääkärikirja Duodecimin artikkeli [Pitkittynyt (krooninen) ripuli](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00059) tekstin lopussa olevasta linkistä.  \n",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "46"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "3",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "21612-7"
+						}
+					],
+					"text": "Ikä (vuosia)",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"linkId": "14",
+					"text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 15,
+								"comparator": "<"
+							}
+						}
+					]
+				}, {
+					"linkId": "202",
+					"text": "# Oireet",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "193",
+					"text": "Ripulin kesto",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1526",
+								"display": "Alle vuorokauden"
+							}
+						}, {
+							"valueCoding": {
+								"id": "316",
+								"display": "1-7 vuorokautta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "317",
+								"display": "Yli viikon mutta alle kuukauden"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1165",
+								"display": "Yli kuukauden"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "710",
+					"text": "Tämä oirekysely ei sovellu yli kuukauden kestäneen ripulin selvittelyyn. Pitkittynyt ripuli edellyttää terveydenhuollon ammattilaisen arviota.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "feedback"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "193",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1165"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "194",
+					"text": "Kuinka monta kertaa joudut ulostamaan vuorokauden aikana?",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "195",
+					"text": "Onko uloste väriltään mustaa?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "709",
+					"text": "Onko ulosteessa verta?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "196",
+					"text": "Onko aiempi ummetus muuttunut ripuliksi?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "707",
+					"text": "Oletko oksentanut nykyisen ripulitaudin aikana?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "197",
+					"text": "Kuinka monta kertaa olet oksentanut viimeisimmän vuorokauden aikana (kirjoita numero)?",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "707",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "198",
+					"text": "Onko sinulla pahoinvointia (etova olo, ei tule oksennuksia)?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "199",
+					"text": "Onko sinulla huono ruokahalu tai ruokahaluttomuus?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "200",
+					"text": "Vatsakivun voimakkuus (0 = ei kipua, 10 = sietämätön kipu)",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1555",
+								"display": "0"
+							}
+						}, {
+							"valueCoding": {
+								"id": "318",
+								"display": "1"
+							}
+						}, {
+							"valueCoding": {
+								"id": "319",
+								"display": "2"
+							}
+						}, {
+							"valueCoding": {
+								"id": "320",
+								"display": "3"
+							}
+						}, {
+							"valueCoding": {
+								"id": "321",
+								"display": "4"
+							}
+						}, {
+							"valueCoding": {
+								"id": "322",
+								"display": "5"
+							}
+						}, {
+							"valueCoding": {
+								"id": "323",
+								"display": "6"
+							}
+						}, {
+							"valueCoding": {
+								"id": "324",
+								"display": "7"
+							}
+						}, {
+							"valueCoding": {
+								"id": "325",
+								"display": "8"
+							}
+						}, {
+							"valueCoding": {
+								"id": "326",
+								"display": "9"
+							}
+						}, {
+							"valueCoding": {
+								"id": "327",
+								"display": "10"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "866",
+					"text": "Millainen on yleisvointisi?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1528",
+								"display": "Oloni on niin heikko, että pystyn olemaan vain vuoteessa (WC-käyntejä lukuunottamatta)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1529",
+								"display": "Pystyn olemaan jalkeilla, mutta selviydyn vain pakollisista kotiaskareista"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1530",
+								"display": "Pystyn olemaan jalkeilla ja selviydyn tavanomaisista kotiaskareista"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "38",
+					"text": "Onko sinulla kuumetta?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "7",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "8310-5"
+						}
+					],
+					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8)",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "38",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "203",
+					"type": "display",
+					"text": "# Altistavat tekijät\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "204",
+					"text": "Oletko kuukauden sisällä palannut ulkomaanmatkalta?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "708",
+					"text": "Missä maissa kävit matkallasi?",
+					"type": "text",
+					"enableWhen": [{
+							"question": "204",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "206",
+					"text": "Olen parhaillaan antibioottikuurilla.",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "207",
+					"text": "Olen ollut antibioottikuurilla joka  päättyi alle  kuukausi sitten.",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "208",
+					"text": "Kuinka monta vuorokautta siitä on, kun antibioottikuuri päättyi?",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "207",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "209",
+					"text": "Lähipiirissä on samoja oireita.",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "258",
+					"text": "Minulla on käytössä lääkitys, joka voi aiheuttaa ripulia (metformiini, rauta, happosalpaajat, luontaistuotteet)",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "254",
+					"text": "Mikä lääke?",
+					"type": "text",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "258",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "259",
+					"text": "Käytän ummetuslääkettä.",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

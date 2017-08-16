@@ -1,0 +1,464 @@
+{
+	"resourceType": "Questionnaire",
+	"language": "fi",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/27",
+	"status": "active",
+	"date": "2017-08-14T16:30:02.894Z",
+	"publisher": "© Kustannus Oy Duodecim, 2017",
+	"copyright": "© Kustannus Oy Duodecim, 2017",
+	"identifier": [{
+			"system": "http://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"value": "27"
+		}
+	],
+	"meta": {
+        "profile": [
+            "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+        ]
+    },
+	"title": "Närästyksen itsearvio",
+	"text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia närästysoireiden yhteydessä.</div>"
+	},
+	"extension": [{
+			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
+			"extension": [{
+					"url": "instruction-text",
+					"valueString": "Ohjeet"
+				}, {
+					"url": "instruction-url",
+					"valueString": "http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00052"
+				}
+			]
+		}
+	],
+	"item": [{
+			"linkId": "introduction",
+			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi Terveyskirjaston artikkeli [Närästys](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00052) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos luettuasi artikkelin arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nNärästyksellä tarkoitetaan karvaan hapon nousua kurkkuun tai kirvelevää tai polttelevaa tunnetta rintalastan takana. Tämä oirearvio ei sovellu alempana vatsan alueella tuntuvan kivun, turvottelun tai muun oireen selvittelyyn.\n\n  \n\nNärästys johtuu useimmiten mahahapon noususta ruokatorveen, mutta se saattaa olla myös sepelvaltimotaudin oire.  \n\nTämän ohjeen tarkoituksena on ensi sijassa tunnistaa vastaanotolla käyntiä vaativat tilanteet. Lieviä oireita, jotka eivät edellytä käyntiä vastaanotolla, voi hoitaa itse ja niitä on seurattava. Oireiden mahdollisesti lisääntyessä on tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan.  \n\n**Jos närästysoire on alkanut äkillisesti,  kipu säteilee yläraajaan tai selkään, tai on hyvin voimakas ja jatkuu edelleen, soita numeroon 112\\. Samoin on meneteltävä, jos sairastat sepelvaltimotautia, ja närästysoire muistuttaa aiempia sepelvaltimo-oireitasi ja jatkuu parhaillaan.**  \n\n\n\n",
+			"type": "group",
+			"item": [{
+					"required": true,
+					"linkId": "20",
+					"text": "### Oma arvioni",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "46",
+								"display": "Oireeni sopivat itse hoidettaviksi ja haluan vain itsehoito-ohjeen"
+							}
+						}, {
+							"valueCoding": {
+								"id": "47",
+								"display": "Arvelen tarvitsevani muuta hoitoa ja haluan täyttää oirekyselyn"
+							}
+						}
+					]
+				}, {
+					"linkId": "262",
+					"text": "# Närästys-artikkelin tulostuslinkki\n\nTulosta Lääkärikirja Duodecimin [artikkeli närästyksestä](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00052) tekstin lopussa olevasta tulostuslinkistä.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "46"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "3",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "21612-7"
+						}
+					],
+					"text": "Ikä (vuosia)",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"linkId": "15",
+					"text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 15,
+								"comparator": "<"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "91",
+					"text": "Miten kauan närästysoireesi on kestänyt?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "173",
+								"display": "alle vuorokauden"
+							}
+						}, {
+							"valueCoding": {
+								"id": "174",
+								"display": "1-7 vuorokautta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "175",
+								"display": "yli viikon ajan päivittäin"
+							}
+						}, {
+							"valueCoding": {
+								"id": "176",
+								"display": "yli viikon ajan toistuvasti, mutta ei joka päivä"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "704",
+					"text": "Tunnetko kipua tai närästystä juuri tällä hetkellä?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "705",
+					"text": "Miten voimakasta närästykseen liittyvä kipu on?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1148",
+								"display": "0 (ei kipua)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1149",
+								"display": "1"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1150",
+								"display": "2 (lievä kipu, ei haittaa arkisia toimia)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1151",
+								"display": "3"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1152",
+								"display": "4 (kiusallinen, häiritsevä kipu)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1153",
+								"display": "5"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1154",
+								"display": "6 (viheliäinen, hankala kipu)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1155",
+								"display": "7"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1156",
+								"display": "8 (vaikea, voimakkaasti haittaava kipu)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1157",
+								"display": "9"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1158",
+								"display": "10 (pahin mahdollinen kipu)"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "93",
+					"text": "Millaista närästysoireesi on? Voit valita useamman kuin yhden vaihtoehdon.",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "189",
+								"display": "Väkevän hapon nousu kurkkuun asti"
+							}
+						}, {
+							"valueCoding": {
+								"id": "190",
+								"display": "Kirvelevä tai poltteleva tunne keskellä rintaa (rintalastan takana), mutta ei kurkussa asti"
+							}
+						}, {
+							"valueCoding": {
+								"id": "191",
+								"display": "Puristava tunne keskellä rintaa (rintalastan takana)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "192",
+								"display": "Mahan sisällön nousu ruokatorveen tai nieluun, ei kuitenkaan oksentelua"
+							}
+						}, {
+							"valueCoding": {
+								"id": "193",
+								"display": "Mahan sisällön nousu ruokatorveen tai nieluun ja tähän toistuvasti liittyvä oksentelu"
+							}
+						}, {
+							"valueCoding": {
+								"id": "194",
+								"display": "Kipu rintalastan takana kiinteää ruokaa niellessä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "442",
+								"display": "Kipu rintalastan takana myös nestettä juodessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "195",
+								"display": "Kiinteä ruoka tuntuu juuttuvan ruokatorveen, niin että joudun pureskelemaan ruoan tarkasti tai vältän joidenkin ruokien syömistä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "196",
+								"display": "Olen laihtunut yli 3 kg puolen vuoden aikana, vaikka en ole yrittänyt laihduttaa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään yllä olevista"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "94",
+					"text": "Mitkä tekijät pahentavat oiretta? Voit valita useamman kuin yhden vaihtoehdon.",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "198",
+								"display": "Rasitus (kävely tai ponnistelu)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "199",
+								"display": "Makuulla oleminen"
+							}
+						}, {
+							"valueCoding": {
+								"id": "200",
+								"display": "Eteenpäin kumartelu"
+							}
+						}, {
+							"valueCoding": {
+								"id": "201",
+								"display": "Rasvaisen ruoan, kahvin, happamien mehujen tai alkoholin nauttiminen"
+							}
+						}, {
+							"valueCoding": {
+								"id": "202",
+								"display": "Minkä tahansa ruoan syöminen"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään yllä olevista"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "95",
+					"text": "Onko sinulla seuraavia sairauksia tai lääkityksiä?",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "203",
+								"display": "Minulle on tehty ruokatorven ja mahan tähystys, ja siinä todettu ruokatorven tulehdus tai refluksitauti närästysoireen syyksi"
+							}
+						}, {
+							"valueCoding": {
+								"id": "204",
+								"display": "Minulla on todettu sepelvaltimotauti tai tehty sepelvaltimoiden pallolaajennus tai ohitusleikkaus"
+							}
+						}, {
+							"valueCoding": {
+								"id": "205",
+								"display": "Käytän hapon eritystä estäviä lääkkeitä (esim. Gasterix, Esomeprazol, Lansoprazol, Losec, Nexium, Omeprazol, Somac, Famotidin, Pepcid, Ranixal, Ranisal, Zantac, Inside)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "206",
+								"display": "Käytän luukadon estoon tai hoitoon tarkoitettua lääkettä (esim. Alendronat, Bonasol, Fosamax, Risedronat, Optinate)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään yllä olevista"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

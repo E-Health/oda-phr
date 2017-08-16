@@ -1,0 +1,382 @@
+{
+	"resourceType": "Questionnaire",
+	"language": "fi",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/28",
+	"status": "active",
+	"date": "2017-07-05T08:28:33.157Z",
+	"publisher": "© Kustannus Oy Duodecim, 2017",
+	"copyright": "© Kustannus Oy Duodecim, 2017",
+	"identifier": [{
+			"system": "http://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"value": "28"
+		}
+	],
+	"meta": {
+		"profile": [
+			"http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+		]
+	},
+	"title": "Peräaukon seudun oireiden itsearvio",
+	"text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia peräaukon seudun oireiden yhteydessä.</div>"
+	},
+	"extension": [{
+			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
+			"extension": [{
+					"url": "instruction-text",
+					"valueString": "Itsehoito-ohjeita on Terveyskirjaston artikkeleissa [peräpukamat](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00058), [peräaukon kutina](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00057) ja [peräaukon haavauma](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00056)."
+				}, {
+					"url": "instruction-url",
+					"valueString": "http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_haku=per%C3%A4aukon%20oire"
+				}
+			]
+		}
+	],
+	"item": [{
+			"linkId": "introduction",
+			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan. \n\nKyselyssä sinua  pyydetään nimeämään pääasiallinen oireesi, ja vastauksessa annetaan neuvoja oireen todennäköisimmän syyn perusteella.  \n\nJos mikään vaihtoehdoista ei kuvaa oirettasi, sinulla on useita samanaikaisia oireita, tai saamasi ohjeet eivät sovi tilanteeseesi, voit antaa lisätietoja oireista ja esittää kysymyksiä siinä vaiheessa, kun lähetät vastauksesi ammattilaiselle.",
+			"type": "group",
+			"item": [{
+					"required": true,
+					"linkId": "20",
+					"text": "### Oma arvioni",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "46",
+								"display": "Oireeni sopivat itse hoidettaviksi ja haluan vain itsehoito-ohjeen"
+							}
+						}, {
+							"valueCoding": {
+								"id": "47",
+								"display": "Arvelen tarvitsevani muuta hoitoa ja haluan täyttää oirekyselyn"
+							}
+						}
+					]
+				}, {
+					"linkId": "263",
+					"text": "# Peräaukon seudun oireita käsittelevien artikkeleita (tulostus)\n\nTulosta Lääkärikirja Duodecimin artikkeli [peräpukamista](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00058) ja [ummetuksesta](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00092) tekstien lopussa olevasta tulostuslinkistä.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "46"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "3",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "21612-7"
+						}
+					],
+					"text": "Ikä (vuosia)",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
+					"linkId": "15",
+					"text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 15,
+								"comparator": "<"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "96",
+					"text": "Pääasiallinen oire",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "207",
+								"code": "1",
+								"display": "Kova, jatkuva kipu peräaukon seudussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "208",
+								"code": "2",
+								"display": "Kuume yli 37.5, johon liittyy kipu peräaukon seudussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "209",
+								"code": "3",
+								"display": "Alle viikko sitten ilmaantunut kivulias pallukka peräaukon suulla"
+							}
+						}, {
+							"valueCoding": {
+								"id": "210",
+								"code": "4",
+								"display": "Ulostamisen yhteydessä peräaukosta ulos työntyvät sormin tuntuvat pukamat, joka saa työnnetyksi sisään tai jotka vetäytyvät välillä sisään itsestään"
+							}
+						}, {
+							"valueCoding": {
+								"id": "211",
+								"code": "5",
+								"display": "Jatkuvasti esillä oleva, kivuton ihoheltta tai pallukka peräaukon suulla"
+							}
+						}, {
+							"valueCoding": {
+								"id": "212",
+								"code": "6",
+								"display": "Kipu peräaukossa ulostaessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "213",
+								"code": "7",
+								"display": "Peräaukon kutina"
+							}
+						}, {
+							"valueCoding": {
+								"id": "214",
+								"code": "8",
+								"display": "Peräaukon ympäristö kostuu ja iho on karhea tai haavaumilla"
+							}
+						}, {
+							"valueCoding": {
+								"id": "215",
+								"code": "9",
+								"display": "Verenvuoto"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään yllä olevista"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "97",
+					"text": "Näkyykö WC-pöntössä tai paperissa verta? Valitse oireeseesi parhaiten sopiva vaihtoehto.",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "216",
+								"code": "1",
+								"display": "Ei"
+							}
+						}, {
+							"valueCoding": {
+								"id": "217",
+								"code": "2",
+								"display": "Verta tippuu ulostaessa WC-pönttöön"
+							}
+						}, {
+							"valueCoding": {
+								"id": "218",
+								"code": "3",
+								"display": "Kirkasta verta paperissa ulostamisen jälkeen, ei vuoda tippumalla pönttöön"
+							}
+						}, {
+							"valueCoding": {
+								"id": "219",
+								"code": "4",
+								"display": "Ulosteen seassa ja sisällä on tummaa verta tai verihyytymiä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1172",
+								"display": "Uloste on mustaa"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "590",
+					"text": "Kuinka monta vuorokautta nykyiset oireesi ovat kestäneet",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "98",
+					"text": "Onko sinulla ummetusta?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "220",
+								"code": "1",
+								"display": "Ei"
+							}
+						}, {
+							"valueCoding": {
+								"id": "221",
+								"code": "2",
+								"display": "Lievää ummetusta (joudun toisinaan hieman ponnistelemaan ulostaessa, mutta vatsa toimii vähintään joka toinen päivä)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "222",
+								"code": "3",
+								"display": "Vaikeaa ummetusta (uloste on kovaa ja joudun aina ponnistelemaan ulostaessa; vatsa voi olla toimimatta useita päiviä)"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "99",
+					"text": "Onko sinulla ripulia?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "223",
+								"display": "Ei"
+							}
+						}, {
+							"valueCoding": {
+								"id": "224",
+								"display": "Uloste on vetisen löysää"
+							}
+						}, {
+							"valueCoding": {
+								"id": "225",
+								"display": "Ulostan vähintään kolme kertaa päivässä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "226",
+								"display": "Uloste karkailee"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "712",
+					"text": "Oletko syönyt antibiootteja viimeisen kuukauden aikana?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "20",
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "99",
+							"answerCoding": {
+								"id": "224"
+							}
+						}, {
+							"question": "99",
+							"answerCoding": {
+								"id": "225"
+							}
+						}, {
+							"question": "99",
+							"answerCoding": {
+								"id": "226"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

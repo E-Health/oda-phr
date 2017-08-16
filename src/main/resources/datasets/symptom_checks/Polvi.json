@@ -1,0 +1,663 @@
+{
+	"resourceType": "Questionnaire",
+	"language": "fi",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/106",
+	"status": "active",
+	"date": "2017-07-05T08:27:20.873Z",
+	"publisher": "© Kustannus Oy Duodecim, 2017",
+	"copyright": "© Kustannus Oy Duodecim, 2017",
+	"identifier": [{
+			"system": "http://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"value": "106"
+		}
+	],
+	"meta": {
+		"profile": [
+			"http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+		]
+	},
+	"title": "Polven oireiden itsearvio",
+	"text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia polven oireiden yhteydessä.</div>"
+	},
+	"extension": [{
+			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
+			"extension": [{
+					"url": "instruction-text",
+					"valueString": "Ohjeet"
+				}
+			]
+		}
+	],
+	"item": [{
+			"linkId": "introduction",
+			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi halutessasi Terveyskirjaston artikkeli [Polvikipu](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00797) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nTämän ohjeen tarkoituksena on ensi sijassa arvioida polvikivun hoidon kiireellisyyttä, ei tarjota valmiita diagnooseja. Polvikivun taustalla voi olla monia erilaisia sairauksia ja diagnoosin varmistaminen vaatii usein kliinisiä tutkimuksia tai joskus myös kuvantamistutkimuksia.",
+			"type": "group",
+			"item": [{
+					"required": true,
+					"linkId": "3",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "21612-7"
+						}
+					],
+					"text": "Ikä (vuosia)",
+					"type": "decimal"
+				}, {
+					"linkId": "14",
+					"text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 15,
+								"comparator": "<"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "664",
+					"text": "Onko polvikipu alkanut äkillisesti kaatumisen, vääntymisen, polveen kohdistuneen iskun tai muun vamman jälkeen?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "697",
+					"text": "Edelsikö polvioireen alkua normaalista poikkeava pitkäkestoinen liikunta tai muu rasitus (pitkä juoksu tai patikka, rasittava työsuoritus)",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "665",
+					"text": "Kuinka pitkään polvioireet ovat jatkuneet?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1117",
+								"display": "Oireet alkoivat alle vuorokausi sitten"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1118",
+								"display": "Oireet ovat kestäneet 1 - 7 vuorokautta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1100",
+								"display": "Oireet ovat kestäneet yli viikon, mutta alle 1 kuukauden"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1101",
+								"display": "Oireet ovat kestäneet 1 - 3 kuukautta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1102",
+								"display": "Oireet ovat kestäneet yli 3 kuukautta"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "38",
+					"text": "Onko sinulla kuumetta?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "7",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "8310-5"
+						}
+					],
+					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8)",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "38",
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "695",
+					"text": "Millaisia oireita polvessasi on? Merkitse kaikki jotka kuvaavat nykyoirettasi.",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "1139",
+								"display": "Polvi on niin kipeä, että en pysty sillä varaamaan, tai pystyn ottamaan vain muutaman askeleen"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1138",
+								"display": "Joudun ontumaan kävellessä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1130",
+								"display": "Polvi on turvoksissa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1131",
+								"display": "Polvessa on liikerajoitus (polvi ei ojennu tai koukistu normaalisti)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1132",
+								"display": "Iho polven päällä punoittaa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1134",
+								"display": "Oire on aamulla lievempi, ja pahenee päivän mittaan kun polvi rasittuu"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1133",
+								"display": "Polvi on aamulla tai levon jälkeen aluksi jäykkä, ja jäykkyys lievittyy liikkuessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1136",
+								"display": "Polvi lukkiutuu ajoittain niin, että en saa sitä ojennetuksi tai koukistetuksi"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1135",
+								"display": "Polven seutu on kauttaaltaan kipeä tai kipua on syvällä polven sisällä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1137",
+								"display": "Polvikipu tuntuu vain yhdessä kohdassa, joko polven sisä- tai ulkosivulla tai polvilumpion päällä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään yllä olevista"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "698",
+					"text": "Onko sinulla samanaikaisesti nykyisen polvioireesi kanssa oireita myös muissa nivelissä (yläraajoissa, lonkissa, nilkoissa tai jalkaterissä)?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "696",
+					"text": "Onko sinulla yösärkyä?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1140",
+								"display": "Ei lainkaan"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1141",
+								"display": "Vain satunnaisesti"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1142",
+								"display": "Jatkuvasti"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "689",
+					"text": "Kuinka paljon polvioire haittaa toimintakykyäsi?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1113",
+								"display": "Ei haittaa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1114",
+								"display": "Haittaa lievästi"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1115",
+								"display": "Haittaa voimakkaassa rasituksessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1116",
+								"display": "Haittaa työssä ja tavanomaisissa askareissa"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "687",
+					"text": "Kuinka pitkän kävelymatkan jälkeen kipu ilmaantuu?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1109",
+								"display": "Alle 100 metrin kävelyn jälkeen kipua"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1108",
+								"display": "100 - 1000 metrin kävelyn jälkeen kipua"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1107",
+								"display": "Yli 1000 metrin kävelyn jälkeen kipua"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "693",
+					"text": "Onko sinulla seuraavia lääkärin toteamia sairauksia?",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "1124",
+								"display": "Nivelrikko"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1123",
+								"display": "Nivelreuma"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1125",
+								"display": "Kihti"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1126",
+								"display": "Nivelkierukan repeämä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1127",
+								"display": "Polvilumpion sijoiltaanmeno"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1128",
+								"display": "Polven nivelsidevamma"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1129",
+								"display": "Muu niveloireita aiheuttava sairaus"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään yllä olevista"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "694",
+					"text": "Mikä muu niveloireita aiheuttava sairaus sinulla on?",
+					"type": "text",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "693",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1129"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "688",
+					"text": "Missä oireesi esiintyy?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1110",
+								"display": "Molemmissa polvissa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1111",
+								"display": "Vain oikeassa polvessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1112",
+								"display": "Vain vasemmassa polvessa"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "691",
+					"text": "Onko jommalle kummalle polvellesi tehty seuraavia toimenpiteitä?  Voit valita useamman kuin yhden?",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "1119",
+								"display": "Tekonivel"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1120",
+								"display": "Tähystys (artroskopia)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1122",
+								"display": "Muu leikkaus"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1121",
+								"display": "Lääkepistos (kortisonivalmiste tai kukonhelttauute)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään yllä olevista"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "692",
+					"text": "Onko viimeisin toimenpide tehty sille polvelle, joka oireilee juuri nyt?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "691",
+							"answerCoding": {
+								"id": "1119"
+							}
+						}, {
+							"question": "691",
+							"answerCoding": {
+								"id": "1120"
+							}
+						}, {
+							"question": "691",
+							"answerCoding": {
+								"id": "1122"
+							}
+						}, {
+							"question": "691",
+							"answerCoding": {
+								"id": "1121"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "966",
+					"text": "Kuinka kauan on kulunut viimeisimmästä toimenpiteestä, joka tehtiin sille polvelle, joka oireilee juuri nyt?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1629",
+								"display": "Alle vuorokausi"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1630",
+								"display": "1 - 7 vuorokautta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1631",
+								"display": "Yli viikko, mutta alle 1 kuukausi"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1632",
+								"display": "1 - 3 kuukautta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1633",
+								"display": "Yli 3 kuukautta"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "692",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "691",
+							"answerCoding": {
+								"id": "1119"
+							}
+						}, {
+							"question": "691",
+							"answerCoding": {
+								"id": "1120"
+							}
+						}, {
+							"question": "691",
+							"answerCoding": {
+								"id": "1121"
+							}
+						}, {
+							"question": "691",
+							"answerCoding": {
+								"id": "1122"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "700",
+					"text": "Oletko käyttänyt oireesi vuoksi kipulääkettä viime päivinä?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "701",
+					"text": "Mitä kipulääkkeitä olet käyttänyt ja kuinka paljon viime päivinä?",
+					"type": "text",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "700",
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "690",
+					"text": "Oletko saanut fysioterapeutin ohjausta nykyisen polvioireesi takia?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,284 @@
+{
+	"resourceType": "Questionnaire",
+	"language": "fi",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/26",
+	"status": "active",
+	"date": "2017-07-02T05:47:15.592Z",
+	"publisher": "© Kustannus Oy Duodecim, 2017",
+	"copyright": "© Kustannus Oy Duodecim, 2017",
+	"identifier": [{
+			"system": "http://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"value": "26"
+		}
+	],
+	"meta": {
+        "profile": [
+          "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+        ]
+    },
+	"title": "Korvakivun itsearvio",
+	"text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviointilomake, joka auttaa korvakipupotilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia.</div>"
+	},
+	"extension": [{
+			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
+			"extension": [{
+					"url": "instruction-text",
+					"valueString": "Yleisimpiä syitä aikuisten korvan kipuun on flunssan ja erityisesti niistämisen yhteydessä välikorvaan joutunut lima ja ilmanpaine, jotka venyttävät tärykalvoa. Lapsilla yleinen välikorvan tulehdus on aikuisilla verraten harvinainen. Pitkittyvän korvakivun syy on yleensä ulkokorvan tai [korvakäytävän tulehdus](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00578) tai muu ärsytys. [Korvakäytävän vahatulppa](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00278) aiheuttaa yleensä paineentunnetta ja kuulon heikentymistä vasta tukkiessaan koko korvakäytävän ja kipua ollessaan kontaktissa tärykalvoon. Myös leukanivelen, nielun tai niskan vaivat voivat usein aiheuttaa korvaan säteilevän kivun. Ohimenevästi kipua voi aiheutua esimerkiksi kylmästä, jolloin kipu menee ohi lämpimään tultaessa. Äkilliset paineenvaihtelut voivat aiheuttaa ohimenevää kipua, ja mikäli tärykalvo vaurioituu, kipu voi kestää pidempäänkin.  \n\n\n  \n\n\n\nEnsijainen itsehoito on särkylääke. [Kipulääkkeiden turvallinen käyttö](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00649&p_hakusana=tulehduskipul%C3%A4%C3%A4kkeet) artikkelissa esitetään tavalliset kipulääkkeiden käyttöön liittyvät haitat ja rajoitukset. Jos korvan kipu ei mene ohi särkylääkkeellä 1–2 vuorokaudessa ammattilaisen hoitoon tulee hakeutua 1-2 vuorokauden sisällä. Mikäli kipuun liittyy kuumetta, huimausta, korvalehden tai korvan seudun punoitusta tai korvan vuotoa, on syytä hakeutua lääkäriin vuorokauden sisällä. Verenvuoto korvasta on aina syy lähteä heti lääkäriin vuorokauden ajasta riippumatta. Kivun syy selviää usein korvan, nielun ja nenän tutkimisella ja jatkohoito riippuu kivun tai vuodon syystä. \n\n"
+				}
+			]
+		}
+	],
+	"item": [{
+			"linkId": "introduction",
+			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Anna oireisen henkilön taustatiedot ja vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \nVoit lukea aluksi Terveyskirjaston artikkelin ’[Korvakipu ja vuotokorvakäytävästä aikuisella](www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00277)’ selvittääksesi ongelman luonnetta.",
+			"type": "group",
+			"item": [{
+					"required": true,
+					"linkId": "3",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "21612-7"
+						}
+					],
+					"text": "Ikä (vuosia)",
+					"type": "decimal"
+				}, {
+					"linkId": "14",
+					"text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 15,
+								"comparator": "<"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "83",
+					"text": "Millaista korvakipu on luonteeltaan eniten?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "160",
+								"display": "paineentunne tai täyteläisyyden tunne"
+							}
+						}, {
+							"valueCoding": {
+								"id": "161",
+								"display": "korva on lukossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "163",
+								"display": "sähköiskumainen kipu"
+							}
+						}, {
+							"valueCoding": {
+								"id": "162",
+								"display": "viiltävä, terävä kipu"
+							}
+						}, {
+							"valueCoding": {
+								"id": "164",
+								"display": "jomottava kipu"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään yllä olevista"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "84",
+					"text": "Onko sinulla ollut flunssan oireita (nuhaa, nenän tukkoisuutta, yskää, kurkkukipua) viimeisen kahden viikon aikana?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "85",
+					"text": "Onko sinulla ollut kuumetta vähintään 38 astetta viimeisen kahden vuorokauden aikana?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "86",
+					"text": "Onko ollut mitään korvakivun alun ajankohtaan liittyvää vammaa, iskua, kaatumista, jossa korvaan olisi voinut sattua?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "87",
+					"text": "Onko mahdollista, että korvaan on mennyt vierasesine?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "88",
+					"text": "Onko korvassa tai korvakäytävässä havaittavissa selvästi vahaa?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "89",
+					"text": "Muut oireet samanaikaisesti korvakivun kanssa",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "166",
+								"code": "1",
+								"display": "Korvalehti tai korvan seutu on painellen arka"
+							}
+						}, {
+							"valueCoding": {
+								"id": "167",
+								"code": "2",
+								"display": "Korvalehti tai korvan ympärys punoittaa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "168",
+								"code": "3",
+								"display": "Korvakivun kanssa samanaikaisesti kurkun tai nielun kipua"
+							}
+						}, {
+							"valueCoding": {
+								"id": "169",
+								"code": "4",
+								"display": "Korvakivun kanssa samanaikaisesti leukanivelen seudun kipua"
+							}
+						}, {
+							"valueCoding": {
+								"id": "170",
+								"code": "5",
+								"display": "Korvakivun kanssa samanaikaisesti niskan seudun kipua"
+							}
+						}, {
+							"valueCoding": {
+								"id": "171",
+								"code": "6",
+								"display": "Korvasta tulee märkäistä vuotoa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "172",
+								"code": "7",
+								"display": "Korvasta tulee verta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "668",
+								"display": "Kuulo on äkillisesti alentunut toisesta korvasta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään yllä olevista"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "706",
+					"text": "Oletko raapaissut korvakäytävän ihoa ennen verenvuodon alkamista?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "89",
+							"answerCoding": {
+								"id": "172"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "90",
+					"text": "Onko oiretta vain kylmässä ilmassa tai tuulessa ja oire helpottaa lämpimässä?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

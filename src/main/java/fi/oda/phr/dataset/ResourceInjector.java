@@ -1,7 +1,6 @@
 package fi.oda.phr.dataset;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.nio.file.Paths;
 import java.util.Map;
 
@@ -35,12 +34,11 @@ public class ResourceInjector implements DataInjector {
 
     @Override
     public void inject(IGenericClient client) {
-        log.info("About to inject: " + sourceFile);
+        log.info("About to inject: {}", sourceFile);
         final FhirContext ctx = FhirContext.forDstu3();
         ctx.setParserErrorHandler(new StrictErrorHandler());
         final IParser parser;
-        String[] splitFileName = sourceFile.split("\\.");
-        if (splitFileName.length > 1 && splitFileName[splitFileName.length - 1].equalsIgnoreCase("xml")) {
+        if (sourceFile.toLowerCase().endsWith(".xml")) {
             parser = ctx.newXmlParser();
         }
         else {
@@ -50,7 +48,8 @@ public class ResourceInjector implements DataInjector {
 
         IBaseResource resource;
         try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(new ClassPathResource(Paths.get(sourceFile).toString()).getInputStream(), Charset.forName("UTF-8")))) {
+                new InputStreamReader(new ClassPathResource(Paths.get(sourceFile).toString()).getInputStream(),
+                        java.nio.charset.StandardCharsets.UTF_8))) {
             resource = parser.parseResource(reader);
         }
         catch (final IOException e) {
@@ -62,7 +61,7 @@ public class ResourceInjector implements DataInjector {
         else {
             client.create().resource(resource).prettyPrint().encodedJson().execute();
         }
-        log.info("Finished injecting: " + sourceFile);
+        log.info("Finished injecting: {}", sourceFile);
     }
 
 }
