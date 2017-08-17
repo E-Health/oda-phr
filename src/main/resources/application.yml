@@ -77,8 +77,7 @@ app:
             - file: datasets/servicerequestlist/careplan-patient5.json
             - file: datasets/servicerequestlist/careplan-patient6.json
             - file: datasets/servicerequestlist/careplan-patient7.json
-            - file: datasets/servicerequestlist/careplan-patient8.json
-            - file: datasets/servicerequestlist/communication.json
+            - file: datasets/servicerequestlist/careplan-patient8.json            
             - file: datasets/servicerequestlist/observation1-patient1.json
             - file: datasets/servicerequestlist/observation2-patient1.json
             - file: datasets/servicerequestlist/observation3-patient1.json
@@ -86,9 +85,10 @@ app:
             - file: datasets/servicerequestlist/observation5-patient1.json
             - file: datasets/servicerequestlist/observation6-patient1.json
             - file: datasets/servicerequestlist/observation7-patient1.json
-            - file: datasets/servicerequestlist/communication-notification1.json
-            - file: datasets/servicerequestlist/communication-notification2.json
-
+            - file: datasets/servicerequestlist/communication-notification1-patient1.json
+            - file: datasets/servicerequestlist/communication-notification2-patient1.json
+            - file: datasets/servicerequestlist/communication-patient1.json
+            - file: datasets/servicerequestlist/communication-patient2.json
             - file: datasets/questionnaires/feedback-issue.json
             - file: datasets/questionnaires/feedback-satisfaction.json
 

@@ -1,0 +1,30 @@
+{
+    "resourceType": "Communication",
+    "id" : "COMMUNICATION1-PATIENT2",
+    "text": {
+        "status": "generated",
+        "div": "<div>You are progressing well! Good work!</div>"
+    },        
+    "status": "completed",
+    "category": [{        
+        "text": "oda-careplan-comment"
+    }],    
+    "subject": {
+        "reference": "Patient/PATIENT2"
+    },
+    "basedOn": [{
+        "reference": "CarePlan/CAREPLAN1-PATIENT2"
+    }],
+    "sent": "2016-12-12T18:01:10-08:00",
+    "received": "2016-12-12T18:01:10-09:00",
+    "sender": {
+        "reference": "Practitioner/PRACTITIONER1"
+    },
+    "recipient": [{
+        "reference": "Patient/PATIENT2"
+    }],   
+    "payload": [{
+        "contentString": "You are progressing well! Good work!"
+    }]
+
+}
