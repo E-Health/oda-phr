@@ -7,7 +7,7 @@
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
-			"system": "http://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"system": "https://duodecim.fi/fhir/sid/vkt-questionnaire-id",
 			"value": "3"
 		}
 	],
