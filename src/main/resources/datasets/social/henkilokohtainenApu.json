@@ -1,0 +1,68 @@
+{
+  "resourceType": "Questionnaire",
+  "language": "fi",
+  "url": "https://oda.fi/Forms/HenkilokohtainenApu",
+  "status": "draft",
+  "date": "2017-08-16T00:00:00+03:00",
+  "meta": {
+    "profile": [
+      "http://oda.fi/StructureDefinition/Questionnaire/Symptom",
+      "http://oda.fi/StructureDefinition/Questionnaire/Social/HenkilokohtainenApu",
+      "http://oda.fi/StructureDefinition/Questionnaire/Social"
+    ]
+  },
+  "title": "Oikeus henkilökohtaiseen apuun",
+  "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta henkilökohtaiseen apuun</div>"
+  },
+  "item": [
+    {
+      "linkId": "Q1_TARVITSETKO_VALTTAMATTA_APUA_KOTONA",
+      "text": "Tarvitsetko välttämättä toisen ihmisen apua kotona tapahtuvissa päivittäisissä toiminnoissa?",
+      "type": "boolean"
+    },
+    {
+      "linkId": "Q2_TARVITSETKO_VALTTAMATTA_APU_KODIN_ULKUPUOLELLA",
+      "text": "Tarvitsetko välttämättä toisen ihmisen apua kodin ulkopuolella?",
+      "type": "boolean"
+    },
+    {
+      "linkId": "Q3_JOHTUUKO_TARPEESI_PITKAAIKAISESTA_TAI_ETENEVASTA_SAIRAUDESTA_TAI_VAMMASTA",
+      "text": "Johtuuko avun tarpeesi pitkäaikaisesta tai etenevästä sairaudesta tai vammasta?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q1_TARVITSETKO_VALTTAMATTA_APUA_KOTONA",
+          "answerBoolean": true
+        },
+        {
+          "question": "Q2_TARVITSETKO_VALTTAMATTA_APU_KODIN_ULKUPUOLELLA",
+          "answerBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "Q4_JOHTUUKO_TARPEESI_IKAANTYMISEEN_LIITTYVISTA_SAIRAUKSISTA_JA_RAJOITTEISTA",
+      "text": "Johtuuko avun tarpeesi ikääntymiseen liittyvistä sairauksista tai toimintarajoitteista?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q3_JOHTUUKO_TARPEESI_PITKAAIKAISESTA_TAI_ETENEVASTA_SAIRAUDESTA_TAI_VAMMASTA",
+          "answerBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "Q5_OSAATKO_JA_PYSTYTKO_ITSE_MAARITTELEMAAN_TARVITSEMASI_AVUN_SISALLON_JA_TOTEUTTAMISTAVAN",
+      "text": "Osaatko ja pystytkö itse määrittelemään tarvitsemasi avun sisällön ja toteuttamistavan?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q4_JOHTUUKO_TARPEESI_IKAANTYMISEEN_LIITTYVISTA_SAIRAUKSISTA_JA_RAJOITTEISTA",
+          "answerBoolean": false
+        }
+      ]
+    }
+  ]
+}

@@ -30,7 +30,7 @@ app:
             - file: datasets/misc/practitioner4.json
             - file: datasets/misc/person-practitioner4.json
             - file: datasets/misc/careteam3-authorization.json
-            
+
             - file: datasets/servicerequestlist/practitioner1.json
             - file: datasets/servicerequestlist/practitioner2.json
             - file: datasets/servicerequestlist/practitioner3.json
@@ -50,7 +50,7 @@ app:
             - file: datasets/servicerequestlist/patient5.json
             - file: datasets/servicerequestlist/patient6.json
             - file: datasets/servicerequestlist/patient7.json
-            - file: datasets/servicerequestlist/patient8.json            
+            - file: datasets/servicerequestlist/patient8.json
             - file: datasets/servicerequestlist/person-patient1.json
             - file: datasets/servicerequestlist/person-patient2.json
             - file: datasets/servicerequestlist/person-patient3.json
@@ -58,7 +58,7 @@ app:
             - file: datasets/servicerequestlist/person-patient5.json
             - file: datasets/servicerequestlist/person-patient6.json
             - file: datasets/servicerequestlist/person-patient7.json
-            - file: datasets/servicerequestlist/person-patient8.json                                                
+            - file: datasets/servicerequestlist/person-patient8.json
             - file: datasets/servicerequestlist/careteam-authorization.json
             - file: datasets/servicerequestlist/careteam1-care.json
             - file: datasets/servicerequestlist/careteam2-care.json
@@ -78,7 +78,7 @@ app:
             - file: datasets/servicerequestlist/careplan-patient6.json
             - file: datasets/servicerequestlist/careplan-patient7.json
             - file: datasets/servicerequestlist/careplan-patient8.json
-            - file: datasets/servicerequestlist/observation1-patient2.json            
+            - file: datasets/servicerequestlist/observation1-patient2.json
             - file: datasets/servicerequestlist/observation1-patient1.json
             - file: datasets/servicerequestlist/observation2-patient1.json
             - file: datasets/servicerequestlist/observation3-patient1.json
@@ -162,6 +162,13 @@ app:
             - file: datasets/symptom_checks/Polvi.json
               use_update: false
             - file: datasets/symptom_checks/Silma.json
+              use_update: false
+
+            - file: datasets/social/henkilokohtainenApu.json
+              use_update: false
+            - file: datasets/social/kuljetusapu.json
+              use_update: false
+            - file: datasets/social/omaishoidonTuki.json
               use_update: false
 
 spring:

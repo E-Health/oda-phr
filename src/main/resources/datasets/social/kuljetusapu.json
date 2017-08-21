@@ -1,0 +1,74 @@
+{
+  "resourceType": "Questionnaire",
+  "language": "fi",
+  "status": "draft",
+  "date": "2017-08-16T00:00:00+03:00",
+  "meta": {
+    "profile": [
+      "http://oda.fi/StructureDefinition/Questionnaire/Symptom",
+      "http://oda.fi/StructureDefinition/Questionnaire/Social/Kuljetusapu",
+      "http://oda.fi/StructureDefinition/Questionnaire/Social"
+    ]
+  },
+  "title": "Oikeus kuljetusapuun",
+  "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta kuljetusapuun</div>"
+  },
+  "item": [
+    {
+      "linkId": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
+      "text": "Onko sinulla vaikeuksia liikkumisessa?",
+      "type": "boolean"
+    },
+    {
+      "linkId": "Q2_ONKO_KAYTOSSA_LIIKKUMISEN_APUVALINEITA",
+      "text": "Onko käytössäsi liikkumisen apuvälineitä?",
+      "type": "boolean"
+    },
+    {
+      "linkId": "Q5_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_JOUKKOLIIKENTEELLA",
+      "text": "Pystytkö liikkumaan julkisella joukkoliikenteellä itsenäisesti?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
+          "answerBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "Q6_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_PALVELULIIKENTEELLA",
+      "text": "Pystytkö liikkumaan palveluliikenteellä itsenäisesti?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q5_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_JOUKKOLIIKENTEELLA",
+          "answerBoolean": false
+        }
+      ]
+    },
+    {
+      "linkId": "Q3_JOHTUUKO_TARPEESI_VAMMASTA_TAI_ESIM_IKAANTYMISESTA",
+      "text": "Johtuvatko liikkumisen vaikeudet vammasta tai vastaavanlaisesta toimintakykyä alentavasta syystä, kuten ikääntymisestä?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q6_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_PALVELULIIKENTEELLA",
+          "answerBoolean": false
+        }
+      ]
+    },
+    {
+      "linkId": "Q4_JOHTUUKO_TARPEESI_PITKAAIKAISESTA_TAI_ETENEVASTA_SAIRAUDESTA_TAI_VAMMASTA",
+      "text": "Johtuvatko vaikeudet liikkumisessa pitkäaikaisesta tai etenevästä sairaudesta tai vammasta?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q6_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_PALVELULIIKENTEELLA",
+          "answerBoolean": false
+        }
+      ]
+    }
+  ]
+}

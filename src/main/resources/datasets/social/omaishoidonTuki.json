@@ -1,0 +1,81 @@
+{
+  "resourceType": "Questionnaire",
+  "language": "fi",
+  "status": "draft",
+  "date": "2017-08-16T00:00:00+03:00",
+    "meta": {
+    "profile": [
+      "http://oda.fi/StructureDefinition/Questionnaire/Symptom",
+      "http://oda.fi/StructureDefinition/Questionnaire/Social/omaishoidon-tuki",
+      "http://oda.fi/StructureDefinition/Questionnaire/Social"
+    ]
+  },
+  "title": "Oikeus omaishoidon tukeen",
+  "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta omaishoidon tukeen</div>"
+  },
+  "description": "Kysely selvittää alustavasti onko kansalaisella oikeus omaishoitoon",
+  "item": [
+    {
+      "linkId": "Q1_TARVITSEEKO_VALTTAMATTA_TOISEN_IHMISEN_HOITOA",
+      "text": "Tarvitseeko hoidettava välttämättä toisen ihmisen antamaa hoitoa, huolenpitoa tai valvontaa?",
+      "type": "boolean"
+    },
+    {
+      "linkId": "Q2_TARVITSEEKO_MUUTA_APUA_KUIN_ASIOINTI_TAI_KODINHOITO",
+      "text": "Tarvitseeko hoidettava asioinnin ja kodinhoidon lisäksi muuta toisen ihmisen antamaa hoitoa, huolenpitoa tai valvontaa?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q1_TARVITSEEKO_VALTTAMATTA_TOISEN_IHMISEN_HOITOA",
+          "answerBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "Q3_TARVITSEEKO_APUA_HENKILOKOHTAISISSA_TOIMINNOISSA",
+      "text": "Tarvitseeko hoidettava toisen ihmisen antamaa hoitoa, huolenpitoa tai valvontaa henkilökohtaisissa toiminnoissa?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q2_TARVITSEEKO_MUUTA_APUA_KUIN_ASIOINTI_TAI_KODINHOITO",
+          "answerBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "Q4_ONKO_AVUN_TARVE_YMPARIVUOROKAUTISTA_TAI_PAIVITTAISTA",
+      "text": "Onko hoidettavan hoidon, huolenpidon tai valvonnan tarve ympärivuorokautista tai päivittäistä (yhtäjaksoisesti tai vähäisin keskeytyksin)?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q3_TARVITSEEKO_APUA_HENKILOKOHTAISISSA_TOIMINNOISSA",
+          "answerBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "Q5_VOIKO_OMAINEN_TAI_LAHEINEN_VASTATA_HOIDOSTA",
+      "text": "Voiko hoidettavan omainen tai muu läheinen vastata hoidosta tai huolenpidosta?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q4_ONKO_AVUN_TARVE_YMPARIVUOROKAUTISTA_TAI_PAIVITTAISTA",
+          "answerBoolean": true
+        }
+      ]
+    },
+    {
+      "linkId": "Q6_SOVELTUUKO_HOIDETTAVAN_KOTI_HOITOON",
+      "text": "Onko hoidettavan koti soveltuva kotona annettavaan hoitoon?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q5_VOIKO_OMAINEN_TAI_LAHEINEN_VASTATA_HOIDOSTA",
+          "answerBoolean": true
+        }
+      ]
+    }
+  ]
+}
