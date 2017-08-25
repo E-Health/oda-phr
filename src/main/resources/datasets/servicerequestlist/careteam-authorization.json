@@ -3,8 +3,8 @@
   "id" : "CARETEAM1-AUTHORIZATION",
   "category" : [{
     "coding" : [{
-        "system" : "http://oda",
-        "code": "Authorization"
+        "system" : "http://oda.fi/CareTeam",
+        "code": "authorization"
     }],
     "text" : "Authorization"
   }],

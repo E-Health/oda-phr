@@ -3,8 +3,8 @@
   "id" : "CARETEAM1-CARE",
   "category" : [{
     "coding" : [{
-        "system" : "http://oda",
-        "code": "Care"
+        "system" : "http://oda.fi/CareTeam",
+        "code": "care"
     }],
     "text" : "Care"
   }],
