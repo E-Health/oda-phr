@@ -140,29 +140,29 @@ app:
             - file: codeSystems/encounter-reason-codesystem.json
             - file: codeSystems/endpoint-connection-type-codesystem.json
 
-            - file: datasets/symptom_checks/Yska.json
+            - file: datasets/symptom_checks/Yska_22.json
               use_update: false
-            - file: datasets/symptom_checks/Virtsatietulehdus.json
+            - file: datasets/symptom_checks/Virtsatietulehdus_21.json
               use_update: false
-            - file: datasets/symptom_checks/Korvakipu.json
+            - file: datasets/symptom_checks/Korvakipu_26.json
               use_update: false
-            - file: datasets/symptom_checks/Kurkkukipu.json
+            - file: datasets/symptom_checks/Kurkkukipu_3.json
               use_update: false
-            - file: datasets/symptom_checks/Ripuli.json
+            - file: datasets/symptom_checks/Ripuli_41.json
               use_update: false
-            - file: datasets/symptom_checks/Alaselka.json
+            - file: datasets/symptom_checks/Alaselka_2.json
               use_update: false
-            - file: datasets/symptom_checks/Narastys.json
+            - file: datasets/symptom_checks/Narastys_27.json
               use_update: false
-            - file: datasets/symptom_checks/Olkapaa.json
+            - file: datasets/symptom_checks/Olkapaa_83.json
               use_update: false
-            - file: datasets/symptom_checks/Paansarky.json
+            - file: datasets/symptom_checks/Paansarky_101.json
               use_update: false
-            - file: datasets/symptom_checks/Peraaukko.json
+            - file: datasets/symptom_checks/Peraaukko_28.json
               use_update: false
-            - file: datasets/symptom_checks/Polvi.json
+            - file: datasets/symptom_checks/Polvi_106.json
               use_update: false
-            - file: datasets/symptom_checks/Silma.json
+            - file: datasets/symptom_checks/Silma_124.json
               use_update: false
 
             - file: datasets/social/henkilokohtainenApu.json
