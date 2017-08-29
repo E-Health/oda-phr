@@ -1,21 +1,21 @@
 {
+	"meta": {
+        "profile": [
+            "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+        ]
+    },
 	"resourceType": "Questionnaire",
 	"language": "fi",
 	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/21",
 	"status": "active",
-	"date": "2017-07-06T04:19:59.476Z",
+	"date": "2017-08-16T11:44:34.395Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
-			"system": "https://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"system": "http://duodecim.fi/fhir/sid/vkt-questionnaire-id",
 			"value": "21"
 		}
 	],
-	"meta": {
-        "profile": [
-          "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-        ]
-    },
 	"title": "Virtsatulehdusoireiden itsearvio 18 - 65 -vuotiaille naisille",
 	"text": {
 		"status": "generated",
@@ -25,7 +25,7 @@
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
 			"extension": [{
 					"url": "instruction-text",
-					"valueString": "Ohjeet"
+					"valueString": "liirum, laarum"
 				}, {
 					"url": "instruction-url",
 					"valueString": "www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00615"
@@ -92,7 +92,7 @@
 					]
 				}, {
 					"linkId": "666",
-					"text": "Oirearvio on tarkoitettu vain 18 - 65 -vuotiaille",
+					"text": "Oirearvio on tarkoitettu 18 - 65 -vuotiaille, sillä muille ikäryhmille ei ole saatavissa riittävän luotettavaa tutkimustietoa tästä oireesta. Jos olet alle 18-vuotias tai yli 65-vuotias ja [Terveyskirjaston artikkelin](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00615) luettuasi arvelet tarvitsevasi tutkimuksia tai hoitoa oireesi vuoksi, ole yhteydessä terveydenhuollon ammattilaiseen.",
 					"type": "display",
 					"_type": {
 						"extension": [{
@@ -184,19 +184,8 @@
 					},
 					"enableWhen": [{
 							"question": "305",
-							"extension": [{
-                                    "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-                                    "valueString": "AND"
-                                }
-                            ],
 							"answerCoding": {
 								"id": "461"
-							}
-						}, {
-							"question": "3",
-							"answerQuantity": {
-								"value": 14,
-								"comparator": ">"
 							}
 						}
 					]

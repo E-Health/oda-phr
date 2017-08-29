@@ -22,7 +22,7 @@ app:
         # Add new resources to the end of the list.
 
         resources:
-            - file: datasets/symptom_checks/Hengitystietulehdusoireiden_itsearvio_fixed_id1.json
+            - file: datasets/symptom_checks/Hengitystietulehdus_107.json
               use_update: false
 
             - file: datasets/misc/location1.json

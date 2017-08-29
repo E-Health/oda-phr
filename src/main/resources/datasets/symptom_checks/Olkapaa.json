@@ -1,9 +1,14 @@
 {
+	"meta": {
+        "profile": [
+            "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+        ]
+    },
 	"resourceType": "Questionnaire",
 	"language": "fi",
 	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/83",
 	"status": "active",
-	"date": "2017-07-04T07:13:34.584Z",
+	"date": "2017-08-29T05:15:49.778Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -11,11 +16,6 @@
 			"value": "83"
 		}
 	],
-	"meta": {
-		"profile": [
-			"http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-		]
-	},
 	"title": "Olkapääkivun itsearvio",
 	"text": {
 		"status": "generated",
@@ -25,7 +25,7 @@
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
 			"extension": [{
 					"url": "instruction-text",
-					"valueString": "## Itsehoito\n\nOlkapääkivun alkuvaiheessa tärkeintä on oireita aiheuttavien olkapään liikkeiden välttäminen mikäli se on mahdollista. Ansio- ja kotityössä sekä harrastuksissa tulee vähentää yläraajan kohoasentoa ja erityisesti olkavarren nostamista sivulle. Kylmähoito voi rauhoittaa kipua, turvotusta ja tulehdusta. Liikelaajuudet tulisi käydä läpi pari kertaa vuorokaudessa kivun sallimissa rajoissa.  \n\nParasetamoli on ensisijainen kipulääke, jos kivut eivät ole voimakkaat (poikkeuksena potilaat joilla on vaikea maksasairaus). Parasetamolia tulee käyttää riittävän suurina annoksina, yleensä 1g kolme kertaa päivässä. Paikalliset kipuvoiteet lievittävät kipua sekä akuuteissa että kroonisissa kipuoireissa ja niiden käyttö on lähes kaikilla potilailla turvallista. Tulehduskipulääkitys (ks. [Kipulääkkeet – turvallinen käyttö](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00649 \"Kipulääkkeet – turvallinen käyttö\")) myös suun kautta voivat olla tarpeen, jos niille ei ole vasta-aiheita ja pelkkä parasetamoli ei riitä kivun hoitoon.  \n\nOlkapään sairaudet paranevat melko hyvin itsestään. Noin puolet uusista olkakivuista paranee 2–3 kuukauden aikana ilman erityisiä hoitoja. Jos vaiva on jatkunut yli 3 kuukautta, olisi kuitenkin syytä arvioda tilanne lääkärin vastaanotolla."
+					"valueString": "## Itsehoito\n\nOlkapääkivun alkuvaiheessa tärkeintä on oireita aiheuttavien olkapään liikkeiden välttäminen, mikäli se on mahdollista. Ansio- ja kotityössä sekä harrastuksissa tulee vähentää yläraajan kohoasentoa ja erityisesti olkavarren nostamista sivulle. Kylmähoito voi rauhoittaa kipua, turvotusta ja tulehdusta. Liikelaajuudet tulisi käydä läpi pari kertaa vuorokaudessa kivun sallimissa rajoissa.  \n\nParasetamoli on ensisijainen kipulääke, jos kivut eivät ole voimakkaat (poikkeuksena potilaat, joilla on vaikea maksasairaus). Parasetamolia tulee käyttää riittävän suurina annoksina, yleensä 1g kolme kertaa päivässä. Paikalliset kipuvoiteet lievittävät kipua sekä akuuteissa että kroonisissa kipuoireissa ja niiden käyttö on lähes kaikilla potilailla turvallista. Tulehduskipulääkitys (ks. [Kipulääkkeet - turvallinen käyttö](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00649)) myös suun kautta voi olla tarpeen, jos sille ei ole vasta-aiheita ja pelkkä parasetamoli ei riitä kivun hoitoon.  \n\nOlkapään sairaudet paranevat melko hyvin itsestään. Noin puolet uusista olkakivuista paranee 2–3 kuukauden aikana ilman erityisiä hoitoja. Jos vaiva on jatkunut yli 3 kuukautta, olisi kuitenkin syytä arvioda tilanne lääkärin vastaanotolla."
 				}
 			]
 		}
@@ -46,17 +46,22 @@
 					"type": "decimal"
 				}, {
 					"linkId": "14",
-					"text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+					"text": "Oirearvio on tarkoitettu vähintään 15 vuotta täyttäneille, sillä tätä nuoremmille ei ole saatavissa tarpeeksi luotettavaa tutkimustietoa tästä oireesta. Jos olet alle 15-vuotias eikä itsehoito-ohjeesta ole riittävästi apua, ole yhteydessä terveydenhuollon ammattilaiseen oireesi selvittämiseksi.",
 					"type": "display",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
-								"valueString": "subtitle"
+								"valueString": "feedback"
 							}
 						]
 					},
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 15,
 								"comparator": "<"
@@ -70,6 +75,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -83,19 +93,29 @@
 					"type": "text",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
 							}
 						}, {
 							"question": "402",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
 				}, {
 					"required": true,
 					"linkId": "656",
-					"text": "Onko olkapääsi tilanne jo arvioitu lääkärin toimesta edellä kuvaamasi tapaturman jälkeen?",
+					"text": "Onko lääkäri jo arvioinut olkapääsi tilannetta edellä kuvaamasi tapaturman jälkeen?",
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
@@ -121,33 +141,33 @@
 				}, {
 					"required": true,
 					"linkId": "405",
-					"text": "Onko sinulla ollut olkapääkipuun liittyen:",
+					"text": "Onko sinulla ollut seuraavia oireita olkapääkipuun liittyen?",
 					"type": "choice",
 					"repeats": true,
 					"option": [{
 							"valueCoding": {
 								"id": "580",
-								"display": "Tahatonta laihtumista?"
+								"display": "Tahatonta laihtumista"
 							}
 						}, {
 							"valueCoding": {
 								"id": "581",
-								"display": "Kovaa tai kohtalaisen kovaa kipua useissa nivelissä?"
+								"display": "Kovaa tai kohtalaisen kovaa kipua useissa nivelissä"
 							}
 						}, {
 							"valueCoding": {
 								"id": "584",
-								"display": "Äskettäin alkaneita uusia hengitystieoireita (esim. yskä tai hengenahdistus)?"
+								"display": "Äskettäin alkaneita uusia hengitystieoireita (esim. yskä tai hengenahdistus)"
 							}
 						}, {
 							"valueCoding": {
 								"id": "586",
-								"display": "Kuumeilua (yli 38 C)?"
+								"display": "Kuumeilua (yli 38 astetta)"
 							}
 						}, {
 							"valueCoding": {
 								"id": "583",
-								"display": "Suurentuneita imusolmukkeita?"
+								"display": "Suurentuneita imusolmukkeita"
 							}
 						}, {
 							"valueCoding": {
@@ -163,6 +183,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -172,10 +197,15 @@
 				}, {
 					"required": true,
 					"linkId": "404",
-					"text": "Tuntuuko oireilu siltä että olkapää voisi mennä sijoiltaan tai onko olkapää aiemmin mennyt sijoiltaan?",
+					"text": "Tuntuuko oireilu siltä, että olkapää voisi mennä sijoiltaan tai onko olkapää aiemmin mennyt sijoiltaan?",
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -207,6 +237,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -238,6 +273,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -281,7 +321,7 @@
 				}, {
 					"required": true,
 					"linkId": "986",
-					"text": "Onko voimakkain kipu niskan alueella, olkapään alueella vai jossain muualla?",
+					"text": "Millä alueella kipu on voimakkain?",
 					"type": "choice",
 					"repeats": false,
 					"option": [{
@@ -303,6 +343,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -352,6 +397,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -375,6 +425,11 @@
 					"type": "text",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -388,6 +443,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -401,6 +461,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -456,6 +521,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"

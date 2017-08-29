@@ -1,9 +1,14 @@
 {
+	"meta": {
+        "profile": [
+            "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+        ]
+    },
 	"resourceType": "Questionnaire",
 	"language": "fi",
 	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/26",
 	"status": "active",
-	"date": "2017-07-02T05:47:15.592Z",
+	"date": "2017-08-29T05:15:31.922Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -11,11 +16,6 @@
 			"value": "26"
 		}
 	],
-	"meta": {
-        "profile": [
-          "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-        ]
-    },
 	"title": "Korvakivun itsearvio",
 	"text": {
 		"status": "generated",
@@ -32,7 +32,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Anna oireisen henkilön taustatiedot ja vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \nVoit lukea aluksi Terveyskirjaston artikkelin ’[Korvakipu ja vuotokorvakäytävästä aikuisella](www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00277)’ selvittääksesi ongelman luonnetta.",
+			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Anna oireisen henkilön taustatiedot ja vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \nVoit lukea aluksi Terveyskirjaston artikkelin [Korvakipu ja vuoto korvakäytävästä aikuisella](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00277) selvittääksesi ongelman luonnetta.",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -46,17 +46,22 @@
 					"type": "decimal"
 				}, {
 					"linkId": "14",
-					"text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+					"text": "Oirearvio on tarkoitettu vähintään 15 vuotta täyttäneille, sillä tätä nuoremmille ei ole saatavissa tarpeeksi luotettavaa tutkimustietoa tästä oireesta. Jos olet alle 15-vuotias eikä itsehoito-ohjeesta ole riittävästi apua, ole yhteydessä terveydenhuollon ammattilaiseen oireesi selvittämiseksi.",
 					"type": "display",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
-								"valueString": "subtitle"
+								"valueString": "feedback"
 							}
 						]
 					},
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 15,
 								"comparator": "<"
@@ -108,6 +113,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -121,6 +131,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -134,6 +149,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -147,6 +167,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -156,10 +181,15 @@
 				}, {
 					"required": true,
 					"linkId": "87",
-					"text": "Onko mahdollista, että korvaan on mennyt vierasesine?",
+					"text": "Onko mahdollista, että korvaan on mennyt vieras esine?",
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -173,6 +203,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -182,49 +217,42 @@
 				}, {
 					"required": true,
 					"linkId": "89",
-					"text": "Muut oireet samanaikaisesti korvakivun kanssa",
+					"text": "Onko sinulla muita oireita samanaikaisesti korvakivun kanssa?",
 					"type": "choice",
 					"repeats": true,
 					"option": [{
 							"valueCoding": {
 								"id": "166",
-								"code": "1",
 								"display": "Korvalehti tai korvan seutu on painellen arka"
 							}
 						}, {
 							"valueCoding": {
 								"id": "167",
-								"code": "2",
 								"display": "Korvalehti tai korvan ympärys punoittaa"
 							}
 						}, {
 							"valueCoding": {
 								"id": "168",
-								"code": "3",
 								"display": "Korvakivun kanssa samanaikaisesti kurkun tai nielun kipua"
 							}
 						}, {
 							"valueCoding": {
 								"id": "169",
-								"code": "4",
 								"display": "Korvakivun kanssa samanaikaisesti leukanivelen seudun kipua"
 							}
 						}, {
 							"valueCoding": {
 								"id": "170",
-								"code": "5",
 								"display": "Korvakivun kanssa samanaikaisesti niskan seudun kipua"
 							}
 						}, {
 							"valueCoding": {
 								"id": "171",
-								"code": "6",
 								"display": "Korvasta tulee märkäistä vuotoa"
 							}
 						}, {
 							"valueCoding": {
 								"id": "172",
-								"code": "7",
 								"display": "Korvasta tulee verta"
 							}
 						}, {
@@ -246,6 +274,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -259,6 +292,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "89",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "172"
 							}
@@ -271,6 +309,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
