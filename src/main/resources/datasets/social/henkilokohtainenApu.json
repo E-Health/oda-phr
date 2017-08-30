@@ -1,5 +1,6 @@
 {
   "resourceType": "Questionnaire",
+  "name": "henkilokohtainen-apu",
   "language": "fi",
   "url": "https://oda.fi/Forms/HenkilokohtainenApu",
   "status": "draft",
