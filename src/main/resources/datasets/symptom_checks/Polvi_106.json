@@ -1,9 +1,21 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/106",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/106/386",
+	"version": "386",
+	"meta": {
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"tag": [{
+				"system": "http://oda.fi/Questionnaire",
+				"code": "symptom"
+			}, {
+				"system": "http://oda.fi/cds",
+				"code": "oda1"
+			}
+		]
+	},
 	"status": "active",
-	"date": "2017-07-05T08:27:20.873Z",
+	"date": "2017-09-01T09:23:39.826Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -11,25 +23,11 @@
 			"value": "106"
 		}
 	],
-	"meta": {
-		"profile": [
-			"http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-		]
-	},
 	"title": "Polven oireiden itsearvio",
 	"text": {
 		"status": "generated",
 		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia polven oireiden yhteydessä.</div>"
 	},
-	"extension": [{
-			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
-			"extension": [{
-					"url": "instruction-text",
-					"valueString": "Ohjeet"
-				}
-			]
-		}
-	],
 	"item": [{
 			"linkId": "introduction",
 			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi halutessasi Terveyskirjaston artikkeli [Polvikipu](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00797) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nTämän ohjeen tarkoituksena on ensi sijassa arvioida polvikivun hoidon kiireellisyyttä, ei tarjota valmiita diagnooseja. Polvikivun taustalla voi olla monia erilaisia sairauksia ja diagnoosin varmistaminen vaatii usein kliinisiä tutkimuksia tai joskus myös kuvantamistutkimuksia.",
@@ -46,17 +44,22 @@
 					"type": "decimal"
 				}, {
 					"linkId": "14",
-					"text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+					"text": "Oirearvio on tarkoitettu vähintään 15 vuotta täyttäneille, sillä tätä nuoremmille ei ole saatavissa tarpeeksi luotettavaa tutkimustietoa tästä oireesta. Jos olet alle 15-vuotias eikä itsehoito-ohjeesta ole riittävästi apua, ole yhteydessä terveydenhuollon ammattilaiseen oireesi selvittämiseksi.",
 					"type": "display",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
-								"valueString": "subtitle"
+								"valueString": "feedback"
 							}
 						]
 					},
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 15,
 								"comparator": "<"
@@ -70,6 +73,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -79,10 +87,15 @@
 				}, {
 					"required": true,
 					"linkId": "697",
-					"text": "Edelsikö polvioireen alkua normaalista poikkeava pitkäkestoinen liikunta tai muu rasitus (pitkä juoksu tai patikka, rasittava työsuoritus)",
+					"text": "Edelsikö polvioireen alkua normaalista poikkeava pitkäkestoinen liikunta tai muu rasitus (pitkä juoksu tai patikointi, rasittava työsuoritus)?",
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -124,6 +137,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -137,6 +155,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -151,23 +174,33 @@
 							"code": "8310-5"
 						}
 					],
-					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8)",
+					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8).",
 					"type": "decimal",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
 							}
 						}, {
 							"question": "38",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
 				}, {
 					"required": true,
 					"linkId": "695",
-					"text": "Millaisia oireita polvessasi on? Merkitse kaikki jotka kuvaavat nykyoirettasi.",
+					"text": "Millaisia oireita polvessasi on? Merkitse kaikki, jotka kuvaavat nykyoirettasi.",
 					"type": "choice",
 					"repeats": true,
 					"option": [{
@@ -234,6 +267,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -247,6 +285,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -278,6 +321,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -314,6 +362,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -345,6 +398,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -406,6 +464,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -413,12 +476,16 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "694",
 					"text": "Mikä muu niveloireita aiheuttava sairaus sinulla on?",
 					"type": "text",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -460,6 +527,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -469,7 +541,7 @@
 				}, {
 					"required": true,
 					"linkId": "691",
-					"text": "Onko jommalle kummalle polvellesi tehty seuraavia toimenpiteitä?  Voit valita useamman kuin yhden?",
+					"text": "Onko jommalle kummalle polvellesi tehty seuraavia toimenpiteitä?  Voit valita useamman kuin yhden.",
 					"type": "choice",
 					"repeats": true,
 					"option": [{
@@ -506,6 +578,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -519,6 +596,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -580,6 +662,11 @@
 					],
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -621,6 +708,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -628,18 +720,27 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "701",
 					"text": "Mitä kipulääkkeitä olet käyttänyt ja kuinka paljon viime päivinä?",
 					"type": "text",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
 							}
 						}, {
 							"question": "700",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
@@ -650,6 +751,11 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"

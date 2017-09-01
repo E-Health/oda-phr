@@ -1,14 +1,21 @@
 {
-	"meta": {
-        "profile": [
-            "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-        ]
-    },
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/124",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/124/408",
+	"version": "408",
+	"meta": {
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"tag": [{
+				"system": "http://oda.fi/Questionnaire",
+				"code": "symptom"
+			}, {
+				"system": "http://oda.fi/cds",
+				"code": "oda1"
+			}
+		]
+	},
 	"status": "active",
-	"date": "2017-08-29T12:06:49.461Z",
+	"date": "2017-09-01T09:48:34.935Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -311,7 +318,7 @@
 					]
 				}, {
 					"linkId": "611",
-					"text": "# Verestävä silmä\n\n  \n![](https://www.terveysportti.fi/xmedia/ima/370.121.jpg)  \n\n© 2016 Jaana Hietanen ja Paula Summanen  \n",
+					"text": "# Verestävä silmä\n\n![](https://www.terveysportti.fi/xmedia/ima/370.121.jpg)  \n\n© 2016 Jaana Hietanen ja Paula Summanen",
 					"type": "display",
 					"_type": {
 						"extension": [{
@@ -474,7 +481,6 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "254",
 					"text": "Mitä lääkettä käytät?",
 					"type": "text",
@@ -642,7 +648,6 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "27",
 					"text": "Mille antibiootille?",
 					"type": "text",

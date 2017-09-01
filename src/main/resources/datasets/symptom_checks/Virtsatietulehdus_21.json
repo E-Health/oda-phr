@@ -1,18 +1,25 @@
 {
-	"meta": {
-        "profile": [
-            "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-        ]
-    },
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/21",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/21/396",
+	"version": "396",
+	"meta": {
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"tag": [{
+				"system": "http://oda.fi/Questionnaire",
+				"code": "symptom"
+			}, {
+				"system": "http://oda.fi/cds",
+				"code": "oda1"
+			}
+		]
+	},
 	"status": "active",
-	"date": "2017-08-16T11:44:34.395Z",
+	"date": "2017-09-01T09:25:31.980Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
-			"system": "http://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"system": "https://duodecim.fi/fhir/sid/vkt-questionnaire-id",
 			"value": "21"
 		}
 	],
@@ -24,9 +31,6 @@
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
 			"extension": [{
-					"url": "instruction-text",
-					"valueString": "liirum, laarum"
-				}, {
 					"url": "instruction-url",
 					"valueString": "www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00615"
 				}
@@ -68,6 +72,11 @@
 					},
 					"enableWhen": [{
 							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "46"
 							}
@@ -85,6 +94,11 @@
 					"type": "decimal",
 					"enableWhen": [{
 							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "47"
 							}
@@ -118,7 +132,7 @@
 				}, {
 					"required": true,
 					"linkId": "305",
-					"text": "Olen",
+					"text": "Sukupuoli",
 					"type": "choice",
 					"repeats": false,
 					"option": [{
@@ -126,14 +140,14 @@
 								"id": "461",
 								"system": "http://loinc.org",
 								"code": "46098",
-								"display": "mies"
+								"display": "Mies"
 							}
 						}, {
 							"valueCoding": {
 								"id": "462",
 								"system": "http://loinc.org",
 								"code": "46098",
-								"display": "nainen"
+								"display": "Nainen"
 							}
 						}
 					],
@@ -184,6 +198,11 @@
 					},
 					"enableWhen": [{
 							"question": "305",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "461"
 							}
@@ -672,7 +691,6 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "27",
 					"text": "Mille antibiootille?",
 					"type": "text",
@@ -731,7 +749,7 @@
 				}, {
 					"required": true,
 					"linkId": "29",
-					"text": "Onko sinulla jatkuva kortisonilääkitys tabletteina tai muu vastustuskykyyn vaikuttava lääkitys (esim. reuman, paksusuolitulehduksen tai syövän hoitoon)",
+					"text": "Onko sinulla jatkuva kortisonilääkitys tabletteina tai muu vastustuskykyyn vaikuttava lääkitys (esim. reuman, paksusuolitulehduksen tai syövän hoitoon)?",
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
@@ -829,7 +847,7 @@
 				}, {
 					"required": true,
 					"linkId": "30",
-					"text": "Onko sinulla aiemmin diagnosoitu munuaissairaus tai muut pitkäaikainen virtsatiesairaus kuten munuaisten monirakkulatauti, munuaiskivitauti, munuaisten vajaatoiminta tai rakon tyhjenemishäiriö?",
+					"text": "Onko sinulla aiemmin diagnosoitu munuaissairaus tai muu pitkäaikainen virtsatiesairaus (kuten munuaisten monirakkulatauti, munuaiskivitauti, munuaisten vajaatoiminta tai rakon tyhjenemishäiriö)?",
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
@@ -1028,7 +1046,6 @@
 					"text": "Tämä on ensimmäinen kerta, kun minulla on virtsatietulehdukseen viittaavia oireita",
 					"type": "boolean"
 				}, {
-					"required": true,
 					"linkId": "34",
 					"text": "Voit kirjoittaa lisätietoja tähän tarvittaessa:",
 					"type": "text",

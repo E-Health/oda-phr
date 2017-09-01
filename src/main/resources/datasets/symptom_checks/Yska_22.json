@@ -1,14 +1,21 @@
 {
-	"meta": {
-        "profile": [
-            "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-        ]
-    },
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/22",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/22/398",
+	"version": "398",
+	"meta": {
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"tag": [{
+				"system": "http://oda.fi/Questionnaire",
+				"code": "symptom"
+			}, {
+				"system": "http://oda.fi/cds",
+				"code": "oda1"
+			}
+		]
+	},
 	"status": "active",
-	"date": "2017-08-29T05:14:32.193Z",
+	"date": "2017-09-01T09:34:31.506Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -595,7 +602,6 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "618",
 					"text": "Käytätkö säännöllisesti hengitettävää kortisonia ja/tai keuhkoputkia avaavaa lääkitystä? Millaisella annoksella?",
 					"type": "text",

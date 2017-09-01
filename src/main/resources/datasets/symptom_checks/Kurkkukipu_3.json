@@ -1,14 +1,21 @@
 {
-	"meta": {
-        "profile": [
-            "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-        ]
-    },
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/3",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/3/376",
+	"version": "376",
+	"meta": {
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"tag": [{
+				"system": "http://oda.fi/Questionnaire",
+				"code": "symptom"
+			}, {
+				"system": "http://oda.fi/cds",
+				"code": "oda1"
+			}
+		]
+	},
 	"status": "active",
-	"date": "2017-08-28T13:04:06.367Z",
+	"date": "2017-09-01T09:21:29.907Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -282,7 +289,7 @@
 				}, {
 					"linkId": "137",
 					"type": "display",
-					"text": "# Hengitysteiden oireet\n\nnull",
+					"text": "# Hengitysteiden oireet",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
@@ -438,7 +445,7 @@
 				}, {
 					"linkId": "138",
 					"type": "display",
-					"text": "# Muut nielun oireet\n\nnull",
+					"text": "# Muut nielun oireet",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",

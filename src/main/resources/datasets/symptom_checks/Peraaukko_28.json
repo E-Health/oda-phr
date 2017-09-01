@@ -1,9 +1,21 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/28",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/28/384",
+	"version": "384",
+	"meta": {
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"tag": [{
+				"system": "http://oda.fi/Questionnaire",
+				"code": "symptom"
+			}, {
+				"system": "http://oda.fi/cds",
+				"code": "oda1"
+			}
+		]
+	},
 	"status": "active",
-	"date": "2017-07-05T08:28:33.157Z",
+	"date": "2017-09-01T09:23:23.726Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -11,11 +23,6 @@
 			"value": "28"
 		}
 	],
-	"meta": {
-		"profile": [
-			"http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-		]
-	},
 	"title": "Peräaukon seudun oireiden itsearvio",
 	"text": {
 		"status": "generated",
@@ -35,7 +42,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan. \n\nKyselyssä sinua  pyydetään nimeämään pääasiallinen oireesi, ja vastauksessa annetaan neuvoja oireen todennäköisimmän syyn perusteella.  \n\nJos mikään vaihtoehdoista ei kuvaa oirettasi, sinulla on useita samanaikaisia oireita, tai saamasi ohjeet eivät sovi tilanteeseesi, voit antaa lisätietoja oireista ja esittää kysymyksiä siinä vaiheessa, kun lähetät vastauksesi ammattilaiselle.",
+			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Vastaa kysymyksiin oireiden mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan. \n\nKyselyssä sinua  pyydetään nimeämään pääasiallinen oireesi, ja vastauksessa annetaan neuvoja oireen todennäköisimmän syyn perusteella.  \n\nJos mikään vaihtoehdoista ei kuvaa oirettasi, sinulla on useita samanaikaisia oireita, tai saamasi ohjeet eivät sovi tilanteeseesi, voit antaa lisätietoja oireista ja esittää kysymyksiä siinä vaiheessa, kun lähetät vastauksesi ammattilaiselle.",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -68,6 +75,11 @@
 					},
 					"enableWhen": [{
 							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "46"
 							}
@@ -85,6 +97,11 @@
 					"type": "decimal",
 					"enableWhen": [{
 							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "47"
 							}
@@ -92,17 +109,22 @@
 					]
 				}, {
 					"linkId": "15",
-					"text": "# Oirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille\n\nOirekyselylomake on tarkoitettu vain 15 vuotta täyttäneille.",
+					"text": "Oirearvio on tarkoitettu vähintään 15 vuotta täyttäneille, sillä tätä nuoremmille ei ole saatavissa tarpeeksi luotettavaa tutkimustietoa tästä oireesta. Jos olet alle 15-vuotias eikä itsehoito-ohjeesta ole riittävästi apua, ole yhteydessä terveydenhuollon ammattilaiseen oireesi selvittämiseksi.",
 					"type": "display",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
-								"valueString": "subtitle"
+								"valueString": "feedback"
 							}
 						]
 					},
 					"enableWhen": [{
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 15,
 								"comparator": "<"
@@ -112,7 +134,7 @@
 				}, {
 					"required": true,
 					"linkId": "96",
-					"text": "Pääasiallinen oire",
+					"text": "Mikä seuraavista on pääasiallinen oireesi?",
 					"type": "choice",
 					"repeats": false,
 					"option": [{
@@ -125,7 +147,7 @@
 							"valueCoding": {
 								"id": "208",
 								"code": "2",
-								"display": "Kuume yli 37.5, johon liittyy kipu peräaukon seudussa"
+								"display": "Kuumetta yli 37,5 astetta, johon liittyy kipu peräaukon seudussa"
 							}
 						}, {
 							"valueCoding": {
@@ -183,11 +205,21 @@
 					],
 					"enableWhen": [{
 							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "47"
 							}
 						}, {
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -233,11 +265,21 @@
 					],
 					"enableWhen": [{
 							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "47"
 							}
 						}, {
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -247,15 +289,25 @@
 				}, {
 					"required": true,
 					"linkId": "590",
-					"text": "Kuinka monta vuorokautta nykyiset oireesi ovat kestäneet",
+					"text": "Kuinka monta vuorokautta nykyiset oireesi ovat kestäneet? Anna vastaus kokonaislukuna (esim. 5).",
 					"type": "decimal",
 					"enableWhen": [{
 							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "47"
 							}
 						}, {
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -290,11 +342,21 @@
 					],
 					"enableWhen": [{
 							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "47"
 							}
 						}, {
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -331,11 +393,21 @@
 					],
 					"enableWhen": [{
 							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "47"
 							}
 						}, {
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
@@ -349,11 +421,21 @@
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "47"
 							}
 						}, {
 							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"

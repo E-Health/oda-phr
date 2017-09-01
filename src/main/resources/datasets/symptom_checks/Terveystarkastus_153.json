@@ -1,0 +1,1059 @@
+{
+	"meta": {
+		"profile": [
+			"http://oda.fi/StructureDefinition/Questionnaire/Symptom"
+		]
+	},
+	"resourceType": "Questionnaire",
+	"language": "fi",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153",
+	"status": "active",
+	"date": "2017-08-25T10:17:08.800Z",
+	"publisher": "© Kustannus Oy Duodecim, 2017",
+	"copyright": "© Kustannus Oy Duodecim, 2017",
+	"identifier": [{
+			"system": "https://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"value": "153"
+		}
+	],
+	"title": "STAR",
+	"text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Sähköinen terveystarkastus</div>"
+	},
+	"item": [{
+			"linkId": "introduction",
+			"text": "Sähköinen terveystarkastus",
+			"type": "group",
+			"item": [{
+					"linkId": "830",
+					"type": "display",
+					"text": "# Perustiedot\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "781",
+					"text": "Kumpaa sukupuolta olet?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1395",
+								"display": "Mies"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1396",
+								"display": "Nainen"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "782",
+					"text": "Kuinka vanha olet?",
+					"type": "decimal"
+				}, {
+					"required": true,
+					"linkId": "783",
+					"text": "Kuinka pitkä olet?",
+					"type": "decimal"
+				}, {
+					"required": true,
+					"linkId": "784",
+					"text": "Paljonko painat kevyissä vaatteissa punnittuna?",
+					"type": "decimal"
+				}, {
+					"required": true,
+					"linkId": "785",
+					"text": "Mikä on vyötärön ympärysmittasi?",
+					"type": "decimal"
+				}, {
+					"required": true,
+					"linkId": "780",
+					"text": "Kuinka monta vuotta olet yhteensä käynyt koulua tai opiskellut päätoimisesti? Kansa- ja peruskoulu lasketaan mukaan.",
+					"type": "decimal"
+				}, {
+					"linkId": "832",
+					"type": "display",
+					"text": "# Terveystiedot\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"linkId": "833",
+					"text": "# Kolesteroli\n\n**Mikä oli viimeisin kolesteroliarvosi? Mikäli et tiedä, voit jättää kentät tyhjiksi.**",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "786",
+					"text": "Kokonaiskolesteroliarvo (esim. 5.7)",
+					"type": "decimal"
+				}, {
+					"required": true,
+					"linkId": "787",
+					"text": "HDL-kolesteroliarvo (esim. 1.4)",
+					"type": "decimal"
+				}, {
+					"linkId": "834",
+					"text": "# Verenpaine\n\n**Mikä oli viimeisin verenpainearvosi? Mikäli et tiedä, voit jättää kentät tyhjiksi.**",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "788",
+					"text": "yläpaine (systolinen esim. 136)",
+					"type": "decimal"
+				}, {
+					"required": true,
+					"linkId": "789",
+					"text": "alapaine (diastolinen esim. 82)",
+					"type": "decimal"
+				}, {
+					"required": true,
+					"linkId": "790",
+					"text": "Oletko koskaan käyttänyt säännöllisesti verenpainelääkkeitä?",
+					"type": "boolean"
+				}, {
+					"required": true,
+					"linkId": "791",
+					"text": "Onko lääkäri joskus todennut sinulla olevan sepelvaltimotaudin?",
+					"type": "boolean"
+				}, {
+					"required": true,
+					"linkId": "792",
+					"text": "Onko isälläsi todettu sydäninfarkti (sydänveritulppa) tai angina pectoris alle 60-vuotiaana?",
+					"type": "boolean"
+				}, {
+					"required": true,
+					"linkId": "793",
+					"text": "Onko äidilläsi todettu sydäninfarkti (sydänveritulppa) tai angina pectoris alle 60-vuotiaana?",
+					"type": "boolean"
+				}, {
+					"required": true,
+					"linkId": "794",
+					"text": "Oletko sairastanut lääkärin toteaman aivohalvauksen, aivoverenvuodon tai aivoverisuonitukoksen?",
+					"type": "boolean"
+				}, {
+					"required": true,
+					"linkId": "836",
+					"text": "Onko lääkäri joskus todennut sinulla olevan astman, keuhkoahtauman tai muun liikuntaa rajoittavan keuhkojen sairauden?",
+					"type": "boolean"
+				}, {
+					"required": true,
+					"linkId": "837",
+					"text": "Onko lääkäri joskus todennut sinulla olevan reuman, alaraajojen nivelrikon tai muun liikuntaa rajoittavan tuki- ja liikuntaelimistön sairauden?",
+					"type": "boolean"
+				}, {
+					"required": true,
+					"linkId": "838",
+					"text": "Onko verensokerisi joskus todettu olevan koholla (esim. terveystarkastuksessa, jonkin sairauden yhteydessä, raskauden aikana)?",
+					"type": "boolean"
+				}, {
+					"required": true,
+					"linkId": "795",
+					"text": "Onko lääkäri joskus todennut sinulla sokeritaudin (diabeteksen)?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1404",
+								"display": "ei"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1405",
+								"display": "kyllä, hoitona on ruokavalio"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1406",
+								"display": "kyllä, hoitona on tabletti- tai insuliinihoito"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "796",
+					"text": "Onko perheenjäsenilläsi tai sukulaisillasi todettu diabetesta (tyypin 1 tai 2 diabetesta)?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1407",
+								"display": "ei"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1408",
+								"display": "kyllä, isovanhemmilla, vanhempien sisaruksilla tai serkuilla (mutta ei omilla vanhemmilla, sisaruksilla tai lapsilla)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1409",
+								"display": "kyllä, vanhemmilla, sisaruksilla tai omilla lapsilla"
+							}
+						}
+					]
+				}, {
+					"linkId": "839",
+					"type": "display",
+					"text": "# Alkoholi\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "797",
+					"text": "Käytätkö alkoholia?",
+					"type": "boolean"
+				}, {
+					"linkId": "840",
+					"text": "# Alkoholiannokset\n\n**Jos käytät alkoholia, montako alkoholiannosta (lasillista tai pullollista) juot keskimäärin viikon aikana seuraavia?**",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "797",
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "798",
+					"text": "olutta (IVA tai III) tai siideriä",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "797",
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "799",
+					"text": "long drink -juomia",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "797",
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "800",
+					"text": "väkevää alkoholia",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "797",
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "801",
+					"text": "viiniä tai vastaavaa (alkoholia yli 5%)",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "797",
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "802",
+					"text": "kevytviiniä (alkoholia noin 5%)",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "797",
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "803",
+					"text": "Kuinka usein juot alkoholijuomia niin, että tunnet itsesi päihtyneeksi?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1416",
+								"display": "harvemmin kuin kerran kuukaudessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1417",
+								"display": "ainakin kerran kuukaudessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1418",
+								"display": "ainakin kerran viikossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1419",
+								"display": "ainakin pari kertaa viikossa"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "797",
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"linkId": "841",
+					"type": "display",
+					"text": "# Tupakka\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "804",
+					"text": "Tupakoitko nykyisin?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1420",
+								"display": "en ole koskaan tupakoinut"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1421",
+								"display": "olen aikaisemmin tupakoinut, mutta lopettanut"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1422",
+								"display": "satunnaisesti"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1423",
+								"display": "kyllä, päivittäin"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "805",
+					"text": "Kuinka monta savuketta, sikaria tai piipullista poltat päivittäin?",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "804",
+							"answerCoding": {
+								"id": "1423"
+							}
+						}, {
+							"question": "804",
+							"answerCoding": {
+								"id": "1422"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "806",
+					"text": "Käytätkö päivittäin nuuskaa?",
+					"type": "boolean"
+				}, {
+					"linkId": "842",
+					"type": "display",
+					"text": "# Ravinto\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "807",
+					"text": "Kuinka paljon keskimäärin syöt tuoreita vihanneksia tai juureksia?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1426",
+								"display": "harvemmin kuin kerran päivässä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1427",
+								"display": "1-2 annosta päivässä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1428",
+								"display": "3-4 annosta päivässä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1429",
+								"display": "5 tai enemmän annosta päivittäin"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "808",
+					"text": "Kuinka paljon keskimäärin syöt tuoreita hedelmiä tai marjoja?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1430",
+								"display": "harvemmin kuin kerran viikossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1431",
+								"display": "viikottain, mutta ei joka päivä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1432",
+								"display": "1 annoksen päivässä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1433",
+								"display": "2 annosta tai enemmän päivittäin"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "809",
+					"text": "Kuinka monta annosta keskimäärin käytät kokojyvätuotteita (1 annos on esimerkiksi 1 viipale kokojyväruisleipää tai 1/2 dl mysliä tai kokojyväpuuroa)?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1434",
+								"display": "harvemmin kuin kerran päivässä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1435",
+								"display": "1-2 annosta päivässä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1436",
+								"display": "3 annosta päivässä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1437",
+								"display": "enemmän kuin 3 annosta päivässä"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "810",
+					"text": "Kuinka usein keskimäärin käytät kalaa tai kalaruokia?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1438",
+								"display": "harvemmin kuin kerran viikossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1439",
+								"display": "1-2 päivänä viikossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1440",
+								"display": "3-5 päivänä viikossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1441",
+								"display": "päivittäin"
+							}
+						}
+					]
+				}, {
+					"linkId": "843",
+					"type": "display",
+					"text": "# Liikunta ja vapaa-aika\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "811",
+					"text": "Kuinka paljon keskimäärin liikut ja rasitat itseäsi ruumiillisesti?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1442",
+								"display": "Yleensä en paljonkaan liiku, ja vapaa-aikanani lähinnä luen, katselen televisiota ja suoritan askareita, joissa en paljonkaan liiku ja jotka eivät rasita minua ruumiillisesti."
+							}
+						}, {
+							"valueCoding": {
+								"id": "1443",
+								"display": "Kävelen, pyöräilen tai liikun muulla tavalla, yhteensä vähemmän kuin 3 tuntia viikossa."
+							}
+						}, {
+							"valueCoding": {
+								"id": "1448",
+								"display": "Kävelen, pyöräilen tai liikun muulla tavalla vähintään 3 tuntia viikossa."
+							}
+						}, {
+							"valueCoding": {
+								"id": "1444",
+								"display": "Harrastan varsinaista kuntoliikuntaa, kuten juoksemista, lenkkeilyä, hiihtoa, kuntovoimistelua, uintia, pallopelejä tai teen rasittavia puutarhatöitä tai muuta vastaavaa keskimäärin vähintään 3 tuntia viikossa."
+							}
+						}, {
+							"valueCoding": {
+								"id": "1445",
+								"display": "Harjoittelen kilpailumielessä säännöllisesti useita kertoja viikossa juoksua, suunnistusta, hiihtoa, uintia, pallopelejä tai muita rasittavia urheilumuotoja."
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "886",
+					"text": "Haluatko arvioida kuntotasosi?",
+					"type": "boolean"
+				}, {
+					"required": true,
+					"linkId": "813",
+					"text": "Valitse seuraavista vaihtoehdoista, mikä parhaiten kuvaa yleistä aktiivisuuden tasoasi edellisen kuukauden aikana.",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1449",
+								"display": "En harrasta säännöllistä vapaa-ajan liikuntaa tai raskaita fyysisiä ponnisteluja."
+							}
+						}, {
+							"valueCoding": {
+								"id": "1450",
+								"display": "Harrastan säännöllistä vapaa-ajan liikuntaa tai teen töitä, jotka vaativat kohtuullista fyysistä ponnistelua, esim. golf, ratsastus, voimistelu, pöytätennis, keilailu, kuntosaliharjoittelu tai puutarhatyöt."
+							}
+						}, {
+							"valueCoding": {
+								"id": "1451",
+								"display": "Harrastan säännöllisesti raskasta liikuntaa, esim. juoksua tai hölkkää, uintia, pyöräilyä, soutua, naruhyppelyä tai muuta raskasta aerobista kuormittavaa lajia, kuten tennis, kori- tai käsipallo."
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "886",
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "814",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1452",
+								"display": "Vältän kävelyä ja ylimääräistä ponnistelua, esim. käytän aina liukuportaita ja kävelyn sijasta ajan autolla aina, kun se on mahdollista."
+							}
+						}, {
+							"valueCoding": {
+								"id": "1453",
+								"display": "Kävelen huvin vuoksi, käytän pääasiassa portaita, toisinaan harrastan liikuntaa niin, että hikoilen ja hengästyn."
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "813",
+							"answerCoding": {
+								"id": "1449"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "815",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1454",
+								"display": "10-60 minuuttia viikossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1455",
+								"display": "yli tunnin viikossa"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "813",
+							"answerCoding": {
+								"id": "1450"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "816",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1456",
+								"display": "Juoksen vähemmän kuin 2 km viikossa tai harrastan vähemmän kuin 30 min rasitukseltaan vastaavanlaista lajia."
+							}
+						}, {
+							"valueCoding": {
+								"id": "1457",
+								"display": "Juoksen 2-10 km viikossa tai harrastan 30-60 min viikossa rasitukseltaan vastaavanlaista lajia."
+							}
+						}, {
+							"valueCoding": {
+								"id": "1458",
+								"display": "Juoksen 10-15 km viikossa tai harrastan 1-3 tuntia viikossa rasitukseltaan vastaavanlaista lajia."
+							}
+						}, {
+							"valueCoding": {
+								"id": "1459",
+								"display": "Juoksen yli 15 km viikossa tai harrastan yli 3 tuntia viikossa rasitukseltaan vastaavanlaista lajia."
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "813",
+							"answerCoding": {
+								"id": "1451"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "826",
+					"text": "Kuinka usein osallistut seura- tai yhdistystoimintaan (mukaan luettuna yhteiskunnalliset luottamustehtävät)?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1508",
+								"display": "harvemmin tai en koskaan"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1509",
+								"display": "kerran tai muutaman kerran vuodessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1510",
+								"display": "kerran kuukaudessa tai useammin"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1511",
+								"display": "kerran viikossa tai useammin"
+							}
+						}
+					]
+				}, {
+					"linkId": "844",
+					"type": "display",
+					"text": "# Uni\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "817",
+					"text": "Kuinka monta tuntia keskimäärin nukut vuorokaudessa?",
+					"type": "decimal"
+				}, {
+					"linkId": "845",
+					"type": "display",
+					"text": "# Stressi\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "818",
+					"text": "Oletko tuntenut itsesi jännittyneeksi, stressaantuneeksi tai kovan paineen alaiseksi viimeksi kuluneen kuukauden aikana?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1461",
+								"display": "en ollenkaan"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1462",
+								"display": "kyllä, jonkin verran, mutta en enempää kuin ihmiset yleensä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1463",
+								"display": "kyllä, melkoisesti enemmän kuin ihmiset yleensä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1464",
+								"display": "kyllä, elämäntilanteeni on miltei sietämätön"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "819",
+					"text": "Miten usein sinua kiusaa se, että joudut pinnistämään voimasi äärimmilleen pystyäksesi selviytymään nykyisestä työstäsi tai työmäärästäsi?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1465",
+								"display": "en ole ansiotyössä, enkä opiskele päätoimisesti"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1466",
+								"display": "harvoin tai ei koskaan"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1467",
+								"display": "joskus"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1468",
+								"display": "aika usein"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1469",
+								"display": "melkein koko ajan"
+							}
+						}
+					]
+				}, {
+					"linkId": "846",
+					"type": "display",
+					"text": "# Perhe ja parisuhde\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "820",
+					"text": "Onko sinulla vaikeuksia tulla toimeen puolisosi kanssa?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1470",
+								"display": "en ole parisuhteessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1471",
+								"display": "ei koskaan"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1472",
+								"display": "joskus"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1473",
+								"display": "melkein koko ajan"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "821",
+					"text": "Onko lapsistasi aiheutunut sinulle erityisiä vaikeuksia?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1474",
+								"display": "minulla ei ole lapsia"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1475",
+								"display": "ei koskaan"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1476",
+								"display": "harvoin"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1477",
+								"display": "joskus"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1478",
+								"display": "aika usein"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1479",
+								"display": "melkein koko ajan"
+							}
+						}
+					]
+				}, {
+					"linkId": "847",
+					"type": "display",
+					"text": "# Henkinen hyvinvointi\n\nnull",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					}
+				}, {
+					"required": true,
+					"linkId": "822",
+					"text": "Minulla on selkeitä tavoitteita elämässäni.",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1480",
+								"display": "ehdottomasti samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1481",
+								"display": "samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1482",
+								"display": "jokseenkin samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1483",
+								"display": "vaikea sanoa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1484",
+								"display": "hiukan eri mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1485",
+								"display": "eri mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1486",
+								"display": "ehdottomasti eri mieltä"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "823",
+					"text": "Suhtaudun tulevaisuuteen hyvin luottavaisesti.",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1487",
+								"display": "ehdottomasti samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1488",
+								"display": "samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1489",
+								"display": "jokseenkin samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1490",
+								"display": "vaikea sanoa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1491",
+								"display": "hiukan eri mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1492",
+								"display": "eri mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1493",
+								"display": "ehdottomasti eri mieltä"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "824",
+					"text": "Haluan elää juuri tätä hetkeä.",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1494",
+								"display": "ehdottomasti samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1495",
+								"display": "samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1496",
+								"display": "jokseenkin samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1497",
+								"display": "vaikea sanoa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1498",
+								"display": "hiukan eri mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1499",
+								"display": "eri mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1500",
+								"display": "ehdottomasti eri mieltä"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "825",
+					"text": "Olen hyvin kiitollinen kaikesta saamastani ja saavuttamastani.",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1501",
+								"display": "ehdottomasti samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1502",
+								"display": "samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1503",
+								"display": "jokseenkin samaa mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1504",
+								"display": "vaikea sanoa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1505",
+								"display": "hiukan eri mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1506",
+								"display": "eri mieltä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1507",
+								"display": "ehdottomasti eri mieltä"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

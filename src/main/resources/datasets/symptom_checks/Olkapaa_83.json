@@ -1,14 +1,21 @@
 {
-	"meta": {
-        "profile": [
-            "http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-        ]
-    },
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/83",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/83/382",
+	"version": "382",
+	"meta": {
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"tag": [{
+				"system": "http://oda.fi/Questionnaire",
+				"code": "symptom"
+			}, {
+				"system": "http://oda.fi/cds",
+				"code": "oda1"
+			}
+		]
+	},
 	"status": "active",
-	"date": "2017-08-29T05:15:49.778Z",
+	"date": "2017-09-01T09:22:17.207Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -87,7 +94,6 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "655",
 					"text": "Minkälaisen tapaturman seurauksena olkapääkipu on alkanut?",
 					"type": "text",
@@ -419,7 +425,6 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "657",
 					"text": "Minkälaista hoitoa olet tähän mennessä saanut tai itse antanut olkapääkipuusi?",
 					"type": "text",

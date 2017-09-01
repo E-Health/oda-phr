@@ -172,6 +172,8 @@ app:
             - file: datasets/social/omaishoidonTuki.json
               use_update: false
 
+            - file:  datasets/symptom_checks/Terveystarkastus_153.json
+              use_update: false
 spring:
     application:
         name: phr
