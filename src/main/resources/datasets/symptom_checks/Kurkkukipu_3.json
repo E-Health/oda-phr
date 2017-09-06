@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/3/376",
-	"version": "376",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/3/424",
+	"version": "424",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:21:29.907Z",
+	"date": "2017-09-05T10:47:51.292Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -71,16 +71,6 @@
 						]
 					},
 					"enableWhen": [{
-							"question": "12",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerCoding": {
-								"id": "25"
-							}
-						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -111,16 +101,6 @@
 							],
 							"answerCoding": {
 								"id": "47"
-							}
-						}, {
-							"question": "12",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerCoding": {
-								"id": "26"
 							}
 						}
 					]
@@ -185,16 +165,6 @@
 								"id": "47"
 							}
 						}, {
-							"question": "12",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerCoding": {
-								"id": "26"
-							}
-						}, {
 							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -254,16 +224,6 @@
 							],
 							"answerCoding": {
 								"id": "47"
-							}
-						}, {
-							"question": "12",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerCoding": {
-								"id": "26"
 							}
 						}, {
 							"question": "3",
@@ -507,26 +467,6 @@
 						}
 					],
 					"enableWhen": [{
-							"question": "12",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerCoding": {
-								"id": "26"
-							}
-						}, {
-							"question": "12",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerCoding": {
-								"id": "26"
-							}
-						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
