@@ -1,14 +1,21 @@
 {
-	"meta": {
-		"profile": [
-			"http://oda.fi/StructureDefinition/Questionnaire/Symptom"
-		]
-	},
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153/416",
+	"version": "416",
+	"meta": {
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"tag": [{
+				"system": "http://oda.fi/Questionnaire",
+				"code": "symptom"
+			}, {
+				"system": "http://oda.fi/cds",
+				"code": "oda1"
+			}
+		]
+	},
 	"status": "active",
-	"date": "2017-08-25T10:17:08.800Z",
+	"date": "2017-09-05T10:43:47.381Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,12 +30,11 @@
 	},
 	"item": [{
 			"linkId": "introduction",
-			"text": "Sähköinen terveystarkastus",
 			"type": "group",
 			"item": [{
 					"linkId": "830",
 					"type": "display",
-					"text": "# Perustiedot\n\nnull",
+					"text": "# Perustiedot",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
@@ -62,12 +68,12 @@
 				}, {
 					"required": true,
 					"linkId": "783",
-					"text": "Kuinka pitkä olet?",
+					"text": "Kuinka pitkä olet (cm)?",
 					"type": "decimal"
 				}, {
 					"required": true,
 					"linkId": "784",
-					"text": "Paljonko painat kevyissä vaatteissa punnittuna?",
+					"text": "Paljonko painat kevyissä vaatteissa punnittuna (kg)?",
 					"type": "decimal"
 				}, {
 					"required": true,
@@ -82,7 +88,7 @@
 				}, {
 					"linkId": "832",
 					"type": "display",
-					"text": "# Terveystiedot\n\nnull",
+					"text": "# Terveystiedot",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
@@ -145,12 +151,12 @@
 				}, {
 					"required": true,
 					"linkId": "792",
-					"text": "Onko isälläsi todettu sydäninfarkti (sydänveritulppa) tai angina pectoris alle 60-vuotiaana?",
+					"text": "Onko isälläsi todettu sydäninfarkti (sydänveritulppa) tai angina pectoris alle 60-vuotiaana? (Jos et ole varma, vastaa \"Ei\")",
 					"type": "boolean"
 				}, {
 					"required": true,
 					"linkId": "793",
-					"text": "Onko äidilläsi todettu sydäninfarkti (sydänveritulppa) tai angina pectoris alle 60-vuotiaana?",
+					"text": "Onko äidilläsi todettu sydäninfarkti (sydänveritulppa) tai angina pectoris alle 60-vuotiaana? (Jos et ole varma, vastaa \"Ei\")",
 					"type": "boolean"
 				}, {
 					"required": true,
@@ -221,7 +227,7 @@
 				}, {
 					"linkId": "839",
 					"type": "display",
-					"text": "# Alkoholi\n\nnull",
+					"text": "# Alkoholi",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
@@ -247,6 +253,11 @@
 					},
 					"enableWhen": [{
 							"question": "797",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
@@ -257,6 +268,11 @@
 					"type": "decimal",
 					"enableWhen": [{
 							"question": "797",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
@@ -267,6 +283,11 @@
 					"type": "decimal",
 					"enableWhen": [{
 							"question": "797",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
@@ -277,6 +298,11 @@
 					"type": "decimal",
 					"enableWhen": [{
 							"question": "797",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
@@ -287,6 +313,11 @@
 					"type": "decimal",
 					"enableWhen": [{
 							"question": "797",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
@@ -297,6 +328,11 @@
 					"type": "decimal",
 					"enableWhen": [{
 							"question": "797",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
@@ -330,13 +366,18 @@
 					],
 					"enableWhen": [{
 							"question": "797",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
 				}, {
 					"linkId": "841",
 					"type": "display",
-					"text": "# Tupakka\n\nnull",
+					"text": "# Tupakka",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
@@ -397,7 +438,7 @@
 				}, {
 					"linkId": "842",
 					"type": "display",
-					"text": "# Ravinto\n\nnull",
+					"text": "# Ravinto",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
@@ -520,7 +561,7 @@
 				}, {
 					"linkId": "843",
 					"type": "display",
-					"text": "# Liikunta ja vapaa-aika\n\nnull",
+					"text": "# Liikunta ja vapaa-aika",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
@@ -591,6 +632,11 @@
 					],
 					"enableWhen": [{
 							"question": "886",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerBoolean": true
 						}
 					]
@@ -613,6 +659,11 @@
 					],
 					"enableWhen": [{
 							"question": "813",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "1449"
 							}
@@ -637,6 +688,11 @@
 					],
 					"enableWhen": [{
 							"question": "813",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "1450"
 							}
@@ -671,6 +727,11 @@
 					],
 					"enableWhen": [{
 							"question": "813",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
 							"answerCoding": {
 								"id": "1451"
 							}
@@ -707,7 +768,7 @@
 				}, {
 					"linkId": "844",
 					"type": "display",
-					"text": "# Uni\n\nnull",
+					"text": "# Uni",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
@@ -723,7 +784,7 @@
 				}, {
 					"linkId": "845",
 					"type": "display",
-					"text": "# Stressi\n\nnull",
+					"text": "# Stressi",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
@@ -795,7 +856,7 @@
 				}, {
 					"linkId": "846",
 					"type": "display",
-					"text": "# Perhe ja parisuhde\n\nnull",
+					"text": "# Perhe ja parisuhde",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
@@ -872,7 +933,7 @@
 				}, {
 					"linkId": "847",
 					"type": "display",
-					"text": "# Henkinen hyvinvointi\n\nnull",
+					"text": "# Henkinen hyvinvointi",
 					"_type": {
 						"extension": [{
 								"url": "https://duodecim.fi/fhir/extensions/item-type",
