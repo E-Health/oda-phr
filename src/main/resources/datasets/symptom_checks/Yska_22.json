@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/22/398",
-	"version": "398",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/22/422",
+	"version": "422",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:34:31.506Z",
+	"date": "2017-09-05T10:47:35.315Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -143,6 +143,17 @@
 							"answerCoding": {
 								"id": "47"
 							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -159,6 +170,17 @@
 							],
 							"answerCoding": {
 								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
 							}
 						}
 					]
@@ -191,6 +213,17 @@
 								}
 							],
 							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -249,6 +282,17 @@
 							],
 							"answerCoding": {
 								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
 							}
 						}
 					]
@@ -334,13 +378,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -359,13 +406,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -396,6 +446,17 @@
 								}
 							],
 							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -419,13 +480,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -480,13 +544,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}, {
 							"question": "45",
 							"extension": [{
@@ -518,13 +585,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -559,13 +629,16 @@
 							],
 							"answerBoolean": true
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -584,13 +657,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}, {
 							"question": "45",
 							"extension": [{
@@ -614,13 +690,26 @@
 							],
 							"answerBoolean": true
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
 						}
 					]
 				}, {
@@ -639,13 +728,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -669,13 +761,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -694,13 +789,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -724,13 +822,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -749,13 +850,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -784,6 +888,17 @@
 								}
 							],
 							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -802,23 +917,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "20",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerCoding": {
-								"id": "47"
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
 							}
-						}, {
-							"question": "584",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerBoolean": false
 						}
 					]
 				}, {
@@ -837,13 +945,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -862,13 +973,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}
 					]
 				}, {
@@ -887,13 +1001,16 @@
 								"id": "47"
 							}
 						}, {
-							"question": "584",
+							"question": "3",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
-							"answerBoolean": false
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
 						}, {
 							"question": "49",
 							"extension": [{
@@ -910,14 +1027,6 @@
 					"text": "Onko painosi laskenut enemmän kuin viisi kiloa kahden kuukauden aikana ilman laihtumistarkoitusta?",
 					"type": "boolean",
 					"enableWhen": [{
-							"question": "584",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerBoolean": false
-						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -926,6 +1035,17 @@
 							],
 							"answerCoding": {
 								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
 							}
 						}
 					]
