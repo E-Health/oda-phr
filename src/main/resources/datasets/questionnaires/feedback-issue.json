@@ -2,6 +2,7 @@
   "resourceType": "Questionnaire",
   "id": "FEEDBACK-ISSUE-FI",
   "meta": {
+    "tag": [{"system": "http://oda.fi/Questionnaire", "code": "feedback"}],
     "profile": [
       "http://oda.fi/StructureDefinition/Questionnaire/Feedback"
     ]

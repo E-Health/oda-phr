@@ -2,6 +2,7 @@
   "resourceType": "Questionnaire",
   "id": "FEEDBACK-SATISFACTION-FI",
   "meta": {
+    "tag": [{"system": "http://oda.fi/Questionnaire", "code": "feedback"}],
     "profile": [
       "http://oda.fi/StructureDefinition/Questionnaire/Feedback"
     ]
@@ -18,7 +19,7 @@
   "text": {
     "status": "additional",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Kun sinulla ei ole enää oireita, tai koet itsesi parantuneeksi, voit päättää tiedon.</p> <p>Oliko palvelusta hyötyä asiasi ratkaisemisessa? Vastaa arvosanalla 10-0. Yli 4 tulkitsemme että oli hyötyä.</p></div>"
-  },  
+  },
   "status": "active",
   "item": [
     {
@@ -30,7 +31,7 @@
             "valueUri": "https://oda.fi/StructureDefinition/Range"
          }]
       },
-      
+
       "required": true,
       "option": [
         {
@@ -72,16 +73,16 @@
            "type": "display",
            "text": "Ei lainkaan hyödyllisinä",
            "linkId": "min",
-                                 
+
            "_type": {
              "extension":[{
                 "url": "https://oda.fi/StructureDefinition/Label",
                 "valueUri": "https://oda.fi/StructureDefinition/Range"
              }]
-           }           
+           }
          },
-         
-         {          
+
+         {
            "type": "display",
            "text": "Erittäin hyödyllisinä",
            "linkId": "max",
@@ -90,9 +91,9 @@
                 "url": "https://oda.fi/StructureDefinition/Label",
                 "valueUri":"https://oda.fi/StructureDefinition/Range"
              }]
-           }                      
+           }
          }
-      ]     
+      ]
     }
   ]
 }

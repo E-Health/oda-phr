@@ -7,6 +7,10 @@
     "status": "draft",
     "date": "2017-06-08T00:00:00+03:00",
     "description": "Arviointilomakeella arvoidaan asiakkaan mahdollisuutta saada henkilökohtaista apua.",
+    "meta": {
+      "tag": [{"system": "http://oda.fi/Questionnaire", "code": "social-service-request"},
+              {"system": "http://oda.fi/cds", "code": "oda-social"}]
+    },
     "item": [{
             "linkId": "0",
             "text": "Lomakeella arvoidaan mahdollisuutta saada henkilökohtaista apua.",

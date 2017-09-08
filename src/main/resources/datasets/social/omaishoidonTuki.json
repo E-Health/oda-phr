@@ -5,6 +5,8 @@
   "status": "draft",
   "date": "2017-08-16T00:00:00+03:00",
     "meta": {
+    "tag": [{"system": "http://oda.fi/Questionnaire", "code": "social-service-request"},
+            {"system": "http://oda.fi/cds", "code": "oda-social"}],
     "profile": [
       "http://oda.fi/StructureDefinition/Questionnaire/Symptom",
       "http://oda.fi/StructureDefinition/Questionnaire/Social/omaishoidon-tuki",
