@@ -1,29 +1,39 @@
 {
   "resourceType": "Questionnaire",
-  "name": "omaishoidon-tuki",
-  "language": "fi",
-  "status": "draft",
-  "date": "2017-08-16T00:00:00+03:00",
-    "meta": {
-    "tag": [{"system": "http://oda.fi/Questionnaire", "code": "social-service-request"},
-            {"system": "http://oda.fi/cds", "code": "oda-social"}],
+  "meta": {
     "profile": [
       "http://oda.fi/StructureDefinition/Questionnaire/Symptom",
-      "http://oda.fi/StructureDefinition/Questionnaire/Social/omaishoidon-tuki",
-      "http://oda.fi/StructureDefinition/Questionnaire/Social"
+      "http://oda.fi/StructureDefinition/Questionnaire/Social",
+      "http://oda.fi/StructureDefinition/Questionnaire/Social/omaishoidon-tuki"
+    ],
+    "tag": [
+      {
+        "system": "http://oda.fi/Questionnaire",
+        "code": "social-service-request"
+      },
+      {
+        "system": "http://oda.fi/cds",
+        "code": "oda-social"
+      }
     ]
   },
-  "title": "Oikeus omaishoidon tukeen",
+  "language": "fi",
   "text": {
-        "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta omaishoidon tukeen</div>"
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta omaishoidon tukeen</div>"
   },
-  "description": "Kysely selvittää alustavasti onko kansalaisella oikeus omaishoitoon",
+  "url": "https://oda.fi/Forms/omaishoidon-tuki",
+  "version": "0.0.1",
+  "name": "omaishoidon-tuki",
+  "title": "Oikeus omaishoidon tukeen",
+  "status": "draft",
+  "date": "2017-09-11T00:00:00+03:00",
   "item": [
     {
       "linkId": "Q1_TARVITSEEKO_VALTTAMATTA_TOISEN_IHMISEN_HOITOA",
       "text": "Tarvitseeko hoidettava välttämättä toisen ihmisen antamaa hoitoa, huolenpitoa tai valvontaa?",
-      "type": "boolean"
+      "type": "boolean",
+      "required": true
     },
     {
       "linkId": "Q2_TARVITSEEKO_MUUTA_APUA_KUIN_ASIOINTI_TAI_KODINHOITO",
@@ -34,7 +44,8 @@
           "question": "Q1_TARVITSEEKO_VALTTAMATTA_TOISEN_IHMISEN_HOITOA",
           "answerBoolean": true
         }
-      ]
+      ],
+      "required": true
     },
     {
       "linkId": "Q3_TARVITSEEKO_APUA_HENKILOKOHTAISISSA_TOIMINNOISSA",
@@ -45,7 +56,8 @@
           "question": "Q2_TARVITSEEKO_MUUTA_APUA_KUIN_ASIOINTI_TAI_KODINHOITO",
           "answerBoolean": true
         }
-      ]
+      ],
+      "required": true
     },
     {
       "linkId": "Q4_ONKO_AVUN_TARVE_YMPARIVUOROKAUTISTA_TAI_PAIVITTAISTA",
@@ -56,7 +68,8 @@
           "question": "Q3_TARVITSEEKO_APUA_HENKILOKOHTAISISSA_TOIMINNOISSA",
           "answerBoolean": true
         }
-      ]
+      ],
+      "required": true
     },
     {
       "linkId": "Q5_VOIKO_OMAINEN_TAI_LAHEINEN_VASTATA_HOIDOSTA",
@@ -67,7 +80,8 @@
           "question": "Q4_ONKO_AVUN_TARVE_YMPARIVUOROKAUTISTA_TAI_PAIVITTAISTA",
           "answerBoolean": true
         }
-      ]
+      ],
+      "required": true
     },
     {
       "linkId": "Q6_SOVELTUUKO_HOIDETTAVAN_KOTI_HOITOON",
@@ -78,7 +92,8 @@
           "question": "Q5_VOIKO_OMAINEN_TAI_LAHEINEN_VASTATA_HOIDOSTA",
           "answerBoolean": true
         }
-      ]
+      ],
+      "required": true
     }
   ]
 }

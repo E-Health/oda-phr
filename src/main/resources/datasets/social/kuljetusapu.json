@@ -1,33 +1,45 @@
 {
   "resourceType": "Questionnaire",
-  "name": "kuljetusapu",
-  "language": "fi",
-  "status": "draft",
-  "date": "2017-08-16T00:00:00+03:00",
   "meta": {
-    "tag": [{"system": "http://oda.fi/Questionnaire", "code": "social-service-request"},
-            {"system": "http://oda.fi/cds", "code": "oda-social"}],
     "profile": [
       "http://oda.fi/StructureDefinition/Questionnaire/Symptom",
-      "http://oda.fi/StructureDefinition/Questionnaire/Social/Kuljetusapu",
-      "http://oda.fi/StructureDefinition/Questionnaire/Social"
+      "http://oda.fi/StructureDefinition/Questionnaire/Social",
+      "http://oda.fi/StructureDefinition/Questionnaire/Social/kuljetusapu"
+    ],
+    "tag": [
+      {
+        "system": "http://oda.fi/Questionnaire",
+        "code": "social-service-request"
+      },
+      {
+        "system": "http://oda.fi/cds",
+        "code": "oda-social"
+      }
     ]
   },
-  "title": "Oikeus kuljetusapuun",
+  "language": "fi",
   "text": {
-        "status": "generated",
-        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta kuljetusapuun</div>"
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta kuljetusapuun</div>"
   },
+  "url": "https://oda.fi/Forms/kuljetusapu",
+  "version": "0.0.3",
+  "name": "kuljetusapu",
+  "title": "Oikeus kuljetusapuun",
+  "status": "draft",
+  "date": "2017-09-11T00:00:00+03:00",
   "item": [
     {
       "linkId": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
       "text": "Onko sinulla vaikeuksia liikkumisessa?",
-      "type": "boolean"
+      "type": "boolean",
+      "required": true
     },
     {
       "linkId": "Q2_ONKO_KAYTOSSA_LIIKKUMISEN_APUVALINEITA",
       "text": "Onko käytössäsi liikkumisen apuvälineitä?",
-      "type": "boolean"
+      "type": "boolean",
+      "required": true
     },
     {
       "linkId": "Q5_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_JOUKKOLIIKENTEELLA",
@@ -38,7 +50,8 @@
           "question": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
           "answerBoolean": true
         }
-      ]
+      ],
+      "required": true
     },
     {
       "linkId": "Q6_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_PALVELULIIKENTEELLA",
@@ -49,7 +62,8 @@
           "question": "Q5_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_JOUKKOLIIKENTEELLA",
           "answerBoolean": false
         }
-      ]
+      ],
+      "required": true
     },
     {
       "linkId": "Q3_JOHTUUKO_TARPEESI_VAMMASTA_TAI_ESIM_IKAANTYMISESTA",
@@ -60,7 +74,8 @@
           "question": "Q6_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_PALVELULIIKENTEELLA",
           "answerBoolean": false
         }
-      ]
+      ],
+      "required": true
     },
     {
       "linkId": "Q4_JOHTUUKO_TARPEESI_PITKAAIKAISESTA_TAI_ETENEVASTA_SAIRAUDESTA_TAI_VAMMASTA",
@@ -71,7 +86,8 @@
           "question": "Q6_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_PALVELULIIKENTEELLA",
           "answerBoolean": false
         }
-      ]
+      ],
+      "required": true
     }
   ]
 }
