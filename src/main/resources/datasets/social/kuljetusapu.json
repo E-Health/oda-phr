@@ -22,7 +22,7 @@
     "status": "generated",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta kuljetusapuun</div>"
   },
-  "url": "https://oda.fi/Forms/kuljetusapu",
+  "url": "https://oda.fi/Forms/Kuljetusapu",
   "version": "0.0.3",
   "name": "Kuljetusapu",
   "title": "Oikeus kuljetusapuun",
@@ -39,6 +39,44 @@
       "linkId": "Q2_ONKO_KAYTOSSA_LIIKKUMISEN_APUVALINEITA",
       "text": "Onko käytössäsi liikkumisen apuvälineitä?",
       "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
+          "answerBoolean": true
+        }
+      ],
+      "required": true
+    },
+    {
+      "linkId": "Q3_JOHTUUKO_TARPEESI_VAMMASTA_TAI_ESIM_IKAANTYMISESTA",
+      "text": "Johtuvatko liikkumisen vaikeudet vammasta tai vastaavanlaisesta toimintakykyä alentavasta syystä, kuten ikääntymisestä?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q2_ONKO_KAYTOSSA_LIIKKUMISEN_APUVALINEITA",
+          "answerBoolean": true
+        },
+        {
+          "question": "Q2_ONKO_KAYTOSSA_LIIKKUMISEN_APUVALINEITA",
+          "answerBoolean": false
+        }
+      ],
+      "required": true
+    },
+    {
+      "linkId": "Q4_JOHTUUKO_TARPEESI_PITKAAIKAISESTA_TAI_ETENEVASTA_SAIRAUDESTA_TAI_VAMMASTA",
+      "text": "Johtuvatko vaikeudet liikkumisessa pitkäaikaisesta tai etenevästä sairaudesta tai vammasta?",
+      "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q2_ONKO_KAYTOSSA_LIIKKUMISEN_APUVALINEITA",
+          "answerBoolean": true
+        },
+        {
+          "question": "Q2_ONKO_KAYTOSSA_LIIKKUMISEN_APUVALINEITA",
+          "answerBoolean": false
+        }
+      ],
       "required": true
     },
     {
@@ -47,7 +85,11 @@
       "type": "boolean",
       "enableWhen": [
         {
-          "question": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
+          "question": "Q3_JOHTUUKO_TARPEESI_VAMMASTA_TAI_ESIM_IKAANTYMISESTA",
+          "answerBoolean": true
+        },
+        {
+          "question": "Q4_JOHTUUKO_TARPEESI_PITKAAIKAISESTA_TAI_ETENEVASTA_SAIRAUDESTA_TAI_VAMMASTA",
           "answerBoolean": true
         }
       ],
@@ -66,8 +108,8 @@
       "required": true
     },
     {
-      "linkId": "Q3_JOHTUUKO_TARPEESI_VAMMASTA_TAI_ESIM_IKAANTYMISESTA",
-      "text": "Johtuvatko liikkumisen vaikeudet vammasta tai vastaavanlaisesta toimintakykyä alentavasta syystä, kuten ikääntymisestä?",
+      "linkId": "Q7_PYSTYTKO_LIIKUMAAN_JOUKKO_PALVELU_LIIKENTEELLA_SAATTAJAN_AVULLA",
+      "text": "Pystytkö liikkumaan julkisella joukkoliikenteellä / palveluliikenteellä saattajan avulla?",
       "type": "boolean",
       "enableWhen": [
         {
@@ -78,12 +120,16 @@
       "required": true
     },
     {
-      "linkId": "Q4_JOHTUUKO_TARPEESI_PITKAAIKAISESTA_TAI_ETENEVASTA_SAIRAUDESTA_TAI_VAMMASTA",
-      "text": "Johtuvatko vaikeudet liikkumisessa pitkäaikaisesta tai etenevästä sairaudesta tai vammasta?",
+      "linkId": "Q8_TARVITSEKO_LIIKKUMISPALVELUA_TERVEYDENHUOLTOMATKOIHIN",
+      "text": "Tarvitsetko liikkumista tukevaa palvelua terveydenhuoltoon liittyviin matkoihin?",
       "type": "boolean",
       "enableWhen": [
         {
-          "question": "Q6_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_PALVELULIIKENTEELLA",
+          "question": "Q7_PYSTYTKO_LIIKUMAAN_JOUKKO_PALVELU_LIIKENTEELLA_SAATTAJAN_AVULLA",
+          "answerBoolean": true
+        },
+        {
+          "question": "Q7_PYSTYTKO_LIIKUMAAN_JOUKKO_PALVELU_LIIKENTEELLA_SAATTAJAN_AVULLA",
           "answerBoolean": false
         }
       ],
