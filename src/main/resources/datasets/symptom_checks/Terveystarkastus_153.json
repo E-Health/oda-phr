@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153/416",
-	"version": "416",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153/454",
+	"version": "454",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-05T10:43:47.381Z",
+	"date": "2017-09-11T09:41:41.032Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -108,12 +108,10 @@
 						]
 					}
 				}, {
-					"required": true,
 					"linkId": "786",
 					"text": "Kokonaiskolesteroliarvo (esim. 5.7)",
 					"type": "decimal"
 				}, {
-					"required": true,
 					"linkId": "787",
 					"text": "HDL-kolesteroliarvo (esim. 1.4)",
 					"type": "decimal"
@@ -129,12 +127,10 @@
 						]
 					}
 				}, {
-					"required": true,
 					"linkId": "788",
 					"text": "yläpaine (systolinen esim. 136)",
 					"type": "decimal"
 				}, {
-					"required": true,
 					"linkId": "789",
 					"text": "alapaine (diastolinen esim. 82)",
 					"type": "decimal"
@@ -643,6 +639,7 @@
 				}, {
 					"required": true,
 					"linkId": "814",
+					"text": "Edelliseen kysymykseen liittyen, valitse sopivin vaihtoehto:",
 					"type": "choice",
 					"repeats": false,
 					"option": [{
@@ -672,6 +669,7 @@
 				}, {
 					"required": true,
 					"linkId": "815",
+					"text": "Edelliseen kysymykseen liittyen, valitse sopivin vaihtoehto:",
 					"type": "choice",
 					"repeats": false,
 					"option": [{
@@ -701,6 +699,7 @@
 				}, {
 					"required": true,
 					"linkId": "816",
+					"text": "Edelliseen kysymykseen liittyen, valitse sopivin vaihtoehto:",
 					"type": "choice",
 					"repeats": false,
 					"option": [{
