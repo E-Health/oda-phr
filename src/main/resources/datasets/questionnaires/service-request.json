@@ -1,0 +1,29 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "SERVICE-REQUEST-FI",
+  "meta": {
+    "tag": [{
+        "system": "http://oda.fi/Questionnaire",
+        "code": "medical-service-request"
+      }
+    ]
+  },
+  "language": "fi",
+  "version": "0.0.1",
+  "title": "Palvelupyyntö",
+  "status": "active",
+  "item": [
+    {
+      "linkId": "title",
+      "text": "Aihe",
+      "type": "string",
+      "required": true
+    },
+    {
+      "linkId": "message",
+      "text": "Viesti",
+      "type": "string",
+      "required": true
+    }
+  ]
+}

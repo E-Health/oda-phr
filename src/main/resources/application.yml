@@ -93,7 +93,7 @@ app:
             - file: datasets/servicerequestlist/communication-patient2.json
             - file: datasets/questionnaires/feedback-issue.json
             - file: datasets/questionnaires/feedback-satisfaction.json
-
+            - file: datasets/questionnaires/service-request.json
             - file: profiles/ODA-ActivityDefinition.profile.xml
               use_update: false
             - file: profiles/ODA-CarePlan.profile.xml
