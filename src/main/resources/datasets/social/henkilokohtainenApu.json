@@ -4,7 +4,7 @@
     "profile": [
       "http://oda.fi/StructureDefinition/Questionnaire/Symptom",
       "http://oda.fi/StructureDefinition/Questionnaire/Social",
-      "http://oda.fi/StructureDefinition/Questionnaire/Social/henkilokohtainen-apu"
+      "http://oda.fi/StructureDefinition/Questionnaire/Social/Henkilokohtainen-apu"
     ],
     "tag": [
       {
@@ -24,7 +24,7 @@
   },
   "url": "https://oda.fi/Forms/henkilokohtainen-apu",
   "version": "0.0.2",
-  "name": "henkilokohtainen-apu",
+  "name": "Henkilokohtainen-apu",
   "title": "Oikeus henkilökohtaiseen apuun",
   "status": "draft",
   "date": "2017-09-11T00:00:00+03:00",

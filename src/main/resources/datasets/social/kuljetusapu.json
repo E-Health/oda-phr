@@ -4,7 +4,7 @@
     "profile": [
       "http://oda.fi/StructureDefinition/Questionnaire/Symptom",
       "http://oda.fi/StructureDefinition/Questionnaire/Social",
-      "http://oda.fi/StructureDefinition/Questionnaire/Social/kuljetusapu"
+      "http://oda.fi/StructureDefinition/Questionnaire/Social/Kuljetusapu"
     ],
     "tag": [
       {
@@ -24,7 +24,7 @@
   },
   "url": "https://oda.fi/Forms/kuljetusapu",
   "version": "0.0.3",
-  "name": "kuljetusapu",
+  "name": "Kuljetusapu",
   "title": "Oikeus kuljetusapuun",
   "status": "draft",
   "date": "2017-09-11T00:00:00+03:00",

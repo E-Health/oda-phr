@@ -4,7 +4,7 @@
     "profile": [
       "http://oda.fi/StructureDefinition/Questionnaire/Symptom",
       "http://oda.fi/StructureDefinition/Questionnaire/Social",
-      "http://oda.fi/StructureDefinition/Questionnaire/Social/omaishoidon-tuki"
+      "http://oda.fi/StructureDefinition/Questionnaire/Social/Omaishoidon-tuki"
     ],
     "tag": [
       {
@@ -24,7 +24,7 @@
   },
   "url": "https://oda.fi/Forms/omaishoidon-tuki",
   "version": "0.0.1",
-  "name": "omaishoidon-tuki",
+  "name": "Omaishoidon-tuki",
   "title": "Oikeus omaishoidon tukeen",
   "status": "draft",
   "date": "2017-09-11T00:00:00+03:00",
