@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153/454",
-	"version": "454",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153/458",
+	"version": "458",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-11T09:41:41.032Z",
+	"date": "2017-09-12T11:43:58.307Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -664,6 +664,14 @@
 							"answerCoding": {
 								"id": "1449"
 							}
+						}, {
+							"question": "886",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
 						}
 					]
 				}, {
@@ -694,6 +702,14 @@
 							"answerCoding": {
 								"id": "1450"
 							}
+						}, {
+							"question": "886",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
 						}
 					]
 				}, {
@@ -734,6 +750,14 @@
 							"answerCoding": {
 								"id": "1451"
 							}
+						}, {
+							"question": "886",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
 						}
 					]
 				}, {
