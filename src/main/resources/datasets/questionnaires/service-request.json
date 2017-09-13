@@ -4,7 +4,7 @@
   "meta": {
     "tag": [{
         "system": "http://oda.fi/Questionnaire",
-        "code": "medical-service-request"
+        "code": "service-request"
       }
     ]
   },
