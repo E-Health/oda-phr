@@ -8,20 +8,21 @@
     ],
     "name": [
       {
-        "text": "Pekka Pakarinen",
-        "family": "Pakarinen",
+        "text": "Portaalia Nordea Testaaja",
+        "family": "Testaaja",
         "given": [
-          "Pekka"
+          "Nordea",
+          "Portaalia"
         ]
       }
     ],
     "address": [
       {
         "line": [
-          "Talvelantie 4"
+          "Nordeatie 2"
         ],
         "city": "Helsinki",
-        "postalCode": "00700",
+        "postalCode": "00120",
         "country": "FI"
       }
     ],
@@ -37,12 +38,12 @@
         }
     ],
     "gender": "female",
-    "birthDate": "1970-01-01",
+    "birthDate": "1981-02-21",
     "link":[
         {   
             "target":{
                 "reference": "Practitioner/PRACTITIONER1",
-                "display" : "Pekka Pakarinen"            
+                "display" : "Portaalia Nordea Testaaja"            
             }         
         }
     ]

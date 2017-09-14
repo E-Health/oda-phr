@@ -8,20 +8,20 @@
     ],
     "name": [
       {
-        "text": "Maija Meikäläinen",
-        "family": "Meikäläinen",
+        "text": "Anna Demo",
+        "family": "Demo",
         "given": [
-          "Maijai"
+          "Anna"
         ]
       }
     ],
     "address": [
       {
         "line": [
-          "Talvelantie 4"
+          "S-Pankki Ålandsbanken 2"
         ],
         "city": "Helsinki",
-        "postalCode": "00700",
+        "postalCode": "00120",
         "country": "FI"
       }
     ],
@@ -42,7 +42,7 @@
         {   
             "target":{
                 "reference": "Practitioner/PRACTITIONER3",
-                "display" : "Maija Meikäläinen"
+                "display" : "Anna Demo"
             }         
         }
     ]

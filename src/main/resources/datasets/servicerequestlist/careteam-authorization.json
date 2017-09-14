@@ -24,16 +24,16 @@
     },
     {
       "role": {
-        "text": "Hoitava kirurgi"
+        "text": "Hoitava yleislääkäri"
       },
       "member": {
         "reference": "Practitioner/PRACTITIONER1",
-        "display": "Kimmo Kirurgi"
+        "display": "Portaalia Nordea Testaaja"
       }
     },
     {
       "role": {
-        "text": "Hoitava ortopedi"
+        "text": "Hoitava yleislääkäri"
       },
       "member": {
         "reference": "Practitioner/PRACTITIONER2",
@@ -42,11 +42,11 @@
     },
     {
       "role": {
-        "text": "Hoitava endokrinologi"
+        "text": "Hoitava yleislääkäri"
       },
       "member": {
         "reference": "Practitioner/PRACTITIONER3",
-        "display": "Maija Meikäläinen"
+        "display": "Anna Demo"
       }
     },    
     {
