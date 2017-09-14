@@ -12,6 +12,10 @@
         "code": "social-service-request"
       },
       {
+        "system": "http://oda.fi/Questionnaire",
+        "code": "symptom"
+      },
+      {
         "system": "http://oda.fi/cds",
         "code": "oda-social"
       }
