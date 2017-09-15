@@ -145,6 +145,26 @@
       "type": "choice",
       "enableWhen": [
         {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q3_JOHTUUKO_TARPEESI_VAMMASTA_TAI_ESIM_IKAANTYMISESTA",
+          "answerBoolean": true
+        },
+        {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q4_JOHTUUKO_TARPEESI_PITKAAIKAISESTA_TAI_ETENEVASTA_SAIRAUDESTA_TAI_VAMMASTA",
+          "answerBoolean": false
+        },
+        {
           "question": "Q8_TARVITSEKO_LIIKKUMISPALVELUA_TERVEYDENHUOLTOMATKOIHIN",
           "answerBoolean": true
         },
