@@ -31,7 +31,7 @@
   "name": "Kuljetusapu",
   "title": "Oikeus kuljetusapuun",
   "status": "draft",
-  "date": "2017-09-11T00:00:00+03:00",
+  "date": "2017-09-14T00:00:00+03:00",
   "item": [
     {
       "linkId": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
@@ -135,6 +135,162 @@
         {
           "question": "Q7_PYSTYTKO_LIIKUMAAN_JOUKKO_PALVELU_LIIKENTEELLA_SAATTAJAN_AVULLA",
           "answerBoolean": false
+        }
+      ],
+      "required": true
+    },
+    {
+      "linkId": "Q9_KUNTA",
+      "text": "Kotikuntasi",
+      "type": "choice",
+      "enableWhen": [
+        {
+          "question": "Q8_TARVITSEKO_LIIKKUMISPALVELUA_TERVEYDENHUOLTOMATKOIHIN",
+          "answerBoolean": true
+        },
+        {
+          "question": "Q8_TARVITSEKO_LIIKKUMISPALVELUA_TERVEYDENHUOLTOMATKOIHIN",
+          "answerBoolean": false
+        }
+      ],
+      "required": true,
+      "option": [
+        {
+          "valueCoding": {
+            "id": "1",
+            "display": "Tampere"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "2",
+            "display": "Oulu"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "3",
+            "display": "Muu"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "Q10_KOTITALOUDEN_KOKO_TAMPERE",
+      "text": "Kotitaloutesi koko?",
+      "type": "choice",
+      "enableWhen": [
+        {
+          "question": "Q9_KUNTA",
+          "answerCoding": {
+            "id": "1"
+          }
+        }
+      ],
+      "required": true,
+      "option": [
+        {
+          "valueCoding": {
+            "id": "1",
+            "display": "1"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "2",
+            "display": "2"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "3",
+            "display": "3"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "4",
+            "display": "4"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "Q10_KOTITALOUDEN_KOKO_OULU",
+      "text": "Kotitaloutesi koko?",
+      "type": "choice",
+      "enableWhen": [
+        {
+          "question": "Q9_KUNTA",
+          "answerCoding": {
+            "id": "2"
+          }
+        }
+      ],
+      "required": true,
+      "option": [
+        {
+          "valueCoding": {
+            "id": "1",
+            "display": "1"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "2",
+            "display": "2"
+          }
+        }
+      ]
+    },
+    {
+      "linkId": "Q11_BRUTTOTULOT_TAMPERE",
+      "text": "Kotitalouden yhteenlasketut bruttotulot",
+      "type": "decimal",
+      "enableWhen": [
+        {
+          "question": "Q10_KOTITALOUDEN_KOKO_TAMPERE",
+          "answerCoding": {
+            "id": "1"
+          }
+        },
+        {
+          "question": "Q10_KOTITALOUDEN_KOKO_TAMPERE",
+          "answerCoding": {
+            "id": "2"
+          }
+        },
+        {
+          "question": "Q10_KOTITALOUDEN_KOKO_TAMPERE",
+          "answerCoding": {
+            "id": "3"
+          }
+        },
+        {
+          "question": "Q10_KOTITALOUDEN_KOKO_TAMPERE",
+          "answerCoding": {
+            "id": "4"
+          }
+        }
+      ],
+      "required": true
+    },
+    {
+      "linkId": "Q11_BRUTTOTULOT_OULU",
+      "text": "Kotitalouden yhteenlasketut bruttotulot",
+      "type": "decimal",
+      "enableWhen": [
+        {
+          "question": "Q10_KOTITALOUDEN_KOKO_OULU",
+          "answerCoding": {
+            "id": "1"
+          }
+        },
+        {
+          "question": "Q10_KOTITALOUDEN_KOKO_OULU",
+          "answerCoding": {
+            "id": "2"
+          }
         }
       ],
       "required": true
