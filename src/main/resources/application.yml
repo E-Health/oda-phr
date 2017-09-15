@@ -13,7 +13,6 @@ server:
     tomcat:
       max-threads: 600
 app:
-    fhir-server-base: http://localhost:${server.port}${server.contextPath}/baseDstu3
     data:
         feed_on_start: true
 

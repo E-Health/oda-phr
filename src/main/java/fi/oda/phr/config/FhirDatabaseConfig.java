@@ -5,7 +5,7 @@ import javax.sql.DataSource;
 
 import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.jpa.HibernatePersistenceProvider;
-import org.springframework.beans.factory.annotation.*;
+import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.context.annotation.*;
 import org.springframework.orm.jpa.*;
@@ -20,7 +20,7 @@ public class FhirDatabaseConfig {
      * Configure FHIR properties around the the JPA server via this bean
      */
     @Bean
-    public DaoConfig daoConfig(@Value("${app.fhir-server-base}") String server) {
+    public DaoConfig daoConfig() {
         final DaoConfig retVal = new DaoConfig();
         retVal.setSubscriptionEnabled(true);
         retVal.setSubscriptionPollDelay(5000);
@@ -28,7 +28,6 @@ public class FhirDatabaseConfig {
         retVal.setAllowMultipleDelete(true);
         retVal.setReuseCachedSearchResultsForMillis(null); //search cache disabled intentionally to prevent showing old data
         retVal.setAllowExternalReferences(true);
-        retVal.getTreatBaseUrlsAsLocal().add(server);
         return retVal;
     }
 
