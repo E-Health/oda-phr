@@ -164,11 +164,11 @@ app:
             - file: datasets/symptom_checks/Silma_124.json
               use_update: false
 
-            - file: datasets/social/henkilokohtainenApu.json
+            - file: datasets/social/questionnaire-henkilokohtainen-apu.json
               use_update: false
-            - file: datasets/social/kuljetusapu.json
+            - file: datasets/social/questionnaire-kuljetusapu.json
               use_update: false
-            - file: datasets/social/omaishoidonTuki.json
+            - file: datasets/social/questionnaire-omaishoidon-tuki.json
               use_update: false
 
             - file:  datasets/symptom_checks/Terveystarkastus_153.json
