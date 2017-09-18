@@ -26,17 +26,75 @@
     "status": "generated",
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta omaishoidon tukeen</div>"
   },
-  "url": "https://oda.fi/Forms/omaishoidon-tuki",
+  "url": "https://oda.fi/Forms/Omaishoidon-tuki",
   "version": "0.0.1",
   "name": "Omaishoidon-tuki",
   "title": "Oikeus omaishoidon tukeen",
   "status": "draft",
-  "date": "2017-09-11T00:00:00+03:00",
+  "date": "2017-09-18T00:00:00+03:00",
   "item": [
+    {
+      "linkId": "Q_KUNTA",
+      "text": "Kotikuntasi?",
+      "type": "choice",
+      "required": true,
+      "option": [
+        {
+          "valueCoding": {
+            "id": "Lahti",
+            "display": "Lahti"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "Tampere",
+            "display": "Tampere"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "Oulu",
+            "display": "Oulu"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "default",
+            "display": "Muu"
+          }
+        }
+      ]
+    },
     {
       "linkId": "Q1_TARVITSEEKO_VALTTAMATTA_TOISEN_IHMISEN_HOITOA",
       "text": "Tarvitseeko hoidettava välttämättä toisen ihmisen antamaa hoitoa, huolenpitoa tai valvontaa?",
       "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Lahti"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Tampere"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Oulu"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "default"
+          }
+        }
+      ],
       "required": true
     },
     {
