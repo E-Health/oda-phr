@@ -31,7 +31,7 @@
   "name": "Kuljetusapu",
   "title": "Oikeus kuljetusapuun",
   "status": "draft",
-  "date": "2017-09-15T00:00:00+03:00",
+  "date": "2017-09-18T00:00:00+03:00",
   "item": [
     {
       "linkId": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
@@ -151,6 +151,16 @@
               "valueString": "AND"
             }
           ],
+          "question": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
+          "answerBoolean": true
+        },
+        {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
           "question": "Q3_JOHTUUKO_TARPEESI_VAMMASTA_TAI_ESIM_IKAANTYMISESTA",
           "answerBoolean": true
         },
@@ -162,6 +172,26 @@
             }
           ],
           "question": "Q4_JOHTUUKO_TARPEESI_PITKAAIKAISESTA_TAI_ETENEVASTA_SAIRAUDESTA_TAI_VAMMASTA",
+          "answerBoolean": false
+        },
+        {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q5_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_JOUKKOLIIKENTEELLA",
+          "answerBoolean": false
+        },
+        {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q6_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_PALVELULIIKENTEELLA",
           "answerBoolean": false
         },
         {
