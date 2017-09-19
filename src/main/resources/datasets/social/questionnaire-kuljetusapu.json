@@ -34,9 +34,55 @@
   "date": "2017-09-18T00:00:00+03:00",
   "item": [
     {
+      "linkId": "Q_KUNTA",
+      "text": "Kotikuntasi",
+      "type": "choice",
+      "required": true,
+      "option": [
+        {
+          "valueCoding": {
+            "id": "Tampere",
+            "display": "Tampere"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "Oulu",
+            "display": "Oulu"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "default",
+            "display": "Muu"
+          }
+        }
+      ]
+    },
+    {
       "linkId": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
       "text": "Onko sinulla vaikeuksia liikkumisessa?",
       "type": "boolean",
+      "enableWhen": [
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Tampere"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Oulu"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "default"
+          }
+        }
+      ],
       "required": true
     },
     {
@@ -140,10 +186,22 @@
       "required": true
     },
     {
-      "linkId": "Q9_KUNTA",
-      "text": "Kotikuntasi",
+      "linkId": "Q9_KOTITALOUDEN_KOKO_TAMPERE",
+      "text": "Kotitaloutesi koko?",
       "type": "choice",
       "enableWhen": [
+        {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Tampere"
+          }
+        },
         {
           "extension": [
             {
@@ -208,40 +266,6 @@
         {
           "valueCoding": {
             "id": "1",
-            "display": "Tampere"
-          }
-        },
-        {
-          "valueCoding": {
-            "id": "2",
-            "display": "Oulu"
-          }
-        },
-        {
-          "valueCoding": {
-            "id": "3",
-            "display": "Muu"
-          }
-        }
-      ]
-    },
-    {
-      "linkId": "Q10_KOTITALOUDEN_KOKO_TAMPERE",
-      "text": "Kotitaloutesi koko?",
-      "type": "choice",
-      "enableWhen": [
-        {
-          "question": "Q9_KUNTA",
-          "answerCoding": {
-            "id": "1"
-          }
-        }
-      ],
-      "required": true,
-      "option": [
-        {
-          "valueCoding": {
-            "id": "1",
             "display": "1"
           }
         },
@@ -266,15 +290,79 @@
       ]
     },
     {
-      "linkId": "Q10_KOTITALOUDEN_KOKO_OULU",
+      "linkId": "Q9_KOTITALOUDEN_KOKO_OULU",
       "text": "Kotitaloutesi koko?",
       "type": "choice",
       "enableWhen": [
         {
-          "question": "Q9_KUNTA",
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q_KUNTA",
           "answerCoding": {
-            "id": "2"
+            "id": "Oulu"
           }
+        },
+        {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q1_ONKO_SINULLA_VAIKEUKSIA_LIIKKUMISESSA",
+          "answerBoolean": true
+        },
+        {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q3_JOHTUUKO_TARPEESI_VAMMASTA_TAI_ESIM_IKAANTYMISESTA",
+          "answerBoolean": true
+        },
+        {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q4_JOHTUUKO_TARPEESI_PITKAAIKAISESTA_TAI_ETENEVASTA_SAIRAUDESTA_TAI_VAMMASTA",
+          "answerBoolean": false
+        },
+        {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q5_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_JOUKKOLIIKENTEELLA",
+          "answerBoolean": false
+        },
+        {
+          "extension": [
+            {
+              "url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+              "valueString": "AND"
+            }
+          ],
+          "question": "Q6_PYSTYTKO_LIIKUMAAN_ITSENAISESTI_PALVELULIIKENTEELLA",
+          "answerBoolean": false
+        },
+        {
+          "question": "Q8_TARVITSEKO_LIIKKUMISPALVELUA_TERVEYDENHUOLTOMATKOIHIN",
+          "answerBoolean": true
+        },
+        {
+          "question": "Q8_TARVITSEKO_LIIKKUMISPALVELUA_TERVEYDENHUOLTOMATKOIHIN",
+          "answerBoolean": false
         }
       ],
       "required": true,
@@ -294,30 +382,30 @@
       ]
     },
     {
-      "linkId": "Q11_BRUTTOTULOT_TAMPERE",
+      "linkId": "Q10_BRUTTOTULOT_TAMPERE",
       "text": "Kotitalouden yhteenlasketut bruttotulot (euroa/kuukausi)",
       "type": "decimal",
       "enableWhen": [
         {
-          "question": "Q10_KOTITALOUDEN_KOKO_TAMPERE",
+          "question": "Q9_KOTITALOUDEN_KOKO_TAMPERE",
           "answerCoding": {
             "id": "1"
           }
         },
         {
-          "question": "Q10_KOTITALOUDEN_KOKO_TAMPERE",
+          "question": "Q9_KOTITALOUDEN_KOKO_TAMPERE",
           "answerCoding": {
             "id": "2"
           }
         },
         {
-          "question": "Q10_KOTITALOUDEN_KOKO_TAMPERE",
+          "question": "Q9_KOTITALOUDEN_KOKO_TAMPERE",
           "answerCoding": {
             "id": "3"
           }
         },
         {
-          "question": "Q10_KOTITALOUDEN_KOKO_TAMPERE",
+          "question": "Q9_KOTITALOUDEN_KOKO_TAMPERE",
           "answerCoding": {
             "id": "4"
           }
@@ -326,18 +414,18 @@
       "required": true
     },
     {
-      "linkId": "Q11_BRUTTOTULOT_OULU",
+      "linkId": "Q10_BRUTTOTULOT_OULU",
       "text": "Kotitalouden yhteenlasketut bruttotulot (euroa/kuukausi)",
       "type": "decimal",
       "enableWhen": [
         {
-          "question": "Q10_KOTITALOUDEN_KOKO_OULU",
+          "question": "Q9_KOTITALOUDEN_KOKO_OULU",
           "answerCoding": {
             "id": "1"
           }
         },
         {
-          "question": "Q10_KOTITALOUDEN_KOKO_OULU",
+          "question": "Q9_KOTITALOUDEN_KOKO_OULU",
           "answerCoding": {
             "id": "2"
           }
