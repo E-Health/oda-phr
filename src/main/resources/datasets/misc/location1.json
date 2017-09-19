@@ -4,7 +4,7 @@
   "identifier": [
     {
       "use": "temp",
-      "system": "https://oda.fi/Organization/CNAME",
+      "system": "https://oda.fi/instance-id",
       "value": "oda.medidemo.fi"
     }
   ],
