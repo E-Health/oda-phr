@@ -1,6 +1,3 @@
-# Version 1.0
-# ODA stack
-
 # Alpine-micro
 FROM openjdk:alpine
 
