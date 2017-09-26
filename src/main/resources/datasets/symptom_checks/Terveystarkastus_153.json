@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153/464",
-	"version": "464",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153/472",
+	"version": "472",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-15T06:48:18.619Z",
+	"date": "2017-09-26T09:09:47.233Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -63,26 +63,63 @@
 				}, {
 					"required": true,
 					"linkId": "782",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 15
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 100
+						}
+					],
 					"text": "Kuinka vanha olet?",
 					"type": "decimal"
 				}, {
 					"required": true,
 					"linkId": "783",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 140
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 250
+						}
+					],
 					"text": "Kuinka pitkä olet (cm)?",
 					"type": "decimal"
 				}, {
 					"required": true,
 					"linkId": "784",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 30
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 200
+						}
+					],
 					"text": "Paljonko painat kevyissä vaatteissa punnittuna (kg)?",
 					"type": "decimal"
 				}, {
 					"required": true,
 					"linkId": "785",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 30
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 300
+						}
+					],
 					"text": "Mikä on vyötärön ympärysmittasi?",
 					"type": "decimal"
 				}, {
 					"required": true,
 					"linkId": "780",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 25
+						}
+					],
 					"text": "Kuinka monta vuotta olet yhteensä käynyt koulua tai opiskellut päätoimisesti? Kansa- ja peruskoulu lasketaan mukaan.",
 					"type": "decimal"
 				}, {
@@ -97,42 +134,42 @@
 						]
 					}
 				}, {
-					"linkId": "833",
-					"text": "# Kolesteroli\n\n**Mikä oli viimeisin kolesteroliarvosi? Mikäli et tiedä, voit jättää kentät tyhjiksi.**",
-					"type": "display",
-					"_type": {
-						"extension": [{
-								"url": "https://duodecim.fi/fhir/extensions/item-type",
-								"valueString": "subtitle"
-							}
-						]
-					}
-				}, {
 					"linkId": "786",
-					"text": "Kokonaiskolesteroliarvo (esim. 5.7)",
+					"extension": [],
+					"text": "Mikä oli viimeisin kokonaiskolesteroliarvosi (esim. 5,7)? Mikäli et tiedä, voit jättää kentän tyhjäksi.",
 					"type": "decimal"
 				}, {
 					"linkId": "787",
-					"text": "HDL-kolesteroliarvo (esim. 1.4)",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 10
+						}
+					],
+					"text": "Mikä oli viimeisin HDL-kolesteroliarvosi (esim. 1,4)? Mikäli et tiedä, voit jättää kentän tyhjäksi.",
 					"type": "decimal"
 				}, {
-					"linkId": "834",
-					"text": "# Verenpaine\n\n**Mikä oli viimeisin verenpainearvosi? Mikäli et tiedä, voit jättää kentät tyhjiksi.**",
-					"type": "display",
-					"_type": {
-						"extension": [{
-								"url": "https://duodecim.fi/fhir/extensions/item-type",
-								"valueString": "subtitle"
-							}
-						]
-					}
-				}, {
 					"linkId": "788",
-					"text": "yläpaine (systolinen esim. 136)",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 50
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 300
+						}
+					],
+					"text": "Mikä oli viimeisin verenpaineen yläpaineesi (systolinen, esim. 136)? Mikäli et tiedä, voit jättää kentän tyhjäksi.",
 					"type": "decimal"
 				}, {
 					"linkId": "789",
-					"text": "alapaine (diastolinen esim. 82)",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 50
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 300
+						}
+					],
+					"text": "Mikä oli viimeisin verenpaineen alapaineesi (diastolinen, esim. 82)? Mikäli et tiedä, voit jättää kentän tyhjäksi.",
 					"type": "decimal"
 				}, {
 					"required": true,
@@ -260,6 +297,11 @@
 				}, {
 					"required": true,
 					"linkId": "798",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 100
+						}
+					],
 					"text": "olutta (IVA tai III) tai siideriä",
 					"type": "decimal",
 					"enableWhen": [{
@@ -275,6 +317,11 @@
 				}, {
 					"required": true,
 					"linkId": "799",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 100
+						}
+					],
 					"text": "long drink -juomia",
 					"type": "decimal",
 					"enableWhen": [{
@@ -290,6 +337,11 @@
 				}, {
 					"required": true,
 					"linkId": "800",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 100
+						}
+					],
 					"text": "väkevää alkoholia",
 					"type": "decimal",
 					"enableWhen": [{
@@ -305,6 +357,11 @@
 				}, {
 					"required": true,
 					"linkId": "801",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 100
+						}
+					],
 					"text": "viiniä tai vastaavaa (alkoholia yli 5%)",
 					"type": "decimal",
 					"enableWhen": [{
@@ -320,6 +377,11 @@
 				}, {
 					"required": true,
 					"linkId": "802",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 100
+						}
+					],
 					"text": "kevytviiniä (alkoholia noin 5%)",
 					"type": "decimal",
 					"enableWhen": [{
@@ -412,6 +474,11 @@
 				}, {
 					"required": true,
 					"linkId": "805",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 100
+						}
+					],
 					"text": "Kuinka monta savuketta, sikaria tai piipullista poltat päivittäin?",
 					"type": "decimal",
 					"enableWhen": [{
@@ -802,6 +869,11 @@
 				}, {
 					"required": true,
 					"linkId": "817",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 24
+						}
+					],
 					"text": "Kuinka monta tuntia keskimäärin nukut vuorokaudessa?",
 					"type": "decimal"
 				}, {
