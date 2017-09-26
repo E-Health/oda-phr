@@ -18,11 +18,15 @@ import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu3;
 import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu3;
 import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.rest.client.*;
+import ca.uhn.fhir.rest.server.IServerAddressStrategy;
 import ca.uhn.fhir.rest.server.interceptor.*;
+import fi.oda.common.fhir.server.OdaHostnameServerAddressStrategy;
 import fi.oda.phr.validation.OdaValidatingInterceptor;
+
 @Configuration
 @Import(BaseJavaConfigDstu3.class)
 public class ServerConfig {
+    public static final String HOSTNAME_HEADER = "x-forwarded-host";
 
     @Bean
     public RequestValidatingInterceptor validationInterceptor(){
@@ -40,14 +44,26 @@ public class ServerConfig {
     }
 
     @Bean
+    public IServerAddressStrategy serverAddressStrategyt(@Value("${app.fhir-server-base}") String base) {
+        return new OdaHostnameServerAddressStrategy(base, HOSTNAME_HEADER);
+    }
+
+    /**
+     * The server can access itself with this client
+     * @param config
+     * @param port
+     * @param contextPath
+     * @return
+     */
+    @Bean
     public IGenericClient fhirClient(FhirConfig config, @Value("${server.port}") String port,
             @Value("${server.contextPath}") String contextPath) {
         final IRestfulClientFactory factory = FhirContext.forDstu3().getRestfulClientFactory();
+
         factory.setConnectTimeout(config.timeout);
         factory.setConnectionRequestTimeout(config.timeout);
         factory.setSocketTimeout(config.timeout);
         return factory.newGenericClient("http://localhost:" + port + "/" + contextPath + "/" + config.path);
-
     }
 
     @Bean
