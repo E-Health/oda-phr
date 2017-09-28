@@ -18,16 +18,13 @@ import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu3;
 import ca.uhn.fhir.jpa.util.SubscriptionsRequireManualActivationInterceptorDstu3;
 import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.rest.client.*;
-import ca.uhn.fhir.rest.server.IServerAddressStrategy;
+import ca.uhn.fhir.rest.server.*;
 import ca.uhn.fhir.rest.server.interceptor.*;
-import fi.oda.common.fhir.server.OdaHostnameServerAddressStrategy;
 import fi.oda.phr.validation.OdaValidatingInterceptor;
 
 @Configuration
 @Import(BaseJavaConfigDstu3.class)
 public class ServerConfig {
-    public static final String HOSTNAME_HEADER = "x-forwarded-host";
-
     @Bean
     public RequestValidatingInterceptor validationInterceptor(){
         PrePopulatedValidationSupport validationSupport = new PrePopulatedValidationSupport();
@@ -44,8 +41,8 @@ public class ServerConfig {
     }
 
     @Bean
-    public IServerAddressStrategy serverAddressStrategyt(@Value("${app.fhir-server-base}") String base) {
-        return new OdaHostnameServerAddressStrategy(base, HOSTNAME_HEADER);
+    public IServerAddressStrategy serverAddressStrategy() {
+        return new IncomingRequestAddressStrategy();
     }
 
     /**

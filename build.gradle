@@ -45,7 +45,7 @@ repositories {
 
 dependencies {
     def hapiVersion = '2.5'
-    def fhirServiceCommonVersion = '0.0.70-SNAPSHOT'
+    def fhirServiceCommonVersion = '0.0.72-SNAPSHOT'
    
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-aop')
