@@ -13,7 +13,6 @@ server:
     tomcat:
       max-threads: 600
 app:
-    fhir-server-base: https://[hostname]/api/fhir/fhir/
     data:
         feed_on_start: true
 
