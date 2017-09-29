@@ -1,10 +1,10 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/2/390",
-	"version": "390",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/2/514",
+	"version": "514",
 	"meta": {
-		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3", "http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
 				"system": "http://oda.fi/Questionnaire",
 				"code": "symptom"
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:24:32.949Z",
+	"date": "2017-09-29T06:37:45.051Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,7 +23,7 @@
 			"value": "2"
 		}
 	],
-	"title": "Alaselkäkivun itsearvio",
+	"title": "Alaselkäkivun oirearvio",
 	"text": {
 		"status": "generated",
 		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviointilomake, joka auttaa selkäkipupotilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia.</div>"
@@ -42,7 +42,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi Terveyskirjaston artikkeli [selkäkivusta](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00326) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos artikkelin luettuasi arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa oirekyselyn kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja/tai tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan. Tämä kysely ei sovellu yläselän oireiden hoidon tarpeen arvioon. Ole yhteydessä terveydenhuollon ammattilaiseen, jos tarvitset yläselän oireiden hoidon tarpeen arviota.   \n\n## Huomautus\n\nTämän ohjeen tarkoituksena on ensi sijassa tunnistaa vastaanotolla käyntiä vaativat tilanteet. Lieviä oireita, jotka eivät edellytä käyntiä vastaanotolla, voi hoitaa itse. Oireiden mahdollisesti lisääntyessä on tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan.",
+			"text": "## Ohje\n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi Terveyskirjaston artikkeli [selkäkivusta](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00326) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos artikkelin luettuasi arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa oirearvion kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja/tai tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan. Tämä kysely ei sovellu yläselän oireiden hoidon tarpeen arvioon. Ole yhteydessä terveydenhuollon ammattilaiseen, jos tarvitset yläselän oireiden hoidon tarpeen arviota.   \n\n## Huomautus\n\nTämän ohjeen tarkoituksena on ensi sijassa tunnistaa vastaanotolla käyntiä vaativat tilanteet. Lieviä oireita, jotka eivät edellytä käyntiä vastaanotolla, voi hoitaa itse. Oireiden mahdollisesti lisääntyessä on tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan.",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -91,6 +91,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "21612-7"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
 						}
 					],
 					"text": "Ikä (vuosia)",
@@ -243,6 +251,16 @@
 						}
 					],
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -271,6 +289,16 @@
 					"text": "Onko sinulla vaikeuksia pidättää ulostetta tai virtsaa, tai eikö virtsaaminen onnistu?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -299,6 +327,16 @@
 					"text": "Onko sinulla alaraajassa tai alaraajoissa tuoretta etenevää voiman puutetta (et pysty tukemaan alaraajan tai alaraajojen varaan)?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -324,9 +362,19 @@
 				}, {
 					"required": true,
 					"linkId": "131",
-					"text": "Onko sinulla toisen alaraajan tai molempien alaraajojen etenevää tunnottomuutta, puutumista tai lievää voiman puutetta?",
+					"text": "Onko sinulla toisen alaraajan tai molempien alaraajojen lievää etenevää tunnottomuutta, puutumista tai voiman puutetta?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -355,6 +403,16 @@
 					"text": "Onko kipu voimakasta ja vaikeasti paikannettavissa joko alavatsaan tai alaselkään?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -463,6 +521,16 @@
 						}
 					],
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -539,6 +607,16 @@
 					"text": "Lievittyykö selkäkipusi, kun nukut sopivassa asennossa?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -580,6 +658,16 @@
 						}
 					],
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -608,6 +696,16 @@
 					"text": "Onko yleisvointisi heikentynyt tai kipu tasaisesti pahentunut (esimerkiksi selviytyminen tavallisista päivittäisistä askareista on selvästi heikentynyt)?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -635,14 +733,14 @@
 					"text": "Miten vointisi on heikentynyt?",
 					"type": "text",
 					"enableWhen": [{
-							"question": "6",
+							"question": "926",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
 							"answerCoding": {
-								"id": "67"
+								"id": "1583"
 							}
 						}, {
 							"question": "133",
@@ -681,6 +779,16 @@
 					"text": "Onko sinulla kuumetta?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -711,17 +819,25 @@
 							"code": "8310-5"
 						}
 					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 34
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 41
+						}
+					],
 					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8).",
 					"type": "decimal",
 					"enableWhen": [{
-							"question": "6",
+							"question": "926",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
 							"answerCoding": {
-								"id": "66"
+								"id": "1583"
 							}
 						}, {
 							"question": "38",
@@ -760,6 +876,16 @@
 					"text": "Alkoiko selkäkipusi välittömästi kaatumisen, selkään kohdistuneen iskun tai vamman jälkeen?  \n",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -828,6 +954,16 @@
 					"text": "Sairastatko tai oletko sairastanut syöpää?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -882,6 +1018,16 @@
 							"answerCoding": {
 								"id": "47"
 							}
+						}, {
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
 						}
 					]
 				}, {
@@ -890,6 +1036,16 @@
 					"text": "Tarvitsetko selkäkipusi takia sairauslomaa?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -918,6 +1074,16 @@
 					"text": "Tarvitsetko selkäkivun vuoksi muuhun tarkoitukseen (esimerkiksi vakuutus tms.) lääkärin antaman todistuksen tai lausunnon?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -946,6 +1112,16 @@
 					"text": "Tarvitsetko mahdollisesti voimakkaamman, reseptillä saatavan kipulääkkeen?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -974,6 +1150,16 @@
 					"text": "Onko sinulla ollut samasta vaivasta viimeisen puolen vuoden aikana käyntejä fysioterapiassa?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -1002,6 +1188,16 @@
 					"text": "Onko sinulla ollut samasta vaivasta viimeisen puolen vuoden aikana käyntejä lääkärillä?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "926",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1583"
+							}
+						}, {
 							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",

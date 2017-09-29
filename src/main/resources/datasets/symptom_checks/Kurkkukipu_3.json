@@ -1,10 +1,10 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/3/424",
-	"version": "424",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/3/510",
+	"version": "510",
 	"meta": {
-		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
 				"system": "http://oda.fi/Questionnaire",
 				"code": "symptom"
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-05T10:47:51.292Z",
+	"date": "2017-09-29T06:36:45.302Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,10 +23,10 @@
 			"value": "3"
 		}
 	],
-	"title": "Kurkkukivun ja nieluoireiden itsearvio",
+	"title": "Kurkkukivun ja nieluoireiden oirearvio",
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviointilomake, joka auttaa kurkkukipupotilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia</div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviolomake, joka auttaa kurkkukipupotilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia</div>"
 	},
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
@@ -39,7 +39,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Lomakkeen ohje  \n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi Terveyskirjaston artikkelit [Kurkkukipu](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00830) ja [Nuhakuume](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00590) selvittääksesi ongelman luonnetta. Jos luettuasi artikkelit arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireitten mukaisesti.\n\nKyselylomakkeen tarkoituksena on ensi sijassa tunnistaa vastaanotolla käyntiä vaativat tilanteet. Lieviä oireita, jotka eivät edellytä käyntiä vastaanotolla, voi hoitaa itse ja niitä on seurattava. Mikäli arvion perusteella on aiheellista, saat tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.\n\nOireiden mahdollisesti lisääntyessä on tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan.",
+			"text": "## Lomakkeen ohje  \n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi Terveyskirjaston artikkelit [Kurkkukipu](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00830) ja [Nuhakuume](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00590) selvittääksesi ongelman luonnetta. Jos luettuasi artikkelit arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireitten mukaisesti.\n\nOirearvion tarkoituksena on ensi sijassa tunnistaa vastaanotolla käyntiä vaativat tilanteet. Lieviä oireita, jotka eivät edellytä käyntiä vastaanotolla, voi hoitaa itse ja niitä on seurattava. Mikäli arvion perusteella on aiheellista, saat tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.\n\nOireiden mahdollisesti lisääntyessä on tehtävä uusi arvio tai otettava yhteyttä lähimpään hoitopaikkaan.",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -88,6 +88,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "21612-7"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
 						}
 					],
 					"text": "Ikä (vuosia)",
@@ -211,6 +219,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "8310-5"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 34
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 41
 						}
 					],
 					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8).",
@@ -457,7 +473,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",

@@ -1,10 +1,10 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/21/396",
-	"version": "396",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/21/482",
+	"version": "482",
 	"meta": {
-		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
 				"system": "http://oda.fi/Questionnaire",
 				"code": "symptom"
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:25:31.980Z",
+	"date": "2017-09-29T06:21:47.460Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,10 +23,10 @@
 			"value": "21"
 		}
 	],
-	"title": "Virtsatulehdusoireiden itsearvio 18 - 65 -vuotiaille naisille",
+	"title": "Virtsatulehdusoireiden oirearvio 18 - 65 -vuotiaille naisille",
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviointilomake, joka auttaa virtsatulehdusoireista naista arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia</div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviolomake, joka auttaa virtsatulehdusoireista naista arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia</div>"
 	},
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
@@ -39,7 +39,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi Terveyskirjaston artikkeli [Virtsatietulehdus aikuisilla](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00615) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos luettuasi artikkelin arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nTämän ohjeen tarkoituksena on ensi sijassa tunnistaa vastaanotolla käyntiä vaativat tilanteet. Lieviä oireita, jotka eivät edellytä käyntiä vastaanotolla, voi hoitaa itse ja niitä on seurattava. Oireiden mahdollisesti lisääntyessä on tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan.",
+			"text": "## Ohje\n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi Terveyskirjaston artikkeli [Virtsatietulehdus aikuisilla](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00615) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos luettuasi artikkelin arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nTämän ohjeen tarkoituksena on ensi sijassa tunnistaa vastaanotolla käyntiä vaativat tilanteet. Lieviä oireita, jotka eivät edellytä käyntiä vastaanotolla, voi hoitaa itse ja niitä on seurattava. Oireiden mahdollisesti lisääntyessä on tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan.",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -90,6 +90,14 @@
 							"code": "21612-7"
 						}
 					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
+						}
+					],
 					"text": "Ikä (vuosia)",
 					"type": "decimal",
 					"enableWhen": [{
@@ -132,7 +140,7 @@
 				}, {
 					"required": true,
 					"linkId": "305",
-					"text": "Sukupuoli",
+					"text": "Sukupuoli (vastaus kysymykseen tarvitaan jatkokysymyksiä varten)",
 					"type": "choice",
 					"repeats": false,
 					"option": [{
@@ -140,6 +148,11 @@
 								"id": "461",
 								"system": "http://loinc.org",
 								"code": "46098",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 1
+									}
+								],
 								"display": "Mies"
 							}
 						}, {
@@ -147,6 +160,11 @@
 								"id": "462",
 								"system": "http://loinc.org",
 								"code": "46098",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 2
+									}
+								],
 								"display": "Nainen"
 							}
 						}
@@ -319,7 +337,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
@@ -1044,7 +1062,51 @@
 					"required": true,
 					"linkId": "702",
 					"text": "Tämä on ensimmäinen kerta, kun minulla on virtsatietulehdukseen viittaavia oireita",
-					"type": "boolean"
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 17,
+								"comparator": ">"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 66,
+								"comparator": "<"
+							}
+						}, {
+							"question": "305",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "462"
+							}
+						}
+					]
 				}, {
 					"linkId": "34",
 					"text": "Voit kirjoittaa lisätietoja tähän tarvittaessa:",

@@ -1,10 +1,10 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/106/386",
-	"version": "386",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/106/522",
+	"version": "522",
 	"meta": {
-		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
 				"system": "http://oda.fi/Questionnaire",
 				"code": "symptom"
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:23:39.826Z",
+	"date": "2017-09-29T06:39:22.533Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,14 +23,14 @@
 			"value": "106"
 		}
 	],
-	"title": "Polven oireiden itsearvio",
+	"title": "Polven oirearvio",
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia polven oireiden yhteydessä.</div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviolomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia polven oireiden yhteydessä.</div>"
 	},
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi halutessasi Terveyskirjaston artikkeli [Polvikipu](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00797) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nTämän ohjeen tarkoituksena on ensi sijassa arvioida polvikivun hoidon kiireellisyyttä, ei tarjota valmiita diagnooseja. Polvikivun taustalla voi olla monia erilaisia sairauksia ja diagnoosin varmistaminen vaatii usein kliinisiä tutkimuksia tai joskus myös kuvantamistutkimuksia.",
+			"text": "## Ohje\n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi halutessasi Terveyskirjaston artikkeli [Polvikipu](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00797) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nTämän oirearvion tarkoituksena on ensi sijassa arvioida polvikivun hoidon kiireellisyyttä, ei tarjota valmiita diagnooseja. Polvikivun taustalla voi olla monia erilaisia sairauksia ja diagnoosin varmistaminen vaatii usein kliinisiä tutkimuksia tai joskus myös kuvantamistutkimuksia.",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -38,6 +38,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "21612-7"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
 						}
 					],
 					"text": "Ikä (vuosia)",
@@ -174,6 +182,14 @@
 							"code": "8310-5"
 						}
 					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 34
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 41
+						}
+					],
 					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8).",
 					"type": "decimal",
 					"enableWhen": [{
@@ -256,7 +272,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
@@ -453,7 +469,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
@@ -567,7 +583,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",

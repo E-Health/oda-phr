@@ -1,10 +1,10 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/26/378",
-	"version": "378",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/26/508",
+	"version": "508",
 	"meta": {
-		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
 				"system": "http://oda.fi/Questionnaire",
 				"code": "symptom"
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:21:45.536Z",
+	"date": "2017-09-29T06:35:50.228Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,10 +23,10 @@
 			"value": "26"
 		}
 	],
-	"title": "Korvakivun itsearvio",
+	"title": "Korvakivun oirearvio",
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviointilomake, joka auttaa korvakipupotilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia.</div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviolomake, joka auttaa korvakipupotilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia.</div>"
 	},
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
@@ -39,7 +39,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Anna oireisen henkilön taustatiedot ja vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \nVoit lukea aluksi Terveyskirjaston artikkelin [Korvakipu ja vuoto korvakäytävästä aikuisella](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00277) selvittääksesi ongelman luonnetta.",
+			"text": "## Ohje\n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Anna oireisen henkilön taustatiedot ja vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \nVoit lukea aluksi Terveyskirjaston artikkelin [Korvakipu ja vuoto korvakäytävästä aikuisella](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00277) selvittääksesi ongelman luonnetta.",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -47,6 +47,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "21612-7"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
 						}
 					],
 					"text": "Ikä (vuosia)",
@@ -109,7 +117,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
@@ -270,7 +278,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",

@@ -1,10 +1,10 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/28/384",
-	"version": "384",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/28/520",
+	"version": "520",
 	"meta": {
-		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
 				"system": "http://oda.fi/Questionnaire",
 				"code": "symptom"
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:23:23.726Z",
+	"date": "2017-09-29T06:39:04.292Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,10 +23,10 @@
 			"value": "28"
 		}
 	],
-	"title": "Peräaukon seudun oireiden itsearvio",
+	"title": "Peräaukon seudun oirearvio",
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia peräaukon seudun oireiden yhteydessä.</div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviolomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia peräaukon seudun oireiden yhteydessä.</div>"
 	},
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
@@ -42,7 +42,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Vastaa kysymyksiin oireiden mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan. \n\nKyselyssä sinua  pyydetään nimeämään pääasiallinen oireesi, ja vastauksessa annetaan neuvoja oireen todennäköisimmän syyn perusteella.  \n\nJos mikään vaihtoehdoista ei kuvaa oirettasi, sinulla on useita samanaikaisia oireita, tai saamasi ohjeet eivät sovi tilanteeseesi, voit antaa lisätietoja oireista ja esittää kysymyksiä siinä vaiheessa, kun lähetät vastauksesi ammattilaiselle.",
+			"text": "## Ohje\n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Vastaa kysymyksiin oireiden mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan. \n\nOirearviossa sinua  pyydetään nimeämään pääasiallinen oireesi, ja vastauksessa annetaan neuvoja oireen todennäköisimmän syyn perusteella.  \n\nJos mikään vaihtoehdoista ei kuvaa oirettasi, sinulla on useita samanaikaisia oireita, tai saamasi ohjeet eivät sovi tilanteeseesi, voit antaa lisätietoja oireista ja esittää kysymyksiä siinä vaiheessa, kun lähetät vastauksesi ammattilaiselle.",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -91,6 +91,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "21612-7"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
 						}
 					],
 					"text": "Ikä (vuosia)",
@@ -194,7 +202,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
@@ -289,6 +297,11 @@
 				}, {
 					"required": true,
 					"linkId": "590",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 60
+						}
+					],
 					"text": "Kuinka monta vuorokautta nykyiset oireesi ovat kestäneet? Anna vastaus kokonaislukuna (esim. 5).",
 					"type": "decimal",
 					"enableWhen": [{

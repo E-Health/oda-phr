@@ -1,10 +1,10 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/41/388",
-	"version": "388",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/41/512",
+	"version": "512",
 	"meta": {
-		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
 				"system": "http://oda.fi/Questionnaire",
 				"code": "symptom"
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:24:18.466Z",
+	"date": "2017-09-29T06:37:23.538Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,10 +23,10 @@
 			"value": "41"
 		}
 	],
-	"title": "Ripulin (alle kuukauden kestänyt) itsearvio",
+	"title": "Ripulin (alle kuukauden kestänyt) oirearvio",
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia.</div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviolomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia.</div>"
 	},
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
@@ -39,7 +39,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "### Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta alle kuukauden kestäneessä ripulioireessa. Lomake ei sovellu pitkittyneen ripulin selvittelyyn.  \n\nKatso ensin [Terveyskirjaston artikkelit ripulista](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_hakusana=ripuli) selvittääksesi ongelman luonnetta. Jos luettuasi artikkeleita arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.",
+			"text": "### Ohje\n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta alle kuukauden kestäneessä ripulioireessa. Lomake ei sovellu pitkittyneen ripulin selvittelyyn.  \n\nKatso ensin [Terveyskirjaston artikkelit ripulista](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_hakusana=ripuli) selvittääksesi ongelman luonnetta. Jos luettuasi artikkeleita arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireittesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -88,6 +88,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "21612-7"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
 						}
 					],
 					"text": "Ikä (vuosia)",
@@ -260,6 +268,7 @@
 				}, {
 					"required": true,
 					"linkId": "194",
+					"extension": [],
 					"text": "Kuinka monta kertaa joudut ulostamaan vuorokauden aikana?",
 					"type": "decimal",
 					"enableWhen": [{
@@ -400,6 +409,11 @@
 				}, {
 					"required": true,
 					"linkId": "197",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 20
+						}
+					],
 					"text": "Kuinka monta kertaa olet oksentanut viimeisimmän vuorokauden aikana (kirjoita numero)?",
 					"type": "decimal",
 					"enableWhen": [{
@@ -498,56 +512,111 @@
 					"option": [{
 							"valueCoding": {
 								"id": "1555",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 0
+									}
+								],
 								"display": "0"
 							}
 						}, {
 							"valueCoding": {
 								"id": "318",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 1
+									}
+								],
 								"display": "1"
 							}
 						}, {
 							"valueCoding": {
 								"id": "319",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 2
+									}
+								],
 								"display": "2"
 							}
 						}, {
 							"valueCoding": {
 								"id": "320",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 3
+									}
+								],
 								"display": "3"
 							}
 						}, {
 							"valueCoding": {
 								"id": "321",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 4
+									}
+								],
 								"display": "4"
 							}
 						}, {
 							"valueCoding": {
 								"id": "322",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 5
+									}
+								],
 								"display": "5"
 							}
 						}, {
 							"valueCoding": {
 								"id": "323",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 6
+									}
+								],
 								"display": "6"
 							}
 						}, {
 							"valueCoding": {
 								"id": "324",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 7
+									}
+								],
 								"display": "7"
 							}
 						}, {
 							"valueCoding": {
 								"id": "325",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 8
+									}
+								],
 								"display": "8"
 							}
 						}, {
 							"valueCoding": {
 								"id": "326",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 9
+									}
+								],
 								"display": "9"
 							}
 						}, {
 							"valueCoding": {
 								"id": "327",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 10
+									}
+								],
 								"display": "10"
 							}
 						}
@@ -655,6 +724,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "8310-5"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 34
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 41
 						}
 					],
 					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8).",
@@ -836,6 +913,7 @@
 				}, {
 					"required": true,
 					"linkId": "208",
+					"extension": [],
 					"text": "Kuinka monta vuorokautta siitä on, kun antibioottikuuri päättyi?",
 					"type": "decimal",
 					"enableWhen": [{

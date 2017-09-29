@@ -1,10 +1,10 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/83/382",
-	"version": "382",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/83/518",
+	"version": "518",
 	"meta": {
-		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
 				"system": "http://oda.fi/Questionnaire",
 				"code": "symptom"
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:22:17.207Z",
+	"date": "2017-09-29T06:38:34.699Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,10 +23,10 @@
 			"value": "83"
 		}
 	],
-	"title": "Olkapääkivun itsearvio",
+	"title": "Olkapääkivun oirearvio",
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia olkapään oireiden yhteydessä.</div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviolomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia olkapään oireiden yhteydessä.</div>"
 	},
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
@@ -39,7 +39,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi halutessasi Terveyskirjaston artikkeli [Kipeä olkapää - kiertäjäkalvosinoireyhtymä](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01041) ja tarvittaessa siihen linkitettyjä muita artikkeleita (kuten [Jäätynyt olkapää](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00698)) selvittääksesi ongelman luonnetta. Jos arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nTämän ohjeen tarkoituksena on ensi sijassa arvioida olkapääkivun hoidon kiireellisyyttä, ei tarjota valmiita diagnooseja. Olkapääkivun taustalla voi olla monia erilaisia sairauksia ja diagnoosin varmistaminen vaatii usein kliinisiä tutkimuksia tai joskus myös kuvantamistutkimuksia. Jos oireiden aiheuttaja ei mielestäsi selviä oirekyselylomakkeiden avulla, käänny lääkärin tai sairaanhoitajan puoleen.  \n\n## Ensiapu\n\n**Jos olkapääkipu on alkanut äkillisesti kaatumisen, putoamisen, olkapäähän kohdistuneen iskun tai muun trauman seurauksena tai siihen liittyy merkittävä toiminnallinen puutos, kuten lihasvoimien heikkous, tulisi hoitoon hakeutua pikaisesti (yleensä muutaman päivän sisällä). **",
+			"text": "## Ohje\n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi halutessasi Terveyskirjaston artikkeli [Kipeä olkapää - kiertäjäkalvosinoireyhtymä](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01041) ja tarvittaessa siihen linkitettyjä muita artikkeleita (kuten [Jäätynyt olkapää](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00698)) selvittääksesi ongelman luonnetta. Jos arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireidesi mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nTämän oirearvion tarkoituksena on ensi sijassa arvioida olkapääkivun hoidon kiireellisyyttä, ei tarjota valmiita diagnooseja. Olkapääkivun taustalla voi olla monia erilaisia sairauksia ja diagnoosin varmistaminen vaatii usein kliinisiä tutkimuksia tai joskus myös kuvantamistutkimuksia. Jos oireiden aiheuttaja ei mielestäsi selviä oirearviolomakkeen avulla, käänny lääkärin tai sairaanhoitajan puoleen.  \n\n## Ensiapu\n\n**Jos olkapääkipu on alkanut äkillisesti kaatumisen, putoamisen, olkapäähän kohdistuneen iskun tai muun trauman seurauksena tai siihen liittyy merkittävä toiminnallinen puutos, kuten lihasvoimien heikkous, tulisi hoitoon hakeutua pikaisesti (yleensä muutaman päivän sisällä). **",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -47,6 +47,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "21612-7"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
 						}
 					],
 					"text": "Ikä (vuosia)",
@@ -178,7 +186,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",

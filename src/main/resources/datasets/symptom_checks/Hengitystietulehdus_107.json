@@ -1,10 +1,10 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/107/372",
-	"version": "372",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/107/530",
+	"version": "530",
 	"meta": {
-		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3", "http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
 				"system": "http://oda.fi/Questionnaire",
 				"code": "symptom"
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:20:52.364Z",
+	"date": "2017-09-29T09:07:58.167Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,10 +23,10 @@
 			"value": "107"
 		}
 	],
-	"title": "Hengitystietulehdusoireiden itsearvio",
+	"title": "Hengitystietulehdusoireiden oirearvio",
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviointilomake, joka auttaa hengitystieinfektion oireita potevaa henkilöä arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia</div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviolomake, joka auttaa hengitystieinfektion oireita potevaa henkilöä arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia</div>"
 	},
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
@@ -47,6 +47,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "21612-7"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
 						}
 					],
 					"text": "Ikä (vuosia)",
@@ -245,7 +253,7 @@
 					]
 				}, {
 					"linkId": "663",
-					"text": "Oireidesi perusteella sinun on aiheellista ottaa välittömästi yhteys päivystykseen. Jos vointisi sallii, voit antaa esitietoja tällä lomakkeella vastaamalla alla oleviin kysymyksiin.",
+					"text": "Voimakkaasti tihentyneen hengityksen takia sinun on aiheellista ottaa välittömästi yhteys päivystykseen. Jos vointisi sallii, voit antaa esitietoja tällä lomakkeella vastaamalla alla oleviin kysymyksiin ja lähettämällä ne eteenpäin.",
 					"type": "display",
 					"_type": {
 						"extension": [{
@@ -504,6 +512,11 @@
 				}, {
 					"required": true,
 					"linkId": "590",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 60
+						}
+					],
 					"text": "Kuinka monta vuorokautta nykyiset oireesi ovat kestäneet? Anna vastaus kokonaislukuna (esim. 5).",
 					"type": "decimal",
 					"enableWhen": [{
@@ -551,6 +564,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "8310-5"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 34
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 41
 						}
 					],
 					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8).",
@@ -722,7 +743,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
@@ -1059,7 +1080,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
@@ -1138,7 +1159,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",

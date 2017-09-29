@@ -1,10 +1,10 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/27/380",
-	"version": "380",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/27/516",
+	"version": "516",
 	"meta": {
-		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3","http://oda.fi/StructureDefinition/Questionnaire/Symptom"],
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
 				"system": "http://oda.fi/Questionnaire",
 				"code": "symptom"
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-01T09:22:00.742Z",
+	"date": "2017-09-29T06:38:13.388Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -23,10 +23,10 @@
 			"value": "27"
 		}
 	],
-	"title": "Närästyksen itsearvio",
+	"title": "Närästyksen oirearvio",
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova itsearviointilomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia närästysoireiden yhteydessä.</div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neuvova oirearviolomake, joka auttaa potilasta arvioimaan ammattiavun tarvetta ja omahoidon mahdollisuuksia närästysoireiden yhteydessä.</div>"
 	},
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
@@ -39,7 +39,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Ohje\n\nOirekyselyn tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi Terveyskirjaston artikkeli [Närästys](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00052) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos luettuasi artikkelin arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nNärästyksellä tarkoitetaan karvaan hapon nousua kurkkuun tai kirvelevää tai polttelevaa tunnetta rintalastan takana. Tämä oirearvio ei sovellu alempana vatsan alueella tuntuvan kivun, turvottelun tai muun oireen selvittelyyn.\n\n  \n\nNärästys johtuu useimmiten mahahapon noususta ruokatorveen, mutta se saattaa olla myös sepelvaltimotaudin oire.  \n\nTämän ohjeen tarkoituksena on ensi sijassa tunnistaa vastaanotolla käyntiä vaativat tilanteet. Lieviä oireita, jotka eivät edellytä käyntiä vastaanotolla, voi hoitaa itse ja niitä on seurattava. Oireiden mahdollisesti lisääntyessä on tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan.  \n\n**Jos närästysoire on alkanut äkillisesti,  kipu säteilee yläraajaan tai selkään, tai on hyvin voimakas ja jatkuu edelleen, soita numeroon 112\\. Samoin on meneteltävä, jos sairastat sepelvaltimotautia, ja närästysoire muistuttaa aiempia sepelvaltimo-oireitasi ja jatkuu parhaillaan.**  \n\n\n\n",
+			"text": "## Ohje\n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Lue aluksi Terveyskirjaston artikkeli [Närästys](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00052) ja tarvittaessa siihen linkitettyjä muita artikkeleita selvittääksesi ongelman luonnetta. Jos luettuasi artikkelin arvelet tarvitsevasi muuta hoitoa kuin pelkän itsehoito-ohjeen, vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Huomautus\n\nNärästyksellä tarkoitetaan karvaan hapon nousua kurkkuun tai kirvelevää tai polttelevaa tunnetta rintalastan takana. Tämä oirearvio ei sovellu alempana vatsan alueella tuntuvan kivun, turvottelun tai muun oireen selvittelyyn.\n\n  \n\nNärästys johtuu useimmiten mahahapon noususta ruokatorveen, mutta se saattaa olla myös sepelvaltimotaudin oire.  \n\nTämän ohjeen tarkoituksena on ensi sijassa tunnistaa vastaanotolla käyntiä vaativat tilanteet. Lieviä oireita, jotka eivät edellytä käyntiä vastaanotolla, voi hoitaa itse ja niitä on seurattava. Oireiden mahdollisesti lisääntyessä on tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan.  \n\n**Jos närästysoire on alkanut äkillisesti,  kipu säteilee yläraajaan tai selkään, tai on hyvin voimakas ja jatkuu edelleen, soita numeroon 112\\. Samoin on meneteltävä, jos sairastat sepelvaltimotautia, ja närästysoire muistuttaa aiempia sepelvaltimo-oireitasi ja jatkuu parhaillaan.**  \n\n\n\n",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -88,6 +88,14 @@
 					"code": [{
 							"system": "http://loinc.org",
 							"code": "21612-7"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
 						}
 					],
 					"text": "Ikä (vuosia)",
@@ -216,56 +224,111 @@
 					"option": [{
 							"valueCoding": {
 								"id": "1148",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 0
+									}
+								],
 								"display": "0 (ei kipua)"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1149",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 1
+									}
+								],
 								"display": "1"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1150",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 2
+									}
+								],
 								"display": "2 (lievä kipu, ei haittaa arkisia toimia)"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1151",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 3
+									}
+								],
 								"display": "3"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1152",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 4
+									}
+								],
 								"display": "4 (kiusallinen, häiritsevä kipu)"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1153",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 5
+									}
+								],
 								"display": "5"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1154",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 6
+									}
+								],
 								"display": "6 (viheliäinen, hankala kipu)"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1155",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 7
+									}
+								],
 								"display": "7"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1156",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 8
+									}
+								],
 								"display": "8 (vaikea, voimakkaasti haittaava kipu)"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1157",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 9
+									}
+								],
 								"display": "9"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1158",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 10
+									}
+								],
 								"display": "10 (pahin mahdollinen kipu)"
 							}
 						}
@@ -347,7 +410,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
@@ -413,7 +476,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
@@ -474,7 +537,7 @@
 						}, {
 							"valueCoding": {
 								"id": "-1",
-								"display": "Ei mikään yllä olevista"
+								"display": "Ei mikään näistä"
 							},
 							"extension": [{
 									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
