@@ -27,11 +27,17 @@
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta omaishoidon tukeen</div>"
   },
   "url": "https://oda.fi/Forms/Omaishoidon-tuki",
+  "identifier": [
+    {
+      "system": "https://oda.fi/Forms/Omaishoidon-tuki",
+      "value": "Omaishoidon-tuki"
+    }
+  ],
   "version": "0.0.1",
   "name": "Omaishoidon-tuki",
   "title": "Oikeus omaishoidon tukeen",
   "status": "draft",
-  "date": "2017-09-18T00:00:00+03:00",
+  "date": "2017-10-02T00:00:00+03:00",
   "item": [
     {
       "linkId": "Q_KUNTA",
@@ -41,14 +47,20 @@
       "option": [
         {
           "valueCoding": {
-            "id": "Lahti",
-            "display": "Lahti"
+            "id": "default",
+            "display": "Muu"
           }
         },
         {
           "valueCoding": {
-            "id": "Tampere",
-            "display": "Tampere"
+            "id": "Sodankylä",
+            "display": "Sodankylä"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "Lahti",
+            "display": "Lahti"
           }
         },
         {
@@ -59,8 +71,8 @@
         },
         {
           "valueCoding": {
-            "id": "default",
-            "display": "Muu"
+            "id": "Tampere",
+            "display": "Tampere"
           }
         }
       ]
@@ -73,13 +85,19 @@
         {
           "question": "Q_KUNTA",
           "answerCoding": {
-            "id": "Lahti"
+            "id": "default"
           }
         },
         {
           "question": "Q_KUNTA",
           "answerCoding": {
-            "id": "Tampere"
+            "id": "Sodankylä"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Lahti"
           }
         },
         {
@@ -91,7 +109,7 @@
         {
           "question": "Q_KUNTA",
           "answerCoding": {
-            "id": "default"
+            "id": "Tampere"
           }
         }
       ],

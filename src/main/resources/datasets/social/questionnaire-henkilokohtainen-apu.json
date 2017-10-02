@@ -27,11 +27,17 @@
     "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta henkilökohtaiseen apuun</div>"
   },
   "url": "https://oda.fi/Forms/Henkilokohtainen-apu",
+  "identifier": [
+    {
+      "system": "https://oda.fi/Forms/Henkilokohtainen-apu",
+      "value": "Henkilokohtainen-apu"
+    }
+  ],
   "version": "0.0.2",
   "name": "Henkilokohtainen-apu",
   "title": "Oikeus henkilökohtaiseen apuun",
   "status": "draft",
-  "date": "2017-09-18T00:00:00+03:00",
+  "date": "2017-10-02T00:00:00+03:00",
   "item": [
     {
       "linkId": "Q_KUNTA",
@@ -41,14 +47,32 @@
       "option": [
         {
           "valueCoding": {
+            "id": "default",
+            "display": "Muu"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "Sodankylä",
+            "display": "Sodankylä"
+          }
+        },
+        {
+          "valueCoding": {
+            "id": "Lahti",
+            "display": "Lahti"
+          }
+        },
+        {
+          "valueCoding": {
             "id": "Oulu",
             "display": "Oulu"
           }
         },
         {
           "valueCoding": {
-            "id": "default",
-            "display": "Muu"
+            "id": "Tampere",
+            "display": "Tampere"
           }
         }
       ]
@@ -61,13 +85,31 @@
         {
           "question": "Q_KUNTA",
           "answerCoding": {
+            "id": "default"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Sodankylä"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Lahti"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
             "id": "Oulu"
           }
         },
         {
           "question": "Q_KUNTA",
           "answerCoding": {
-            "id": "default"
+            "id": "Tampere"
           }
         }
       ],
@@ -75,9 +117,26 @@
     },
     {
       "linkId": "Q2_TARVITSETKO_VALTTAMATTA_APUA_KODIN_ULKOPUOLELLA",
-      "text": "Tarvitsetko välttämättä toisen ihmisen apua kodin ulkopuolella?",
       "type": "boolean",
       "enableWhen": [
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "default"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Sodankylä"
+          }
+        },
+        {
+          "question": "Q_KUNTA",
+          "answerCoding": {
+            "id": "Lahti"
+          }
+        },
         {
           "question": "Q_KUNTA",
           "answerCoding": {
@@ -87,7 +146,7 @@
         {
           "question": "Q_KUNTA",
           "answerCoding": {
-            "id": "default"
+            "id": "Tampere"
           }
         }
       ],
