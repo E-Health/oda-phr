@@ -12,9 +12,9 @@
     },
     "context":{
               "reference":"EpisodeOfCare/EPISODEOFCARE1-PATIENT2"
-    },
-    
+    },    
     "status":"active",
+    "intent": "plan",
     "period":{
               "start":"2017-03-01T00:00:00.000Z",
               "end":"2017-04-02T23:59:59.999Z"
