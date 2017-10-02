@@ -69,27 +69,26 @@
         }
       ],
       "item":[
+               {
+           "type": "display",
+           "text": "Erittäin hyödyllisinä",
+           "linkId": "start",
+           "_type": {
+             "extension":[{
+                "url": "https://oda.fi/StructureDefinition/Label",
+                "valueUri":"https://oda.fi/StructureDefinition/Range"
+             }]
+           }
+         },
          {
            "type": "display",
            "text": "Ei lainkaan hyödyllisinä",
-           "linkId": "min",
+           "linkId": "end",
 
            "_type": {
              "extension":[{
                 "url": "https://oda.fi/StructureDefinition/Label",
                 "valueUri": "https://oda.fi/StructureDefinition/Range"
-             }]
-           }
-         },
-
-         {
-           "type": "display",
-           "text": "Erittäin hyödyllisinä",
-           "linkId": "max",
-           "_type": {
-             "extension":[{
-                "url": "https://oda.fi/StructureDefinition/Label",
-                "valueUri":"https://oda.fi/StructureDefinition/Range"
              }]
            }
          }
