@@ -13,6 +13,8 @@ server:
     tomcat:
       max-threads: 600
 app:
+    localUrls:
+           - https://oda.medidemo.fi/phr/baseDstu3
     data:
         feed_on_start: true
 

@@ -20,7 +20,7 @@ public class FhirDatabaseConfig {
      * Configure FHIR properties around the the JPA server via this bean
      */
     @Bean
-    public DaoConfig daoConfig() {
+    public DaoConfig daoConfig(ClientConfiguration clientConfig) {
         final DaoConfig retVal = new DaoConfig();
         retVal.setSubscriptionEnabled(true);
         retVal.setSubscriptionPollDelay(5000);
@@ -28,6 +28,7 @@ public class FhirDatabaseConfig {
         retVal.setAllowMultipleDelete(true);
         retVal.setReuseCachedSearchResultsForMillis(null); //search cache disabled intentionally to prevent showing old data
         retVal.setAllowExternalReferences(true);
+        clientConfig.getLocalUrls().forEach(u -> retVal.getTreatBaseUrlsAsLocal().add(u));
         return retVal;
     }
 
