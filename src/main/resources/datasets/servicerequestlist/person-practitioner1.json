@@ -3,6 +3,7 @@
     "id" : "PERSON1-PRACTITIONER1",
     "identifier": [
         {
+          "system" : "urn:oid:1.2.246.21",
           "value": "210281-9988"
         }
     ],
