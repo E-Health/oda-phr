@@ -20,7 +20,7 @@ import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.rest.client.*;
 import ca.uhn.fhir.rest.server.*;
 import ca.uhn.fhir.rest.server.interceptor.*;
-import fi.oda.phr.server.interceptor.OdaInstanceIdConcatenatingInterceptor;
+import fi.oda.phr.server.interceptor.*;
 import fi.oda.phr.validation.OdaValidatingInterceptor;
 
 @Configuration
@@ -39,6 +39,10 @@ public class ServerConfig {
         ignoreList.add(Bundle.class);
         ignoreList.add(Appointment.class);
         return new OdaValidatingInterceptor(Optional.of(validationSupport), ignoreList);
+    }
+    @Bean
+    public IServerInterceptor odaInstanceIdTaggingInterceptor() {
+        return new InstanceIdTaggingInterceptor();
     }
 
     @Bean
