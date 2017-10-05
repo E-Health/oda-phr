@@ -27,9 +27,9 @@ public class OdaInstanceIdConcatenatingInterceptorTest {
 
     private HttpServletResponse theResponse;
 
-    private static final String resourceName = "Person";
+    private String resourceName = "Person";
 
-    private static final String odaInstanceId = "testinstance";
+    private String odaInstanceId = "testinstance";
 
     private String nationalId = "010101-0101";
 

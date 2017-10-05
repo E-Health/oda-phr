@@ -58,8 +58,9 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
     public void incomingRequestPreHandled(RestOperationTypeEnum theOperation, ActionRequestDetails theProcessedRequest) {
         ServletRequestDetails requestDetails = (ServletRequestDetails) theProcessedRequest.getRequestDetails();
         String headerValue = requestDetails.getServletRequest().getHeader(OdaFhirConstants.ODA_INSTANCE_ID_HEADER);
-        if (StringUtils.isNotBlank(headerValue)) {
-            addToResource(theProcessedRequest.getResource(), headerValue);
+        IBaseResource resource = theProcessedRequest.getResource();
+        if (StringUtils.isNotBlank(headerValue) && (resource instanceof Resource)) {
+            addToResource((Resource) resource, headerValue);
         }
 
     }
@@ -89,11 +90,21 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
         }
     }
 
-    private void addToResource(IBaseResource resource, String odaInstanceId) {
-        if (resource instanceof Person) {
+    private void addToResource(Resource resource, String odaInstanceId) {
+        if (resource instanceof Bundle) {
+            Bundle bundle = (Bundle) resource;
+            if (bundle.getEntry() != null) {
+                bundle.getEntry().stream().map(e -> e.getResource()).filter(Objects::nonNull).forEach(r -> addToResource(r, odaInstanceId));
+            }
+        }
+        else if (resource instanceof Person) {
             List<Identifier> identifiers = ((Person) resource).getIdentifier();
-            identifiers.stream().filter(i -> OdaFhirConstants.NATIONAL_ID_SYSTEM.equals(i.getSystem())).findFirst().ifPresent(
-                    j -> j.setValue(j.getValue() + odaInstanceId));
+
+            identifiers.stream()
+                    .filter(i -> OdaFhirConstants.NATIONAL_ID_SYSTEM.equals(i.getSystem()))
+                    .filter(j -> j.getValue().length() == 11) //Add only to identifier without suffix.
+                    .findFirst()
+                    .ifPresent(k -> k.setValue(k.getValue() + odaInstanceId));
         }
 
     }
