@@ -54,6 +54,7 @@ public class InstanceIdTaggingInterceptorTest {
     @Test
     public void testAddTagToResource() {
         interceptor.incomingRequestPreHandled(RestOperationTypeEnum.CREATE, actionRequestDetails);
+
         Coding coding = personResource.getMeta().getTag().get(0);
         String tagSystem = coding.getSystem();
         String tagCode = coding.getCode();
@@ -64,7 +65,9 @@ public class InstanceIdTaggingInterceptorTest {
     @Test
     public void testAddTagToBundleResources() {
         actionRequestDetails.setResource(bundle);
+
         interceptor.incomingRequestPreHandled(RestOperationTypeEnum.TRANSACTION, actionRequestDetails);
+
         Coding coding = personResource.getMeta().getTag().get(0);
         String tagSystem = coding.getSystem();
         String tagCode = coding.getCode();
