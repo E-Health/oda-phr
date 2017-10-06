@@ -74,14 +74,14 @@ public class OdaInstanceIdConcatenatingInterceptorTest {
 
 
     @Test
-    public void testConcatenateToQueryParam() {
+    public void concatenateToQueryParam() {
         interceptor.incomingRequestPostProcessed(requestDetails, theRequest, theResponse);
         String producedQueryParam = queryParams.get(OdaInstanceIdConcatenatingInterceptor.IDENTIFIER_PARAMETER)[0];
         assertThat(producedQueryParam, is(concatenatedQueryParam));
     }
 
     @Test
-    public void testConcatenateToPersonIdentifier() {
+    public void concatenateToPersonIdentifier() {
         interceptor.incomingRequestPreHandled(RestOperationTypeEnum.CREATE, actionRequestDetails);
         Identifier producedPersonIdentifier = personResource.getIdentifier().get(0);
         assertThat(producedPersonIdentifier.getSystem(), is(OdaFhirConstants.NATIONAL_ID_SYSTEM));
@@ -89,7 +89,7 @@ public class OdaInstanceIdConcatenatingInterceptorTest {
     }
 
     @Test
-    public void testConcatenateToBundlePersonIdentifier() {
+    public void concatenateToBundlePersonIdentifier() {
         actionRequestDetails.setResource(bundle);
         interceptor.incomingRequestPreHandled(RestOperationTypeEnum.CREATE, actionRequestDetails);
         Identifier producedPersonIdentifier = personResource.getIdentifier().get(0);
@@ -98,7 +98,7 @@ public class OdaInstanceIdConcatenatingInterceptorTest {
     }
 
     @Test
-    public void testRemoveBundlePersonIdentifierSuffix() {
+    public void removeBundlePersonIdentifierSuffix() {
         personResource.getIdentifier().get(0).setValue(concatenatedNationalId);
         interceptor.outgoingResponse(requestDetails, bundle);
         Identifier producedPersonIdentifier = personResource.getIdentifier().get(0);
@@ -107,11 +107,22 @@ public class OdaInstanceIdConcatenatingInterceptorTest {
     }
 
     @Test
-    public void testRemovePersonIdentifierSuffix() {
+    public void removePersonIdentifierSuffix() {
         personResource.getIdentifier().get(0).setValue(concatenatedNationalId);
         interceptor.outgoingResponse(requestDetails, personResource);
         Identifier producedPersonIdentifier = personResource.getIdentifier().get(0);
         assertThat(producedPersonIdentifier.getSystem(), is(OdaFhirConstants.NATIONAL_ID_SYSTEM));
         assertThat(producedPersonIdentifier.getValue(), is(nationalId));
     }
+
+    @Test
+    public void doNotRemovePersonIdentifierSuffixInDebug() {
+        when(theRequest.getHeader("REMOVE-SUFFIX")).thenReturn("false");
+        personResource.getIdentifier().get(0).setValue(concatenatedNationalId);
+        interceptor.outgoingResponse(requestDetails, personResource);
+        Identifier producedPersonIdentifier = personResource.getIdentifier().get(0);
+        assertThat(producedPersonIdentifier.getSystem(), is(OdaFhirConstants.NATIONAL_ID_SYSTEM));
+        assertThat(producedPersonIdentifier.getValue(), is(concatenatedNationalId));
+    }
+
 }

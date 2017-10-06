@@ -29,6 +29,7 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
 
     public static final String IDENTIFIER_PARAMETER = "identifier";
 
+    public static final String REMOVE_SUFFIX_HEADER = "REMOVE-SUFFIX";
     //Query parameters are processed for these types
     private Set<String> types = Collections.unmodifiableSet(
             Stream.of("Person")
@@ -70,12 +71,17 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
      */
     @Override
     public boolean outgoingResponse(RequestDetails theRequestDetails, IBaseResource resource) {
+        ServletRequestDetails servletRequestDetails = (ServletRequestDetails) theRequestDetails;
+        String removeSuffixHeader = servletRequestDetails.getServletRequest().getHeader(REMOVE_SUFFIX_HEADER);
+        if (StringUtils.isNotBlank(removeSuffixHeader) && removeSuffixHeader.trim().equalsIgnoreCase("false")) {
+            return true;
+        }
+
         if (resource instanceof Resource) {
             removeFromResource((Resource) resource);
         }
         return true;
     }
-
     private void removeFromResource(Resource resource) {
         if (resource instanceof Bundle) {
             Bundle bundle = (Bundle) resource;
