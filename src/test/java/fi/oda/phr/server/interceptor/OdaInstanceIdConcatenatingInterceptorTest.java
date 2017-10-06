@@ -117,7 +117,7 @@ public class OdaInstanceIdConcatenatingInterceptorTest {
 
     @Test
     public void doNotRemovePersonIdentifierSuffixInDebug() {
-        when(theRequest.getHeader("REMOVE-SUFFIX")).thenReturn("false");
+        when(theRequest.getHeader(OdaInstanceIdConcatenatingInterceptor.DEBUG_KEEP_NATIONAL_ID_SUFFIX)).thenReturn("true");
         personResource.getIdentifier().get(0).setValue(concatenatedNationalId);
         interceptor.outgoingResponse(requestDetails, personResource);
         Identifier producedPersonIdentifier = personResource.getIdentifier().get(0);

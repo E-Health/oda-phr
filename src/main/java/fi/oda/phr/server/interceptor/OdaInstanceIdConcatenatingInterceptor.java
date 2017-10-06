@@ -29,7 +29,7 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
 
     public static final String IDENTIFIER_PARAMETER = "identifier";
 
-    public static final String REMOVE_SUFFIX_HEADER = "REMOVE-SUFFIX";
+    public static final String DEBUG_KEEP_NATIONAL_ID_SUFFIX = "DEBUG-KEEP-NATIONAL-ID-SUFFIX";
     //Query parameters are processed for these types
     private Set<String> types = Collections.unmodifiableSet(
             Stream.of("Person")
@@ -72,8 +72,8 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
     @Override
     public boolean outgoingResponse(RequestDetails theRequestDetails, IBaseResource resource) {
         ServletRequestDetails servletRequestDetails = (ServletRequestDetails) theRequestDetails;
-        String removeSuffixHeader = servletRequestDetails.getServletRequest().getHeader(REMOVE_SUFFIX_HEADER);
-        if (StringUtils.isNotBlank(removeSuffixHeader) && removeSuffixHeader.trim().equalsIgnoreCase("false")) {
+        String removeSuffixHeader = servletRequestDetails.getServletRequest().getHeader(DEBUG_KEEP_NATIONAL_ID_SUFFIX);
+        if (StringUtils.isNotBlank(removeSuffixHeader) && removeSuffixHeader.trim().equalsIgnoreCase("true")) {
             return true;
         }
 
