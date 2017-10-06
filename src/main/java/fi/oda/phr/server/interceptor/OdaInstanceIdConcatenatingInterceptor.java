@@ -2,7 +2,6 @@ package fi.oda.phr.server.interceptor;
 
 
 import java.util.*;
-import java.util.stream.*;
 
 import javax.servlet.http.*;
 
@@ -14,7 +13,7 @@ import ca.uhn.fhir.rest.api.RestOperationTypeEnum;
 import ca.uhn.fhir.rest.method.RequestDetails;
 import ca.uhn.fhir.rest.server.exceptions.AuthenticationException;
 import ca.uhn.fhir.rest.server.interceptor.InterceptorAdapter;
-import ca.uhn.fhir.rest.server.servlet.ServletRequestDetails;
+import fi.oda.common.collection.CollectionUtils;
 import fi.oda.common.fhir.utils.OdaFhirConstants;
 
 /**
@@ -31,9 +30,7 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
 
     public static final String DEBUG_KEEP_NATIONAL_ID_SUFFIX = "DEBUG-KEEP-NATIONAL-ID-SUFFIX";
     //Query parameters are processed for these types
-    private Set<String> types = Collections.unmodifiableSet(
-            Stream.of("Person")
-                    .collect(Collectors.toSet()));
+    private Set<String> types = CollectionUtils.toSet("Person");
 
     /**
      * Concatenates odaInstanceId to nationalid query parameters
@@ -41,12 +38,10 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
     @Override
     public boolean incomingRequestPostProcessed(RequestDetails theRequestDetails, HttpServletRequest theRequest,
             HttpServletResponse theResponse) throws AuthenticationException {
-        String resourceType = theRequestDetails.getResourceName();
-        if (StringUtils.isNotBlank(resourceType) && types.contains(resourceType)) {
-            ServletRequestDetails requestDetails = (ServletRequestDetails) theRequestDetails;
-            String headerValue = requestDetails.getServletRequest().getHeader(OdaFhirConstants.ODA_INSTANCE_ID_HEADER);
+        if (types.contains(theRequestDetails.getResourceName())) {
+            String headerValue = theRequest.getHeader(OdaFhirConstants.ODA_INSTANCE_ID_HEADER);
             if (StringUtils.isNotBlank(headerValue)) {
-                addToQueryParameters(requestDetails, headerValue);
+                addToQueryParameters(theRequestDetails, headerValue);
             }
         }
         return true;
@@ -57,8 +52,7 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
      */
     @Override
     public void incomingRequestPreHandled(RestOperationTypeEnum theOperation, ActionRequestDetails theProcessedRequest) {
-        ServletRequestDetails requestDetails = (ServletRequestDetails) theProcessedRequest.getRequestDetails();
-        String headerValue = requestDetails.getServletRequest().getHeader(OdaFhirConstants.ODA_INSTANCE_ID_HEADER);
+        String headerValue = theProcessedRequest.getRequestDetails().getHeader(OdaFhirConstants.ODA_INSTANCE_ID_HEADER);
         IBaseResource resource = theProcessedRequest.getResource();
         if (StringUtils.isNotBlank(headerValue) && (resource instanceof Resource)) {
             addToResource((Resource) resource, headerValue);
@@ -71,9 +65,8 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
      */
     @Override
     public boolean outgoingResponse(RequestDetails theRequestDetails, IBaseResource resource) {
-        ServletRequestDetails servletRequestDetails = (ServletRequestDetails) theRequestDetails;
-        String removeSuffixHeader = servletRequestDetails.getServletRequest().getHeader(DEBUG_KEEP_NATIONAL_ID_SUFFIX);
-        if (StringUtils.isNotBlank(removeSuffixHeader) && removeSuffixHeader.trim().equalsIgnoreCase("true")) {
+        String keepSuffixHeader = theRequestDetails.getHeader(OdaInstanceIdConcatenatingInterceptor.DEBUG_KEEP_NATIONAL_ID_SUFFIX);
+        if (StringUtils.isNotBlank(keepSuffixHeader) && keepSuffixHeader.trim().equalsIgnoreCase("true")) {
             return true;
         }
 
@@ -91,7 +84,7 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
         }
         else if (resource instanceof Person) {
             List<Identifier> identifiers = ((Person) resource).getIdentifier();
-            identifiers.stream().filter(i -> OdaFhirConstants.NATIONAL_ID_SYSTEM.equals(i.getSystem())).findFirst().ifPresent(
+            identifiers.stream().filter(i -> OdaFhirConstants.NATIONAL_ID_SYSTEM.equals(i.getSystem())).forEach(
                     j -> j.setValue(j.getValue().substring(0, 11)));
         }
     }
@@ -109,8 +102,7 @@ public class OdaInstanceIdConcatenatingInterceptor extends InterceptorAdapter {
             identifiers.stream()
                     .filter(i -> OdaFhirConstants.NATIONAL_ID_SYSTEM.equals(i.getSystem()))
                     .filter(j -> j.getValue().length() == 11) //Add only to identifier without suffix.
-                    .findFirst()
-                    .ifPresent(k -> k.setValue(k.getValue() + odaInstanceId));
+                    .forEach(k -> k.setValue(k.getValue() + odaInstanceId));
         }
 
     }

@@ -58,9 +58,9 @@ public class OdaInstanceIdConcatenatingInterceptorTest {
         theRequest = mock(HttpServletRequest.class);
         theResponse = mock(HttpServletResponse.class);
         mockServer = mock(RestfulServer.class);
-        
+        when(requestDetails.getHeader(OdaFhirConstants.ODA_INSTANCE_ID_HEADER)).thenReturn(odaInstanceId);
         when(requestDetails.getResourceName()).thenReturn(resourceName);
-        when(requestDetails.getServletRequest()).thenReturn(theRequest);
+
         when(requestDetails.getParameters()).thenReturn(queryParams);
         when(theRequest.getHeader(OdaFhirConstants.ODA_INSTANCE_ID_HEADER)).thenReturn(odaInstanceId);
         when(mockServer.getFhirContext()).thenReturn(FhirContext.forDstu3());
@@ -117,7 +117,7 @@ public class OdaInstanceIdConcatenatingInterceptorTest {
 
     @Test
     public void doNotRemovePersonIdentifierSuffixInDebug() {
-        when(theRequest.getHeader(OdaInstanceIdConcatenatingInterceptor.DEBUG_KEEP_NATIONAL_ID_SUFFIX)).thenReturn("true");
+        when(requestDetails.getHeader(OdaInstanceIdConcatenatingInterceptor.DEBUG_KEEP_NATIONAL_ID_SUFFIX)).thenReturn("true");
         personResource.getIdentifier().get(0).setValue(concatenatedNationalId);
         interceptor.outgoingResponse(requestDetails, personResource);
         Identifier producedPersonIdentifier = personResource.getIdentifier().get(0);
