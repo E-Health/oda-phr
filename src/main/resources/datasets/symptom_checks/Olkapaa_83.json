@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/83/518",
-	"version": "518",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/83/544",
+	"version": "544",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-29T06:38:34.699Z",
+	"date": "2017-10-06T10:25:51.186Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -43,6 +43,24 @@
 			"type": "group",
 			"item": [{
 					"required": true,
+					"linkId": "20",
+					"text": "### Oma arvioni",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "46",
+								"display": "Oireeni sopivat itse hoidettaviksi ja haluan vain itsehoito-ohjeen"
+							}
+						}, {
+							"valueCoding": {
+								"id": "47",
+								"display": "Arvelen tarvitsevani muuta hoitoa ja haluan täyttää oirekyselyn"
+							}
+						}
+					]
+				}, {
+					"required": true,
 					"linkId": "3",
 					"code": [{
 							"system": "http://loinc.org",
@@ -58,7 +76,19 @@
 						}
 					],
 					"text": "Ikä (vuosia)",
-					"type": "decimal"
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
 				}, {
 					"linkId": "14",
 					"text": "Oirearvio on tarkoitettu vähintään 15 vuotta täyttäneille, sillä tätä nuoremmille ei ole saatavissa tarpeeksi luotettavaa tutkimustietoa tästä oireesta. Jos olet alle 15-vuotias eikä itsehoito-ohjeesta ole riittävästi apua, ole yhteydessä terveydenhuollon ammattilaiseen oireesi selvittämiseksi.",
@@ -84,6 +114,70 @@
 						}
 					]
 				}, {
+					"linkId": "1087",
+					"text": "# Olkapääkipu-artikkelin tulostuslinkki\n\nTulosta Lääkärikirja Duodecimin [artikkeli yläraajan kiputilat](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00291)[ ](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00291)tekstin lopussa olevasta tulostuslinkistä.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "subtitle"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "46"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "848",
+					"text": "Kummassa olkapäässä sinulla on oireita? Jos oireita on kummassakin olkapäässä, täytä kysely siitä olkapäästä, jossa oireet ovat vaikeammat.",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1512",
+								"display": "Vasemmassa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1513",
+								"display": "Oikeassa"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}
+					]
+				}, {
 					"required": true,
 					"linkId": "402",
 					"text": "Onko olkapääkipu alkanut äkillisesti kaatumisen, putoamisen, olkapäähän kohdistuneen iskun tai muun tapaturman jälkeen?",
@@ -98,6 +192,16 @@
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
 							}
 						}
 					]
@@ -124,6 +228,16 @@
 								}
 							],
 							"answerBoolean": true
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
 						}
 					]
 				}, {
@@ -150,6 +264,16 @@
 								}
 							],
 							"answerBoolean": true
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
 						}
 					]
 				}, {
@@ -206,6 +330,16 @@
 								"value": 14,
 								"comparator": ">"
 							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
 						}
 					]
 				}, {
@@ -223,6 +357,16 @@
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
 							}
 						}
 					]
@@ -260,75 +404,15 @@
 								"value": 14,
 								"comparator": ">"
 							}
-						}
-					]
-				}, {
-					"required": true,
-					"linkId": "848",
-					"text": "Kummassa olkapäässä sinulla on oireita?",
-					"type": "choice",
-					"repeats": false,
-					"option": [{
-							"valueCoding": {
-								"id": "1512",
-								"display": "Vasemmassa"
-							}
 						}, {
-							"valueCoding": {
-								"id": "1513",
-								"display": "Oikeassa"
-							}
-						}, {
-							"valueCoding": {
-								"id": "1514",
-								"display": "Molemmissa"
-							}
-						}
-					],
-					"enableWhen": [{
-							"question": "3",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerQuantity": {
-								"value": 14,
-								"comparator": ">"
-							}
-						}
-					]
-				}, {
-					"linkId": "849",
-					"text": "# Olkapääkipu - toimii vain yhdelle kädelle\n\nJos sinulla on oireita molemmissa olkapäissä, täytä oirekysely kummallekin kädelle erikseen.  \n",
-					"type": "display",
-					"_type": {
-						"extension": [{
-								"url": "https://duodecim.fi/fhir/extensions/item-type",
-								"valueString": "subtitle"
-							}
-						]
-					},
-					"enableWhen": [{
-							"question": "3",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerQuantity": {
-								"value": 14,
-								"comparator": ">"
-							}
-						}, {
-							"question": "848",
+							"question": "20",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
 									"valueString": "AND"
 								}
 							],
 							"answerCoding": {
-								"id": "1514"
+								"id": "47"
 							}
 						}
 					]
@@ -366,6 +450,16 @@
 								"value": 14,
 								"comparator": ">"
 							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
 						}
 					]
 				}, {
@@ -402,6 +496,16 @@
 								"value": 14,
 								"comparator": ">"
 							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
 						}
 					]
 				}, {
@@ -419,6 +523,16 @@
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
 							}
 						}, {
 							"question": "408",
@@ -447,6 +561,16 @@
 								"value": 14,
 								"comparator": ">"
 							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
 						}
 					]
 				}, {
@@ -464,6 +588,16 @@
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
 							}
 						}
 					]
@@ -484,6 +618,16 @@
 								"comparator": ">"
 							}
 						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
 							"question": "398",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -499,6 +643,16 @@
 					"text": "Onko olkavarren lihasvoima heikentynyt verrattuna terveeseen käteen ja onko käsi helpointa nostaa ylös etukautta?",
 					"type": "boolean",
 					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
 							"question": "398",
 							"extension": [{
 									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
@@ -531,7 +685,35 @@
 					"required": true,
 					"linkId": "403",
 					"text": "Onko olkapäässä lepo- tai yösärkyä tai rasituksen jälkeistä kipua?",
-					"type": "boolean",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "1824",
+								"display": "Leposärkyä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1825",
+								"display": "Yösärkyä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1826",
+								"display": "Rasituksen jälkeistä kipua"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään näistä"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
 					"enableWhen": [{
 							"question": "3",
 							"extension": [{
@@ -542,6 +724,16 @@
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
+							}
+						}, {
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
 							}
 						}
 					]
