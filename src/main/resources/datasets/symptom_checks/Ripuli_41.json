@@ -268,7 +268,6 @@
 				}, {
 					"required": true,
 					"linkId": "194",
-					"extension": [],
 					"text": "Kuinka monta kertaa joudut ulostamaan vuorokauden aikana?",
 					"type": "decimal",
 					"enableWhen": [{
@@ -913,7 +912,6 @@
 				}, {
 					"required": true,
 					"linkId": "208",
-					"extension": [],
 					"text": "Kuinka monta vuorokautta siitä on, kun antibioottikuuri päättyi?",
 					"type": "decimal",
 					"enableWhen": [{
