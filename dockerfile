@@ -11,4 +11,4 @@ COPY build/libs/oda-phr.jar /home/oda-phr.jar
 WORKDIR /home
 
 # Launch jar-files
-CMD ["java","-jar","/home/oda-phr.jar"]
+ENTRYPOINT exec java $JAVA_OPTS -jar /home/oda-phr.jar
