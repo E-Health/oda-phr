@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/107/530",
-	"version": "530",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/107/550",
+	"version": "550",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-29T09:07:58.167Z",
+	"date": "2017-10-10T05:24:32.512Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -218,7 +218,7 @@
 				}, {
 					"required": true,
 					"linkId": "290",
-					"text": "Onko sinulla niskan kipua ja jäykkyyttä (leukaa ei saa painetuksi rintaan, ks. [Aivokalvontulehdus](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00558))?",
+					"text": "Onko sinulla niskan kipua ja jäykkyyttä (leukaa ei saa painetuksi rintaan, ks. [Aivokalvontulehdus](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00558#s4))?",
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
@@ -252,8 +252,8 @@
 						}
 					]
 				}, {
-					"linkId": "663",
-					"text": "Voimakkaasti tihentyneen hengityksen takia sinun on aiheellista ottaa välittömästi yhteys päivystykseen. Jos vointisi sallii, voit antaa esitietoja tällä lomakkeella vastaamalla alla oleviin kysymyksiin ja lähettämällä ne eteenpäin.",
+					"linkId": "1089",
+					"text": "Vakavan oirekuvasi takia sinun on aiheellista ottaa välittömästi yhteys päivystykseen. Jos vointisi sallii, voit antaa esitietoja tällä lomakkeella vastaamalla alla oleviin kysymyksiin ja lähettämällä ne eteenpäin. ",
 					"type": "display",
 					"_type": {
 						"extension": [{
@@ -272,10 +272,10 @@
 							"question": "141",
 							"answerBoolean": true
 						}, {
-							"question": "37",
+							"question": "290",
 							"answerBoolean": true
 						}, {
-							"question": "290",
+							"question": "37",
 							"answerBoolean": true
 						}
 					]
@@ -776,7 +776,7 @@
 				}, {
 					"required": true,
 					"linkId": "658",
-					"text": "Onko sinulla leuanalustassa turvotusta tai tunnettavissa olevia patteja (imusolmukkeita)?",
+					"text": "Onko sinulla leuanalustassa turvotusta tai tunnusteltavissa olevia patteja (imusolmukkeita)?",
 					"type": "boolean",
 					"enableWhen": [{
 							"question": "3",
