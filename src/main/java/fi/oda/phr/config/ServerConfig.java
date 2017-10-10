@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.*;
 import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.web.filter.ForwardedHeaderFilter;
 
 import ca.uhn.fhir.context.*;
 import ca.uhn.fhir.jpa.config.BaseJavaConfigDstu3;
@@ -40,6 +41,11 @@ public class ServerConfig {
         ignoreList.add(Appointment.class);
         return new OdaValidatingInterceptor(Optional.of(validationSupport), ignoreList);
     }
+    @Bean
+    public ForwardedHeaderFilter forwardedHeaderFilter() {
+        return new ForwardedHeaderFilter();
+    }
+
     @Bean
     public IServerInterceptor odaInstanceIdTaggingInterceptor() {
         return new InstanceIdTaggingInterceptor();
