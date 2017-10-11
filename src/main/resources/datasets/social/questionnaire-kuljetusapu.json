@@ -413,6 +413,13 @@
     },
     {
       "linkId": "Q10_BRUTTOTULOT_TAMPERE",
+      "extension": [{
+        "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+        "valueDecimal": 0
+      }, {
+        "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+        "valueDecimal": 999999999
+      }],
       "text": "Kotitalouden yhteenlasketut bruttotulot (euroa/kuukausi)",
       "type": "decimal",
       "enableWhen": [
@@ -445,6 +452,13 @@
     },
     {
       "linkId": "Q10_BRUTTOTULOT_OULU",
+      "extension": [{
+        "url": "http://hl7.org/fhir/StructureDefinition/minValue",
+        "valueDecimal": 0
+      }, {
+        "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+        "valueDecimal": 999999999
+      }],
       "text": "Kotitalouden yhteenlasketut bruttotulot (euroa/kuukausi)",
       "type": "decimal",
       "enableWhen": [
