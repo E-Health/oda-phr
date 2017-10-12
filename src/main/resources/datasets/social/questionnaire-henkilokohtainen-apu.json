@@ -117,6 +117,7 @@
     },
     {
       "linkId": "Q2_TARVITSETKO_VALTTAMATTA_APUA_KODIN_ULKOPUOLELLA",
+      "text": "Tarvitsetko välttämättä toisen ihmisen apua kodin ulkopuolella?",
       "type": "boolean",
       "enableWhen": [
         {
