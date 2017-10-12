@@ -181,12 +181,13 @@ spring:
         name: phr
     thymeleaf:
         prefix: classpath:/WEB-INF/templates/
-    profiles:
-        active: dev
     jpa:
+       generate-ddl: true
+       hibernate:
+              ddl-auto: update
+
        properties:
               format_sql: true
-              show-sql: true
               jdbc:
                   batch_size: 20
               cache:
@@ -201,10 +202,3 @@ spring:
                       worker:
                           execution: sync
                   lucene_version: LUCENE_CURRENT
----
-spring:
-    profiles: dev
-    jpa:
-       generate-ddl: true
-       hibernate:
-              ddl-auto: update
