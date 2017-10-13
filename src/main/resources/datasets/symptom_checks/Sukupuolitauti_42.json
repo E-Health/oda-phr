@@ -1,0 +1,1800 @@
+{
+	"resourceType": "Questionnaire",
+	"language": "fi",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/42/564",
+	"version": "564",
+	"meta": {
+		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
+		"tag": [{
+				"system": "http://oda.fi/Questionnaire",
+				"code": "symptom"
+			}, {
+				"system": "http://oda.fi/cds",
+				"code": "oda1"
+			}
+		]
+	},
+	"status": "active",
+	"date": "2017-10-12T12:13:45.001Z",
+	"publisher": "© Kustannus Oy Duodecim, 2017",
+	"copyright": "© Kustannus Oy Duodecim, 2017",
+	"identifier": [{
+			"system": "https://duodecim.fi/fhir/sid/vkt-questionnaire-id",
+			"value": "42"
+		}
+	],
+	"title": "Sukupuolitautiepäilyn oirearvio",
+	"text": {
+		"status": "generated",
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Sukupuolitautiepäilyn oirearvio</div>"
+	},
+	"extension": [{
+			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
+			"extension": [{
+					"url": "instruction-url",
+					"valueString": "http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00497"
+				}
+			]
+		}
+	],
+	"item": [{
+			"linkId": "introduction",
+			"text": "Oirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Jos arvelet tarvitsevasi tutkimuksia tai hoitoa, anna taustatietosi ja vastaa kysymyksiin oireiden ja tietojesi mukaisesti. Saat neuvoja asian hoitamiseen ja tarvittaessa ohjeet hakeutua tutkimuksiin ja hoitoon kiireellisyyden mukaan. \n\n  \nLomakkeen täyttäminen sujuvoittaa asiointiasi ja tiedot ovat valmiina hoitoon hakeutuessasi. Lähettämäsi tiedot käsitellään täysin luottamuksellisesti. \n\nAiheeseen liittyen voit lukea Terveyskirjaston artikkelin [Sukupuolitaudit, seksitaudit](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00497&p_haku=sukupuolitaudit). Jos olet nainen ja raskaana, voit lukea Terveyskirjaston artikkelin [Raskaus ja sukupuolitaudit](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_haku=sukupuolitaudit&p_artikkeli=dlk01140). Jos tarvitset jälkiehkäisyä, lue ensin Terveyskirjaston artikkeli [Jälkiehkäisy](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_teos=&p_artikkeli=dlk00133). Jälkiehkäisyn teho on parhaimmillaan 12 tunnin sisällä suojaamattomasta yhdynnästä otettuna.  \n\n\n  \n**Huom:**  \n\nJos olet ollut suojaamattomassa seksikontaktissa uuden tai tilapäisen kumppanin kanssa JA partnerilla sukupuolitauti tai sen epäily tai jos kyseessä on miesten välinen seksi, klamydia, tippuri ja HIV-näyte kannattaa antaa vaikka olisit oireeton. Huom. klamydia-ja tippurinäytteet tulevat positiiviseksi 1-2 viikkoa ja HIV-näyte 1-3 kuukautta seksikontaktista.\n\n",
+			"type": "group",
+			"item": [{
+					"required": true,
+					"linkId": "1007",
+					"text": "Kyselyn täyttäminen",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "1783",
+								"display": "Haluan täyttää oirearvion"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1784",
+								"display": "En halua täyttää oirearviota, mutta haluan keskustella terveydenhuollon ammattilaisen kanssa mahdollisista jatkotutkimuksista"
+							}
+						}
+					]
+				}, {
+					"linkId": "1008",
+					"text": "Oirearvion täyttäminen tai ammattilaisen kanssa keskustelu voi auttaa tutkimusten kohdentamisen ja tarpeellisuuden arvioinnissa. Jos et halua sitä kuitenkaan täyttää, ole yhteydessä terveydenhuollon ammattilaiseen tilanteesi arvioimista varten.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "feedback"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1784"
+							}
+						}
+					]
+				}, {
+					"linkId": "1009",
+					"text": "Haluat suoraan tutkimuksiin ilman oirearvion täyttämistä. Tämä voi tarkoittaa laajoja tutkimuksia. Oirearvion täyttäminen tai ammattilaisen kanssa keskustelu voisi auttaa tutkimusten kohdentamisen ja tarpeellisuuden arvioinnissa. Huomioi myös, että klamydia-näytteet kannattaa ottaa 1-2 viikkoa mahdollisesta tartunta-ajankohdasta ja HIV-näytteet 1-3 kuukautta mahdollisesta tartunta-ajankohdasta.  ",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "feedback"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1747"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "3",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "21612-7"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 10
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 99
+						}
+					],
+					"text": "Ikä (vuosia)",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1783"
+							}
+						}
+					]
+				}, {
+					"linkId": "421",
+					"text": "Oirearvio on tarkoitettu vähintään 15 vuotta täyttäneille, sillä tätä nuorempien kohdalla tilannearvio olisi syytä tehdä yhdessä terveydenhuollon ammattilaisen kanssa. Jos olet alle 15-vuotias eikä [Terveyskirjaston artikkelista](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00497&p_haku=sukupuolitaudit) ole riittävästi apua ongelman selvittämiseen, ole yhteydessä terveydenhuollon ammattilaiseen oireesi selvittämiseksi.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "feedback"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 15,
+								"comparator": "<"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "305",
+					"text": "Sukupuoli (vastaus kysymykseen tarvitaan jatkokysymyksiä varten)",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "461",
+								"system": "http://loinc.org",
+								"code": "46098",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 1
+									}
+								],
+								"display": "Mies"
+							}
+						}, {
+							"valueCoding": {
+								"id": "462",
+								"system": "http://loinc.org",
+								"code": "46098",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 2
+									}
+								],
+								"display": "Nainen"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1783"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "25",
+					"text": "Oletko raskaana?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "414",
+								"display": "Kyllä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "415",
+								"display": "Ei"
+							}
+						}, {
+							"valueCoding": {
+								"id": "416",
+								"display": "En tiedä"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1783"
+							}
+						}, {
+							"question": "305",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "462"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "428",
+					"text": "Olen ollut suojaamattomassa seksikontaktissa (ilman kondomia) uuden tai tilapäisen kumppanin kanssa  \n\n[Kondomin käyttöohjeet](http://www.dlc.fi/%7Eetkirja/kondomin_kaytt%25F6ohje_esite.pdf)",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "1026",
+					"text": "Et ole ollut seksikontaktissa ilman kondomia uuden tai tilapäisen kontaktin kanssa joten sukupuolitaudin riski on pieni. Haluatko silti jatkaa kyselyä?",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "feedback"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "428",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": false
+						}
+					]
+				}, {
+					"linkId": "1066",
+					"text": "Oletko harrastanut mahdollisen tartunnan aikana (tämä kysytään näytteiden oton kohdentamiseksi oikein, voit valita myös useamman vaihtoehdon)",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "1803",
+								"display": "suuseksiä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1804",
+								"display": "anaaliseksiä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1809",
+								"display": "ostettua seksiä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1810",
+								"display": "en halua vastata tähän kysymykseen"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1823",
+								"display": "ei mikään ylläolevista"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1783"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "428",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "210",
+					"text": "Minulla on oireita, jotka saattavat viitata sukupuolitautiin",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1783"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "1027",
+					"text": "Sinulla ei ole sukupuolitaudin oireita. Sukupuolitaudeista klamydia ja tippuri voivat olla täysin oireettomia. Jos olet huolissasi sukupuolitartunnan mahdollisuudesta, voit jatkaa kyselyn täyttämistä tutkimusten ja hoidon tarpeen arvioimiseksi.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "feedback"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "210",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": false
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "238",
+					"text": "Nykyiset paikalliset oireet",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "336",
+								"display": "Muuttunut valkovuoto (väri, haju tai runsastunut)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "337",
+								"display": "Kirvely virtsatessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "338",
+								"display": "Tihentynyt virtsaamistarve"
+							}
+						}, {
+							"valueCoding": {
+								"id": "435",
+								"display": "Vuoto virtsaputkesta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "339",
+								"display": "Verinen tihkuvuoto emättimestä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "357",
+								"display": "Yhdynnän jälkeinen verinen vuoto"
+							}
+						}, {
+							"valueCoding": {
+								"id": "341",
+								"display": "Kovareunainen pyöreä haava häpyhuulessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "342",
+								"display": "Kovareunainen pyöreä haava emättimessä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "343",
+								"display": "Kovareunainen pyöreä haava peräaukossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1767",
+								"display": "Kovareunainen pyöreä haava nielussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "345",
+								"display": "Syylä/syyliä häpyhuulessa (papilloomavirus eli kondylooma eli visvasyylä ei edellytä yhdyntää, limakalvo- ja ihokosketus riittää)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "346",
+								"display": "Syylä/syyliä emättimessä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "347",
+								"display": "Syylä/syyliä peräaukossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "349",
+								"display": "Syylä/syyliä pakaravaossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1768",
+								"display": "Syylä/syyliä nielussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "351",
+								"display": "Ryhmä kipeitä rakkuloita häpyhuulessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1785",
+								"display": "Ryhmä kipeitä rakkuloita suussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "352",
+								"display": "Kivuton märkänäppy (1-2 viikon kuluessa tartunnasta)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1766",
+								"display": "Suun laaja-alainen sienitulehdus"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään näistä"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "210",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1783"
+							}
+						}, {
+							"question": "305",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "462"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "423",
+					"text": "Nykyiset paikalliset oireet",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "642",
+								"display": "Kirvely virtsatessa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "643",
+								"display": "Tihentynyt virtsaamistarve"
+							}
+						}, {
+							"valueCoding": {
+								"id": "644",
+								"display": "Vuoto virtsaputkesta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "645",
+								"display": "Kipu kivesten alueella"
+							}
+						}, {
+							"valueCoding": {
+								"id": "646",
+								"display": "Kovareunainen pyöreä haava siittimessä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "647",
+								"display": "Kovareunainen pyöreä haava peräaukossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1764",
+								"display": "Kovareunainen pyöreä haava nielussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "648",
+								"display": "Syylä/syyliä siittimessä (papilloomavirus eli kondylooma eli visvasyylä ei edellytä yhdyntää, limakalvo- ja ihokosketus riittää)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "649",
+								"display": "Syylä/syyliä kivespussissa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "656",
+								"display": "Syylä/syyliä peräaukossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "657",
+								"display": "Syylä/syyliä pakaravaossa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1763",
+								"display": "Syylä/syyliä nielussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "650",
+								"display": "Ryhmä kipeitä rakkuloita siittimessä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1786",
+								"display": "Ryhmä kipeitä rakkuloita suussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "651",
+								"display": "Kivuton märkänäppy (1-2 viikon kuluessa tartunnasta)"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1765",
+								"display": "Suun laaja-alainen sienitulehdus"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään näistä"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1783"
+							}
+						}, {
+							"question": "305",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "461"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "210",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "424",
+					"text": "Nykyiset yleisoireet",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "658",
+								"display": "Alavatsakipu"
+							}
+						}, {
+							"valueCoding": {
+								"id": "653",
+								"display": "Turvonneet imusolmukkeet"
+							}
+						}, {
+							"valueCoding": {
+								"id": "654",
+								"display": "Nivelsärky"
+							}
+						}, {
+							"valueCoding": {
+								"id": "655",
+								"display": "Lihassärky"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1807",
+								"display": "Ihottuma"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1808",
+								"display": "Hilseileviä näppylöitä kämmenissä tai jalkapohjissa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään näistä"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1783"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "210",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "425",
+					"text": "Oireeni ovat voimakkaat",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1783"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "210",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "590",
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 60
+						}
+					],
+					"text": "Kuinka monta vuorokautta nykyiset oireesi ovat kestäneet? Anna vastaus kokonaislukuna (esim. 5).",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "210",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "38",
+					"text": "Onko sinulla kuumetta?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "210",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "7",
+					"code": [{
+							"system": "http://loinc.org",
+							"code": "8310-5"
+						}
+					],
+					"extension": [{
+							"url": "http://hl7.org/fhir/StructureDefinition/minValue",
+							"valueDecimal": 34
+						}, {
+							"url": "http://hl7.org/fhir/StructureDefinition/maxValue",
+							"valueDecimal": 41
+						}
+					],
+					"text": "Kuinka paljon kuumetta sinulla on ollut kuluneen vuorokauden aikana? Vastaa kymmenyksen tarkkuudella (esim. 37,8).",
+					"type": "decimal",
+					"enableWhen": [{
+							"question": "38",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "61",
+					"text": "Kuinka monta päivää sinulla on ollut kuumetta?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "113",
+								"display": "Alle 3 vuorokautta"
+							}
+						}, {
+							"valueCoding": {
+								"id": "114",
+								"display": "Yli 3 vuorokautta"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "38",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "255",
+					"text": "Tiedän ajankohdan, jolloin sukupuolitauti on mahdollisesti tarttunut minuun",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "216",
+					"text": "Milloin sukupuolitauti on mahdollisesti tarttunut sinuun?",
+					"type": "date",
+					"enableWhen": [{
+							"question": "213",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "255",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "422",
+					"text": "Tiedän keneltä olen mahdollisesti saanut sukupuolitaudin",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "219",
+					"text": "Onko tällä seksikumppanilla äskettäin todettu jokin sukupuolitauti?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "421",
+								"display": "Kyllä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "423",
+								"display": "Epäilen että on"
+							}
+						}, {
+							"valueCoding": {
+								"id": "422",
+								"display": "Ei"
+							}
+						}, {
+							"valueCoding": {
+								"id": "424",
+								"display": "En tiedä"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "422",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "221",
+					"text": "Mikä tauti hänellä on todettu?",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "669",
+								"display": "En osaa sanoa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "670",
+								"display": "Klamydia"
+							}
+						}, {
+							"valueCoding": {
+								"id": "671",
+								"display": "Tippuri"
+							}
+						}, {
+							"valueCoding": {
+								"id": "672",
+								"display": "Kuppa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "673",
+								"display": "Herpes"
+							}
+						}, {
+							"valueCoding": {
+								"id": "674",
+								"display": "HIV"
+							}
+						}, {
+							"valueCoding": {
+								"id": "675",
+								"display": "Hepatiitti B"
+							}
+						}, {
+							"valueCoding": {
+								"id": "676",
+								"display": "Hepatiitti C"
+							}
+						}, {
+							"valueCoding": {
+								"id": "677",
+								"display": "Jokin muu"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "219",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "421"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "435",
+					"text": "Mikä muu sukupuolitauti hänellä on todettu?",
+					"type": "string",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "219",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "421"
+							}
+						}, {
+							"question": "221",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "677"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "222",
+					"text": "Onko tämä seksikumppani jo lääkitty?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "425",
+								"display": "Kyllä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "426",
+								"display": "Ei"
+							}
+						}, {
+							"valueCoding": {
+								"id": "427",
+								"display": "En tiedä"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "219",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "421"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "223",
+					"text": "Milloin lääkitty?",
+					"type": "date",
+					"enableWhen": [{
+							"question": "222",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "425"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "224",
+					"text": "Hoitoon käytetty lääke",
+					"type": "string",
+					"enableWhen": [{
+							"question": "222",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "425"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "225",
+					"text": "Onko hoidon jälkeinen kontrollinäyte otettu?",
+					"type": "choice",
+					"repeats": false,
+					"option": [{
+							"valueCoding": {
+								"id": "623",
+								"display": "Kyllä"
+							}
+						}, {
+							"valueCoding": {
+								"id": "624",
+								"display": "Ei"
+							}
+						}, {
+							"valueCoding": {
+								"id": "625",
+								"display": "En tiedä"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "222",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "425"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "230",
+					"text": "Näytteen tulos",
+					"type": "string",
+					"enableWhen": [{
+							"question": "225",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "214",
+					"text": "Onko sinulta otettu sukupuolitautinäytteitä puolen vuoden sisällä?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "430",
+					"text": "Onko otetuissa sukupuolitautinäytteissä todettu jotain poikkeavaa?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "214",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "431",
+					"text": "Viimeisten näytteiden ajankohta",
+					"type": "date",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "214",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "215",
+					"text": "Mitä näytteitä sinulta on viimeksi otettu?",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "666",
+								"display": "En osaa sanoa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "659",
+								"display": "Klamydia"
+							}
+						}, {
+							"valueCoding": {
+								"id": "660",
+								"display": "Tippuri"
+							}
+						}, {
+							"valueCoding": {
+								"id": "662",
+								"display": "Kuppa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "663",
+								"display": "Herpes"
+							}
+						}, {
+							"valueCoding": {
+								"id": "661",
+								"display": "HIV"
+							}
+						}, {
+							"valueCoding": {
+								"id": "664",
+								"display": "Hepatiitti B"
+							}
+						}, {
+							"valueCoding": {
+								"id": "665",
+								"display": "Hepatiitti C"
+							}
+						}, {
+							"valueCoding": {
+								"id": "667",
+								"display": "Jokin muu"
+							}
+						}
+					],
+					"enableWhen": [{
+							"question": "214",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "432",
+					"text": "Kirjoita tähän muun otetun näytteen nimi ja tulos (jos ne ovat tiedossa)",
+					"type": "string",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "215",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "667"
+							}
+						}, {
+							"question": "214",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "226",
+					"text": "Onko sinulla sukupuolitauti aiemmin hoidettu lääkityksellä?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "214",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "227",
+					"text": "Hoitoon käytetty lääke?",
+					"type": "string",
+					"enableWhen": [{
+							"question": "226",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "228",
+					"text": "Lääkityksen ajankohta?",
+					"type": "date",
+					"enableWhen": [{
+							"question": "226",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "229",
+					"text": "Onko hoidon jälkeinen kontrollinäyte otettu?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "226",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "231",
+					"text": "Näytteen tulos?",
+					"type": "string",
+					"enableWhen": [{
+							"question": "229",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": "<"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "235",
+					"text": "Oletko mahdollisesti tartuttanut jonkun muun kumppanin?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "236",
+					"text": "Oletko jo ottanut häneen yhteyttä ja kehottanut testeihin?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "235",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "1047",
+					"text": "Huolehdi kondomiehkäisystä siihen asti kunnes on osoitettu, että sinulla ei ole tautia. Jos olet ehtinyt olla suojaamattomassa seksikontaktissa mahdollisen tartunnan jälkeen huolehdi kaikkien tartunnan jälkeisten kumppanien infomoinnista, jos testituloksesi on positiivinen.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "feedback"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "236",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": false
+						}
+					]
+				}, {
+					"linkId": "1048",
+					"text": "Huolehdi kondomiehkäisystä siihen asti kunnes on osoitettu, että sinulla ei ole tautia. ",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "feedback"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "236",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "237",
+					"text": "Oletko syönyt antibioottia muuhun syyhyn kuin sukupuolitaudin hoitoon viimeisen kuukauden aikana?",
+					"type": "boolean",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "434",
+					"text": "Minkä nimistä antibioottia olet käyttänyt viimeisen kuukauden aikana?",
+					"type": "string",
+					"enableWhen": [{
+							"question": "237",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

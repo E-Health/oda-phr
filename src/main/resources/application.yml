@@ -176,6 +176,8 @@ app:
 
             - file:  datasets/symptom_checks/Terveystarkastus_153.json
               use_update: false
+            - file:  datasets/symptom_checks/Sukupuolitauti_42.json
+              use_update: false
 spring:
     application:
         name: phr
