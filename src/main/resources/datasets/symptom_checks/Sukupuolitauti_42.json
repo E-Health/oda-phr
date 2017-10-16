@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/42/564",
-	"version": "564",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/42/570",
+	"version": "570",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-10-12T12:13:45.001Z",
+	"date": "2017-10-16T10:10:12.211Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -26,7 +26,7 @@
 	"title": "Sukupuolitautiepäilyn oirearvio",
 	"text": {
 		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Sukupuolitautiepäilyn oirearvio</div>"
+		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"></div>"
 	},
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
@@ -336,9 +336,14 @@
 							}
 						}, {
 							"valueCoding": {
-								"id": "1823",
-								"display": "ei mikään ylläolevista"
-							}
+								"id": "-1",
+								"display": "Ei mikään näistä"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
 						}
 					],
 					"enableWhen": [{
@@ -983,10 +988,9 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "216",
 					"text": "Milloin sukupuolitauti on mahdollisesti tarttunut sinuun?",
-					"type": "date",
+					"type": "string",
 					"enableWhen": [{
 							"question": "213",
 							"extension": [{
@@ -1243,10 +1247,9 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "223",
 					"text": "Milloin lääkitty?",
-					"type": "date",
+					"type": "string",
 					"enableWhen": [{
 							"question": "222",
 							"extension": [{
@@ -1413,10 +1416,9 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "431",
 					"text": "Viimeisten näytteiden ajankohta",
-					"type": "date",
+					"type": "string",
 					"enableWhen": [{
 							"question": "3",
 							"extension": [{
@@ -1599,10 +1601,9 @@
 						}
 					]
 				}, {
-					"required": true,
 					"linkId": "228",
 					"text": "Lääkityksen ajankohta?",
-					"type": "date",
+					"type": "string",
 					"enableWhen": [{
 							"question": "226",
 							"extension": [{
