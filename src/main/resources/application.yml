@@ -173,7 +173,8 @@ app:
               use_update: false
             - file: datasets/social/questionnaire-omaishoidon-tuki.json
               use_update: false
-
+            - file: datasets/social/maahanmuuttajien-hyvinvointikysely-fi.json
+              use_update: false            
             - file:  datasets/symptom_checks/Terveystarkastus_153.json
               use_update: false
             - file:  datasets/symptom_checks/Sukupuolitauti_42.json
