@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/42/570",
-	"version": "570",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/42/572",
+	"version": "572",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-10-16T10:10:12.211Z",
+	"date": "2017-10-17T09:34:41.371Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -24,10 +24,6 @@
 		}
 	],
 	"title": "Sukupuolitautiepäilyn oirearvio",
-	"text": {
-		"status": "generated",
-		"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Sukupuolitautiepäilyn oirearvio</div>"
-	},
 	"extension": [{
 			"url": "https://duodecim.fi/fhir/extensions/self-care-instructions",
 			"extension": [{
@@ -316,23 +312,28 @@
 					"repeats": true,
 					"option": [{
 							"valueCoding": {
+								"id": "1843",
+								"display": "Emätinseksiä"
+							}
+						}, {
+							"valueCoding": {
 								"id": "1803",
-								"display": "suuseksiä"
+								"display": "Suuseksiä"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1804",
-								"display": "anaaliseksiä"
+								"display": "Anaaliseksiä"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1809",
-								"display": "ostettua seksiä"
+								"display": "Ostettua seksiä"
 							}
 						}, {
 							"valueCoding": {
 								"id": "1810",
-								"display": "en halua vastata tähän kysymykseen"
+								"display": "En halua vastata tähän kysymykseen"
 							}
 						}, {
 							"valueCoding": {
@@ -525,7 +526,7 @@
 						}, {
 							"valueCoding": {
 								"id": "1766",
-								"display": "Suun laaja-alainen sienitulehdus"
+								"display": "Suun limakalvoilla vaihtelevia punoittavia tai vaaleita laikkuja ja nielemisvaikeutta tai -kipua"
 							}
 						}, {
 							"valueCoding": {
@@ -664,7 +665,7 @@
 						}, {
 							"valueCoding": {
 								"id": "1765",
-								"display": "Suun laaja-alainen sienitulehdus"
+								"display": "Suun limakalvoilla vaihtelevia punoittavia tai vaaleita laikkuja ja nielemisvaikeutta tai -kipua"
 							}
 						}, {
 							"valueCoding": {
