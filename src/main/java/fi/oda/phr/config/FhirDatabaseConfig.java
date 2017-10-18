@@ -23,6 +23,7 @@ public class FhirDatabaseConfig {
     public DaoConfig daoConfig(ClientConfiguration clientConfig) {
         final DaoConfig retVal = new DaoConfig();
         retVal.setSubscriptionEnabled(true);
+        retVal.setDefaultSearchParamsCanBeOverridden(true);
         retVal.setSubscriptionPollDelay(5000);
         retVal.setSubscriptionPurgeInactiveAfterMillis(DateUtils.MILLIS_PER_HOUR);
         retVal.setAllowMultipleDelete(true);

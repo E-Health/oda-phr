@@ -1,0 +1,19 @@
+{
+  "resourceType": "SearchParameter",
+  "id": "SP-SUPPORTING-INFO",
+  "url": "http://localhost:6083/phr/baseDstu3/SearchParameter/SP-SUPPORTING-INFO",
+  "version": "1",
+  "name": "SP-SUPPORTING-INFO",
+  "status": "active",
+  "description" : "CarePlan.supportingInfo",
+  "code": "supporting-info",
+  "base": [
+     "CarePlan"
+  ],
+  "type": "reference",
+  "expression": "CarePlan.supportingInfo",
+  "xpathUsage": "normal",
+  "comparator": [
+    "eq"
+  ]
+}
