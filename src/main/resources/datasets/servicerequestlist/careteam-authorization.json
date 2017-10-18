@@ -1,13 +1,11 @@
 {
   "resourceType": "CareTeam",
   "id" : "CARETEAM1-AUTHORIZATION",
-  "category" : [{
-    "coding" : [{
-        "system" : "http://oda.fi/CareTeam",
-        "code": "authorization"
-    }],
-    "text" : "Authorization"
-  }],
+  "meta": {
+    "profile": [
+       "http://oda.fi/StructureDefintion/ODA-ServiceRequestList"
+    ]
+  },
   "period": {
     "end": "2017-05-01"
   },  
