@@ -24,7 +24,12 @@
   "language": "fi",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta henkilökohtaiseen apuun</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Tämän arvion tarkoitus on auttaa sinua selvittämään, millaista tukea 
+    tai palvelua sinun tai läheisesi elämäntilanteeseen on tarjolla. Vastaa kyselyyn oman tai läheisesi elämäntilanteen mukaisesti. 
+    Vastaustesi perusteella saat elämäntilanteeseen sopivan toimintasuosituksen ja ohjauksen esimerkiksi alueellasi toimivien 
+    järjestöjen palveluihin, kunnallisiin palveluihin tai tiettyjen kunnallisten sosiaalipalvelujen hakemiseen. 
+
+</div>"
   },
   "url": "https://oda.fi/Forms/Henkilokohtainen-apu",
   "identifier": [
@@ -39,6 +44,11 @@
   "status": "draft",
   "date": "2017-10-02T00:00:00+03:00",
   "item": [
+   {
+      "linkId": "OTSIKKO",
+      "text": "Huomioithan, että kysely on suuntaa-antava, eikä päätös palvelun saamisesta. Henkilökohtainen apu on välttämätöntä toisen ihmisen antamaa apua niissä tavanomaiseen elämään liittyvissä toimissa, jotka henkilö tekisi itse, mutta vamman tai sairauden vuoksi hän ei selviä niistä itse.",
+      "type": "display"
+    },
     {
       "linkId": "Q_KUNTA",
       "text": "Kotikuntasi?",

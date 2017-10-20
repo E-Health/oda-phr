@@ -24,7 +24,11 @@
   "language": "fi",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta omaishoidon tukeen</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">
+    Tämän arvion tarkoitus on auttaa sinua selvittämään, millaista tukea tai palvelua sinun tai läheisesi elämäntilanteeseen on tarjolla. 
+    Vastaa kyselyyn elämäntilanteesi mukaisesti. Vastaustesi perusteella saat elämäntilanteeseen sopivan toimintasuosituksen 
+    ja ohjauksen esimerkiksi alueellasi toimivien järjestöjen palveluihin, kunnallisiin palveluihin 
+    tai tiettyjen kunnallisten sosiaalipalvelujen hakemiseen. </div>"
   },
   "url": "https://oda.fi/Forms/Omaishoidon-tuki",
   "identifier": [
@@ -39,6 +43,22 @@
   "status": "draft",
   "date": "2017-10-02T00:00:00+03:00",
   "item": [
+   {
+      "linkId": "OTSIKKO",
+      "text": "<p>Seuraavien kysymysten avulla voit arvioida, voisiko sinulla tai läheiselläsi olla oikeutta omaishoidon tukeen. 
+      Samalla saat ohjauksen muuhun tukeen ja palveluihin alueellasi, joista voit tilanteessasi hyötyä. 
+      Huomioithan, että kysely on suuntaa-antava, eikä päätös palvelun saamisesta. </p>
+      <p> Omaishoidon tuki on harkinnanvarainen sosiaalipalvelu, jota kunta järjestää määrärahojensa rajoissa. 
+      Jos ikääntynyttä, vammaista tai pitkäaikaissairasta hoidetaan kotona, voidaan häntä hoitavalle omaiselle 
+      tai läheiselle myöntää tietyin edellytyksin omaishoidon tukea. Omaishoidon tuella tarkoitetaan kokonaisuutta, 
+      johon kuuluvat hoidettavalle annettavat palvelut sekä omaishoitajalle maksettava hoitopalkkio, 
+      vapaat ja omaishoitoa tukevat palvelut. Palvelun myöntämiskriteerit ovat hoidettavan hoidon sitovuus ja vaativuus. 
+      Avun tarve pelkästään kodinhoidollisissa tehtävissä ja asioinneissa ei oikeuta omaishoidontukeen. 
+      Omaishoidon tuki perustuu lakiin ja asetukseen omaishoidon tuesta (Laki omaishoidon tuesta 2.12.2005/937, 
+      Laki omaishoidon tuesta annetun lain muuttamisesta 511/2016, Asetus omaishoidon tuesta 318/1993)</p>
+",
+      "type": "display"
+    },
     {
       "linkId": "Q_KUNTA",
       "text": "Kotikuntasi?",

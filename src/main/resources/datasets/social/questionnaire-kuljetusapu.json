@@ -24,7 +24,14 @@
   "language": "fi",
   "text": {
     "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Kysely selvittää alustavasti onko kansalaisella oikeutta kuljetusapuun</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Tämän arvion tarkoitus on auttaa sinua selvittämään, 
+    millaista tukea tai palvelua sinun tai läheisesi elämäntilanteeseen on tarjolla. 
+    Vastaa kyselyyn oman tai läheisesi elämäntilanteen mukaisesti. 
+    Vastaustesi perusteella saat elämäntilanteeseen sopivan toimintasuosituksen ja ohjauksen esimerkiksi alueellasi 
+    toimivien järjestöjen palveluihin, kunnallisiin palveluihin tai tiettyjen kunnallisten sosiaalipalvelujen hakemiseen. 
+
+
+</div>"
   },
   "url": "https://oda.fi/Forms/Kuljetusapu",
   "identifier": [
@@ -39,6 +46,25 @@
   "status": "draft",
   "date": "2017-10-02T00:00:00+03:00",
   "item": [
+   {
+      "linkId": "OTSIKKO",
+      "text": "<p>Seuraavien kysymysten avulla voit arvioida, voisiko sinulla olla oikeutta vammaispalvelulain mukaisiin kuljetuspalveluihin tai sosiaalihuoltolain mukaisiin liikkumista tukeviin palveluihin. 
+      Samalla saat ohjauksen muuhun tukeen ja palveluihin alueellasi, joista voit tilanteessasi hyötyä.</p>   
+<p>Huomioithan, että kysely on suuntaa-antava, eikä päätös palvelun saamisesta. Liikkumista tukevia palveluja voi saada henkilö, 
+joka ei kykene itsenäisesti käyttämään julkisia liikennevälineitä sairauden, vamman tai muun vastaavanlaisen toimintakykyä alentavan syyn takia 
+ja joka tarvitsee palvelua asioimisen tai muun jokapäiväiseen elämään kuuluvan tarpeen vuoksi. Esteetön ja toimiva julkinen joukkoliikenne mukaan lukien kutsu- ja palveluliikenne on ensisijainen tapa järjestää kaikille soveltuva liikkuminen. Liikkumista tulevat palvelut perustuvat sosiaalihuoltolakiin ja –asetukseen.</p> 
+
+<p>Vaikeavammaisen henkilön kuljetuspalvelua voi saada henkilö, jolla on erityisiä vaikeuksia liikkumisessa 
+ja joka ei vammansa tai sairautensa vuoksi kykene käyttämään julkisia kulkuneuvoja ilman kohtuuttoman suuria vaikeuksia, 
+eikä hän saa sopivia palveluja muun lain nojalla. Kuljetuspalvelua voidaan myöntää asiointi- ja virkistysmatkoihin 
+sekä työ- ja opiskelumatkoihin. Asiointi- ja virkistysmatkoihin voidaan myöntää vähintään 18 yhdensuuntaista matkaa kuukaudessa. 
+Asiakas maksaa kuljetuspalveluista julkisen liikenteen mukaisen omavastuuosuuden. 
+Kuljetuspalvelua ei voi käyttää lääkäri-, kuntoutus- ja terveydenhuollon matkoihin, joihin voi saada 
+Kelan korvausta sairausvakuutuslain mukaisesti. 
+Vaikeavammaisten kuljetuspalvelut perustuvat lakiin ja asetukseen vammaisuuden perustella järjestettävistä palveluista (VpL ja VpA).</p>
+",
+      "type": "display"
+    },
     {
       "linkId": "Q_KUNTA",
       "text": "Kotikuntasi?",
