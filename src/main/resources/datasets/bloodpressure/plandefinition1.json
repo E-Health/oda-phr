@@ -1,0 +1,51 @@
+{
+  "resourceType" : "PlanDefinition",
+  "language": "fi",
+  "id" : "PLANDEFINITION1",
+  "version" : "0.1",
+  "title" : "Verenpainepotilaan hoitosuunnitelma",
+  "status" : "draft", 
+  "experimental" : true,
+  "date" : "2017-10-17",
+  "publisher" : "ODA",
+  "description" : "Tähän kuvaus hoitosuunnitelmatemplaatin sisällöstä ja käytöstä. Tukee markdownia",
+  "purpose" : "<markdown>",
+  "usage" : "<string>",
+  "approvalDate" : "2017-10-17",
+  "copyright" : "<markdown>",
+ 
+  "action" : [{
+    "id" : "1",
+    "label" : "1.",
+    "title" : "Verenpaineen seuranta (4 vrk)",
+    "description" : "Mittaa verenpainettasi 4 vuorokauden ajan kolmen viikon sisällä aamuin ja illoin. ",
+    "textEquivalent" : "Potilaan verenpainetta mitataan 4 vuorokauden ajan kolmen viikon sisällä aamuin ja illoin",
+    "code" : [ 
+        {
+            "coding" : [
+                {
+                    "system" : "http://loinc.org",
+                    "code" : "85354-9"
+                }
+            ],
+            "text" : "Verenpaineen mittaus"
+        }
+    ],  
+    "output" : [{
+        "type" : "Observation",
+        "profile" : ["http://phr.kanta.fi/StructureDefinition/fiphr-bloodpressure-stu3"]
+    }],
+    "timingTiming" : {
+        "repeat" : {
+            "duration" : 4,
+            "durationUnit" : "d",
+            "period" : 3,
+            "periodUnit" : "wk",
+            "when" : ["MORN", "EVE"]
+        }
+    },
+    "participant" : [{ 
+      "type" : "patient"
+    }]  
+  }]
+}

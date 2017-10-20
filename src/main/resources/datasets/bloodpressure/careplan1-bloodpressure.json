@@ -1,0 +1,44 @@
+{
+    "resourceType": "CarePlan",
+    "id" : "CAREPLAN1-BLOODPRESSURE",
+    "subject":{
+        "reference":"Patient/PATIENT1"
+    },
+    "definition":[{
+        "reference" : "PlanDefinition/PLANDEFINITION1"
+    }],
+    "status":"active",
+    "intent": "plan",
+    "period":{
+        "start":"2017-03-01T00:00:00.000Z"
+    },
+    "author":[{
+        "reference" : "Practitioner/PRACTITIONER1"       
+    }],
+    "careTeam":[{
+        "reference" : "CareTeam/CARETEAM1-AUTHORIZATION"
+    }],  
+    "description": "Insert description here",
+    "activity":[{
+        "detail":{
+            "prohibited": false,
+            "code":{
+                "coding": [{"system":"urn:oid:1.2.246.537.6.96.2008","version":"1.2.246.537.6.96.2008","code":"85354-9"}]
+            },
+            "status":"not-started",
+            
+            "scheduledTiming": {
+                "repeat" : {
+                    "duration" : 4,       
+                    "durationUnit" : "d",
+                    "period" : 3,
+                    "periodUnit" : "wk",
+                    "when" : ["MORN", "EVE"]
+                }
+            },
+            "performer" : [{
+                "reference": "Patient/PATIENT1"
+            }]
+        }
+    }]
+}

@@ -16,7 +16,7 @@ app:
     localUrls:
            - https://oda.medidemo.fi/phr/baseDstu3
            - http://localhost:8081/phr/baseDstu3
-    data:
+    data:          
         feed_on_start: true
 
         # NOTE: keep the resources in order!
@@ -54,7 +54,7 @@ app:
             - file: datasets/servicerequestlist/patient6.json
             - file: datasets/servicerequestlist/patient7.json
             - file: datasets/servicerequestlist/patient8.json
-            - file: datasets/servicerequestlist/person-patient1.json
+            - file: datasets/servicerequestlist/person-patient1.json               
             - file: datasets/servicerequestlist/person-patient2.json
             - file: datasets/servicerequestlist/person-patient3.json
             - file: datasets/servicerequestlist/person-patient4.json
@@ -179,6 +179,9 @@ app:
               use_update: false
             - file:  datasets/symptom_checks/Sukupuolitauti_42.json
               use_update: false
+            - file: datasets/bloodpressure/plandefinition1.json
+            - file: datasets/bloodpressure/careplan1-bloodpressure.json
+              
 spring:
     application:
         name: phr
