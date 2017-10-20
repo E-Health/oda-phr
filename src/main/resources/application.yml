@@ -28,6 +28,7 @@ app:
               use_update: false
 
             - file: datasets/misc/location1.json
+            - file: datasets/misc/location2.json
             - file: datasets/misc/organization1.json
             - file: datasets/misc/healthcareservice1.json
             - file: datasets/misc/practitioner4.json

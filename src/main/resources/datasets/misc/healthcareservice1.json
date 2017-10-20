@@ -18,7 +18,10 @@
   },
   "location": [
     {
-      "reference": "Location/LOCATION1"
+      "reference": "Location/LOCATION1"      
+    },
+    {
+      "reference": "Location/LOCATION2"
     }
   ],
   "appointmentRequired": true

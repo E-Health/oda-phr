@@ -1,0 +1,36 @@
+{
+  "resourceType": "Location",
+  "id": "LOCATION2",
+  "identifier": [
+    {
+      "use": "temp",
+      "system": "https://oda.fi/instance-id",
+      "value": "demo.oda.fi"
+    }
+  ],
+  "status": "active",
+  "name": "Meilahti Tower Hospital, South Wing, second floor",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+3581234765",
+      "use": "work"
+    }
+  ],
+  "address": [
+    {
+      "use": "work",
+      "line": [
+        "Haartmaninkatu 4B"
+      ],
+      "city": "Helsinki",
+      "postalCode": "00290",
+      "country": "FI"
+    }
+  ],
+  "position": {
+    "longitude": 24.9071953,
+    "latitude": 60.190711,
+    "altitude": 0
+  }
+}
