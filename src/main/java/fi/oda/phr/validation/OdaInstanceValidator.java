@@ -2,17 +2,11 @@ package fi.oda.phr.validation;
 
 import java.util.List;
 
-import org.hl7.fhir.dstu3.hapi.validation.FhirInstanceValidator;
-import org.hl7.fhir.dstu3.hapi.validation.IValidationSupport;
-import org.hl7.fhir.dstu3.model.CarePlan;
+import org.hl7.fhir.dstu3.hapi.validation.*;
 import org.hl7.fhir.instance.model.api.IBaseResource;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.slf4j.*;
 
 import ca.uhn.fhir.validation.IValidationContext;
-import ca.uhn.fhir.validation.ResultSeverityEnum;
-import ca.uhn.fhir.validation.SingleValidationMessage;
-import fi.oda.phr.dataset.BundleInjector;
 
 public class OdaInstanceValidator extends FhirInstanceValidator {
     private List<Class<? extends IBaseResource>> ignoreList;

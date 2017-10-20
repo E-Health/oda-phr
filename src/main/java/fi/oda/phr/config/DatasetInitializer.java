@@ -11,6 +11,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 import ca.uhn.fhir.rest.client.IGenericClient;
+import fi.oda.common.fhir.client.interceptor.HeaderInjectingInterceptor;
 import fi.oda.phr.dataset.*;
 
 /**
@@ -39,6 +40,9 @@ public class DatasetInitializer implements ApplicationListener<ApplicationReadyE
         this.runDataOnStart = Boolean.valueOf(runDataOnStart);
         this.fhirClient = fhirClient;
         this.dataConfig = dataConfig;
+        if (dataConfig.getHeaders() != null) {
+            fhirClient.registerInterceptor(new HeaderInjectingInterceptor(dataConfig.getHeaders()));
+        }
     }
 
     public List<DataInjector> parseDatasets(

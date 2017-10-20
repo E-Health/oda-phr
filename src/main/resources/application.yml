@@ -18,7 +18,8 @@ app:
            - http://localhost:8081/phr/baseDstu3
     data:          
         feed_on_start: true
-
+        headers:
+             ODA-INSTANCE-ID: oda.medidemo.fi
         # NOTE: keep the resources in order!
         # The resources have references to one another.
         # Add new resources to the end of the list.

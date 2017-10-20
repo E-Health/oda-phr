@@ -26,11 +26,7 @@ public class DatasetInitializerTest {
 
     private final String resourceInjector = "fi.oda.phr.dataset.ResourceInjector";
 
-    private final String bundleInjector = "fi.oda.phr.dataset.BundleInjector";
-
     private final String foobarInjector = "fi.oda.phr.dataset.Foobar";
-
-    private Map<String, String> bundleInjectorConfig;
 
     private Map<String, String> resourceInjectorConfig;
 
@@ -40,14 +36,10 @@ public class DatasetInitializerTest {
     public void setUp() {
         fhirClient = mock(GenericClient.class);
         resourceInjectorConfig = new HashMap<String, String>();
-        bundleInjectorConfig = new HashMap<String, String>();
         foobarInjectorConfig = new HashMap<String, String>();
 
         resourceInjectorConfig.put("file", "datafile.json");
         resourceInjectorConfig.put("injector", resourceInjector);
-
-        bundleInjectorConfig.put("file", "datafile2.json");
-        bundleInjectorConfig.put("injector", bundleInjector);
 
         foobarInjectorConfig.put("file", "datafile.json");
         foobarInjectorConfig.put("injector", foobarInjector);
@@ -56,13 +48,13 @@ public class DatasetInitializerTest {
     @Test
     public void parseValidInjectors() {
         dataConfig = new DataConfig();
-        injectors = asList(bundleInjectorConfig, resourceInjectorConfig);
+        injectors = asList(resourceInjectorConfig);
         dataConfig.setResources(injectors);
         datasetInitializer = new DatasetInitializer(fhirClient, dataConfig, "true");
         List<DataInjector> sets = datasetInitializer.parseDatasets(dataConfig);
-        assertThat(sets.size(), equalTo(2));
+        assertThat(sets.size(), equalTo(1));
         assertThat(sets, hasItem(isA(ResourceInjector.class)));
-        assertThat(sets, hasItem(isA(BundleInjector.class)));
+
     }
 
     @Test
