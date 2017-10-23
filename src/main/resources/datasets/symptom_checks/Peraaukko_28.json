@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/28/520",
-	"version": "520",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/28/596",
+	"version": "596",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-29T06:39:04.292Z",
+	"date": "2017-10-20T11:43:45.695Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -64,7 +64,7 @@
 					]
 				}, {
 					"linkId": "263",
-					"text": "# Peräaukon seudun oireita käsittelevien artikkeleita (tulostus)\n\nTulosta Lääkärikirja Duodecimin artikkeli [peräpukamista](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00058) ja [ummetuksesta](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00092) tekstien lopussa olevasta tulostuslinkistä.",
+					"text": "# Peräaukon seudun oireita käsittelevien artikkelien tulostuslinkki\n\nTulosta Lääkärikirja Duodecimin artikkeli [peräpukamista](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00058) ja [ummetuksesta](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00092) tekstien lopussa olevasta tulostuslinkistä.",
 					"type": "display",
 					"_type": {
 						"extension": [{
@@ -116,7 +116,7 @@
 						}
 					]
 				}, {
-					"linkId": "15",
+					"linkId": "14",
 					"text": "Oirearvio on tarkoitettu vähintään 15 vuotta täyttäneille, sillä tätä nuoremmille ei ole saatavissa tarpeeksi luotettavaa tutkimustietoa tästä oireesta. Jos olet alle 15-vuotias eikä itsehoito-ohjeesta ole riittävästi apua, ole yhteydessä terveydenhuollon ammattilaiseen oireesi selvittämiseksi.",
 					"type": "display",
 					"_type": {
@@ -155,7 +155,7 @@
 							"valueCoding": {
 								"id": "208",
 								"code": "2",
-								"display": "Kuumetta yli 37,5 astetta, johon liittyy kipu peräaukon seudussa"
+								"display": "Kuumetta yli 37,5 astetta ja  kipu peräaukon seudussa"
 							}
 						}, {
 							"valueCoding": {
@@ -167,7 +167,7 @@
 							"valueCoding": {
 								"id": "210",
 								"code": "4",
-								"display": "Ulostamisen yhteydessä peräaukosta ulos työntyvät sormin tuntuvat pukamat, joka saa työnnetyksi sisään tai jotka vetäytyvät välillä sisään itsestään"
+								"display": "Ulostamisen yhteydessä peräaukosta ulos työntyvät sormin tuntuvat pukamat, jotka saa työnnetyksi sisään tai jotka vetäytyvät välillä sisään itsestään"
 							}
 						}, {
 							"valueCoding": {
@@ -197,7 +197,7 @@
 							"valueCoding": {
 								"id": "215",
 								"code": "9",
-								"display": "Verenvuoto"
+								"display": "Verenvuoto peräaukosta"
 							}
 						}, {
 							"valueCoding": {

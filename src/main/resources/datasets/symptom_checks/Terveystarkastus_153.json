@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153/562",
-	"version": "562",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/153/604",
+	"version": "604",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-10-12T07:56:38.943Z",
+	"date": "2017-10-23T08:58:32.542Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{

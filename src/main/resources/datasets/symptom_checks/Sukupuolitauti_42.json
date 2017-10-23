@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/42/572",
-	"version": "572",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/42/606",
+	"version": "606",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-10-17T09:34:41.371Z",
+	"date": "2017-10-23T10:20:43.646Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -430,7 +430,7 @@
 				}, {
 					"required": true,
 					"linkId": "238",
-					"text": "Nykyiset paikalliset oireet",
+					"text": "Nykyiset genitaalialueen paikalliset oireet",
 					"type": "choice",
 					"repeats": true,
 					"option": [{
@@ -470,11 +470,6 @@
 							}
 						}, {
 							"valueCoding": {
-								"id": "342",
-								"display": "Kovareunainen pyöreä haava emättimessä"
-							}
-						}, {
-							"valueCoding": {
 								"id": "343",
 								"display": "Kovareunainen pyöreä haava peräaukossa"
 							}
@@ -505,28 +500,13 @@
 							}
 						}, {
 							"valueCoding": {
-								"id": "1768",
-								"display": "Syylä/syyliä nielussa"
-							}
-						}, {
-							"valueCoding": {
 								"id": "351",
 								"display": "Ryhmä kipeitä rakkuloita häpyhuulessa"
 							}
 						}, {
 							"valueCoding": {
-								"id": "1785",
-								"display": "Ryhmä kipeitä rakkuloita suussa"
-							}
-						}, {
-							"valueCoding": {
 								"id": "352",
 								"display": "Kivuton märkänäppy (1-2 viikon kuluessa tartunnasta)"
-							}
-						}, {
-							"valueCoding": {
-								"id": "1766",
-								"display": "Suun limakalvoilla vaihtelevia punoittavia tai vaaleita laikkuja ja nielemisvaikeutta tai -kipua"
 							}
 						}, {
 							"valueCoding": {
@@ -584,7 +564,7 @@
 				}, {
 					"required": true,
 					"linkId": "423",
-					"text": "Nykyiset paikalliset oireet",
+					"text": "Nykyiset genitaalialueen paikalliset oireet",
 					"type": "choice",
 					"repeats": true,
 					"option": [{
@@ -619,11 +599,6 @@
 							}
 						}, {
 							"valueCoding": {
-								"id": "1764",
-								"display": "Kovareunainen pyöreä haava nielussa"
-							}
-						}, {
-							"valueCoding": {
 								"id": "648",
 								"display": "Syylä/syyliä siittimessä (papilloomavirus eli kondylooma eli visvasyylä ei edellytä yhdyntää, limakalvo- ja ihokosketus riittää)"
 							}
@@ -644,28 +619,13 @@
 							}
 						}, {
 							"valueCoding": {
-								"id": "1763",
-								"display": "Syylä/syyliä nielussa"
-							}
-						}, {
-							"valueCoding": {
 								"id": "650",
 								"display": "Ryhmä kipeitä rakkuloita siittimessä"
 							}
 						}, {
 							"valueCoding": {
-								"id": "1786",
-								"display": "Ryhmä kipeitä rakkuloita suussa"
-							}
-						}, {
-							"valueCoding": {
 								"id": "651",
 								"display": "Kivuton märkänäppy (1-2 viikon kuluessa tartunnasta)"
-							}
-						}, {
-							"valueCoding": {
-								"id": "1765",
-								"display": "Suun limakalvoilla vaihtelevia punoittavia tai vaaleita laikkuja ja nielemisvaikeutta tai -kipua"
 							}
 						}, {
 							"valueCoding": {
@@ -755,6 +715,75 @@
 							"valueCoding": {
 								"id": "1808",
 								"display": "Hilseileviä näppylöitä kämmenissä tai jalkapohjissa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään näistä"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
+					"enableWhen": [{
+							"question": "1007",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "1783"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "210",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
+						}
+					]
+				}, {
+					"required": true,
+					"linkId": "1126",
+					"text": "Nykyiset suun alueen paikallisoireet",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "1866",
+								"display": "Kovareunainen pyöreä haava nielussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1863",
+								"display": "Syylä/syyliä nielussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1864",
+								"display": "Ryhmä kipeitä rakkuloita suussa"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1865",
+								"display": "Suun limakalvoilla vaihtelevia punoittavia tai vaaleita laikkuja ja nielemisvaikeutta tai -kipua"
 							}
 						}, {
 							"valueCoding": {
@@ -1089,6 +1118,43 @@
 						}
 					]
 				}, {
+					"linkId": "435",
+					"text": "Mikä muu sukupuolitauti hänellä on todettu?",
+					"type": "string",
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 12,
+								"comparator": ">"
+							}
+						}, {
+							"question": "219",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "421"
+							}
+						}, {
+							"question": "221",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "677"
+							}
+						}
+					]
+				}, {
 					"required": true,
 					"linkId": "221",
 					"text": "Mikä tauti hänellä on todettu?",
@@ -1161,43 +1227,6 @@
 							"answerQuantity": {
 								"value": 12,
 								"comparator": ">"
-							}
-						}
-					]
-				}, {
-					"linkId": "435",
-					"text": "Mikä muu sukupuolitauti hänellä on todettu?",
-					"type": "string",
-					"enableWhen": [{
-							"question": "3",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerQuantity": {
-								"value": 12,
-								"comparator": ">"
-							}
-						}, {
-							"question": "219",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerCoding": {
-								"id": "421"
-							}
-						}, {
-							"question": "221",
-							"extension": [{
-									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
-									"valueString": "AND"
-								}
-							],
-							"answerCoding": {
-								"id": "677"
 							}
 						}
 					]
@@ -1418,7 +1447,7 @@
 					]
 				}, {
 					"linkId": "431",
-					"text": "Viimeisten näytteiden ajankohta",
+					"text": "Viimeisten näytteiden ajankohta (jos et muista ajankohtaa, voit ohittaa tämän kysymyksen)",
 					"type": "string",
 					"enableWhen": [{
 							"question": "3",

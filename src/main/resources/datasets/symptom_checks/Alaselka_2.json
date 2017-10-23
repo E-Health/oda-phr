@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/2/514",
-	"version": "514",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/2/600",
+	"version": "600",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-29T06:37:45.051Z",
+	"date": "2017-10-20T11:44:57.020Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -286,8 +286,36 @@
 				}, {
 					"required": true,
 					"linkId": "128",
-					"text": "Onko sinulla vaikeuksia pidättää ulostetta tai virtsaa, tai eikö virtsaaminen onnistu?",
-					"type": "boolean",
+					"text": "Onko sinulla",
+					"type": "choice",
+					"repeats": true,
+					"option": [{
+							"valueCoding": {
+								"id": "1830",
+								"display": "Vaikeuksia pidättää ulostetta?"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1831",
+								"display": "Vaikeuksia pidättää virtsaa?"
+							}
+						}, {
+							"valueCoding": {
+								"id": "1832",
+								"display": "Vaikeuksia virtsaamisessa (virtsaaminen ei onnistu)?"
+							}
+						}, {
+							"valueCoding": {
+								"id": "-1",
+								"display": "Ei mikään näistä"
+							},
+							"extension": [{
+									"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+									"valueBoolean": true
+								}
+							]
+						}
+					],
 					"enableWhen": [{
 							"question": "926",
 							"extension": [{
@@ -446,6 +474,11 @@
 								"id": "281",
 								"system": "http://loinc.org",
 								"code": "38214-3",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 0
+									}
+								],
 								"display": "0"
 							}
 						}, {
@@ -453,6 +486,11 @@
 								"id": "6",
 								"system": "http://loinc.org",
 								"code": "38214-3",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 1
+									}
+								],
 								"display": "1"
 							}
 						}, {
@@ -460,6 +498,11 @@
 								"id": "7",
 								"system": "http://loinc.org",
 								"code": "38214-3",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 2
+									}
+								],
 								"display": "2"
 							}
 						}, {
@@ -467,6 +510,11 @@
 								"id": "8",
 								"system": "http://loinc.org",
 								"code": "38214-3",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 3
+									}
+								],
 								"display": "3"
 							}
 						}, {
@@ -474,6 +522,11 @@
 								"id": "9",
 								"system": "http://loinc.org",
 								"code": "38214-3",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 4
+									}
+								],
 								"display": "4"
 							}
 						}, {
@@ -481,6 +534,11 @@
 								"id": "10",
 								"system": "http://loinc.org",
 								"code": "38214-3",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 5
+									}
+								],
 								"display": "5"
 							}
 						}, {
@@ -488,6 +546,11 @@
 								"id": "11",
 								"system": "http://loinc.org",
 								"code": "38214-3",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 6
+									}
+								],
 								"display": "6"
 							}
 						}, {
@@ -495,6 +558,11 @@
 								"id": "12",
 								"system": "http://loinc.org",
 								"code": "7",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 7
+									}
+								],
 								"display": "7"
 							}
 						}, {
@@ -502,6 +570,11 @@
 								"id": "13",
 								"system": "http://loinc.org",
 								"code": "38214-3",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 8
+									}
+								],
 								"display": "8"
 							}
 						}, {
@@ -509,6 +582,11 @@
 								"id": "14",
 								"system": "http://loinc.org",
 								"code": "38214-3",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 9
+									}
+								],
 								"display": "9"
 							}
 						}, {
@@ -516,6 +594,11 @@
 								"id": "15",
 								"system": "http://loinc.org",
 								"code": "38214-3",
+								"extension": [{
+										"url": "http://hl7.org/fhir/StructureDefinition/questionnaire-ordinalValue",
+										"valueDecimal": 10
+									}
+								],
 								"display": "10"
 							}
 						}
@@ -984,6 +1067,41 @@
 								"value": 14,
 								"comparator": ">"
 							}
+						}
+					]
+				}, {
+					"linkId": "1091",
+					"text": "Minkä syövän olet sairastanut tai mitä syöpää sairastat?",
+					"type": "string",
+					"enableWhen": [{
+							"question": "20",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "47"
+							}
+						}, {
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 14,
+								"comparator": ">"
+							}
+						}, {
+							"question": "8",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerBoolean": true
 						}
 					]
 				}, {

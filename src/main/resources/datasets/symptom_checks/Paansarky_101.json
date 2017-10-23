@@ -1,8 +1,8 @@
 {
 	"resourceType": "Questionnaire",
 	"language": "fi",
-	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/101/496",
-	"version": "496",
+	"url": "https://www.ebmeds.org/form/api/FHIR/forms/export/101/594",
+	"version": "594",
 	"meta": {
 		"profile": ["http://phr.kanta.fi/StructureDefinition/fiphr-questionnaire-stu3"],
 		"tag": [{
@@ -15,7 +15,7 @@
 		]
 	},
 	"status": "active",
-	"date": "2017-09-29T06:26:06.816Z",
+	"date": "2017-10-20T11:41:09.064Z",
 	"publisher": "© Kustannus Oy Duodecim, 2017",
 	"copyright": "© Kustannus Oy Duodecim, 2017",
 	"identifier": [{
@@ -39,7 +39,7 @@
 	],
 	"item": [{
 			"linkId": "introduction",
-			"text": "## Ohje\n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Anna oireisen henkilön taustatiedot ja vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Päänsäryn arviointi\n\nPäänsärkyyn on lukuisia syitä, viattomista särkylääkkeillä hoidettavista ohimenevistä kivuista vakaviin ja välitöntä hoitoa vaativiin sairauksiin.  \n\nTämän oirearvion tarkoituksena on ensi sijassa erottaa kiireellistä hoitoa vaativat tilanteet muista. Lieviä oireita, jotka eivät edellytä kiireellistä käyntiä vastaanotolla, on seurattava, ja oireiden mahdollisesti lisääntyessä tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan. \n\n  \nLue ensin artikkeli tästä linkistä [Päänsärky](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00322) ja tarvittaessa siihen linkitettyjä muita artikkeleita sekä päänsäryn itsehoito-ohje. Mikäli ongelmasi ei tunnu soveltuvan itsehoitoon vastaa oirearvioon.  \n\n\n\n**Jos päänsärkyä valittanut henkilö on tajuton eikä reagoi kevyeen ravisteluun, soita välittömästi numeroon 112.**  \n",
+			"text": "## Ohje\n\nOirearvion tarkoitus on antaa arvio vaivasi hoidon tarpeesta. Anna oireisen henkilön taustatiedot ja vastaa kysymyksiin oireitten mukaisesti. Saat neuvoja hoitaa ongelmaa itse ja tarvittaessa ohjeet hakeutua hoitoon kiireellisyyden mukaan.  \n\n## Päänsäryn arviointi\n\nPäänsärkyyn on lukuisia syitä, viattomista särkylääkkeillä hoidettavista ohimenevistä kivuista vakaviin ja välitöntä hoitoa vaativiin sairauksiin.  \n\nTämän oirearvion tarkoituksena on ensi sijassa erottaa kiireellistä hoitoa vaativat tilanteet muista. Lieviä oireita, jotka eivät edellytä kiireellistä käyntiä vastaanotolla, on seurattava, ja oireiden muuttuessa tai mahdollisesti lisääntyessä tehtävä uusi kysely tai otettava yhteyttä lähimpään hoitopaikkaan. \n\n  \nLue ensin artikkeli tästä linkistä [Päänsärky](http://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk00322) ja tarvittaessa siihen linkitettyjä muita artikkeleita sekä päänsäryn itsehoito-ohje. Mikäli ongelmasi ei tunnu soveltuvan itsehoitoon vastaa oirearvioon.  \n\n\n\n**Jos päänsärkyä valittanut henkilö on tajuton eikä reagoi kevyeen ravisteluun, soita välittömästi numeroon 112.**  \n",
 			"type": "group",
 			"item": [{
 					"required": true,
@@ -179,6 +179,63 @@
 							"answerQuantity": {
 								"value": 14,
 								"comparator": ">"
+							}
+						}
+					]
+				}, {
+					"linkId": "1108",
+					"text": "Iskun jälkeen alkanut kova särky voi merkitä välitöntä hoitoa vaativaa kallonsisäistä vammaa. Jos päänsärky on voimakasta, sinun on aiheellista ottaa välittömästi yhteys päivystykseen. Jos vointisi sallii, vastaa alla oleviin kysymyksiin, koska se voi nopeuttaa hoitoasi päivystyksessä.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "feedback"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "436",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "680"
+							}
+						}
+					]
+				}, {
+					"linkId": "1107",
+					"text": "Äkillisesti alkanut kova särky voi olla merkkinä välitöntä hoitoa vaativasta kallon sisäisestä sairaudesta. Jos vointisi sallii, vastaa alla oleviin kysymyksiin, koska se voi nopeuttaa hoitoasi päivystyksessä.",
+					"type": "display",
+					"_type": {
+						"extension": [{
+								"url": "https://duodecim.fi/fhir/extensions/item-type",
+								"valueString": "feedback"
+							}
+						]
+					},
+					"enableWhen": [{
+							"question": "3",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerQuantity": {
+								"value": 39,
+								"comparator": ">"
+							}
+						}, {
+							"question": "436",
+							"extension": [{
+									"url": "https://duodecim.fi/fhir/extensions/enable-when-operator",
+									"valueString": "AND"
+								}
+							],
+							"answerCoding": {
+								"id": "679"
 							}
 						}
 					]
