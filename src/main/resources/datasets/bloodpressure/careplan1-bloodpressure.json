@@ -25,8 +25,10 @@
             "code":{
                 "coding": [{"system":"urn:oid:1.2.246.537.6.96.2008","version":"1.2.246.537.6.96.2008","code":"85354-9"}]
             },
+            "definition" : {
+                "reference" : "ActivityDefinition/ACTIVITYDEFINITION1"
+            },
             "status":"not-started",
-            
             "scheduledTiming": {
                 "repeat" : {
                     "duration" : 4,       

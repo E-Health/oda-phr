@@ -182,8 +182,9 @@ app:
             - file:  datasets/symptom_checks/Sukupuolitauti_42.json
               use_update: false
             - file: datasets/bloodpressure/plandefinition1.json
+            - file: datasets/bloodpressure/activitydefinition1.json
             - file: datasets/bloodpressure/careplan1-bloodpressure.json
-              
+            - file: datasets/bloodpressure/observation1-bloodpressure.json              
 spring:
     application:
         name: phr

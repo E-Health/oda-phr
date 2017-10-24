@@ -1,0 +1,26 @@
+{
+  "resourceType" : "ActivityDefinition",
+  "language": "fi",
+  "id" : "ACTIVITYDEFINITION1",
+  "version" : "0.1",
+  "title" : "Verenpaineen mittaaminen",
+  "status" : "draft", 
+  "experimental" : true,
+  "publisher" : "ODA",
+  "description" : "Tähän kuvaus toiminnosta. Tukee markdownia.",
+  "purpose" : "<markdown>",
+  "usage" : "<string>",
+  "code" : [{
+    "coding" :[{
+        "system" : "http://loinc.org",
+        "code" : "85354-9"
+    }],
+    "text" : "Verenpaineen mittaus"
+  }],  
+  "approvalDate" : "2017-10-17",
+  "copyright" : "<markdown>", 
+  "participant" : [{
+    "type" : "patient"
+  }]
+  
+}

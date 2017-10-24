@@ -1,0 +1,110 @@
+{
+  "resourceType": "Observation",
+  "id" : "OBSERVATION1-BLOODPRESSURE",
+  "identifier": [{
+    "system": "urn:ietf:rfc:3986",
+    "value": "http://oda.fi/Observation"
+  }],  
+  "meta": {
+    "profile": [
+      "http://phr.kanta.fi/StructureDefinition/fiphr-bloodpressure-stu3"
+    ]
+  },  
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">adsafsd</div>"
+  },  
+  "language" : "fi",
+  "status": "final",
+  "category": [{
+     "coding":[{
+       "system": "http://hl7.org/fhir/observation-category",
+       "code": "vital-signs",
+       "display": "Vital Signs"
+     }]
+  }],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "85354-9",
+        "display": "Blood pressure panel with all children optional"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/PATIENT1"
+  },
+  "effectiveDateTime": "2012-09-17",
+  "issued": "2017-03-09T09:02:00+01:00",
+  "performer": [{
+    "reference": "Patient/PATIENT1"
+  }],
+  "component": [
+  {
+    "code": {
+      "coding": [{
+        "system": "http://loinc.org",
+        "code": "8480-6",
+        "display": "Systolic blood pressure"
+      }]
+    },
+    "valueQuantity": {
+      "value": 131,
+      "unit": "mm[Hg]",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    },
+    "interpretation": {
+      "coding": [{
+        "system": "http://hl7.org/fhir/v2/0078",
+        "code": "N",
+        "display": "normal"
+      }],
+      "text": "Normal"
+    },
+    "referenceRange": [{
+      "low": {
+        "value": 90,
+        "unit": "mm[Hg]"
+      },
+      "high": {
+        "value": 139,
+        "unit": "mm[Hg]"
+      }
+    }]
+  },
+  {
+    "code": {
+      "coding": [{
+        "system": "http://loinc.org",
+        "code": "8462-4",
+        "display": "Diastolic blood pressure"
+      }]
+    },
+    "valueQuantity": {
+      "value": 81,
+      "unit": "mm[Hg]",
+      "system": "http://unitsofmeasure.org",
+      "code": "mm[Hg]"
+    },
+    "interpretation": {
+      "coding": [{
+        "system": "http://hl7.org/fhir/v2/0078",
+        "code": "N",
+        "display": "normal"
+      }],
+      "text": "Normal"
+    },
+    "referenceRange": [{
+      "low": {
+        "value": 60,
+        "unit": "mm[Hg]"
+      },
+      "high": {
+        "value": 89,
+        "unit": "mm[Hg]"
+      }
+    }]
+  }]
+}

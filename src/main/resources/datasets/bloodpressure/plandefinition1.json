@@ -20,17 +20,6 @@
     "title" : "Verenpaineen seuranta (4 vrk)",
     "description" : "Mittaa verenpainettasi 4 vuorokauden ajan kolmen viikon sisällä aamuin ja illoin. ",
     "textEquivalent" : "Potilaan verenpainetta mitataan 4 vuorokauden ajan kolmen viikon sisällä aamuin ja illoin",
-    "code" : [ 
-        {
-            "coding" : [
-                {
-                    "system" : "http://loinc.org",
-                    "code" : "85354-9"
-                }
-            ],
-            "text" : "Verenpaineen mittaus"
-        }
-    ],  
     "output" : [{
         "type" : "Observation",
         "profile" : ["http://phr.kanta.fi/StructureDefinition/fiphr-bloodpressure-stu3"]
@@ -46,6 +35,9 @@
     },
     "participant" : [{ 
       "type" : "patient"
-    }]  
+    }],
+    "definition" : {
+        "reference" : "ActivityDefinition/ACTIVITYDEFINITION1"
+    }    
   }]
 }
