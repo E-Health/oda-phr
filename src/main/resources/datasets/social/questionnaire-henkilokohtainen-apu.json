@@ -46,7 +46,9 @@
   "item": [
    {
       "linkId": "OTSIKKO",
-      "text": "Huomioithan, että kysely on suuntaa-antava, eikä päätös palvelun saamisesta. Henkilökohtainen apu on välttämätöntä toisen ihmisen antamaa apua niissä tavanomaiseen elämään liittyvissä toimissa, jotka henkilö tekisi itse, mutta vamman tai sairauden vuoksi hän ei selviä niistä itse.",
+      "text": "Huomioithan, että kysely on suuntaa-antava, eikä päätös palvelun saamisesta. 
+      Henkilökohtainen apu on välttämätöntä toisen ihmisen antamaa apua niissä tavanomaiseen elämään liittyvissä toimissa, 
+      jotka henkilö tekisi itse, mutta vamman tai sairauden vuoksi hän ei selviä niistä itse.",
       "type": "display"
     },
     {

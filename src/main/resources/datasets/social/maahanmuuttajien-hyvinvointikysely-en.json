@@ -21,10 +21,10 @@
       }
     ]
   },
-  "language": "fi",
+  "language": "en",
   "text": {
     "status": "generated",
-      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Maahanmuttajien taustatietokysely</div>"
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Description of maahanmuuttajien-hyvinvointikysely</div>"
   },
   "url": "https://oda.fi/Forms/maahanmuuttajien-hyvinvointikysely",
   "identifier": [
@@ -33,45 +33,45 @@
       "value": "maahanmuuttajien-hyvinvointikysely"
     }
   ],
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "maahanmuuttajien-hyvinvointikysely",
   "title": "maahanmuuttajien-hyvinvointikysely",
   "status": "draft",
-  "date": "2017-10-17T00:00:00+03:00",
+  "date": "2017-10-24T00:00:00+03:00",
   "item": [
     {
       "linkId": "A1_HENKILOTUNNUS",
-      "text": " Sijoita käännös ( muuttuja:A1_HENKILOTUNNUS, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Finnish personal identity code (ID)",
       "type": "string",
       "required": true
     },
     {
       "linkId": "A2_SUKUNIMI",
-      "text": " Sijoita käännös ( muuttuja:A2_SUKUNIMI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Last name",
       "type": "string",
       "required": true
     },
     {
       "linkId": "A3_ETUNIMI",
-      "text": " Sijoita käännös ( muuttuja:A3_ETUNIMI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "First name",
       "type": "string",
       "required": true
     },
     {
       "linkId": "A4_PUHELINUMERO",
-      "text": " Sijoita käännös ( muuttuja:A4_PUHELINUMERO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Telephone number",
       "type": "string",
       "required": true
     },
     {
       "linkId": "A5_KIELI",
-      "text": " Sijoita käännös ( muuttuja:A5_KIELI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Language",
       "type": "string",
       "required": true
     },
     {
       "linkId": "A6_SUKUPUOLI",
-      "text": " Sijoita käännös ( muuttuja:A6_SUKUPUOLI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Gender",
       "type": "choice",
       "required": true,
       "option": [
@@ -91,7 +91,7 @@
     },
     {
       "linkId": "A7_LAPSIA",
-      "text": " Sijoita käännös ( muuttuja:A7_LAPSIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Children",
       "type": "choice",
       "required": true,
       "option": [
@@ -165,19 +165,19 @@
     },
     {
       "linkId": "A8_MINULLA_ON_VUOKRASOPIMUS_TURUSSA",
-      "text": " Sijoita käännös ( muuttuja:A8_MINULLA_ON_VUOKRASOPIMUS_TURUSSA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have a rental agreement for a dwelling which is situated in Turku",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "A9_VUOKRASOPIMUKSEN_ALKAMISPVM",
-      "text": " Sijoita käännös ( muuttuja:A9_VUOKRASOPIMUKSEN_ALKAMISPVM, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Mark the date when your rental agreement began",
       "type": "string",
       "required": true
     },
     {
       "linkId": "A10_ASUMISPAIKKA",
-      "text": " Sijoita käännös ( muuttuja:A10_ASUMISPAIKKA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I live",
       "type": "choice",
       "required": true,
       "option": [
@@ -209,12 +209,12 @@
     },
     {
       "linkId": "B_KOULUS_JA_KIELITAITO",
-      "text": " Sijoita käännös ( muuttuja:B_KOULUS_JA_KIELITAITO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Education and language skills",
       "type": "display"
     },
     {
       "linkId": "B1_KOULUTUS",
-      "text": " Sijoita käännös ( muuttuja:B1_KOULUTUS, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Education",
       "type": "choice",
       "required": true,
       "repeats": true,
@@ -253,7 +253,7 @@
     },
     {
       "linkId": "B2_KOULUVUOSIA",
-      "text": " Sijoita käännös ( muuttuja:B2_KOULUVUOSIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have attended school for",
       "type": "choice",
       "required": true,
       "option": [
@@ -333,7 +333,7 @@
     },
     {
       "linkId": "B3_AIDINKIELEN_LUKUTAITO",
-      "text": " Sijoita käännös ( muuttuja:B3_AIDINKIELEN_LUKUTAITO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:B3_AIDINKIELEN_LUKUTAITO, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "choice",
       "required": true,
       "option": [
@@ -359,7 +359,7 @@
     },
     {
       "linkId": "B4_SUOIMEN_KIELEN_LUKUTAITO",
-      "text": " Sijoita käännös ( muuttuja:B4_SUOIMEN_KIELEN_LUKUTAITO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:B4_SUOIMEN_KIELEN_LUKUTAITO, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "choice",
       "required": true,
       "option": [
@@ -385,7 +385,7 @@
     },
     {
       "linkId": "B5_ENGLANNIN_KIELEN_LUKUTAITO",
-      "text": " Sijoita käännös ( muuttuja:B5_ENGLANNIN_KIELEN_LUKUTAITO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:B5_ENGLANNIN_KIELEN_LUKUTAITO, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "choice",
       "required": true,
       "option": [
@@ -411,7 +411,7 @@
     },
     {
       "linkId": "B6_AIDINKIELEN_KIRJOITUSTAITO",
-      "text": " Sijoita käännös ( muuttuja:B6_AIDINKIELEN_KIRJOITUSTAITO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:B6_AIDINKIELEN_KIRJOITUSTAITO, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "choice",
       "required": true,
       "option": [
@@ -437,7 +437,7 @@
     },
     {
       "linkId": "B7_SUOIMEN_KIELEN_KIRJOITUSTAITO",
-      "text": " Sijoita käännös ( muuttuja:B7_SUOIMEN_KIELEN_KIRJOITUSTAITO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:B7_SUOIMEN_KIELEN_KIRJOITUSTAITO, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "choice",
       "required": true,
       "option": [
@@ -463,7 +463,7 @@
     },
     {
       "linkId": "B8_ENGLANNIN_KIELEN_KIRJOITUSTAITO",
-      "text": " Sijoita käännös ( muuttuja:B8_ENGLANNIN_KIELEN_KIRJOITUSTAITO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:B8_ENGLANNIN_KIELEN_KIRJOITUSTAITO, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "choice",
       "required": true,
       "option": [
@@ -489,7 +489,7 @@
     },
     {
       "linkId": "B9_AIDINKIELEN_PUHETAITO",
-      "text": " Sijoita käännös ( muuttuja:B9_AIDINKIELEN_PUHETAITO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:B9_AIDINKIELEN_PUHETAITO, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "choice",
       "required": true,
       "option": [
@@ -515,7 +515,7 @@
     },
     {
       "linkId": "B10_SUOIMEN_KIELEN_PUHETAITO",
-      "text": " Sijoita käännös ( muuttuja:B10_SUOIMEN_KIELEN_PUHETAITO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:B10_SUOIMEN_KIELEN_PUHETAITO, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "choice",
       "required": true,
       "option": [
@@ -541,7 +541,7 @@
     },
     {
       "linkId": "B11_ENGLANNIN_KIELEN_PUHETAITO",
-      "text": " Sijoita käännös ( muuttuja:B11_ENGLANNIN_KIELEN_PUHETAITO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:B11_ENGLANNIN_KIELEN_PUHETAITO, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "choice",
       "required": true,
       "option": [
@@ -567,42 +567,42 @@
     },
     {
       "linkId": "C_PERHE_JA_YSTAVAT",
-      "text": " Sijoita käännös ( muuttuja:C_PERHE_JA_YSTAVAT, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Family and friends",
       "type": "display"
     },
     {
       "linkId": "C1_TURUSSA_YDINPERHETTA",
-      "text": " Sijoita käännös ( muuttuja:C1_TURUSSA_YDINPERHETTA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:C1_TURUSSA_YDINPERHETTA, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "C2_TURUSSA_SUKULAISIA",
-      "text": " Sijoita käännös ( muuttuja:C2_TURUSSA_SUKULAISIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:C2_TURUSSA_SUKULAISIA, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "C3_TURUSSA_YSTAVIA",
-      "text": " Sijoita käännös ( muuttuja:C3_TURUSSA_YSTAVIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:C3_TURUSSA_YSTAVIA, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "C4_YDINPERHEEN_JASENIA_SUOMEN_ULKOPUOLELLA",
-      "text": " Sijoita käännös ( muuttuja:C4_YDINPERHEEN_JASENIA_SUOMEN_ULKOPUOLELLA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have members of my immediate family who are outside Finland",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "C5_HAKENUT_PERHEEN_YHDISTAMISTA",
-      "text": " Sijoita käännös ( muuttuja:C5_HAKENUT_PERHEEN_YHDISTAMISTA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have applied for my family members to come to Finland through family reunification",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "C6_TUNNETKO_ITSESI_YKSINAISEKSI",
-      "text": " Sijoita käännös ( muuttuja:C6_TUNNETKO_ITSESI_YKSINAISEKSI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Do you feel lonely",
       "type": "choice",
       "required": true,
       "option": [
@@ -640,12 +640,12 @@
     },
     {
       "linkId": "F_TYOKYKY",
-      "text": " Sijoita käännös ( muuttuja:F_TYOKYKY, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Irrespective of whether you are in paid employment or not, please evaluate your present ability to work",
       "type": "display"
     },
     {
       "linkId": "F1_MIKA_ON_NYKYINEN_TYOKYKYSI",
-      "text": " Sijoita käännös ( muuttuja:F1_MIKA_ON_NYKYINEN_TYOKYKYSI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Are you?",
       "type": "choice",
       "required": true,
       "option": [
@@ -671,7 +671,7 @@
     },
     {
       "linkId": "F2_TYOKYKYSI_PISTEMAARA",
-      "text": " Sijoita käännös ( muuttuja:F2_TYOKYKYSI_PISTEMAARA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Let us assume that, at its best, your ability work receives 10 points. How many points would you give your present ability to work on a scale of 0 to 10? (0 means that you cannot work at all.)",
       "type": "choice",
       "required": true,
       "option": [
@@ -745,7 +745,7 @@
     },
     {
       "linkId": "F3_KYKENETKO_KAVELEMAAN_500M",
-      "text": " Sijoita käännös ( muuttuja:F3_KYKENETKO_KAVELEMAAN_500M, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Can you walk for about half a kilometre without resting?",
       "type": "choice",
       "required": true,
       "option": [
@@ -777,7 +777,7 @@
     },
     {
       "linkId": "F4_PAIHDE_KAYTTO",
-      "text": " Sijoita käännös ( muuttuja:F4_PAIHDE_KAYTTO, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I use daily/regularly",
       "type": "choice",
       "required": true,
       "repeats": true,
@@ -810,250 +810,250 @@
     },
     {
       "linkId": "F5_OLETKO_KOKENUT_PAHOINPITELYA_TAI_KIDUTUSTA",
-      "text": " Sijoita käännös ( muuttuja:F5_OLETKO_KOKENUT_PAHOINPITELYA_TAI_KIDUTUSTA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have experienced physical/mental abuse or torture",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "F6_OLETKO_KOKENUT_PAHOINPITELYA_TAI_UHKAA_PERHEENJASENEN_TAHOLTA",
-      "text": " Sijoita käännös ( muuttuja:F6_OLETKO_KOKENUT_PAHOINPITELYA_TAI_UHKAA_PERHEENJASENEN_TAHOLTA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have experienced physical or mental violence or the threat of it from a family member",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "F7_OLEN_ITSE_KAYTTANYT_FYYSISTA_TAI_PSYYKKISTA_VAKIVALTAA",
-      "text": " Sijoita käännös ( muuttuja:F7_OLEN_ITSE_KAYTTANYT_FYYSISTA_TAI_PSYYKKISTA_VAKIVALTAA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I myself have used physical or mental violence",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "F8_OLEN_ITSE_KAYTTANYT_FYYSISTA_TAI_PSYYKKISTA_VAKIVALTAA_PERHEENJASENTA_KOHTAAN",
-      "text": " Sijoita käännös ( muuttuja:F8_OLEN_ITSE_KAYTTANYT_FYYSISTA_TAI_PSYYKKISTA_VAKIVALTAA_PERHEENJASENTA_KOHTAAN, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I myself have used physical or mental violence against a member of my family ",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G_TERVEYDENTILA",
-      "text": " Sijoita käännös ( muuttuja:G_TERVEYDENTILA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "State of health",
       "type": "display"
     },
     {
       "linkId": "G1_TODETTU_VATSAVAIVOJA",
-      "text": " Sijoita käännös ( muuttuja:G1_TODETTU_VATSAVAIVOJA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Stomach problems",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G2_TUKILIIKUNTAELIN_SAIRAUS",
-      "text": " Sijoita käännös ( muuttuja:G2_TUKILIIKUNTAELIN_SAIRAUS, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Musculoskeletal disease (e.g. back problems)",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G3_NAKO_ONGELMIA",
-      "text": " Sijoita käännös ( muuttuja:G3_NAKO_ONGELMIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Vision problems",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G4_KUULO_ONGELMIA",
-      "text": " Sijoita käännös ( muuttuja:G4_KUULO_ONGELMIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Hearing problems",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G5_MIELIALA_UNI_ONGELMIA",
-      "text": " Sijoita käännös ( muuttuja:G5_MIELIALA_UNI_ONGELMIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Depression, bad feelings or sleeping problems",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G6_PAANSARKY",
-      "text": " Sijoita käännös ( muuttuja:G6_PAANSARKY, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Headache",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G7_SYDANSAIRAUS_TAI_VERENPAINE",
-      "text": " Sijoita käännös ( muuttuja:G7_SYDANSAIRAUS_TAI_VERENPAINE, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Heart disease or high blood pressure",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G8_VIRTSAAMISONGELMA",
-      "text": " Sijoita käännös ( muuttuja:G8_VIRTSAAMISONGELMA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Urinary problems",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G9_IHOSAIRAUS",
-      "text": " Sijoita käännös ( muuttuja:G9_IHOSAIRAUS, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Skin condition",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G11_DIABETES",
-      "text": " Sijoita käännös ( muuttuja:G11_DIABETES, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Diabetes",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G12_VERISAIRAUS",
-      "text": " Sijoita käännös ( muuttuja:G12_VERISAIRAUS, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Blood disease",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G13_AIVOHALVAUS",
-      "text": " Sijoita käännös ( muuttuja:G13_AIVOHALVAUS, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Stroke\t\t\t\t",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G14_SYOPA",
-      "text": " Sijoita käännös ( muuttuja:G14_SYOPA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Cancer",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G15_OLEN_OLLUT_SAIRAALAHOIDOSSA",
-      "text": " Sijoita käännös ( muuttuja:G15_OLEN_OLLUT_SAIRAALAHOIDOSSA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have been in hospital care",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "G16_MINULLE_ON_TEHTY_LEIKKAUKSIA",
-      "text": " Sijoita käännös ( muuttuja:G16_MINULLE_ON_TEHTY_LEIKKAUKSIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have had operation",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H_KEUHKOTUBERKULOOSIKYSELY",
-      "text": " Sijoita käännös ( muuttuja:H_KEUHKOTUBERKULOOSIKYSELY, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Pulmonary tuberculosis questionnaire",
       "type": "display"
     },
     {
       "linkId": "H1_MINULLA_OLLUT_YLI_KOLME_VIIKKOA_YSKAA",
-      "text": " Sijoita käännös ( muuttuja:H1_MINULLA_OLLUT_YLI_KOLME_VIIKKOA_YSKAA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have had a cough for over three weeks and I don’t know why",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H2A_OLEN_YSKINYT_LIMAA",
-      "text": " Sijoita käännös ( muuttuja:H2A_OLEN_YSKINYT_LIMAA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have coughed up phlegm",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H2B_OLEN_YSKINYT_VERTA",
-      "text": " Sijoita käännös ( muuttuja:H2B_OLEN_YSKINYT_VERTA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have coughed up blood",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H3_MINULLA_ON_OLLUT_KUUMETTA_VIIM_KK_AIKANA",
-      "text": " Sijoita käännös ( muuttuja:H3_MINULLA_ON_OLLUT_KUUMETTA_VIIM_KK_AIKANA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have had a fever during the last month for several days",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H4_OLEN_LAIHTUNUT",
-      "text": " Sijoita käännös ( muuttuja:H4_OLEN_LAIHTUNUT, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have lost weight",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H5_MINULLA_ON_YOHIKOILUA",
-      "text": " Sijoita käännös ( muuttuja:H5_MINULLA_ON_YOHIKOILUA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have had night sweating",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H6_MINULLA_ON_KIPUA_RINTAKEHAN_ALUEELLA",
-      "text": " Sijoita käännös ( muuttuja:H6_MINULLA_ON_KIPUA_RINTAKEHAN_ALUEELLA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have pain in the area of my ribcage or side",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H7_HENGASTYN_HELPOMMIN_KUIN_ENNEN",
-      "text": " Sijoita käännös ( muuttuja:H7_HENGASTYN_HELPOMMIN_KUIN_ENNEN, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I get out of breath easier than before",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H8_OLEN_OLLUT_NORMAALIA_VASYNEEMPI",
-      "text": " Sijoita käännös ( muuttuja:H8_OLEN_OLLUT_NORMAALIA_VASYNEEMPI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have been more tired than normally",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H9_OLEN_SAIRASTANUT_TUBERKULOOSIN",
-      "text": " Sijoita käännös ( muuttuja:H9_OLEN_SAIRASTANUT_TUBERKULOOSIN, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have had tuberculosis before",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H10_TUBERKULOOSINI_ON_HOIDETTU",
-      "text": " Sijoita käännös ( muuttuja:H10_TUBERKULOOSINI_ON_HOIDETTU, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "which has been treated",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "H11_PERHEESSA_TAI_LEHIPIIRISSA_TUBERKULOOSIA",
-      "text": " Sijoita käännös ( muuttuja:H11_PERHEESSA_TAI_LEHIPIIRISSA_TUBERKULOOSIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Someone in my family or a person close to me (at my school, at my workplace) has had tuberculosis",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "J_LAAKITYS",
-      "text": " Sijoita käännös ( muuttuja:J_LAAKITYS, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Medication",
       "type": "display"
     },
     {
       "linkId": "J1_KAYTOSSANI_SAANNOLLINEN_LAAKITYS",
-      "text": " Sijoita käännös ( muuttuja:J1_KAYTOSSANI_SAANNOLLINEN_LAAKITYS, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I am using regular medication",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "J2_LAAKERESEPTINI_VAATII_PIKAISTA_UUSIMISTA",
-      "text": " Sijoita käännös ( muuttuja:J2_LAAKERESEPTINI_VAATII_PIKAISTA_UUSIMISTA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "My prescription must be renewed quickly",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "J3_ONKO_ALLERGIOITA",
-      "text": " Sijoita käännös ( muuttuja:J3_ONKO_ALLERGIOITA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have been diagnosed with an allergy. I am allergic to",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "J4_RUOKA_ALLERGIA",
-      "text": " Sijoita käännös ( muuttuja:J4_RUOKA_ALLERGIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Some food",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "J5_ELAIN_ALLERGIA",
-      "text": " Sijoita käännös ( muuttuja:J5_ELAIN_ALLERGIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Some animal(s)",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "J6_SIITEPOLY_ALLERGIA",
-      "text": " Sijoita käännös ( muuttuja:J6_SIITEPOLY_ALLERGIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Pollen",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "J7_LAAKE_ALLERGIA",
-      "text": " Sijoita käännös ( muuttuja:J7_LAAKE_ALLERGIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "A medication",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "J9_OLEN_SAANUT_ROKOTUKSIA",
-      "text": " Sijoita käännös ( muuttuja:J9_OLEN_SAANUT_ROKOTUKSIA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have received vaccinations",
       "type": "choice",
       "required": true,
       "repeats": true,
@@ -1092,7 +1092,7 @@
     },
     {
       "linkId": "J10_HAMPAAT",
-      "text": " Sijoita käännös ( muuttuja:J10_HAMPAAT, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Teeth",
       "type": "choice",
       "required": true,
       "repeats": true,
@@ -1125,7 +1125,7 @@
     },
     {
       "linkId": "J11_MITEN_KOEN_TERVEYDENTILANI",
-      "text": " Sijoita käännös ( muuttuja:J11_MITEN_KOEN_TERVEYDENTILANI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I feel that my state of health is",
       "type": "choice",
       "required": true,
       "repeats": true,
@@ -1152,18 +1152,18 @@
     },
     {
       "linkId": "K_VAIN_NAISILLE",
-      "text": " Sijoita käännös ( muuttuja:K_VAIN_NAISILLE, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "ONLY for women",
       "type": "display"
     },
     {
       "linkId": "K1_OLETKO_OLLUT_RASKAANA",
-      "text": " Sijoita käännös ( muuttuja:K1_OLETKO_OLLUT_RASKAANA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Have you been pregnant before",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "K2_SYNNYTYSTEN_MAARA",
-      "text": " Sijoita käännös ( muuttuja:K2_SYNNYTYSTEN_MAARA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Births – how many",
       "type": "choice",
       "required": true,
       "option": [
@@ -1237,7 +1237,7 @@
     },
     {
       "linkId": "K3_OLEN_PARHAILLAAN_RASKAANA",
-      "text": " Sijoita käännös ( muuttuja:K3_OLEN_PARHAILLAAN_RASKAANA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I am pregnant",
       "type": "choice",
       "required": true,
       "option": [
@@ -1263,25 +1263,25 @@
     },
     {
       "linkId": "K4_MINULLE_ON_TEHTY_YMPARILEIKKAUS",
-      "text": " Sijoita käännös ( muuttuja:K4_MINULLE_ON_TEHTY_YMPARILEIKKAUS, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have been circumcised",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "K5_MINULLA_ON_GYNEGOLOGISIA_VAIVOJA",
-      "text": " Sijoita käännös ( muuttuja:K5_MINULLA_ON_GYNEGOLOGISIA_VAIVOJA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I have gynaecological problems",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "K6_KAYTAN_EHKAISYA",
-      "text": " Sijoita käännös ( muuttuja:K6_KAYTAN_EHKAISYA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I use contraception",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "K7_EHKAISYTAPA",
-      "text": " Sijoita käännös ( muuttuja:K7_EHKAISYTAPA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:K7_EHKAISYTAPA, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "choice",
       "required": true,
       "repeats": true,
@@ -1320,83 +1320,83 @@
     },
     {
       "linkId": "D_VIRANOMAISKONTAKTIT",
-      "text": " Sijoita käännös ( muuttuja:D_VIRANOMAISKONTAKTIT, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "I/my family has the following official contacts",
       "type": "display"
     },
     {
       "linkId": "D5_EPAILTY_TAI_TUOMITTU_RIKOKSESTA_SUOMESSA",
-      "text": " Sijoita käännös ( muuttuja:D5_EPAILTY_TAI_TUOMITTU_RIKOKSESTA_SUOMESSA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:D5_EPAILTY_TAI_TUOMITTU_RIKOKSESTA_SUOMESSA, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "D6_EPAILTY_TAI_TUOMITTU_RIKOKSESTA_MUUALLA",
-      "text": " Sijoita käännös ( muuttuja:D6_EPAILTY_TAI_TUOMITTU_RIKOKSESTA_MUUALLA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": " Sijoita käännös ( muuttuja:D6_EPAILTY_TAI_TUOMITTU_RIKOKSESTA_MUUALLA, kielikoodi: en) tähän (hipsukoiden väliin) ",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "D1_LASTENSUOJELU_KONTAKTI",
-      "text": " Sijoita käännös ( muuttuja:D1_LASTENSUOJELU_KONTAKTI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Child welfare",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "D2_LASTENVALVOJA_KONTAKTI",
-      "text": " Sijoita käännös ( muuttuja:D2_LASTENVALVOJA_KONTAKTI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Child welfare officer",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "D3_TE_TOIMISTO_KONTAKTI",
-      "text": " Sijoita käännös ( muuttuja:D3_TE_TOIMISTO_KONTAKTI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "TE Office (employment agency)",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "D4_KELA_KONTAKTI",
-      "text": " Sijoita käännös ( muuttuja:D4_KELA_KONTAKTI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "KELA (The Social Insurance Institution of Finland)",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "E_TUKITARVE",
-      "text": " Sijoita käännös ( muuttuja:E_TUKITARVE, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "At an appointed time, I would like to discuss, among other things",
       "type": "display"
     },
     {
       "linkId": "E1_ASIOINTI_VUOKRANMAKSU",
-      "text": " Sijoita käännös ( muuttuja:E1_ASIOINTI_VUOKRANMAKSU, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Rental payment",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "E2_ASIOINTI_LASTENKASVATUS",
-      "text": " Sijoita käännös ( muuttuja:E2_ASIOINTI_LASTENKASVATUS, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Bringing up children",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "E5_ASIOINTI_OMA_OPISKELU",
-      "text": " Sijoita käännös ( muuttuja:E5_ASIOINTI_OMA_OPISKELU, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "My studies/education",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "E6_ASIOINTI_LASTEN_KOULUNKAYNTI",
-      "text": " Sijoita käännös ( muuttuja:E6_ASIOINTI_LASTEN_KOULUNKAYNTI, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "The attendance of my children at school",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "E7_ASIOINTI_VIRANOMAISET_YLEENSA",
-      "text": " Sijoita käännös ( muuttuja:E7_ASIOINTI_VIRANOMAISET_YLEENSA, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Official matters in general",
       "type": "boolean",
       "required": true
     },
     {
       "linkId": "E8_ASIOINTI_OMASTA_TERVEYDESTA_HUOLEHTIMINEN",
-      "text": " Sijoita käännös ( muuttuja:E8_ASIOINTI_OMASTA_TERVEYDESTA_HUOLEHTIMINEN, kielikoodi: fi) tähän (hipsukoiden väliin) ",
+      "text": "Health-related matters",
       "type": "boolean",
       "required": true
     }
