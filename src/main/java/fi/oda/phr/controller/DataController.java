@@ -31,4 +31,9 @@ public class DataController {
         httpServletResponse.setStatus(HttpServletResponse.SC_OK);
         log.debug("Done");
     }
+
+    @GetMapping("/editor")
+    public String editor() {
+        return "index";
+    }
 }
