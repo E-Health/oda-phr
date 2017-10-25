@@ -1,21 +1,23 @@
 package fi.oda.phr.controller;
 
-import javax.servlet.http.*;
-
-import org.slf4j.*;
-import org.springframework.web.bind.annotation.*;
-
 import ca.uhn.fhir.rest.client.IGenericClient;
-import fi.oda.phr.config.*;
+import fi.oda.phr.config.DataConfig;
+import fi.oda.phr.config.DatasetInitializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class DataController {
-    private DatasetInitializer dataInitializer;
-
-    private DataConfig dataConfig;
-
-    private IGenericClient fhirClient;
     private final Logger log = LoggerFactory.getLogger(DataController.class);
+    private DatasetInitializer dataInitializer;
+    private DataConfig dataConfig;
+    private IGenericClient fhirClient;
 
     public DataController(DatasetInitializer dataInitializer, IGenericClient fhirClient, DataConfig dataConfig) {
         this.dataConfig = dataConfig;
@@ -32,8 +34,4 @@ public class DataController {
         log.debug("Done");
     }
 
-    @GetMapping("/editor")
-    public String editor() {
-        return "index";
-    }
 }
