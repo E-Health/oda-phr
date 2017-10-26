@@ -2,7 +2,7 @@
 #    level:
   #    ROOT: DEBUG
 #    ca.uhn.fhir.rest.server: DEBUG
-
+# Port changed to 8080 from 6083 for testing
 server:
     port: 6083
     use-forward-headers: true
@@ -16,178 +16,177 @@ app:
     localUrls:
            - https://oda.medidemo.fi/phr/baseDstu3
            - http://localhost:8081/phr/baseDstu3
-    data:          
+    data:
         feed_on_start: true
-        headers:
-             ODA-INSTANCE-ID: oda.medidemo.fi
+
         # NOTE: keep the resources in order!
         # The resources have references to one another.
         # Add new resources to the end of the list.
 
         resources:
-            - file: datasets/symptom_checks/Hengitystietulehdus_107.json
-              use_update: false
-
-            - file: datasets/misc/location1.json
-            - file: datasets/misc/location2.json
-            - file: datasets/misc/organization1.json
-            - file: datasets/misc/healthcareservice1.json
-            - file: datasets/misc/practitioner4.json
-            - file: datasets/misc/person-practitioner4.json
-            - file: datasets/misc/careteam3-authorization.json
-
-            - file: datasets/servicerequestlist/practitioner1.json
-            - file: datasets/servicerequestlist/practitioner2.json
-            - file: datasets/servicerequestlist/practitioner3.json
-            - file: datasets/servicerequestlist/practitioner5.json
-            - file: datasets/servicerequestlist/person-practitioner1.json
-            - file: datasets/servicerequestlist/person-practitioner2.json
-            - file: datasets/servicerequestlist/person-practitioner3.json
-            - file: datasets/servicerequestlist/person-practitioner5.json
-            - file: datasets/servicerequestlist/practitioner1-role.json
-            - file: datasets/servicerequestlist/practitioner2-role.json
-            - file: datasets/servicerequestlist/practitioner3-role.json
-            - file: datasets/servicerequestlist/practitioner5-role.json
-            - file: datasets/servicerequestlist/patient1.json
-            - file: datasets/servicerequestlist/patient2.json
-            - file: datasets/servicerequestlist/patient3.json
-            - file: datasets/servicerequestlist/patient4.json
-            - file: datasets/servicerequestlist/patient5.json
-            - file: datasets/servicerequestlist/patient6.json
-            - file: datasets/servicerequestlist/patient7.json
-            - file: datasets/servicerequestlist/patient8.json
-            - file: datasets/servicerequestlist/person-patient1.json               
-            - file: datasets/servicerequestlist/person-patient2.json
-            - file: datasets/servicerequestlist/person-patient3.json
-            - file: datasets/servicerequestlist/person-patient4.json
-            - file: datasets/servicerequestlist/person-patient5.json
-            - file: datasets/servicerequestlist/person-patient6.json
-            - file: datasets/servicerequestlist/person-patient7.json
-            - file: datasets/servicerequestlist/person-patient8.json
-            - file: datasets/servicerequestlist/careteam-authorization.json
-            - file: datasets/servicerequestlist/careteam1-care.json
-            - file: datasets/servicerequestlist/careteam2-care.json
-            - file: datasets/servicerequestlist/careteam3-care.json
-            - file: datasets/servicerequestlist/careteam4-care.json
-            - file: datasets/servicerequestlist/careteam5-care.json
-            - file: datasets/servicerequestlist/episodeofcare-patient1.json
-            - file: datasets/servicerequestlist/episodeofcare-patient2.json
-            - file: datasets/servicerequestlist/episodeofcare-patient3.json
-            - file: datasets/servicerequestlist/episodeofcare-patient4.json
-            - file: datasets/servicerequestlist/episodeofcare-patient5.json
-            - file: datasets/servicerequestlist/careplan-patient1.json
-            - file: datasets/servicerequestlist/careplan-patient2.json
-            - file: datasets/servicerequestlist/careplan-patient3.json
-            - file: datasets/servicerequestlist/careplan-patient4.json
-            - file: datasets/servicerequestlist/careplan-patient5.json
-            - file: datasets/servicerequestlist/careplan-patient6.json
-            - file: datasets/servicerequestlist/careplan-patient7.json
-            - file: datasets/servicerequestlist/careplan-patient8.json
-            - file: datasets/servicerequestlist/observation1-patient2.json
-            - file: datasets/servicerequestlist/observation1-patient1.json
-            - file: datasets/servicerequestlist/observation2-patient1.json
-            - file: datasets/servicerequestlist/observation3-patient1.json
-            - file: datasets/servicerequestlist/observation4-patient1.json
-            - file: datasets/servicerequestlist/observation5-patient1.json
-            - file: datasets/servicerequestlist/observation6-patient1.json
-            - file: datasets/servicerequestlist/observation7-patient1.json
-            - file: datasets/servicerequestlist/communication-notification1-patient1.json
-            - file: datasets/servicerequestlist/communication-notification2-patient1.json
-            - file: datasets/servicerequestlist/communication-patient1.json
-            - file: datasets/servicerequestlist/communication-patient2.json
-            - file: datasets/questionnaires/feedback-issue.json
-            - file: datasets/questionnaires/feedback-satisfaction.json
-            - file: datasets/questionnaires/service-request.json
-            - file: profiles/ODA-ActivityDefinition.profile.xml
-              use_update: false
-            - file: profiles/ODA-CarePlan.profile.xml
-              use_update: false
-            - file: profiles/ODA-CareTeam.profile.xml
-              use_update: false
-            - file: profiles/ODA-Communication.profile.xml
-              use_update: false
-            - file: profiles/ODA-EpisodeOfCare.profile.xml
-              use_update: false
-            - file: profiles/ODA-Goal.profile.xml
-              use_update: false
-            - file: profiles/ODA-MedicationStatement.profile.xml
-              use_update: false
-            - file: profiles/ODA-Observation.profile.xml
-              use_update: false
-            - file: profiles/ODA-Organization.profile.xml
-              use_update: false
-            - file: profiles/ODA-Person.profile.xml
-              use_update: false
-            - file: profiles/ODA-Practitioner.profile.xml
-              use_update: false
-            - file: profiles/ODA-Questionnaire.profile.xml
-              use_update: false
-            - file: profiles/ODA-QuestionnaireResponse.profile.xml
-              use_update: false
-            - file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
-              use_update: false
-
-            - file: datasets/APPOINTMENT/ODALocation-example.json
-            - file: datasets/APPOINTMENT/ODAOrganization-example.json
-            - file: datasets/APPOINTMENT/ODAPatient-example.json
-            - file: datasets/APPOINTMENT/ODAPractitioner-example.json
-            - file: datasets/APPOINTMENT/ODASchedule-example.json
-            - file: datasets/APPOINTMENT/ODASlot-example.json
-            - file: datasets/APPOINTMENT/ODAEndpoint-example.json
-            - file: datasets/APPOINTMENT/ODAHealthcareService-example.json
-            - file: datasets/APPOINTMENT/ODACareTeam-example.json
-            - file: datasets/APPOINTMENT/ODAAppointment-example.json
-
-            - file: valueSets/practitioner-role-valueset.json
-            - file: valueSets/location-valueset.json
-            - file: codeSystems/action-type-codesystem.json
-            - file: codeSystems/encounter-reason-codesystem.json
-            - file: codeSystems/endpoint-connection-type-codesystem.json
-
-            - file: datasets/symptom_checks/Yska_22.json
-              use_update: false
-            - file: datasets/symptom_checks/Virtsatietulehdus_21.json
-              use_update: false
-            - file: datasets/symptom_checks/Korvakipu_26.json
-              use_update: false
-            - file: datasets/symptom_checks/Kurkkukipu_3.json
-              use_update: false
-            - file: datasets/symptom_checks/Ripuli_41.json
-              use_update: false
-            - file: datasets/symptom_checks/Alaselka_2.json
-              use_update: false
-            - file: datasets/symptom_checks/Narastys_27.json
-              use_update: false
-            - file: datasets/symptom_checks/Olkapaa_83.json
-              use_update: false
-            - file: datasets/symptom_checks/Paansarky_101.json
-              use_update: false
-            - file: datasets/symptom_checks/Peraaukko_28.json
-              use_update: false
-            - file: datasets/symptom_checks/Polvi_106.json
-              use_update: false
-            - file: datasets/symptom_checks/Silma_124.json
-              use_update: false
-
-            - file: datasets/social/questionnaire-henkilokohtainen-apu.json
-              use_update: false
-            - file: datasets/social/questionnaire-kuljetusapu.json
-              use_update: false
-            - file: datasets/social/questionnaire-omaishoidon-tuki.json
-              use_update: false
-            - file: datasets/social/maahanmuuttajien-hyvinvointikysely-en.json
-              use_update: false            
-            - file:  datasets/symptom_checks/Terveystarkastus_153.json
-              use_update: false
-            - file:  datasets/symptom_checks/Sukupuolitauti_42.json
-              use_update: false
-            - file: datasets/bloodpressure/plandefinition1.json
-            - file: datasets/bloodpressure/activitydefinition1.json
-            - file: datasets/bloodpressure/careplan1-bloodpressure.json
-            - file: datasets/bloodpressure/observation1-bloodpressure.json              
+              - file: profiles/CQIF-Questionnaire.profile.xml
+                use_update: false
+              - file: datasets/questionnaires/feedback-issue.json
+              - file: DataElements/de-example-prothrombin-time.json
+#            - file: datasets/symptom_checks/Hengitystietulehdus_107.json
+#              use_update: false
+#
+#            - file: datasets/misc/location1.json
+#            - file: datasets/misc/organization1.json
+#            - file: datasets/misc/healthcareservice1.json
+#            - file: datasets/misc/practitioner4.json
+#            - file: datasets/misc/person-practitioner4.json
+#            - file: datasets/misc/careteam3-authorization.json
+#
+#            - file: datasets/servicerequestlist/practitioner1.json
+#            - file: datasets/servicerequestlist/practitioner2.json
+#            - file: datasets/servicerequestlist/practitioner3.json
+#            - file: datasets/servicerequestlist/practitioner5.json
+#            - file: datasets/servicerequestlist/person-practitioner1.json
+#            - file: datasets/servicerequestlist/person-practitioner2.json
+#            - file: datasets/servicerequestlist/person-practitioner3.json
+#            - file: datasets/servicerequestlist/person-practitioner5.json
+#            - file: datasets/servicerequestlist/practitioner1-role.json
+#            - file: datasets/servicerequestlist/practitioner2-role.json
+#            - file: datasets/servicerequestlist/practitioner3-role.json
+#            - file: datasets/servicerequestlist/practitioner5-role.json
+#            - file: datasets/servicerequestlist/patient1.json
+#            - file: datasets/servicerequestlist/patient2.json
+#            - file: datasets/servicerequestlist/patient3.json
+#            - file: datasets/servicerequestlist/patient4.json
+#            - file: datasets/servicerequestlist/patient5.json
+#            - file: datasets/servicerequestlist/patient6.json
+#            - file: datasets/servicerequestlist/patient7.json
+#            - file: datasets/servicerequestlist/patient8.json
+#            - file: datasets/servicerequestlist/person-patient1.json
+#            - file: datasets/servicerequestlist/person-patient2.json
+#            - file: datasets/servicerequestlist/person-patient3.json
+#            - file: datasets/servicerequestlist/person-patient4.json
+#            - file: datasets/servicerequestlist/person-patient5.json
+#            - file: datasets/servicerequestlist/person-patient6.json
+#            - file: datasets/servicerequestlist/person-patient7.json
+#            - file: datasets/servicerequestlist/person-patient8.json
+#            - file: datasets/servicerequestlist/careteam-authorization.json
+#            - file: datasets/servicerequestlist/careteam1-care.json
+#            - file: datasets/servicerequestlist/careteam2-care.json
+#            - file: datasets/servicerequestlist/careteam3-care.json
+#            - file: datasets/servicerequestlist/careteam4-care.json
+#            - file: datasets/servicerequestlist/careteam5-care.json
+#            - file: datasets/servicerequestlist/episodeofcare-patient1.json
+#            - file: datasets/servicerequestlist/episodeofcare-patient2.json
+#            - file: datasets/servicerequestlist/episodeofcare-patient3.json
+#            - file: datasets/servicerequestlist/episodeofcare-patient4.json
+#            - file: datasets/servicerequestlist/episodeofcare-patient5.json
+#            - file: datasets/servicerequestlist/careplan-patient1.json
+#            - file: datasets/servicerequestlist/careplan-patient2.json
+#            - file: datasets/servicerequestlist/careplan-patient3.json
+#            - file: datasets/servicerequestlist/careplan-patient4.json
+#            - file: datasets/servicerequestlist/careplan-patient5.json
+#            - file: datasets/servicerequestlist/careplan-patient6.json
+#            - file: datasets/servicerequestlist/careplan-patient7.json
+#            - file: datasets/servicerequestlist/careplan-patient8.json
+#            - file: datasets/servicerequestlist/observation1-patient2.json
+#            - file: datasets/servicerequestlist/observation1-patient1.json
+#            - file: datasets/servicerequestlist/observation2-patient1.json
+#            - file: datasets/servicerequestlist/observation3-patient1.json
+#            - file: datasets/servicerequestlist/observation4-patient1.json
+#            - file: datasets/servicerequestlist/observation5-patient1.json
+#            - file: datasets/servicerequestlist/observation6-patient1.json
+#            - file: datasets/servicerequestlist/observation7-patient1.json
+#            - file: datasets/servicerequestlist/communication-notification1-patient1.json
+#            - file: datasets/servicerequestlist/communication-notification2-patient1.json
+#            - file: datasets/servicerequestlist/communication-patient1.json
+#            - file: datasets/servicerequestlist/communication-patient2.json
+#            - file: datasets/questionnaires/feedback-issue.json
+#            - file: datasets/questionnaires/feedback-satisfaction.json
+#            - file: datasets/questionnaires/service-request.json
+#            - file: profiles/ODA-ActivityDefinition.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-CarePlan.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-CareTeam.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-Communication.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-EpisodeOfCare.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-Goal.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-MedicationStatement.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-Observation.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-Organization.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-Person.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-Practitioner.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-Questionnaire.profile.xml
+#              use_update: false
+#            - file: profiles/ODA-QuestionnaireResponse.profile.xml
+#              use_update: false
+#            - file: datasets/questionnaires/Oikeus_henkilokohtaiseen_apuun.json
+#              use_update: false
+#
+#            - file: datasets/APPOINTMENT/ODALocation-example.json
+#            - file: datasets/APPOINTMENT/ODAOrganization-example.json
+#            - file: datasets/APPOINTMENT/ODAPatient-example.json
+#            - file: datasets/APPOINTMENT/ODAPractitioner-example.json
+#            - file: datasets/APPOINTMENT/ODASchedule-example.json
+#            - file: datasets/APPOINTMENT/ODASlot-example.json
+#            - file: datasets/APPOINTMENT/ODAEndpoint-example.json
+#            - file: datasets/APPOINTMENT/ODAHealthcareService-example.json
+#            - file: datasets/APPOINTMENT/ODACareTeam-example.json
+#            - file: datasets/APPOINTMENT/ODAAppointment-example.json
+#
+#            - file: valueSets/practitioner-role-valueset.json
+#            - file: valueSets/location-valueset.json
+#            - file: codeSystems/action-type-codesystem.json
+#            - file: codeSystems/encounter-reason-codesystem.json
+#            - file: codeSystems/endpoint-connection-type-codesystem.json
+#
+#            - file: datasets/symptom_checks/Yska_22.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Virtsatietulehdus_21.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Korvakipu_26.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Kurkkukipu_3.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Ripuli_41.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Alaselka_2.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Narastys_27.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Olkapaa_83.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Paansarky_101.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Peraaukko_28.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Polvi_106.json
+#              use_update: false
+#            - file: datasets/symptom_checks/Silma_124.json
+#              use_update: false
+#
+#            - file: datasets/social/questionnaire-henkilokohtainen-apu.json
+#              use_update: false
+#            - file: datasets/social/questionnaire-kuljetusapu.json
+#              use_update: false
+#            - file: datasets/social/questionnaire-omaishoidon-tuki.json
+#              use_update: false
+#
+#            - file:  datasets/symptom_checks/Terveystarkastus_153.json
+#              use_update: false
+#            - file:  datasets/symptom_checks/Sukupuolitauti_42.json
+#              use_update: false
 spring:
     application:
         name: phr
+        uri: http://canehealth.com/fhirform/
+        demap: http://hl7.org/fhir/StructureDefinition/questionnaire-deMap
     thymeleaf:
         prefix: classpath:/WEB-INF/templates/
     jpa:
