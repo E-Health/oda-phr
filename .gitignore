@@ -128,3 +128,4 @@ local.properties
 /gradlew
 src/main/resources/js/node/
 src/main/resources/js/bundle.js
+src/main/resources/FHIRForms/
