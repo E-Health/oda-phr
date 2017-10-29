@@ -27,7 +27,7 @@ app:
 #              - file: profiles/CQIF-Questionnaire.profile.xml
 #                use_update: false
               - file: datasets/questionnaires/feedback-issue.json
-              - file: FHIRForms/fhirform-ex-qu-1.json
+              - file: FHIRForms/fhirform-example-qu-1.json
 #              - file: FHIRForms/fhirform-ex-de-age.json
 #            - file: datasets/symptom_checks/Hengitystietulehdus_107.json
 #              use_update: false
