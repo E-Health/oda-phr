@@ -4,10 +4,8 @@ package fi.oda.phr.dataset;
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.parser.IParser;
 import ca.uhn.fhir.parser.StrictErrorHandler;
-import org.hl7.fhir.dstu3.model.DataElement;
-import org.hl7.fhir.dstu3.model.Element;
-import org.hl7.fhir.dstu3.model.Extension;
-import org.hl7.fhir.dstu3.model.Questionnaire;
+import org.hl7.fhir.dstu3.model.*;
+import org.hl7.fhir.instance.model.api.IBaseDatatype;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,7 +24,7 @@ public class DataElementInjector {
     private final Logger log = LoggerFactory.getLogger(ResourceInjector.class);
 
     @Value("${spring.application.uri}")
-    private String uri;
+    private String uri = "http://canehealth.com/fhirform/";
 
     @Value("${spring.application.demap}")
     private String demap = "http://hl7.org/fhir/StructureDefinition/questionnaire-deMap";
@@ -36,21 +34,32 @@ public class DataElementInjector {
      */
     public Questionnaire inject(Questionnaire questionnaire) {
 
-        log.info("Processing: {}", questionnaire.getId());
+        log.info("Processing Questionnaire: {}", questionnaire.getId());
         List<Extension> extensions = new ArrayList();
-        if (questionnaire.getExtensionsByUrl(demap) != null)
-            extensions = questionnaire.getExtensionsByUrl(demap);
-        // If no extensions
-        if (extensions.isEmpty())
+        List<Questionnaire.QuestionnaireItemComponent> empty_list = new ArrayList<>();
+        Questionnaire newQ = questionnaire.copy();
+        newQ.setItem(empty_list);
+
+        List<Questionnaire.QuestionnaireItemComponent> questionnaireItemComponent = questionnaire.getItem();
+
+        if (questionnaireItemComponent.isEmpty())
             return questionnaire;
-        else {
+
+        for (Questionnaire.QuestionnaireItemComponent item : questionnaireItemComponent) {
+            log.info("Processing Item: {}", item.getLinkId());
+            if (item.getExtensionsByUrl(demap) != null) {
+                extensions = item.getExtensionsByUrl(demap);
+            }
             for (Extension extension : extensions) {
-                String extension_value = extension.getValue().toString();
+                IBaseDatatype iBaseDatatype = extension.getValue();
+                Reference reference = (Reference) iBaseDatatype;
+                String extension_value = reference.getReference();
+
                 // If demap extension value has uri, process it
-                if (extension_value.contains("uri")) {
+                if (extension_value.contains(uri)) {
                     log.info("Reading Extension: {}", extension_value);
                     // Replace the uri with local path
-                    String sourceFile = extension_value.replace(uri, "DataElements/");
+                    String sourceFile = extension_value.replace(uri, "FHIRForms/").concat(".json");
                     // The segment below is from ResourceInjector.java
                     log.info("About to inject: {}", sourceFile);
                     final FhirContext ctx = FhirContext.forDstu3();
@@ -69,11 +78,16 @@ public class DataElementInjector {
                         resource = parser.parseResource(reader);
                         // In this case the resource is a DataElement
                         DataElement dataElement = (DataElement) resource;
-                        // Convert elements in the dataElement resource to QuestionnaireItemComponent and add
-                        // them to the questionnaire.
-                        for (Element element : dataElement.getElement()) {
-                            Questionnaire.QuestionnaireItemComponent item = (Questionnaire.QuestionnaireItemComponent) element;
-                            questionnaire.addItem(item);
+
+                        for (Resource res : dataElement.getContained()) {
+                            if (res.getClass() == ValueSet.class)
+                                newQ.addContained(res);
+                            if (res.getClass() == Questionnaire.class) {
+                                Questionnaire qu = (Questionnaire) res;
+                                for (Questionnaire.QuestionnaireItemComponent qi : qu.getItem()) {
+                                    newQ.addItem(qi);
+                                }
+                            }
                         }
 
                     } catch (final IOException e) {
@@ -81,8 +95,9 @@ public class DataElementInjector {
                     }
                 }
             }
-            return questionnaire;
+
         }
+        return newQ;
     }
 }
 
