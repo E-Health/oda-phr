@@ -80,7 +80,7 @@ public class DataElementInjector {
                         DataElement dataElement = (DataElement) resource;
 
                         for (Resource res : dataElement.getContained()) {
-                            if (res.getClass() == ValueSet.class)
+                            if (res.getClass() == ValueSet.class || res.getClass() == DataElement.class)
                                 newQ.addContained(res);
                             if (res.getClass() == Questionnaire.class) {
                                 Questionnaire qu = (Questionnaire) res;
