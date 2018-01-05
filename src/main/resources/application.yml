@@ -28,7 +28,12 @@ app:
 #                use_update: false
               - file: datasets/questionnaires/feedback-issue.json
               - file: FHIRForms/fhirform-example-qu-1.json
-#              - file: FHIRForms/fhirform-ex-de-age.json
+              - file: FHIRForms/fhirform-example-de-age.json
+              - file: FHIRForms/fhirform-example-de-name.json
+              - file: FHIRForms/fhirform-example-de-gender.json
+              - file: FHIRForms/fhirform-example-de-smoker.json
+              - file: FHIRForms/fhirform-example-de-alcohol.json
+
 #            - file: datasets/symptom_checks/Hengitystietulehdus_107.json
 #              use_update: false
 #
